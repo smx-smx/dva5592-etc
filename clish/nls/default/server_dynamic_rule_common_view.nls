@@ -1,0 +1,15 @@
+[server_dynamic_rule_common_view:]
+matchingDomain set=Set a list of domains (up to 8). Hostnames belonging to these domains will be resolved by this DNS server.
+matchingDomain set:addr=Comma-separated list of domains
+matchingDomain add=Add a domain. Hostnames belonging to this domain will be resolved by this DNS server.
+matchingDomain add:domain_val=Domain name
+matchingDomain del=Remove a domain. Hostnames belonging to this domain were resolved by this DNS server.
+matchingDomain del:domain_val=Domain name
+strictDomain=If enabled, fallback on failure for queries matching this entry will be performed only if the domain filter of the next chosen entry is the same as the original matching filter.
+strictDomain:value=Enable/disable
+priority=Set a specific priority to the DNS server (useful only for the fallback functionality).
+priority:prio=Priority
+domainPriority=Set a specific priority to the DNS server for a specific Domain (useful only for the fallback functionality).
+domainPriority:prio=Priority
+timeout=Set a timeout to wait for a server response.
+timeout:timeout_val=Timeout (in milliseconds)

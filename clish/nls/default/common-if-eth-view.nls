@@ -1,0 +1,10 @@
+[common-if-eth-view:]
+reset=Ethernet device hard reset
+rateAndMode=Sets rate and mode
+rateAndMode:rate=Rate
+rateAndMode:duplexMode=Mode
+rateAndMode Auto=Sets auto-negotiated mode
+energySave=Enables or disables energy save mode
+energySave:value=boolean
+hwQoS=Enables or disables H/W QoS on devices
+hwQoS:value=boolean

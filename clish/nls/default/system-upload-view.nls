@@ -1,0 +1,15 @@
+[system-upload-view:]
+configurationToHttp=Upload configuration to HTTP(S) server
+configurationToHttp:type=Configuration type
+configurationToHttp:url=HTTP(S) server address
+configurationToHttp:certcheck=Disable certificate check for HTTPS
+configurationToHttp:username=Username for HTTP(S) server
+configurationToHttp:password=Password for HTTP(S) server
+configurationToFtp=Upload configuration to FTP server
+configurationToFtp:type=Configuration type
+configurationToFtp:url=FTP server address
+configurationToFtp:username=Username for FTP server
+configurationToFtp:password=Password for FTP server
+configurationToTftp=Upload configuration to TFTP server
+configurationToTftp:type=Configuration type
+configurationToTftp:url=TFTP server address

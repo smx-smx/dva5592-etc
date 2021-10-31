@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="DSL" version="2.0">
+    <object name="WANDevice.{i}.WANConnectionDevice.{i}.WANDSLLinkConfig.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+        <parameter name="X_ADB_VLANID" excludeUser="CWMP"/>
+    </object>
+    <object name="WANDevice.{i}.WANDSLInterfaceConfig.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+        <parameter name="X_ADB_TR181_CHAN" excludeUser="CWMP"/>
+        <parameter name="X_ADB_AllowedStandards" excludeUser="CWMP"/>
+        <parameter name="X_DLINK_SOS" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).X_ADB_SOS" aliasOnSet="%(%p.X_ADB_TR181Name).X_ADB_SOS">
+            <description>Whether enable Save our showtime (SOS) on the line. It
+            manages both kVdslSOSDisable0 (0x00000800) in VDSLcfgFlag bitmap
+            and kDslSOSEnabled (0x08000000) in auxFeatures bitmap. In order to
+            enable SOS at CPE both ROC and SRA must be enabled
+            </description>
+            <syntax>
+                <int>
+                    <range minInclusive="-1" maxInclusive="1" step="1"/>
+                </int>
+                <default value="-1"/>
+            </syntax>
+        </parameter>
+        <parameter name="X_DLINK_EnableROC" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).X_ADB_EnableROC" aliasOnSet="%(%p.X_ADB_TR181Name).X_ADB_EnableROC">
+            <description>It manages EnableROC bit (0x10000000) in xdslAuxfeature configuration</description>
+            <syntax>
+                <int>
+                    <range minInclusive="-1" maxInclusive="1" step="1"/>
+                </int>
+                <default value="-1"/>
+            </syntax>
+        </parameter>
+    </object>
+</datamodel>

@@ -1,0 +1,17 @@
+[ipv6Route-view:]
+destPrefix=Destination IPv6 prefix
+destPrefix:prefix=Enter destination IPv6 prefix
+no destPrefix=Clear destination IPv6 prefix
+classificationIndex=Identifier of a set of classes or flows that have the corresponding ForwardingPolicy value as defined in the QoS object
+classificationIndex:index=Enter classification index
+classificationIndex:new_value=Enter new classification index
+no classificationIndex=Clear classification index
+nextHop=IPv6 address of the next hop
+nextHop:address=Enter IPv6 address
+no nextHop=Clear IPv6 address of the next hop
+interface=Specifies the egress layer 3 interface associated with this entry
+interface:ifname=Enter interface
+no interface=Clear interface
+forwardingMetric=Forwarding metric. A value of -1 indicates this metric is not used
+forwardingMetric:metric=Enter metric
+no forwardingMetric=Clear metric

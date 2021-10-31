@@ -1,0 +1,7 @@
+Device.*
+Device.NAT.PortMapping.*
+	exclude = "true"
+Device.Routing.Router.1.IPv4Forwarding.*
+	exclude = "true"
+Device.DHCPv4.Server.Pool.[0-9]+.StaticAddress.*
+	exclude = "true"

@@ -1,0 +1,13 @@
+[if-dsl-view:]
+ptm=Enter "ptm" config view
+ptm:alias=Alias
+del ptm=Delete PTM layer
+lineReset=Soft-reset the DSL line, forcing the training procedure
+phy=Enter "phy" config view
+add atm=Add ATM layer
+add atm:linktype=An ATM link type
+add atm:atm_alias=Alias
+atm=Enter "atm" config view
+atm:alias_atm=Alias
+del atm=Delete ATM layer
+del atm:alias=Alias

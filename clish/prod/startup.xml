@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CLISH_MODULE><PLUGIN file="/usr/lib/cmplugin.so" name="cmplugin" /><COMMAND args="comment" args_help="ignored comment text" help="Comments" name="!"><ACTION builtin="clish_nop" /></COMMAND><COMMAND name="exit"><ACTION builtin="clish_nested_up" /></COMMAND><COMMAND help="Quit the current CLI session" name="quit"><ACTION builtin="clish_close" /></COMMAND><OVERVIEW>
+CONTEXT SENSITIVE HELP
+[?] - Display context sensitive help. This is either a list of possible
+      command completions with summaries, or the full syntax of the
+      current command. A subsequent repeat of this key, when a command
+      has been resolved, will display a detailed reference.
+
+AUTO-COMPLETION
+The following keys both perform auto-completion for the current command line.
+If the command prefix is not unique then the bell will ring and a subsequent
+repeat of the key will display possible completions.
+
+[enter] - Auto-completes, syntax-checks then executes a command. If there is
+          a syntax error then offending part of the command line will be
+          highlighted and explained.
+
+[space] - Auto-completes, or if the command is already resolved inserts a space.
+
+MOVEMENT KEYS
+[CTRL-A] - Move to the start of the line
+[CTRL-E] - Move to the end of the line.
+[up]     - Move to the previous command line held in history.
+[down]   - Move to the next command line held in history.
+[left]   - Move the insertion point left one character.
+[right]  - Move the insertion point right one character.
+
+DELETION KEYS
+[CTRL-C]    - Delete and abort the current line
+[CTRL-D]    - Delete the character to the right on the insertion point.
+[CTRL-K]    - Delete all the characters to the right of the insertion point.
+[CTRL-U]    - Delete the whole line.
+[backspace] - Delete the character to the left of the insertion point.
+
+ESCAPE SEQUENCES
+!!  - Subsitute the the last command line.
+!N  - Substitute the Nth command line (absolute as per 'history' command)
+!-N - Substitute the command line entered N lines before (relative)
+    </OVERVIEW><STARTUP view="main-view"><DETAIL>
+********************************************
+*                 D-Link                   *
+*                                          *
+*      WARNING: Authorised Access Only     *
+********************************************
+        </DETAIL><ACTION>
+            echo "Welcome"
+            . /etc/clish/predefine-cli-tr.sh
+        </ACTION></STARTUP><VIEW name="main-view" prompt="${CLISH_PROMPT}# "><COMMAND help="Exit this CLI session" name="exit"><ACTION builtin="clish_close" /></COMMAND><COMMAND help="returns true if the boot is completed" name="boot-completed"><ACTION>cmclient GETV Device.DeviceInfo.X_ADB_BootDone</ACTION></COMMAND><COMMAND help="Reboot" name="reboot"><ACTION>exec pcli "reboot"</ACTION></COMMAND><COMMAND help="save" name="save"><ACTION>exec pcli "save"</ACTION></COMMAND><COMMAND help="Show" name="show" /><COMMAND help="Shows the current version" name="show version"><ACTION>
+    cmclient -v swver GETV Device.DeviceInfo.SoftwareVersion
+    cmclient -v hwver GETV Device.X_ADB_FactoryData.HardwareVersion
+    cmclient -v manuf GETV Device.X_ADB_FactoryData.Manufacturer
+    cmclient -v model GETV Device.X_ADB_FactoryData.ModelName
+    gcctime=`cat /proc/version | cut -d' ' -f 13-`
+    echo "SoftwareVersion:" $swver
+    echo "HardwareVersion:" $hwver
+    echo "Manufacturer:"    $manuf
+    echo "ModelName:"       $model
+    echo "Compilation Time:" $gcctime
+  </ACTION></COMMAND><COMMAND help="send ICMP ECHO_REQUEST to network hosts" name="ping"><PARAM help="destination" name="hostOripaddress" ptype="STRING" /><PARAM default="4" help="Stop after sending count ECHO_REQUEST packets" name="count" ptype="UINT" /><ACTION>exec ping  ${-c :count} "${hostOripaddress}"</ACTION></COMMAND><COMMAND help="restore" name="restore" /><COMMAND help="Restore default setting" name="restore default-setting"><ACTION>
+    echo "Restore default-setting ... and reboot"
+    nvramUpdate Feature 0x0 > /dev/null
+    cmclient RESET
+  </ACTION></COMMAND><COMMAND help="Restore factory production configuration" name="restore production-conf"><ACTION>
+    echo "Restore factory production configuration ... and reboot"
+    mtd erase conf_factory
+    reboot
+  </ACTION></COMMAND><COMMAND help="system" name="system" /><COMMAND help="enters system shell" name="system shell"><ACTION>exec /etc/clish/shell.sh /etc/clish/set-factorydata.sh nvramUpdate dhdctl ping wlctl xdslctl ethctl clivo cmbs_tcx mount *ls *cp *rm</ACTION></COMMAND><COMMAND help="print the route packets trace to network host" name="traceroute"><PARAM help="hostname" name="hostOripaddress" ptype="STRING" /><ACTION>exec traceroute "${hostOripaddress}"</ACTION></COMMAND><COMMAND help="upgrade" name="upgrade" /><COMMAND help="Upgrade firmware downloading the image from an external URL" name="upgrade firmware"><PARAM help="URL to download the firmware" name="url" ptype="STRING" /><ACTION>/etc/clish/cliupgrade.sh "${url}"</ACTION></COMMAND><COMMAND help="Upgrade configuration downloading the new one from an external URL" name="upgrade configuration"><PARAM help="URL to download the configuration" name="url" ptype="STRING" /><ACTION>/etc/clish/cliupgrade-conf.sh "${url}"</ACTION></COMMAND><COMMAND help="Factory settings" name="factory" view="factory-view" /></VIEW><PTYPE name="STRING" pattern=".+" /><PTYPE name="UINT" pattern="[0-9]+" /><VIEW name="factory-view" prompt="${CLISH_PROMPT}(factory)# "><COMMAND help="exit" name="exit" view="main-view" /><COMMAND help="returns true if in factory mode" name="factory-check"><ACTION>echo true</ACTION></COMMAND><COMMAND help="show vendor name and vendor OUI" name="getdeviceinfo"><ACTION>
+    cmclient -v vname GETV Device.DeviceInfo.Manufacturer
+    cmclient -v voui GETV Device.DeviceInfo.ManufacturerOUI
+    echo "vendor name:" $vname
+    echo "vendor OUI :" $voui
+  </ACTION></COMMAND><COMMAND help="set MAC address" name="setMACaddress"><PARAM help="base mac address to set" name="address" ptype="MAC_ADDR" /><ACTION>/etc/clish/set-factorydata.sh BaseMACAddress "${address}"</ACTION></COMMAND><COMMAND help="set device Serial Number" name="setSerialNumber"><PARAM help="device serial number to set" name="serial" ptype="STRING" /><ACTION>/etc/clish/set-factorydata.sh SerialNumber "${serial}"</ACTION></COMMAND><COMMAND help="set Hw Version" name="setHWversion"><PARAM help="hw version to set" name="hwVersion" ptype="STRING" /><ACTION>/etc/clish/set-factorydata.sh HardwareVersion "${hwVersion}"</ACTION></COMMAND><COMMAND help="set product class" name="setProductClass"><PARAM help="product class to set" name="pClass" ptype="STRING" /><ACTION>/etc/clish/set-factorydata.sh ProductClass "${pClass}"</ACTION></COMMAND><COMMAND help="set model name" name="setModelName"><PARAM help="model name to set" name="model" ptype="STRING" /><ACTION>/etc/clish/set-factorydata.sh ModelName "${model}"</ACTION></COMMAND><COMMAND help="set wlan SSID with infostrada suffix" name="setSSIDdlink"><PARAM help="wlan ssid to set" name="ssid" ptype="STRING" /><ACTION>
+	/etc/clish/set-factorydata.sh WiFiSSID Infostrada-2.4GHz-$(echo "${ssid}")
+	/etc/clish/set-factorydata.sh WiFiSSID2 Infostrada-5GHz-$(echo "${ssid}")
+</ACTION></COMMAND><COMMAND help="voip status" name="voice_status"><ACTION>
+    cmclient -v voipstatus GETV Device.Services.VoiceService.1.X_ADB_Status
+    echo "Voip status: $voipstatus"
+  </ACTION></COMMAND><COMMAND help="factory voip test" name="voice_test" /><COMMAND help="voip test mode start" name="voice_test on"><ACTION>echo "FACTORYTEST ON" | nc  local:/tmp/voip_socket</ACTION></COMMAND><COMMAND help="voip test mode stop" name="voice_test off"><ACTION>echo "FACTORYTEST OFF" | nc  local:/tmp/voip_socket</ACTION></COMMAND><COMMAND help="voip test mode status" name="voice_test status"><ACTION>echo "FACTORYTEST STATUS" | nc  local:/tmp/voip_socket</ACTION></COMMAND><COMMAND help="info on xdsl physical layer" name="xdslinfo"><PARAM help="xdsl channel ID" name="channel" ptype="XDSL_CHANNEL" /><ACTION>
+		xdslctl"${channel}" info --show
+	</ACTION></COMMAND><COMMAND help="info on adsl physical layer" name="adslinfo"><ACTION>
+		xdslctl info
+	</ACTION></COMMAND><COMMAND help="info on connected usb devices" name="getusbdevices"><ACTION>
+		cat /proc/bus/usb/devices
+	</ACTION></COMMAND><COMMAND help="test leds" name="ledctl"><PARAM help="supported modes: greenon redon off" name="mode" ptype="STRING" /><ACTION>
+		case ${mode} in
+		greenon)	ledctl -s -n ALL -c green -u on	;;
+		redon)		ledctl -s -n ALL -c red -u on	;;
+		off)		ledctl -s -n ALL -c green -u off	;;
+		*)		echo "Unknown option ${mode}"	;;
+		esac 2>/dev/null
+	</ACTION></COMMAND><COMMAND help="enable WiFi" name="factorywlup"><ACTION>
+		setem="Device.WiFi.Radio.1.AutoChannelEnable=false"
+		setem="$setem	Device.WiFi.Radio.1.Channel=6"
+		setem="$setem	Device.WiFi.AccessPoint.1.Enable=true"
+		setem="$setem	Device.WiFi.SSID.1.Enable=true"
+		cmclient SETEM "$setem"
+		cmclient -u boot SET Device.WiFi.Radio.1.Enable true
+	</ACTION></COMMAND><COMMAND help="disable WiFi" name="factorywldown"><ACTION>
+		cmclient SET Device.WiFi.AccessPoint.1.Enable false
+		cmclient SET Device.WiFi.SSID.1.Enable false
+		cmclient SET Device.WiFi.Radio.1.Enable false
+	</ACTION></COMMAND><COMMAND help="set ssid in factory mode. note:this setting will be lost after restore default" name="setProdSSID"><PARAM help="ssid to set" name="ssid" ptype="STRING" /><ACTION>
+		cmclient SET Device.WiFi.SSID.1.SSID ${ssid}
+		cmclient SAVE
+	</ACTION></COMMAND><COMMAND help="enable WiFi" name="factorywlup5G"><ACTION>
+		cmclient -v ssid GETO "Device.WiFi.SSID.[Name=wl0]"
+		if [ -z "$ssid" ]; then
+			echo "Wrong interface $interface"
+		else
+			cmclient -v radio GETV "$ssid.LowerLayers"
+			cmclient -v ap GETO "Device.WiFi.AccessPoint.[SSIDReference=$ssid]"
+			setem="$radio.AutoChannelEnable=false"
+			setem="$setem	$radio.Channel=36"
+			setem="$setem	$ap.Enable=true"
+			setem="$setem	$ssid.Enable=true"
+			cmclient SETEM "$setem"
+			cmclient -u boot SET "$radio.Enable" true
+		fi
+	</ACTION></COMMAND><COMMAND help="disable WiFi" name="factorywldown5G"><ACTION>
+		cmclient SET Device.WiFi.AccessPoint.2.Enable false
+		cmclient SET Device.WiFi.SSID.2.Enable false
+		cmclient SET Device.WiFi.Radio.2.Enable false
+	</ACTION></COMMAND><COMMAND help="set ssid in factory mode. note:this setting will be lost after restore default" name="setProdSSID5G"><PARAM help="ssid to set" name="ssid" ptype="STRING" /><ACTION>
+		cmclient SET Device.WiFi.SSID.2.SSID "${ssid}"
+		cmclient SAVE
+	</ACTION></COMMAND><COMMAND help="set wlan SSID" name="setSSID"><PARAM help="wlan ssid to set" name="ssid" ptype="STRING" /><ACTION>
+	/etc/clish/set-factorydata.sh WiFiSSID "${ssid}"
+	/etc/clish/set-factorydata.sh WiFiSSID2 "${ssid}"
+</ACTION></COMMAND><COMMAND help="set wlan WEPKey" name="setWEPKey"><PARAM help="wep key to set" name="key" ptype="STRING" /><ACTION>
+	/etc/clish/set-factorydata.sh WiFiWEPKey "${key}"
+	/etc/clish/set-factorydata.sh WiFiWEPKey2 "${key}"
+</ACTION></COMMAND><COMMAND help="set wlan WPAKey" name="setWPAKey"><PARAM help="passphrase to set" name="passphrase" ptype="STRING" /><ACTION>
+	/etc/clish/set-factorydata.sh WiFiKeyPassphrase "${passphrase}"
+	/etc/clish/set-factorydata.sh WiFiKeyPassphrase2 "${passphrase}"
+</ACTION></COMMAND><COMMAND help="set beamforming rpcal2g" name="setRpcal2g"><PARAM help="param val to set in HEX format" name="val" ptype="STRING" /><ACTION>
+	/etc/clish/set-factorydata.sh Rpcal2g ${val}
+</ACTION></COMMAND><COMMAND help="set beamforming rpcal5gb0" name="setRpcal5gb0"><PARAM help="param val to set in HEX format" name="val" ptype="STRING" /><ACTION>
+	/etc/clish/set-factorydata.sh Rpcal5gb0 ${val}
+</ACTION></COMMAND><COMMAND help="set beamforming rpcal5gb1" name="setRpcal5gb1"><PARAM help="param val to set in HEX format" name="val" ptype="STRING" /><ACTION>
+	/etc/clish/set-factorydata.sh Rpcal5gb1 ${val}
+</ACTION></COMMAND><COMMAND help="set beamforming rpcal5gb2" name="setRpcal5gb2"><PARAM help="param val to set in HEX format" name="val" ptype="STRING" /><ACTION>
+	/etc/clish/set-factorydata.sh Rpcal5gb2 ${val}
+</ACTION></COMMAND><COMMAND help="set beamforming rpcal5gb3" name="setRpcal5gb3"><PARAM help="param val to set in HEX format" name="val" ptype="STRING" /><ACTION>
+	/etc/clish/set-factorydata.sh Rpcal5gb3 ${val}
+</ACTION></COMMAND><COMMAND help="set beamforming rpcal5gb01core3" name="setRpcal5gb01core3"><PARAM help="param val to set in HEX format" name="val" ptype="STRING" /><ACTION>
+	/etc/clish/set-factorydata.sh Rpcal5gb01core3 ${val}
+</ACTION></COMMAND><COMMAND help="set beamforming rpcal5gb23core3" name="setRpcal5gb23core3"><PARAM help="param val to set in HEX format" name="val" ptype="STRING" /><ACTION>
+	/etc/clish/set-factorydata.sh Rpcal5gb23core3 ${val}
+</ACTION></COMMAND><COMMAND help="get device setting" name="getSettings"><ACTION>
+	cmclient -v mac GETV "Device.X_ADB_FactoryData.BaseMACAddress"
+	cmclient -v serial GETV "Device.X_ADB_FactoryData.SerialNumber"
+	cmclient -v hwver GETV "Device.X_ADB_FactoryData.HardwareVersion"
+	cmclient -v pclass GETV "Device.X_ADB_FactoryData.ProductClass"
+	cmclient -v model GETV "Device.X_ADB_FactoryData.ModelName"
+	cmclient -v wepKey GETV "Device.X_ADB_FactoryData.WiFiWEPKey"
+	cmclient -v wpaKey GETV "Device.X_ADB_FactoryData.WiFiKeyPassphrase"
+	cmclient -v ssid GETV "Device.X_ADB_FactoryData.WiFiSSID"
+	cmclient -v wepKey2 GETV "Device.X_ADB_FactoryData.WiFiWEPKey2"
+	cmclient -v wpaKey2 GETV "Device.X_ADB_FactoryData.WiFiKeyPassphrase2"
+	cmclient -v ssid2 GETV "Device.X_ADB_FactoryData.WiFiSSID2"
+	cmclient -v prod_ssid2 GETV "Device.WiFi.SSID.2.SSID"
+	wepKeystr=`echo "$wepKey"|sed -e "s/.*;/\ /"`
+	ascii=`. /etc/clish/hex2ascii.sh $wepKey`
+	cmclient -v prod_ssid GETV "Device.WiFi.SSID.1.SSID"
+	echo "Production SSID :" $prod_ssid
+	echo "Production SSID2:" $prod_ssid2
+	echo "MAC :" $mac
+	echo "SerialNumber: " $serial
+	echo "HwVersion: " $hwver
+	echo "ProductionClass: " $pclass
+	echo "Model Name :" $model
+	echo "SSID: " $ssid
+	echo "WEP Key: " $wepKeystr
+	echo "ascii WEP key: $ascii"
+	echo "WPA Key: " `echo "$wpaKey"|sed -e "s/.*;/\ /"`
+	wepKeystr=`echo "$wepKey2"|sed -e "s/.*;/\ /"`
+	ascii=`. /etc/clish/hex2ascii.sh $wepKey2`
+	echo "SSID2: " $ssid2
+	echo "WEP Key2: " $wepKeystr
+	echo "ascii WEP key2: $ascii"
+	echo "WPA Key2: " `echo "$wpaKey2"|sed -e "s/.*;/\ /"`
+	cmclient -v rpcal2g GETV "Device.X_ADB_FactoryData.Rpcal2g"
+	cmclient -v rpcal5gb0 GETV "Device.X_ADB_FactoryData.Rpcal5gb0"
+	cmclient -v rpcal5gb1 GETV "Device.X_ADB_FactoryData.Rpcal5gb1"
+	cmclient -v rpcal5gb2 GETV "Device.X_ADB_FactoryData.Rpcal5gb2"
+	cmclient -v rpcal5gb3 GETV "Device.X_ADB_FactoryData.Rpcal5gb3"
+	cmclient -v rpcal5gb01core3 GETV "Device.X_ADB_FactoryData.Rpcal5gb01core3"
+	cmclient -v rpcal5gb23core3 GETV "Device.X_ADB_FactoryData.Rpcal5gb23core3"
+	echo "Beamforming rpcal2g" $rpcal2g
+	echo "Beamforming rpcal5gb0" $rpcal5gb0
+	echo "Beamforming rpcal5gb1" $rpcal5gb1
+	echo "Beamforming rpcal5gb2" $rpcal5gb2
+	echo "Beamforming rpcal5gb3" $rpcal5gb3
+	echo "Beamforming rpcal5gb01core3" $rpcal5gb01core3
+	echo "Beamforming rpcal5gb23core3" $rpcal5gb23core3
+</ACTION></COMMAND></VIEW><PTYPE name="MAC_ADDR" pattern="[0-9a-fA-F][0-9a-fA-F][:-][0-9a-fA-F][0-9a-fA-F][:-][0-9a-fA-F][0-9a-fA-F][:-][0-9a-fA-F][0-9a-fA-F][:-][0-9a-fA-F][0-9a-fA-F][:-][0-9a-fA-F][0-9a-fA-F]" /><PTYPE method="select" name="XDSL_CHANNEL" pattern="0(0) 1(1)" /></CLISH_MODULE>

@@ -1,0 +1,17 @@
+[voip-interface-view:]
+enable=Enable this physical interface
+disable=Disable this physical interface
+gain=Change the gains behavior (If enabled, gains are set by physical interface instead of line)
+gain:enable=Enable/disable
+txGain=Set gain in 01. dB to apply to the transmitted voice signal prior to encoding. This gain is a modifier of the default transmit-gain, which is unspecified
+txGain:value=Gain
+rxGain=Set gain in 0.1 dB to apply to the received voice signal after decoding. This gain is a modifier of the default receive-gain, which is unspecified
+rxGain:value=Gain
+pstnIncomingCall=Change ability of this physical interface to receive incoming calls from PSTN
+pstnIncomingCall:enable=Enable/disable
+pstnOutgoingCall=Change ability of this physical interface to switch to PSTN for outgoing calls
+pstnOutgoingCall:enable=Enable/disable
+monitor=Change ability of this interface to monitor
+monitor:enable=Enable/disable
+test=Run test
+test:type=Test entry

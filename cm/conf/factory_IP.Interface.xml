@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.IP.Interface.1">
+		<parameter name="LowerLayers">
+			<value>Device.Ethernet.Link.1</value>
+		</parameter>
+		<parameter name="IPv6Enable">
+			<value>false</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Bridge</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>ip0</value>
+		</parameter>
+	</object>
+	<object name="Device.IP.Interface.2">
+		<parameter name="LowerLayers">
+			<value>Device.PPP.Interface.1</value>
+		</parameter>
+		<parameter name="IPv6Enable">
+			<value>false</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>WAN Data</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>ip1</value>
+		</parameter>
+		<parameter name="X_ADB_DefaultRoute">
+			<value>true</value>
+		</parameter>
+		<parameter name="X_ADB_Upstream">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.IP.Interface.3">
+		<parameter name="LowerLayers">
+			<value>Device.Ethernet.Link.6</value>
+		</parameter>
+		<parameter name="IPv6Enable">
+			<value>false</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Wan VoIP</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>ip2</value>
+		</parameter>
+		<parameter name="X_ADB_Upstream">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.IP.Interface.4">
+		<parameter name="LowerLayers">
+			<value>Device.PPP.Interface.2</value>
+		</parameter>
+		<parameter name="IPv6Enable">
+			<value>false</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Wan PPP VoIP</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>ip3</value>
+		</parameter>
+		<parameter name="X_ADB_Upstream">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.IP.Interface.1.IPv4Address.1">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="IPAddress">
+			<value>192.168.1.1</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>IPv4Address1</value>
+		</parameter>
+		<parameter name="SubnetMask">
+			<value>255.255.255.0</value>
+		</parameter>
+		<parameter name="X_ADB_StartTime">
+			<value>54</value>
+		</parameter>
+	</object>
+</config>

@@ -1,0 +1,11 @@
+[vpn-client-server-namespace:]
+authProtocol add=Add PPP authentication protocol to the list of allowed protocols
+authProtocol add:proto=Name of the PPP authentication protocol
+authProtocol del=Delete PPP authentication protocol from the list of allowed protocols
+authProtocol del:proto=Name of the PPP authentication protocol
+authProtocol set=Set list of allowed PPP authentication protocols
+authProtocol set:proto list=Comma-separated list of the allowed PPP authentication protocols
+authProtocol show=Show entire list of the allowed PPP authentication protocols
+authProtocol clear=Clear list of the allowed PPP authentication protocols
+interface=Set the IP interface used for the given VPN tunnel
+interface:ifname=Name of the IP interface

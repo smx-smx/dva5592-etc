@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.Routing.Router.1">
+		<parameter name="Alias">
+			<value>Router1</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Routing.Router.1.IPv4Forwarding.1" upgrade="yes">
+		<parameter name="Alias">
+			<value>myforwarding</value>
+		</parameter>
+		<parameter name="DestIPAddress">
+			<value>0.0.0.0</value>
+		</parameter>
+		<parameter name="DestSubnetMask">
+			<value>0.0.0.0</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="ForwardingPolicy">
+			<value>1004</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.4</value>
+		</parameter>
+	</object>
+</config>

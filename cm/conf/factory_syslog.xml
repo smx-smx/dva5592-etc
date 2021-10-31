@@ -1,0 +1,74 @@
+<config>
+<object name="Device.X_ADB_SystemLog.Service.-1">
+	<parameter name="Alias">
+		<value>DHCPv4 Client</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Identity">
+		<value>udhcpc</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_SystemLog.Service.-1">
+	<parameter name="Alias">
+		<value>HTTP Server</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Identity">
+		<value>httpd</value>
+	</parameter>
+	<parameter name="Facility">
+		<value>23</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_SystemLog.Service.-1">
+	<parameter name="Alias">
+		<value>NTP</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Identity">
+		<value>chronyd</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_SystemLog.Service.-1">
+	<parameter name="Alias">
+		<value>DNS Service</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Identity">
+		<value>dns</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_SystemLog.Service.-1">
+	<parameter name="Alias">
+		<value>Wi-Fi</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Identity">
+		<value>hostapd</value>
+	</parameter>
+	<parameter name="Priority">
+		<value>4</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_SystemLog.Service.-1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Alias">
+		<value>System Status</value>
+	</parameter>
+	<parameter name="Identity">
+		<value>init</value>
+	</parameter>
+</object>
+</config>

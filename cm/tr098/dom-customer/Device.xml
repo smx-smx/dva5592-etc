@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="Device" version="2.0">
+    <object name="DeviceInfo.">
+        <parameter name="X_ADB_ProfileType" excludeUser="CWMP"/>
+        <parameter name="X_ADB_AvailableProfileType" excludeUser="CWMP"/>
+        <parameter name="X_ADB_BaseMACAddress" excludeUser="CWMP"/>
+        <parameter name="X_DLINK_SecureDevice" store="no">
+            <description>If {{false}} allows to upgrade firmware only with D-Link releases. If {{true}} allows to upgrade firmware only with not D-Link releases </description>
+            <syntax>
+                <boolean/>
+                <default value="false"/>
+            </syntax>
+        </parameter>
+        <parameter name="X_DLINK_AllowFirmwareDowngrade" store="no">
+            <description>If {{true}} allows firmware downgrade</description>
+            <syntax>
+                <boolean/>
+                <default value="false"/>
+            </syntax>
+        </parameter>
+    </object>
+</datamodel>

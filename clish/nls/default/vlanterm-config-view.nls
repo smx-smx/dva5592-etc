@@ -1,0 +1,6 @@
+[vlanterm-config-view:]
+vlanID=The VLAN ID
+vlanID:value=Enter VLAN ID
+prio=Force a 802.1p priority for egress traffic on this VLAN termination
+prio:value=Enter value
+stat show=Show statistics

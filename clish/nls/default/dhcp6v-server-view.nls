@@ -1,0 +1,7 @@
+[dhcp6v-server-view:]
+add pool=Add DHCPv6 server pool
+add pool:dhcp6-alias=Alias of adding pool
+del pool=Delete DHCPv6 server pool
+del pool:alias=Alias of deleting pool
+pool=Enter "pool" config view
+pool:alias=Alias for pool

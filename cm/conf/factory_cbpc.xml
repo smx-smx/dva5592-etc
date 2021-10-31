@@ -1,0 +1,651 @@
+<object name="Device.X_ADB_ParentalControl">
+	<parameter name="Enable">
+		<value>false</value>
+	</parameter>
+	<parameter name="UrlCacheHousekeepingPeriod">
+		<value>5</value>
+	</parameter>
+	<parameter name="PolicyOverrideHousekeepingPeriod">
+		<value>30</value>
+	</parameter>
+	<parameter name="DefaultPolicy">
+		<value>Device.X_ADB_ParentalControl.Policy.1</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1">
+	<parameter name="Name">
+		<value>BluePrintData</value>
+	</parameter>
+	<parameter name="Username">
+		<value>Marco506</value>
+	</parameter>
+	<parameter name="Password">
+		<value>MS068</value>
+	</parameter>
+	<parameter name="QueryType">
+		<value>Recursive</value>
+	</parameter>
+	<parameter name="Url">
+		<value>http://aws1.blueprintdata.com/urlreview/api/urlLookup.do?</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.1">
+	<parameter name="Name">
+		<value>Pornography</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>1</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.2">
+	<parameter name="Name">
+		<value>Sexual</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>2,3,4,5</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.3">
+	<parameter name="Name">
+		<value>Enterteinment</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>6,7,8,9,10</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.4">
+	<parameter name="Name">
+		<value>Business</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>11,12,13</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.5">
+	<parameter name="Name">
+		<value>Computers</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>14,16,17,18</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.6">
+	<parameter name="Name">
+		<value>Society</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>20,21,22,23,24,25,26,27,28,29,30</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.7">
+	<parameter name="Name">
+		<value>Drugs</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>31</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.8">
+	<parameter name="Name">
+		<value>Education</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>32,33,34,35,36</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.9">
+	<parameter name="Name">
+		<value>Games</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>37,38</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.10">
+	<parameter name="Name">
+		<value>Crime</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>39,40,41,42,43</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.11">
+	<parameter name="Name">
+		<value>Medical</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>45</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.12">
+	<parameter name="Name">
+		<value>News</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>46</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.13">
+	<parameter name="Name">
+		<value>Hobbies</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>47,48,49</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.14">
+	<parameter name="Name">
+		<value>Shopping</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>50,51</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.15">
+	<parameter name="Name">
+		<value>SocialNetworking</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>52,53</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.16">
+	<parameter name="Name">
+		<value>WebBasedEmail</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>54,55</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.17">
+	<parameter name="Name">
+		<value>Sports</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>56</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.18">
+	<parameter name="Name">
+		<value>Travel</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>57</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.19">
+	<parameter name="Name">
+		<value>Violence</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>58,59</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.20">
+	<parameter name="Name">
+		<value>ObsceneLanguage</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>44</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.21">
+	<parameter name="Name">
+		<value>AnonymousProxies</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>15</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.22">
+	<parameter name="Name">
+		<value>SearchEngines</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>19</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.23">
+	<parameter name="Name">
+		<value>Miscellaneous</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>60,61,62,63,64</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.1.ContentCategory.24">
+	<parameter name="Name">
+		<value>Unclassified</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>65</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2">
+	<parameter name="Name">
+		<value>SurfRight</value>
+	</parameter>
+	<parameter name="Username">
+		<value></value>
+	</parameter>
+	<parameter name="Password">
+		<value></value>
+	</parameter>
+	<parameter name="Url">
+		<value>udp://familyonline.hitmanpro.net:288</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.1">
+	<parameter name="Name">
+		<value>Pornography</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>17,18</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.2">
+	<parameter name="Name">
+		<value>Sexual</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>16,32</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.3">
+	<parameter name="Name">
+		<value>Enterteinment</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>44,45,46,47</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.4">
+	<parameter name="Name">
+		<value>Business</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>59,49,60</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.5">
+	<parameter name="Name">
+		<value>Computers</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>58,22,23,24</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.6">
+	<parameter name="Name">
+		<value>Society</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>40,35,39,41,38,61,42</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.7">
+	<parameter name="Name">
+		<value>Drugs</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>24,28,13</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.8">
+	<parameter name="Name">
+		<value>Education</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>43</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.9">
+	<parameter name="Name">
+		<value>Games</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>29,30</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.10">
+	<parameter name="Name">
+		<value>Crime</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>15,10,14,11,12</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.11">
+	<parameter name="Name">
+		<value>Medical</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>26,27</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.12">
+	<parameter name="Name">
+		<value>News</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>48</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.13">
+	<parameter name="Name">
+		<value>Hobbies</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>31,33</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.14">
+	<parameter name="Name">
+		<value>Shopping</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>51</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.15">
+	<parameter name="Name">
+		<value>SocialNetworking</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>53,54,56,34</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.16">
+	<parameter name="Name">
+		<value>WebBasedEmail</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>52,55</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.17">
+	<parameter name="Name">
+		<value>Sports</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>36</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.18">
+	<parameter name="Name">
+		<value>Travel</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>37</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.19">
+	<parameter name="Name">
+		<value>Violence</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>19,20</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.20">
+	<parameter name="Name">
+		<value>ObsceneLanguage</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>12</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.21">
+	<parameter name="Name">
+		<value>AnonymousProxies</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>21</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.22">
+	<parameter name="Name">
+		<value>SearchEngines</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>57</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.23">
+	<parameter name="Name">
+		<value>Miscellaneous</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>62</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.ServiceProvider.2.ContentCategory.24">
+	<parameter name="Name">
+		<value>Unclassified</value>
+	</parameter>
+	<parameter name="ProviderIdentifiers">
+		<value>00</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.PolicyDeviceAssociation.1">
+	<parameter name="MacAddress">
+		<value>00:00:00:00:00:00</value>
+	</parameter>
+	<parameter name="PreAssignedPolicy">
+		<value>Device.X_ADB_ParentalControl.Policy.1</value>
+	</parameter>
+	<parameter name="AllowPolicyOverride">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.Policy.1">
+	<parameter name="PolicyID">
+		<value>Low</value>
+	</parameter>
+	<parameter name="PolicyPIN">
+		<value>0001</value>
+	</parameter>
+	<parameter name="ActionOnUrlLookupFail">
+		<value>Blocked</value>
+	</parameter>
+	<parameter name="AllowedCategories">
+		<value>Miscellaneous,WebBasedEmail,Enterteinment,Business,Medical,Computers,AnonymousProxies,SearchEngines,Society,Education,Games,News,Hobbies,Shopping,SocialNetworking,Sports,Travel,Unclassified</value>
+	</parameter>
+	<parameter name="BlockedCategories">
+		<value>Pornography,Sexual,Drugs,Crime,Violence,ObsceneLanguage</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.Policy.2">
+	<parameter name="PolicyID">
+		<value>Medium</value>
+	</parameter>
+	<parameter name="PolicyPIN">
+		<value>0002</value>
+	</parameter>
+	<parameter name="ActionOnUrlLookupFail">
+		<value>Blocked</value>
+	</parameter>
+	<parameter name="AllowedCategories">
+		<value>Miscellaneous,WebBasedEmail,Enterteinment,Business,AnonymousProxies,SearchEngines,Computers,Society,Education,Games,News,Hobbies,Shopping,SocialNetworking,Sports,Travel</value>
+	</parameter>
+	<parameter name="BlockedCategories">
+		<value>Pornography,Sexual,Drugs,Crime,Medical,Violence,ObsceneLanguage,Unclassified</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.Policy.3">
+	<parameter name="PolicyID">
+		<value>High</value>
+	</parameter>
+	<parameter name="PolicyPIN">
+		<value>0003</value>
+	</parameter>
+	<parameter name="ActionOnUrlLookupFail">
+		<value>Blocked</value>
+	</parameter>
+	<parameter name="AllowedCategories">
+		<value>Miscellaneous,WebBasedEmail,Enterteinment,Business,Computers,SearchEngines,Society,Education,Games,News,Hobbies,Shopping,Sports,Travel</value>
+	</parameter>
+	<parameter name="BlockedCategories">
+		<value>Pornography,Sexual,Drugs,Crime,Medical,Violence,ObsceneLanguage,AnonymousProxies,SocialNetworking,Unclassified</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_SystemLog.Service.-1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Alias">
+		<value>Parental Control</value>
+	</parameter>
+	<parameter name="Identity">
+		<value>Cbpc</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.Policy.1">
+	<parameter name="TimeOfDayProfile">
+		<value>Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.1</value>
+	</parameter>
+	<parameter name="TimeOfDayEnable">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.Policy.2">
+	<parameter name="TimeOfDayProfile">
+		<value>Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.2</value>
+	</parameter>
+	<parameter name="TimeOfDayEnable">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.Policy.3">
+	<parameter name="TimeOfDayProfile">
+		<value>Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.3</value>
+	</parameter>
+	<parameter name="TimeOfDayEnable">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.1.TimeOfDay.1">
+	<parameter name="Day">
+		<value>1</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.1.TimeOfDay.2">
+	<parameter name="Day">
+		<value>2</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.1.TimeOfDay.3">
+	<parameter name="Day">
+		<value>3</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.1.TimeOfDay.4">
+	<parameter name="Day">
+		<value>4</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.1.TimeOfDay.5">
+	<parameter name="Day">
+		<value>5</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.1.TimeOfDay.6">
+	<parameter name="Day">
+		<value>6</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.1.TimeOfDay.7">
+	<parameter name="Day">
+		<value>7</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.2.TimeOfDay.1">
+	<parameter name="Day">
+		<value>1</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.2.TimeOfDay.2">
+	<parameter name="Day">
+		<value>2</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.2.TimeOfDay.3">
+	<parameter name="Day">
+		<value>3</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.2.TimeOfDay.4">
+	<parameter name="Day">
+		<value>4</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.2.TimeOfDay.5">
+	<parameter name="Day">
+		<value>5</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.2.TimeOfDay.6">
+	<parameter name="Day">
+		<value>6</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.2.TimeOfDay.7">
+	<parameter name="Day">
+		<value>7</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.3.TimeOfDay.1">
+	<parameter name="Day">
+		<value>1</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.3.TimeOfDay.2">
+	<parameter name="Day">
+		<value>2</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.3.TimeOfDay.3">
+	<parameter name="Day">
+		<value>3</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.3.TimeOfDay.4">
+	<parameter name="Day">
+		<value>4</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.3.TimeOfDay.5">
+	<parameter name="Day">
+		<value>5</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.3.TimeOfDay.6">
+	<parameter name="Day">
+		<value>6</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.3.TimeOfDay.7">
+	<parameter name="Day">
+		<value>7</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.RestrictedHosts">
+	<parameter name="Verification">
+		<value>900</value>
+	</parameter>
+	<parameter name="UsageInterval">
+		<value>300</value>
+	</parameter>
+	<parameter name="DefaultRestriction">
+		<value>PARENTALCONTROL</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/security/parental</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+

@@ -1,0 +1,27 @@
+[system-upgrade-view:]
+configurationFromHttp=Upgrade configuration downloading the new one from an external HTTP(S) server
+configurationFromHttp:url=URL to download the configuration (http(s):// ...)
+configurationFromHttp:certcheck=Disable certificate check for HTTPS
+configurationFromHttp:username=Username for HTTP(S) server
+configurationFromHttp:password=Password for HTTP(S) server
+configurationFromFtp=Upgrade configuration downloading the new one from an external ftp server
+configurationFromFtp:url=URL to download the configuration (ftp:// ...)
+configurationFromFtp:username=Username for FTP server
+configurationFromFtp:password=Password for FTP server
+configurationFromTftp=Upgrade configuration downloading the new one from an external TFTP server
+configurationFromTftp:url=URL to download the configuration (tftp:// ...)
+firmwareFromHttp=Upgrade firmware downloading the image from an external HTTP(S) server
+firmwareFromHttp:url=URL to download the firmware (http(s):// ...)
+firmwareFromHttp:certcheck=Disable certificate check for HTTPS
+firmwareFromHttp:username=Username for HTTP(S) server
+firmwareFromHttp:password=Password for HTTP(S) server
+firmwareFromFtp=Upgrade firmware downloading the image from an external FTP server
+firmwareFromFtp:url=URL to download the firmware (ftp:// ...)
+firmwareFromFtp:username=Username for FTP server
+firmwareFromFtp:password=Password for FTP server
+firmwareFromTftp=Upgrade firmware downloading the image from an external TFTP server
+firmwareFromTftp:url=URL to download the firmware (tftp:// ...)
+secureDevice=Flag that allows to flash the board with generic images too (not only Dlink releases).
+secureDevice:val=(true/false): true - doesn't check if image is permitted be flashed, false - checks if image is permitted to be flashed.
+fw_upgr_usb_filename=Write the name of the file that will be upgraded from USB stick
+fw_upgr_usb_filename:file=Name of the file that will be upgraded from USB stick (e.g. CELL_DV5820_63168.sig), type empty ("") to disable

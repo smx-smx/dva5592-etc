@@ -1,0 +1,21 @@
+[storage-user-view:]
+password=Set password used to authenticate the user when connecting to the Storage Service Device
+password:pass=Password
+group set=Set list of user groups
+group set:groups=Comma-separated list of user groups
+group add=Add user to specific user group
+group add:name=User group name
+group del=Remove user from specific user group
+group del:name=User group name
+group show=Show entire user group list
+group clear=Clear user group list
+ftpAccess=Enables or disables access via FTP (including SSH FTP access) for this user
+ftpAccess:value=Enable or disable
+httpAccess=Enables or disables access via HTTP (including HTTPS access) for this user
+httpAccess:value=Enable or disable
+remoteFtpAccess=Enables or disables remote access via FTP (including SSH FTP access) for this user
+remoteFtpAccess:value=Enable or disable
+ftpStartingFolder=Select FTP starting folder for current user
+ftpStartingFolder:folder=Name of existing folder
+remoteFtpStartingFolder=Select FTP starting folder during remote session for current user
+remoteFtpStartingFolder:folder=Name of existing folder

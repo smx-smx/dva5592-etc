@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE>
+  <PTYPE name="TLOOP_LOG_SET"    method="integer" pattern="0..255" help="Tloop log setting 0..255
+  0 -> All log disabled
+  1 -> Layer 1 log enabled
+  2 -> Layer 2 log enabled
+  4 -> Layer 3 log enabled
+  8 -> ME log enabled
+ 16 -> TBD
+ 32 -> TBD
+ 64 -> TBD
+128 -> Verbose ON only "/>
+  <!--=======================================================-->
+  <VIEW name="tloop-view" prompt="ADB(tloop)# ">
+    <COMMAND name="set" help="tloop set 0..255"/>
+    <COMMAND name="set log" help="tloop set 0..255/n">
+      <PARAM name="log_set" help="log setting 0..255" ptype="TLOOP_LOG_SET"/>
+      <ACTION>echo "TLOOP SET ${log_set}" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="exit" help="Go back to main manu" view="voip-view">
+      <ACTION>echo "Leaving tloop setting mode ..."</ACTION>
+    </COMMAND>
+  </VIEW>
+</CLISH_MODULE>

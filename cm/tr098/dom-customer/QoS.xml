@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="IP" version="2.0">
+    <object name="QueueManagement.App.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="QueueManagement.Classification.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="QueueManagement.Flow.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="QueueManagement.Policer.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="QueueManagement.Queue.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="QueueManagement.QueueStats.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+</datamodel>

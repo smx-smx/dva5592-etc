@@ -1,0 +1,19 @@
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/debug/wireless force5Gchannel</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2020</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/loadConfigScriptClear</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2000</value>
+	</parameter>
+	<parameter name="X_ADB_Permissions">
+		<value>200</value>
+	</parameter>
+</object>

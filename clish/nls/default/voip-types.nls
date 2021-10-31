@@ -1,0 +1,5 @@
+FAX_PASSTHROUGH_CODEC=Enumeration: G.711ALaw, G.711MuLaw
+FAX_T38_BIT_RATE=Enumeration: 2400, 4800, 7200, 9600, 12000, 14400, 33600
+FAX_T38_PACKET_RATE=Enumeration: 10, 20, 30, 40
+SIP_EVENT_SUBSCRIBE_EVENT=Enumeration: message-summary, reg, as-feature-event, ua-profile
+VOIP_FACILITY_ACTION_TYPE=Enumeration: Unset, UseLine, EmergencyNumber, CallForwardingOnNoReplyActivate, CallForwardingOnNoReplyDeactivate, CallForwardingOnNoReplyErase, CallForwardingOnNoReplyRegister, CallForwardingOnBusyActivate, CallForwardingOnBusyDeactivate, CallForwardingOnBusyDestinationErase, CallForwardingOnBusyDestinationRegister, CallForwardingUnconditionalActivate, CallForwardingUnconditionalDeactivate, CallForwardingUnconditionalErase, CallForwardingUnconditionalRegister, DoNotDisturbActivate, DoNotDisturbDeactivate, CallingLineIdentificationRestrictionActivate, CallingLineIdentificationRestrictionDeactivate, CallWaitingActivate, CallWaitingDeactivate, ConferenceCallActivate, ConferenceCallDeactivate, RequireMaxDigitsLengthNumber

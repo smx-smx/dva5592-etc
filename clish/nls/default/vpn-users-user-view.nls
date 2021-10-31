@@ -1,0 +1,7 @@
+[vpn-users-user-view:]
+username=Change user name
+username:name=Name of user
+no username=Delete user
+password=Set user's password
+password:pass=New password
+no password=Clear user's password

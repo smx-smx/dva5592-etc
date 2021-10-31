@@ -1,0 +1,10 @@
+[ipv-six-address-config-view:]
+address=IPv6 address
+address:address=Enter IPv6 address
+address:len=Enter prefix
+anycast=Anycast addresses are syntactically identical to unicast addresses and so need to be configured explicitly
+no anycast=Disable anycast
+lifetime valid=The time at which this address will cease to be valid (i.e. will become invalid), or 0001-01-01T00:00:00Z if unknown. For an infinite lifetime, the parameter value MUST be 9999-12-31T23:59:59Z
+lifetime valid:time=Enter time
+lifetime preferred=The time at which this address will cease to be preferred (i.e. will become deprecated), or 0001-01-01T00:00:00Z if not known. For an infinite lifetime, the parameter value MUST be 9999-12-31T23:59:59Z
+lifetime preferred:time=Enter time

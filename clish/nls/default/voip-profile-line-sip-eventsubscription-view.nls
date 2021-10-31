@@ -1,0 +1,5 @@
+[voip-profile-line-sip-eventsubscription-view:]
+username=Set username
+username:name=Username
+password=Set password
+password:passwd=Password

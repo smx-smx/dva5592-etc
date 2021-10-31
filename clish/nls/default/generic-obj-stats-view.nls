@@ -1,0 +1,2 @@
+stats reset=Reset stats linked to current object
+stats show=Show stats linked to current object

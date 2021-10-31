@@ -1,0 +1,5 @@
+[provider-dyndns-view:]
+protocol=Known protocol used by this provider
+protocol:protocol=Enter protocol
+baseURI=Base URI to the provider's Web-service
+baseURI:uri=Enter URI to the provider's Web-service

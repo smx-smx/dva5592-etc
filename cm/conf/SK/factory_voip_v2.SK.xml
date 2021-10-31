@@ -1,0 +1,187 @@
+<object name="Device.Services.VoiceService.1.POTS.">
+   <parameter name="FXSNumberOfEntries">
+      <value>1</value>
+   </parameter>
+   <parameter name="Region">
+      <value>SK</value>
+   </parameter>
+</object>
+<object name="Device.Services.VoiceService.1.POTS.FXS.1.">
+   <parameter name="Name">
+      <value>FXS1</value>
+   </parameter>
+   <parameter name="ToneEventProfile">
+      <value>Device.Services.VoiceService.1.Tone.EventProfile.1</value>
+   </parameter>
+</object>
+<object name="Device.Services.VoiceService.1.POTS.FXS.1.X_ADB_Endpoint.">
+   <parameter name="MinHookFlash">
+      <value>80</value>
+   </parameter>
+   <parameter name="MaxHookFlash">
+      <value>145</value>
+   </parameter>
+   <parameter name="PlsDlInterdigitTime">
+      <value>150</value>
+   </parameter>
+   <parameter name="PlsDlMinMakeTime">
+      <value>10</value>
+   </parameter>
+   <parameter name="PlsDlMaxMakeTime">
+      <value>150</value>
+   </parameter>
+   <parameter name="PlsDlMinBreakTime">
+      <value>20</value>
+   </parameter>
+   <parameter name="PlsDlMaxBreakTime">
+      <value>80</value>
+   </parameter>
+   <parameter name="CallWtgDelay">
+      <value>14000</value>
+   </parameter>
+   <parameter name="MinConnect">
+      <value>250</value>
+   </parameter>
+   <parameter name="MinDisconnect">
+      <value>250</value>
+   </parameter>
+</object>
+<object name="Device.Services.VoiceService.1.POTS.X_ADB_CallerID.">
+   <parameter name="CIDMode">
+      <value>onhook_ring</value>
+   </parameter>
+   <parameter name="CIDFskAfterRing">
+      <value>550</value>
+   </parameter>
+   <parameter name="CIDFskAfterDTAS">
+      <value>50</value>
+   </parameter>
+   <parameter name="CIDFskAfterRPAS">
+      <value>650</value>
+   </parameter>
+   <parameter name="CIDRingAfterFSK">
+      <value>250</value>
+   </parameter>
+   <parameter name="CIDDTASAfterLR">
+      <value>250</value>
+   </parameter>
+   <parameter name="CIDSigProtocol">
+      <value>FSK</value>
+   </parameter>
+</object>
+<object name="Device.Services.VoiceService.1.POTS.X_ADB_CallerID.FSK.">
+   <parameter name="amplitude">
+      <value>125</value>
+   </parameter>
+   <parameter name="markFrequency">
+      <value>1300</value>
+   </parameter>
+   <parameter name="spaceFrequency">
+      <value>2100</value>
+   </parameter>
+   <parameter name="startNumSeizes">
+      <value>300</value>
+   </parameter>
+   <parameter name="startNumMarks">
+      <value>180</value>
+   </parameter>
+</object>
+<object name="Device.Services.VoiceService.1.POTS.X_ADB_CallerID.DTMF.">
+   <parameter name="dbLevel">
+      <value>5</value>
+   </parameter>
+   <parameter name="pulseTime">
+      <value>70</value>
+   </parameter>
+   <parameter name="startCode">
+      <value>DTMFA</value>
+   </parameter>
+   <parameter name="endCode">
+      <value>DTMFC</value>
+   </parameter>
+   <parameter name="privateCode">
+      <value>DTMFB,DTMF0,DTMF1,DTMFC,DTMFERROR</value>
+   </parameter>
+   <parameter name="unavailCode">
+      <value>DTMFB,DTMF0,DTMF0,DTMFC,DTMFERROR</value>
+   </parameter>
+   <parameter name="errorCode">
+      <value>DTMFERROR</value>
+   </parameter>
+   <parameter name="redirectingCode">
+      <value>DTMFD</value>
+   </parameter>
+   <parameter name="informationCode">
+      <value>DTMFB</value>
+   </parameter>
+   <parameter name="DTMFpauseTimeout">
+      <value>1000</value>
+   </parameter>
+   <parameter name="DTMFsessionTimeout">
+      <value>3000</value>
+   </parameter>
+   <parameter name="ringAfterClidTimeout">
+      <value>1000</value>
+   </parameter>
+</object>
+<object name="Device.Services.VoiceService.1.POTS.X_ADB_VMWI.">
+   <parameter name="VMWIMsgFormat">
+      <value>SDMF</value>
+   </parameter>
+   <parameter name="VMWIMode">
+      <value>DTAS</value>
+   </parameter>
+   <parameter name="VMWISigProtocol">
+      <value>FSK</value>
+   </parameter>
+   <parameter name="VMWIFskAfterDTAS">
+      <value>50</value>
+   </parameter>
+   <parameter name="VMWIFskAfterRPAS">
+      <value>650</value>
+   </parameter>
+   <parameter name="VMWIDTASAfterLR">
+      <value>250</value>
+   </parameter>
+</object>
+<object name="Device.Services.VoiceService.1.POTS.Ringer.X_ADB_RingSignal.">
+   <parameter name="PowerRingFrequency">
+      <value>25</value>
+   </parameter>
+   <parameter name="RingWaveform">
+      <value>sine</value>
+   </parameter>
+   <parameter name="HighVoltageRingSupport">
+      <value>false</value>
+   </parameter>
+   <parameter name="RingVoltage">
+      <value>50</value>
+   </parameter>
+   <parameter name="RingDCOffset">
+      <value>25</value>
+   </parameter>
+</object>
+<object name="Device.Services.VoiceService.1.X_ADB_GenericEndpoint.">
+   <parameter name="FaxDetection">
+      <value>true</value>
+   </parameter>
+   <parameter name="PteDetectAdmin">
+      <value>europe</value>
+   </parameter>
+   <parameter name="PteMinDetectPower">
+      <value>30</value>
+   </parameter>
+   <parameter name="PveEgressVolume">
+      <value>0</value>
+   </parameter>
+   <parameter name="DtmfDbLevel">
+      <value>1</value>
+   </parameter>
+   <parameter name="DtmfPulseTime">
+      <value>100</value>
+   </parameter>
+   <parameter name="Rfc2833ToneLevel">
+      <value>60</value>
+   </parameter>
+</object>
+

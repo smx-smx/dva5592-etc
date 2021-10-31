@@ -1,0 +1,8 @@
+[diagnostics-toplevel-view:]
+isdnLog start layer=Capture ISDN log
+isdnLog start layer:layerLevel=Select desired Layer for ISDN log
+isdnLog start layer:verbosity=Verbosity
+isdnLog start layer:verbosityLevel=Select level of captured messages.
+isdnLog start layer:maxMsgCount=Exit capturing logs after specified number of log lines.
+isdnLog start layer:logFile=Filename to store the logs. Log will be saved on USB device.
+isdnLog stop=Stop ISDN log capturing

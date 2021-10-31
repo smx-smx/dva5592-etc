@@ -1,0 +1,12 @@
+[storage-volume-dlna-view:]
+refresh=Start the procedure of contents indexing for all folder objects or for the whole logical volume
+shareFolder=Enable sharing multimedia files
+shareFolder:folder=Folder to share
+shareFolder:music=Enable or disable sharing music files
+shareFolder:video=Enable or disable sharing video files
+shareFolder:photo=Enable or disable sharing photo files
+shareFolder:allMedia=Enable sharing all multimedia
+unshareFolder=Disable sharing multimedia files
+unshareFolder:folder=Folder to unshare
+refreshFolder=Start the procedure of contents's indexing for the folder
+refreshFolder:folder=Folder name

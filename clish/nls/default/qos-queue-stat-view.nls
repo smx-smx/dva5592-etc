@@ -1,0 +1,3 @@
+[qos-queue-stat-view:]
+interface=Set interface for which this object contains statistics
+interface:ifname=Interface entry

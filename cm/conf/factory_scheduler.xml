@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.X_ADB_Time.Scheduler.Profile.1"/>
+	<object name="Device.X_ADB_Time.Scheduler.Profile.2"/>
+	<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+		<parameter name="PagePath">
+			<value>dboard/settings/netif/wradio/scheduler</value>
+		</parameter>
+		<parameter name="Permissions">
+			<value>2221</value>
+		</parameter>
+	</object>
+</config>

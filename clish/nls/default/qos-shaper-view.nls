@@ -1,0 +1,10 @@
+[qos-shaper-view:]
+interface=Set the interface object associated with this shaper entry
+interface:ifname=Interface entry
+ratePercent=Set the rate to shape the associated interface connection's egress traffic to
+ratePercent:value=Rate to shape in percent
+rate=Set the rate to shape the associated interface connection's egress traffic to
+rate:value=Rate to shape in bits per second
+no shaping=Disable shaping
+burst=Set the burst size in bytes
+burst:value=Burst size in bytes

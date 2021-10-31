@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="IPv6" version="2.0"><object name="IP."><parameter name="X_ADB_ULASubnet" excludeUser="CWMP" /><parameter name="X_ADB_6to4Enable" excludeUser="CWMP" /><parameter name="X_ADB_6to4AddressSource" excludeUser="CWMP" /></object><object name="IP.Interface.{i}."><parameter name="X_ADB_SLAACEnable" excludeUser="CWMP" /></object><object name="IP.Interface.{i}.IPv6Prefix.{i}."><parameter name="X_ADB_Preferred" excludeUser="CWMP" /><parameter name="X_ADB_Valid" excludeUser="CWMP" /></object></datamodel>

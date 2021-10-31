@@ -1,0 +1,14 @@
+[client-config-view:]
+add server=Add a DNS server entry
+add server:address=IP address
+add server:alias=Entry alias
+server=Enter "server" config view
+server:server=Server entry alias
+del server=Remove a DNS server entry
+del server:server=Server entry alias
+add dynamicRule=Add a rule (template) for dynamically acquired DNS server entries
+add dynamicRule:alias=Rule alias
+dynamicRule=Enter "dynamicRule" config view
+dynamicRule:rule=Rule alias
+del dynamicRule=Remove a rule (template) entry
+del dynamicRule:rule=Rule alias

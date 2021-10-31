@@ -1,0 +1,16 @@
+[printerservice-view:]
+spooling=Set spooling
+spooling:val=Enable/Disable
+spoolingVolume=Set storage device for spooling
+spoolingVolume:name=Enter name
+interface set=Set list of Interfaces
+interface set:interface=Enter Interface
+interface add=Add Interface
+interface add:interface=Enter Interface
+interface del=Delete Interface
+interface del:interface=Enter Interface
+interface clear=Clear Interfaces
+interface show=Show Interfaces
+printer=Enter "printer" config view
+printer:name=Enter printer name
+servers=Enter "servers" config view

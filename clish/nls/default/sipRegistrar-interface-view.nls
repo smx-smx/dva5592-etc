@@ -1,0 +1,7 @@
+[sipRegistrar-interface-view:]
+enable=Enable interface
+disable=Disable interface
+alias=Set alias name for interface
+alias:alias=Interface alias name
+interface=Set proxy interface
+interface:alias=Proxy interface alias name

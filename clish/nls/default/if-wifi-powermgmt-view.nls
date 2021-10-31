@@ -1,0 +1,15 @@
+[if-wifi-powermgmt-view:]
+rxSingleChain=Power Save with single rxchain
+rxSingleChain:val=Enable/Disable
+rxQuietTime=Power Save with single rxchain quiet time
+rxQuietTime:time=Enter time
+rxPps=Single rxchain packets per second
+rxPps:number=Enter value
+txPowerSave=Radio duty cycle Power Save
+txPowerSave:val=Enable/Disable
+txOnTime=Radio power save duty cycle on time
+txOnTime:time=Enter time
+txQuietTime=Radio duty cycle Power Save
+txQuietTime:time=Enter time
+txPps=Radio power save packets per second
+txPps:number=Enter value

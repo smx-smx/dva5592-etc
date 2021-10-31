@@ -1,0 +1,11 @@
+[diag-udpechoservice-view:]
+interface=Set interface over which the CPE will listen and receive UDP echo requests on
+interface:ifname=Interface entry
+no interface=Clear interface
+sourceAddr=Set the source IP address of the UDP echo packet. The CPE will only respond to a UDP echo from this source IP address
+sourceAddr:addr=Source IP address
+no sourceAddr=Clear source IP address
+udpPort=Set the UDP port on which the UDP server will listen and respond to UDP echo requests
+udpPort:value=UDP port
+echoPlus enable=Enable packet processing for UDP Echo Plus packets
+echoPlus disable=Disable packet processing for UDP Echo Plus packets

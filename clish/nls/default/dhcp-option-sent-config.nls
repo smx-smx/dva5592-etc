@@ -1,0 +1,8 @@
+[dhcp-option-sent-config:]
+add suboption=Adds suboption
+add suboption:tag=New suboption's tag value
+add suboption:alias=New suboption's alias
+del suboption=Deletes suboptions
+del suboption:alias_opt=Suboption's alias to delete
+suboption=Enter "suboption" config view
+suboption:alias_subopt=Suboption's alias

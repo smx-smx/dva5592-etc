@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.Services.VoiceService.1.POTS.Ringer.Event.1">
+		<parameter name="Alias">
+			<value>RingGeneral</value>
+		</parameter>
+		<parameter name="X_ADB_Type">
+			<value>Short</value>
+		</parameter>
+		<parameter name="Function">
+			<value>Default</value>
+		</parameter>
+		<parameter name="Cadence">
+			<value>1000,5000</value>
+		</parameter>
+		<parameter name="X_ADB_Repeatable">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.POTS.Ringer.Event.2">
+		<parameter name="Alias">
+			<value>RingSplash</value>
+		</parameter>
+		<parameter name="X_ADB_Type">
+			<value>Short</value>
+		</parameter>
+		<parameter name="Function">
+			<value>RingSplash</value>
+		</parameter>
+		<parameter name="Cadence">
+			<value>500,0</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.POTS.Ringer.Event.3">
+		<parameter name="Alias">
+			<value>X_ADB_Ring0</value>
+		</parameter>
+		<parameter name="X_ADB_Type">
+			<value>Short</value>
+		</parameter>
+		<parameter name="Function">
+			<value>X_ADB_Ring0</value>
+		</parameter>
+		<parameter name="Cadence">
+			<value>400,200,400,200,800,4000</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.POTS.Ringer.Event.4">
+		<parameter name="Alias">
+			<value>X_ADB_Ring1_ETS_profile</value>
+		</parameter>
+		<parameter name="X_ADB_Type">
+			<value>Short</value>
+		</parameter>
+		<parameter name="Function">
+			<value>X_ADB_Ring1</value>
+		</parameter>
+		<parameter name="Cadence">
+			<value>2000,4000</value>
+		</parameter>
+		<parameter name="X_ADB_Repeatable">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.POTS.Ringer.Event.5">
+		<parameter name="Alias">
+			<value>X_ADB_Ring2_ETS_profile</value>
+		</parameter>
+		<parameter name="X_ADB_Type">
+			<value>Short</value>
+		</parameter>
+		<parameter name="Function">
+			<value>X_ADB_Ring2</value>
+		</parameter>
+		<parameter name="Cadence">
+			<value>800,400,800,4000</value>
+		</parameter>
+		<parameter name="X_ADB_Repeatable">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.POTS.Ringer.Event.6">
+		<parameter name="Alias">
+			<value>X_ADB_Ring3_ETS_profile</value>
+		</parameter>
+		<parameter name="X_ADB_Type">
+			<value>Short</value>
+		</parameter>
+		<parameter name="Function">
+			<value>X_ADB_Ring3</value>
+		</parameter>
+		<parameter name="Cadence">
+			<value>400,200,400,200,800,4000</value>
+		</parameter>
+		<parameter name="X_ADB_Repeatable">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.POTS.Ringer.Event.7">
+		<parameter name="Alias">
+			<value>X_ADB_Ring4_ETS_profile</value>
+		</parameter>
+		<parameter name="X_ADB_Type">
+			<value>Short</value>
+		</parameter>
+		<parameter name="Function">
+			<value>X_ADB_Ring4</value>
+		</parameter>
+		<parameter name="Cadence">
+			<value>300,200,1000,200,300,4000</value>
+		</parameter>
+		<parameter name="X_ADB_Repeatable">
+			<value>true</value>
+		</parameter>
+	</object>
+</config>

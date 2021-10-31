@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="Certo" version="1.0">
+    <object name="UserInterface.X_ADB_StatusPage." access="readWrite" minEntries="1" maxEntries="1">
+        <description>
+            An instance of this object keeps parameters needed to manage user's Status Page
+        </description>
+        <parameter name="PingTestHost" access="readWrite">
+            <description>The Hostname (or IP address) to be used for ping test.</description>
+            <syntax>
+                <string>
+                    <size maxLength="256"/>
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="LoginRequired" access="readWrite">
+            <description>If true, status page is accessible after user login procedure</description>
+            <syntax>
+                <boolean/>
+                <default value="false"/>
+            </syntax>
+        </parameter>
+    </object>
+</datamodel>

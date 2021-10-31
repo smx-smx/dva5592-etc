@@ -1,0 +1,7 @@
+[leds-led-trigger-cfg-view:]
+operator=Set operator
+operator:type=Operator
+parameter=Set parameter
+parameter:type=Parameter
+value=Set value
+value:type=Value

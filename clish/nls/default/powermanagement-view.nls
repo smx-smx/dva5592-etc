@@ -1,0 +1,13 @@
+[powermanagement-view:]
+cpuSpeed=Set CPU Speed
+cpuSpeed:speed=0:100% of full speed in SYNC mode; 1:100% of full speed; 2:50% of full speed; 4:25% of full speed; 8:12.5% of full speed; 256:12.5% ASYNC when entering wait, 100% SYNC otherwise
+cpuR4Wait=Keep CPU in sleep state without spinning
+cpuR4Wait:val=Enable/Disable
+dramSelfRefresh=DRAM Self Refresh Mode Enable
+dramSelfRefresh:val=Enable/Disable
+ethernetEEE=Enable Energy Efficient Ethernet on all Ethernet interfaces
+ethernetEEE:val=Enable/Disable
+autoPowerScaling=Adaptive Voltage Scaling Enable
+autoPowerScaling:state=on: to enable AVS while guaranteeing best performance; stopped: for testing only, to hold the voltage to its current setting; deep:for more savings, with possible impact on WiFi data rates
+pciPolicy=Pci Express power save policy
+pciPolicy:policy=default: BIOS default settings; performance: Disable ASPM and Clock PM; powersave: Enable ASPM L0s/L1; l0s_powersave: Enable ASPM L0s; l1_powersave: Enable ASPM L1

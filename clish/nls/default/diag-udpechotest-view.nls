@@ -1,0 +1,22 @@
+[diag-udpechotest-view:]
+echoPlus=Enables or disables CPE packet processing for UDP Echo Plus packets
+echoPlus:val=Enable/disable
+testStart=Launch test
+interface=Select interface to test
+interface:ifname=Interface entry
+no interface=Clear interface
+udpPort=Set the UDP port used for this service
+udpPort:value=UDP port
+host=Set host name or ip address of the host to perform tests to
+host:host=Host name or ip address
+no host=Clear host
+count=Set number of repetitions of the test to perform before reporting the results
+count:value=Number of repetitions
+timeout=Set timeout in milliseconds for the UDPEchoPlus test to get response
+timeout:time=Timeout in milliseconds
+size=Set size of the data block in bytes to be sent for each packet
+size:value=Size of the data block in bytes
+dscp=Set DiffServ codepoint to be used for the test packets
+dscp:value=DiffServ codepoint
+interTxTime=Set the time in milliseconds between the each interation of test
+interTxTime:time=Time in milliseconds

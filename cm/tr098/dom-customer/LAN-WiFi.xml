@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="WiFi" version="2.0">
+    <object name="LANDevice.{i}.WLANConfiguration.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+        <parameter name="X_ADB_TR181_SSID" excludeUser="CWMP"/>
+        <parameter name="X_ADB_TR181_AP" excludeUser="CWMP"/>
+        <parameter name="X_ADB_WMMGlobalEnable" excludeUser="CWMP"/>
+        <parameter name="X_ADB_WMMGlobalNoAck" excludeUser="CWMP"/>
+        <parameter name="X_ADB_STBC_Rx" excludeUser="CWMP"/>
+        <parameter name="X_ADB_STBC_Tx" excludeUser="CWMP"/>
+        <parameter name="X_ADB_AMPDU" excludeUser="CWMP"/>
+        <parameter name="X_ADB_InterferenceSwitchCount" excludeUser="CWMP"/>
+        <parameter name="X_ADB_LockoutPeriod" excludeUser="CWMP"/>
+    </object>
+    <object name="LANDevice.{i}.WLANConfiguration.{i}.AssociatedDevice.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+        <parameter name="X_DLINK_LastDataUplinkRate" access="readOnly" get="X_DLink_LAN-WiFi.sh" store="no">
+            <description>The data transmit rate in {{units}} that was most recently used for transmission from the associated device to the access point.</description>
+            <syntax>
+                <unsignedInt>
+                    <range minInclusive="1000" maxInclusive="600000" step="1"/>
+                    <units value="kbps"/>
+                </unsignedInt>
+            </syntax>
+        </parameter>
+        <parameter name="X_DLINK_LastDataDownlinkRate" access="readOnly" get="X_DLink_LAN-WiFi.sh" store="no">
+            <description>The data transmit rate in {{units}} that was most recently used for transmission from the access point to the associated device.</description>
+            <syntax>
+                <unsignedInt>
+                    <range minInclusive="1000" maxInclusive="600000" step="1"/>
+                    <units value="kbps"/>
+                </unsignedInt>
+            </syntax>
+        </parameter>
+        <parameter name="X_DLINK_SignalStrength" access="readOnly" get="X_DLink_LAN-WiFi.sh" store="no">
+            <description>An indicator of radio signal strength of the uplink from the associated device to the access point, measured in {{units}}, as an average of the last 100 packets received from the device.</description>
+            <syntax>
+                <int>
+                    <range minInclusive="-200" maxInclusive="0" step="1"/>
+                    <units value="dBm"/>
+                </int>
+            </syntax>
+        </parameter>
+    </object>
+</datamodel>

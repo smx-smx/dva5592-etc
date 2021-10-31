@@ -1,0 +1,24 @@
+[mgmt-webgui-view:]
+passwordRequest=Set user interface password requirement
+passwordRequest:val=Enable or disable
+passwordSelect=Set protection of user password against direct interface access
+passwordSelect:val=Enable or disable
+passwordReset=Resets password to its factory value.
+isp=Enter "isp" config view
+language=Select language
+language:value=Available language
+help=Enable or disable help
+help:val=Enable or disable
+pbcRadio set=Set list of AccessPoints associated with hardware WPS button
+pbcRadio set:method_list=List of AccessPoints
+pbcRadio add=Add AccessPoint to list
+pbcRadio add:method=Name of AccessPoint
+pbcRadio del=Delete AccessPoint from list
+pbcRadio del:method=Name of AccessPoint
+pbcRadio clear=Clear list of AccessPoints
+pbcRadio show=Show entire AccessPoint list
+localAccess=Enter "localAccess" config view
+remoteAccess=Enter "remoteAccess" config view
+uiPage=Enter "uiPage" config view
+uiPage:page=Name of uiPage
+show uiPage=Show uiPage details

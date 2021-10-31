@@ -1,0 +1,437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.QoS">
+		<parameter name="MaxAppEntries">
+			<value>64</value>
+		</parameter>
+		<parameter name="MaxClassificationEntries">
+			<value>255</value>
+		</parameter>
+		<parameter name="MaxFlowEntries">
+			<value>64</value>
+		</parameter>
+		<parameter name="MaxPolicerEntries">
+			<value>64</value>
+		</parameter>
+		<parameter name="MaxQueueEntries">
+			<value>255</value>
+		</parameter>
+		<parameter name="MaxShaperEntries">
+			<value>255</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.X_ADB_DefaultClassification">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.App.1">
+		<parameter name="Alias">
+			<value>App1</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>FTP</value>
+		</parameter>
+		<parameter name="ProtocolIdentifier">
+			<value>urn:dslforum-org:ftp</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.App.2">
+		<parameter name="Alias">
+			<value>App2</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>TFTP</value>
+		</parameter>
+		<parameter name="ProtocolIdentifier">
+			<value>urn:dslforum-org:tftp</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.App.3">
+		<parameter name="Alias">
+			<value>App3</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>SIP</value>
+		</parameter>
+		<parameter name="ProtocolIdentifier">
+			<value>urn:dslforum-org:sip</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.App.4">
+		<parameter name="Alias">
+			<value>App4</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>H323</value>
+		</parameter>
+		<parameter name="ProtocolIdentifier">
+			<value>urn:dslforum-org:h323</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.App.5">
+		<parameter name="Alias">
+			<value>App5</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>PPTP</value>
+		</parameter>
+		<parameter name="ProtocolIdentifier">
+			<value>urn:dslforum-org:pptp</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.App.6">
+		<parameter name="Alias">
+			<value>App6</value>
+		</parameter>
+		<parameter name="Name">
+			<value>IPsec</value>
+		</parameter>
+		<parameter name="ProtocolIdentifier">
+			<value>urn:dslforum-org:ipsec</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Classification.1">
+		<parameter name="Order">
+			<value>1</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>SIP</value>
+		</parameter>
+		<parameter name="App">
+			<value>Device.QoS.App.3</value>
+		</parameter>
+		<parameter name="DestPort">
+			<value>5060</value>
+		</parameter>
+		<parameter name="DestPortRangeMax">
+			<value>5063</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.Bridging.Bridge.1.Port.1</value>
+		</parameter>
+		<parameter name="Protocol">
+			<value>17</value>
+		</parameter>
+		<parameter name="TrafficClass">
+			<value>6</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Classification.2">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Order">
+			<value>2</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>FTP ALG</value>
+		</parameter>
+		<parameter name="AllInterfaces">
+			<value>true</value>
+		</parameter>
+		<parameter name="App">
+			<value>Device.QoS.App.1</value>
+		</parameter>
+		<parameter name="DestPort">
+			<value>21</value>
+		</parameter>
+		<parameter name="Protocol">
+			<value>6</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Classification.3">
+		<parameter name="Order">
+			<value>3</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TFTP ALG</value>
+		</parameter>
+		<parameter name="AllInterfaces">
+			<value>true</value>
+		</parameter>
+		<parameter name="App">
+			<value>Device.QoS.App.2</value>
+		</parameter>
+		<parameter name="DestPort">
+			<value>69</value>
+		</parameter>
+		<parameter name="Protocol">
+			<value>17</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Classification.4">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Order">
+			<value>4</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>PPTP ALG</value>
+		</parameter>
+		<parameter name="AllInterfaces">
+			<value>true</value>
+		</parameter>
+		<parameter name="App">
+			<value>Device.QoS.App.5</value>
+		</parameter>
+		<parameter name="DestPort">
+			<value>1723</value>
+		</parameter>
+		<parameter name="Protocol">
+			<value>6</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Classification.5">
+		<parameter name="Order">
+			<value>5</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>H323-UDP ALG</value>
+		</parameter>
+		<parameter name="AllInterfaces">
+			<value>true</value>
+		</parameter>
+		<parameter name="App">
+			<value>Device.QoS.App.4</value>
+		</parameter>
+		<parameter name="DestPort">
+			<value>1718</value>
+		</parameter>
+		<parameter name="DestPortRangeMax">
+			<value>1719</value>
+		</parameter>
+		<parameter name="Protocol">
+			<value>17</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Classification.6">
+		<parameter name="Order">
+			<value>6</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>H323-TCP ALG</value>
+		</parameter>
+		<parameter name="AllInterfaces">
+			<value>true</value>
+		</parameter>
+		<parameter name="App">
+			<value>Device.QoS.App.4</value>
+		</parameter>
+		<parameter name="DestPort">
+			<value>1719</value>
+		</parameter>
+		<parameter name="DestPortRangeMax">
+			<value>1720</value>
+		</parameter>
+		<parameter name="Protocol">
+			<value>6</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Classification.7">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Order">
+			<value>7</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>SIP FXS</value>
+		</parameter>
+		<parameter name="DSCPCheck">
+			<value>46</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>X_ADB_Local</value>
+		</parameter>
+		<parameter name="EthernetPriorityMark">
+			<value>5</value>
+		</parameter>
+		<parameter name="TrafficClass">
+			<value>7</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Classification.8">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Order">
+			<value>8</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>SIP-VDSL-WETH</value>
+		</parameter>
+		<parameter name="DSCPCheck">
+			<value>46</value>
+		</parameter>
+		<parameter name="EthernetPriorityMark">
+			<value>5</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>X_ADB_Local</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Classification.9">
+		<parameter name="ForwardingPolicy">
+			<value>1004</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Order">
+			<value>9</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Queue.1">
+		<parameter name="Alias">
+			<value>ATM HP</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.ATM.Link.2</value>
+		</parameter>
+		<parameter name="TrafficClasses">
+			<value>7</value>
+		</parameter>
+		<parameter name="X_ADB_TargetLatency">
+			<value>20</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Queue.2">
+		<parameter name="Alias">
+			<value>ATM LP</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.ATM.Link.1</value>
+		</parameter>
+		<parameter name="Precedence">
+			<value>2</value>
+		</parameter>
+		<parameter name="X_ADB_TargetLatency">
+			<value>20</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Queue.3">
+		<parameter name="Alias">
+			<value>PTM HP</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.PTM.Link.1</value>
+		</parameter>
+		<parameter name="Precedence">
+			<value>3</value>
+		</parameter>
+		<parameter name="X_ADB_TargetLatency">
+			<value>12</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Queue.4">
+		<parameter name="Alias">
+			<value>PTM LP</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.PTM.Link.1</value>
+		</parameter>
+		<parameter name="Precedence">
+			<value>4</value>
+		</parameter>
+		<parameter name="X_ADB_TargetLatency">
+			<value>12</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Queue.5">
+		<parameter name="Alias">
+			<value>WETH HP</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.Ethernet.Interface.5</value>
+		</parameter>
+		<parameter name="Precedence">
+			<value>5</value>
+		</parameter>
+		<parameter name="X_ADB_TargetLatency">
+			<value>2</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Queue.6">
+		<parameter name="Alias">
+			<value>WETH LP</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.Ethernet.Interface.5</value>
+		</parameter>
+		<parameter name="Precedence">
+			<value>6</value>
+		</parameter>
+		<parameter name="X_ADB_TargetLatency">
+			<value>2</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Queue.7">
+		<parameter name="Alias">
+			<value>FIBER HP</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.Ethernet.Interface.6</value>
+		</parameter>
+		<parameter name="Precedence">
+			<value>7</value>
+		</parameter>
+		<parameter name="X_ADB_TargetLatency">
+			<value>2</value>
+		</parameter>
+	</object>
+	<object name="Device.QoS.Queue.8">
+		<parameter name="Alias">
+			<value>FIBER LP</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.Ethernet.Interface.6</value>
+		</parameter>
+		<parameter name="Precedence">
+			<value>8</value>
+		</parameter>
+		<parameter name="X_ADB_TargetLatency">
+			<value>2</value>
+		</parameter>
+	</object>
+</config>

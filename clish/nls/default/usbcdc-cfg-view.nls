@@ -1,0 +1,7 @@
+[usbcdc-cfg-view:]
+add modem=Add mobile modem
+add modem:modelAlias=Name of modem
+del modem=Delete mobile modem
+del modem:modelObj=Name of modem
+modem=Enter "modem" config view
+modem:alias=Name of modem

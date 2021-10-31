@@ -1,0 +1,11 @@
+[diagnostics-view:]
+pingTest=Enter "pingTest" config view
+tracerouteTest=Enter "tracerouteTest" config view
+downloadTest=Enter "downloadTest" config view
+uploadTest=Enter "uploadTest" config view
+udpEchoService=Enter "udpEchoService" config view
+udpEchoTest=Enter "udpEchoTest" config view
+dnsLookupTest=Enter "dnsLookupTest" config view
+coreDump=Enter "coreDump" config view
+lanSurvey=Enter "lanSurvey" config view
+interfaceMirroring=Enter "interfaceMirroring" config view

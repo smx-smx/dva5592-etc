@@ -1,0 +1,10 @@
+[dhcp-option-req-config:]
+order=Sets position of the pool entry in the order of precedence
+order:num=The order of precedence.
+tag=Tag
+tag:val=New tag value
+passThrough=Passthrough
+passThrough:value=New passthrough state
+no passThrough pool=Clears passthrough pool
+passThrough pool=Selects passthrough pool
+passThrough pool:alias_name=New passthrough pool's alias

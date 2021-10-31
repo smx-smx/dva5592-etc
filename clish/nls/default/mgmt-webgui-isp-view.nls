@@ -1,0 +1,13 @@
+[mgmt-webgui-isp-view:]
+name=Set name of the customer's ISP
+name:value=Name
+no name=Clear name of the customer's ISP
+helpDeskNumber=Set help desk phone number of the ISP
+helpDeskNumber:value=Phone number
+no helpDeskNumber=Clear help desk phone number of the ISP
+homePage=Set URL of the ISP's home page
+homePage:value=URL address
+no homePage=Clear URL of the ISP's home page
+helpPage=Set the URL of the ISP's on-line support page
+helpPage:value=URL address
+no helpPage=Clear the URL of the ISP's on-line support page

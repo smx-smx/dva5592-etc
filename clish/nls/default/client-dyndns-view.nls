@@ -1,0 +1,23 @@
+[client-dyndns-view:]
+hostname set=Set list of host name that will be resolved by dynamic DNS provider
+hostname set:hostnames=Enter list of hosts names
+hostname add=Add the host name that will be resolved by dynamic DNS provider
+hostname add:hostname=Enter host name to add
+hostname del=Delete the host name that will be resolved by dynamic DNS provider
+hostname del:hostname=Enter host name to delete
+hostname show=Show list of hosts names
+hostname clear=Clear all hosts names
+interface=Specifies the IP interface to which this Dynamic DNS entry applies
+interface:interface=Enter IP interface to which this Dynamic DNS entry applies
+provider=Dynamic DNS provider
+provider:provider=Enter provider
+no username=Clear username to Dynamic DNS account
+username=The Dynamic DNS account username
+username:name=Username to Dynamic DNS account
+no password=Clear password to Dynamic DNS account
+password=The Dynamic DNS account password
+password:password=Password to Dynamic DNS account
+offline=If enabled, the Dynamic DNS provider will resolve the query re-routing to a static page
+offline:flag=Enable/Disable
+ipv6Support=Match Hostname with the WAN IPv6 address rather than the IPv4 address
+ipv6Support:flag=Enable/Disable

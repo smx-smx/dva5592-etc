@@ -1,0 +1,9 @@
+[dynamic-rule-common-view:]
+origin=Method to be used for acquiring the address of a dynamic DNS server
+origin:type=DHCPv4/DHCPv6/IPCP/Any
+forceDrop=Enables/disables forcing the creation of rules to drop matching DNS queries. This behavior is useful to drop DNS queries preventing that these queries are routed on the wrong interface during transitorial phases
+forceDrop:value=Enable/disable
+doNotCreate=If enabled, on dynamic DNS rules learning (e.g. via DHCP), the client rule will be not created. This behavior is useful when the configuration requires to deny locally generated DNS traffic to a specific interface.
+doNotCreate:value=Enable/disable
+dropPriority=Set a specific priority to the DNS server for a Drop Rule (useful only when ForceDrop is enabled).
+dropPriority:prio=Priority

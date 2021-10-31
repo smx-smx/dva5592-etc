@@ -1,0 +1,17 @@
+[firewall-main-view:]
+config=Select the type of the firewall configuration (High, Low or Advanced)
+config:level=Type of the firewall configuration
+advancedLevel=Select the level to be used if "Advanced" configuration is selected
+advancedLevel:level=Level name
+add level=Add an "Advanced" level
+add level:name=Level name
+level=Configure an "Advanced" level
+level:level=Level name
+del level=Remove an "Advanced" level
+del level:level=Level name
+add chain=Add a firewall chain
+add chain:name=Chain name
+chain=Configure a firewall chain
+chain:chain=Chain name
+del chain=Remove a firewall chain
+del chain:chain=Chain name

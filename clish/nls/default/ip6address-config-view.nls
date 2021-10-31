@@ -1,0 +1,18 @@
+[ip6address-config-view:]
+del ipv6StaticAddr=Delete IPv6 static address
+del ipv6StaticAddr:alias_or_addr/prefix_len=Enter IPv6 address or alias
+add ipv6StaticAddr=Add IPv6 static address
+add ipv6StaticAddr:address=Enter IPv6 address
+add ipv6StaticAddr:len=Enter IPv6 prefix length
+add ipv6StaticAddr:alias=Enter IPv6 static address alias
+ipv6StaticAddr=Enter "ipv6StaticAddr" config view
+ipv6StaticAddr:alias_or_addr/prefix_len=Enter IPv6 address or alias
+ipv6Nd=Enter "ipv6Nd" config view
+del ipv6Nd=Delete IPv6 neighbor discovery
+add ipv6Prefix=Add IPv6 prefix
+add ipv6Prefix:prefix=Enter IPv6 prefix
+add ipv6Prefix:alias=Enter prefix alias
+del ipv6Prefix=Delete IPv6 prefix
+del ipv6Prefix:addr=Enter IPv6 address
+ipv6Prefix=Enter "ipv6Prefix" config view
+ipv6Prefix:alias_or_prefix=Enter IPv6 prefix or alias

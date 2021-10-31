@@ -1,0 +1,19 @@
+[pppoeproxy-view:]
+inInterface set=Set list of Interfaces (Ethernet.Interface)
+inInterface set:interfaces=Enter Interface
+inInterface add=Add Interface (Ethernet.Interface)
+inInterface add:interface=Enter Interface
+inInterface del=Delete Interface (Ethernet.Interface)
+inInterface del:interface=Enter Interface
+inInterface show=Show Interfaces
+inInterface clear=Clear Interfaces
+outInterface set=Set list of Interfaces (PTM.Link)
+outInterface set:interfaces=Enter Interface
+outInterface add=Add Interface (PTM.Link)
+outInterface add:interface=Enter Interface
+outInterface del=Delete Interface (PTM.Link)
+outInterface del:interface=Enter Interface
+outInterface show=Show Interfaces
+outInterface clear=Clear Interfaces
+stat show=Show statistics
+client show=Show clients

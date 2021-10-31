@@ -1,0 +1,26 @@
+<object name="Device.Services.StorageService.1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.StorageService.1.Capabilities">
+	<parameter name="SupportedNetworkProtocols">
+		<value>SMB</value>
+	</parameter>
+	<parameter name="VolumeEncryptionCapable">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.Services.StorageService.1.NetworkServer">
+	<parameter name="NetworkProtocolAuthReq">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/storage</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>

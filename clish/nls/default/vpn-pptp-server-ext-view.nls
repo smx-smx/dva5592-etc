@@ -1,0 +1,6 @@
+[vpn-pptp-server-ext-view:]
+idleDisconnectTime=Set time in seconds that the VPN connection is kept in Connected state if no data is transmitted on the interface
+idleDisconnectTime:time=Time in seconds
+pppoaRelay=Enable PPP Relay over PPPoA
+pppoaRelay:ifname=Name of relay
+no pppoaRelay=Disable PPP Relay over PPPoA

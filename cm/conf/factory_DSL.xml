@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.DSL.Line.1">
+		<parameter name="AllowedProfiles">
+			<value>8a,8b,8c,8d,12a,12b,17a,35b</value>
+		</parameter>
+		<parameter name="X_ADB_DynamicF">
+			<value>0</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Line1</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>dsl0</value>
+		</parameter>
+		<parameter name="StandardsSupported">
+			<value>G.992.2,G.992.1_Annex_A,G.992.3_Annex_A,G.992.3_Annex_L,G.992.5_Annex_A,G.992.5_Annex_M,G.993.2_Annex_A,T1.413</value>
+		</parameter>
+		<parameter name="LineNumber">
+			<value>1</value>
+		</parameter>
+		<parameter name="Upstream">
+			<value>true</value>
+		</parameter>
+		<parameter name="TRELLISds">
+			<value>1</value>
+		</parameter>
+		<parameter name="TRELLISus">
+			<value>1</value>
+		</parameter>
+		<parameter name="X_ADB_SRA">
+			<value>1</value>
+		</parameter>
+		<parameter name="X_ADB_BitSwap">
+			<value>1</value>
+		</parameter>
+		<parameter name="X_ADB_PhyR">
+			<value>3</value>
+		</parameter>
+		<parameter name="X_ADB_GINP">
+			<value>3</value>
+		</parameter>
+		<parameter name="X_ADB_MonitorTone">
+			<value>1</value>
+		</parameter>
+	</object>
+	<object name="Device.DSL.Channel.1">
+		<parameter name="LowerLayers">
+			<value>Device.DSL.Line.1</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Channel1</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>chan0</value>
+		</parameter>
+	</object>
+</config>

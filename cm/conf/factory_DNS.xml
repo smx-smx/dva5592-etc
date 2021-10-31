@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.DNS.">
+		<parameter name="X_ADB_IPVersionRestricted">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.DNS.Client.">
+		<parameter name="X_ADB_CacheEnable">
+			<value>false</value>
+		</parameter>
+	</object>
+	<object name="Device.DNS.Client.X_ADB_DynamicServerRule.1">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.3</value>
+		</parameter>
+		<parameter name="Type">
+			<value>DHCPv4</value>
+		</parameter>
+		<parameter name="X_ADB_DomainFiltering">
+			<value>voip.libero.it,sip.infostrada.it</value>
+		</parameter>
+		<parameter name="X_ADB_Timeout">
+			<value>10000</value>
+		</parameter>
+	</object>
+	<object name="Device.DNS.Client.X_ADB_DynamicServerRule.2">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.4</value>
+		</parameter>
+		<parameter name="Type">
+			<value>IPCP</value>
+		</parameter>
+		<parameter name="X_ADB_DomainFiltering">
+			<value>voip.libero.it,sip.infostrada.it</value>
+		</parameter>
+		<parameter name="X_ADB_Timeout">
+			<value>10000</value>
+		</parameter>
+	</object>
+	<object name="Device.DNS.Client.X_ADB_DynamicServerRule.3">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.3</value>
+		</parameter>
+		<parameter name="Type">
+			<value>DHCPv4</value>
+		</parameter>
+		<parameter name="X_ADB_DomainFiltering">
+			<value>voip.windtre.it,windtre.it</value>
+		</parameter>
+		<parameter name="X_ADB_Timeout">
+			<value>10000</value>
+		</parameter>
+	</object>
+	<object name="Device.DNS.Client.X_ADB_DynamicServerRule.4">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.4</value>
+		</parameter>
+		<parameter name="Type">
+			<value>IPCP</value>
+		</parameter>
+		<parameter name="X_ADB_DomainFiltering">
+			<value>voip.windtre.it,windtre.it</value>
+		</parameter>
+		<parameter name="X_ADB_Timeout">
+			<value>10000</value>
+		</parameter>
+	</object>
+	<object name="Device.DNS.Relay.X_ADB_DynamicForwardingRule.1">
+		<parameter name="Alias">
+			<value>eth voip</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.4</value>
+		</parameter>
+		<parameter name="Type">
+			<value>IPCP</value>
+		</parameter>
+		<parameter name="X_ADB_DomainFiltering">
+			<value>sip.infostrada.it,voip.libero.it</value>
+		</parameter>
+		<parameter name="X_ADB_InboundInterface">
+			<value>Device.IP.Interface.1</value>
+		</parameter>
+	</object>
+	<object name="Device.DNS.Relay.X_ADB_DynamicForwardingRule.2">
+		<parameter name="Alias">
+			<value>dsl voip</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.3</value>
+		</parameter>
+		<parameter name="Type">
+			<value>DHCPv4</value>
+		</parameter>
+		<parameter name="X_ADB_DomainFiltering">
+			<value>sip.infostrada.it,voip.libero.it</value>
+		</parameter>
+		<parameter name="X_ADB_InboundInterface">
+			<value>Device.IP.Interface.1</value>
+		</parameter>
+	</object>
+	<object name="Device.DNS.Relay.X_ADB_DynamicForwardingRule.3">
+		<parameter name="Alias">
+			<value>eth voip2</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.4</value>
+		</parameter>
+		<parameter name="Type">
+			<value>IPCP</value>
+		</parameter>
+		<parameter name="X_ADB_DomainFiltering">
+			<value>voip.windtre.it,windtre.it</value>
+		</parameter>
+		<parameter name="X_ADB_InboundInterface">
+			<value>Device.IP.Interface.1</value>
+		</parameter>
+		<parameter name="X_ADB_Timeout">
+			<value>10000</value>
+		</parameter>
+	</object>
+	<object name="Device.DNS.Relay.X_ADB_DynamicForwardingRule.4">
+		<parameter name="Alias">
+			<value>dsl voip2</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.3</value>
+		</parameter>
+		<parameter name="Type">
+			<value>DHCPv4</value>
+		</parameter>
+		<parameter name="X_ADB_DomainFiltering">
+			<value>voip.windtre.it,windtre.it</value>
+		</parameter>
+		<parameter name="X_ADB_InboundInterface">
+			<value>Device.IP.Interface.1</value>
+		</parameter>
+		<parameter name="X_ADB_Timeout">
+			<value>10000</value>
+		</parameter>
+	</object>
+</config>

@@ -1,0 +1,24 @@
+[time-cfg-view:]
+server1=Set first NTP timeserver
+server1:server=Host name or IP address
+server2=Set second NTP timeserver
+server2:server=Host name or IP address
+server3=Set third NTP timeserver
+server3:server=Host name or IP address
+server4=Set fourth NTP timeserver
+server4:server=Host name or IP address
+server5=Set fifth NTP timeserver
+server5:server=Host name or IP address
+no server1=Remove first NTP timeserver
+no server2=Remove second NTP timeserver
+no server3=Remove third NTP timeserver
+no server4=Remove fourth NTP timeserver
+no server5=Remove fifth NTP timeserver
+timezone=Set local time zone definition
+timezone:zone=Time zone definition
+timezone:new_value=Time zone definition encoded according to IEEE 1003.1 (POSIX)
+permissive=Enable or disable permissive
+permissive:val=Enable or disable
+pollExponent=Set poll exponent
+pollExponent:min=Minimum poll exponent, 2^min seconds
+pollExponent:max=Maximum poll exponent, 2^max seconds

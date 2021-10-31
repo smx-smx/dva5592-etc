@@ -1,0 +1,5 @@
+[dhcp-server-static-config:]
+chaddr=Set MAC address
+chaddr:mac=New MAC address
+ipaddr=Set IP Address
+ipaddr:ip=New IP address

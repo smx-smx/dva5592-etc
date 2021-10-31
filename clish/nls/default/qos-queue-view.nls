@@ -1,0 +1,32 @@
+[qos-queue-view:]
+trafficClass set=Set the comma-separated list of traffic classes associated with this queue
+trafficClass set:index=Comma-separated list of traffic classes
+trafficClass add=Add new traffic class to list
+trafficClass add:index=Identifier of the traffic class entry or 'new' for a new value
+trafficClass add:new_value=Identifier of the traffic class in case of new value
+trafficClass del=Delete traffic class from list
+trafficClass del:index=Identifier of the traffic class entry
+trafficClass show=Show the list of traffic classes
+trafficClass clear=Clear the list of traffic classes
+interface=Select interface for current queue
+interface:ifname=Interface entry
+no interface=Clear interface
+weight=Set weight of this queue in case of WFQ or WRR (only used for queues of equal precedence)
+weight:value=Weight of this queue
+precedence=Set precedence of this queue relative to others. Lower numbers imply greater precedence
+precedence:value=Precedence of this queue
+red=Set RED parameters for this queue (only used if dropAlgorithm is RED)
+red:thresh=Random Early Detection threshold
+red:percent=Random Early Detection percentage
+dropAlgorithm=Set dropping algorithm used for this queue if congested
+dropAlgorithm:alg=Dropping algorithm
+schedulingAlgorithm=Set scheduling algorithm used by scheduler
+schedulingAlgorithm:alg=Scheduling algorithm
+shaping=Set shaping parameters for this queue
+shaping:rate=Rate to shape this queue's traffic to in percent (if <= 100) or bits per second (if > 100)
+shaping:burst=Burst size in bytes
+no shaping=Disable shaping
+latency=Set target latency for this queue in milliseconds (only used if dropAlgorithm is DT)
+latency:value=Target latency for this queue in milliseconds
+parentQueue=Select parent queue. Parent queue will be used only for scheduling of this queue
+parentQueue:queue=Queue entry

@@ -1,0 +1,26 @@
+[mgmt-factorymode-view:]
+serialNumber=Set device serial number
+serialNumber:type=Serial number
+no serialNumber=Clear serial number
+baseMacAddress=Set base MAC address
+baseMacAddress:addr=MAC address
+no baseMacAddress=Clear MAC address
+maxMacAddressNumber=Set maximum MAC address number
+maxMacAddressNumber:value=MAC address
+SSID=Set factory WiFi SSID
+SSID:name=SSID
+no SSID=Clear factory WiFi SSID
+wepKey=Set factory WiFi WEP key
+wepKey:key=WEP key
+no wepKey=Clear factory WiFi WEP key
+passphrase=Set factory WiFi key passphrase
+passphrase:key=WiFi key passphrase
+no passphrase=Clear factory WiFi key passphrase
+SSID2=Set factory WiFi SSID
+SSID2:name=SSID
+no SSID2=Clear factory WiFi SSID
+passphrase2=Set factory WiFi key passphrase
+passphrase2:key=WiFi key passphrase
+no passphrase2=Clear factory WiFi key passphrase
+factoryMode=When enable, the CPE is in factory mode, that is, the configuration allows manufacturing tests to be performed thanks to specific behaviors
+factoryMode:val=Enable or disable

@@ -1,0 +1,21 @@
+[mgmt-managementAgent-view:]
+server url=Set an URL, as defined in [RFC3986], for the CPE to connect to the ACS using the CPE WAN Management Protocol
+server url:url=URL address
+server username=Set an username used to authenticate the CPE when making a connection to the ACS using the CPE WAN Management Protocol
+server username:username=Name of the user
+no server url=Clear the server URL
+no server username=Clear the server username
+server password=Set a password used to authenticate the CPE when making a connection to the ACS using the CPE WAN Management Protocol
+server password:password=Password used to authenticate the CPE
+no server password=Clear password used to authenticate the CPE
+notification=Enable or disable periodically sending a CPE information to the ACS using the Inform method call
+notification:val=Enable or disable
+notificationInterval=Set the duration time in seconds of the interval for which the CPE MUST attempt to connect with the ACS and call the Inform method if periodicInform is enabled
+notificationInterval:time=Interval duration in seconds
+notificationTime=Set absolute time reference in UTC to determine when the CPE will initiate the periodic Inform method calls
+notificationTime:date=Time in UTC standard
+notificationInformInterface=Set a periodic information interface
+notificationInformInterface:ifname=Name of the existing interface
+no notificationInformInterface=Clear a periodic information interface
+changeNotifiicationMinTime=Control throttling of an active notifications sent by the CPE to the ACS. It defines the minimum number of seconds that the CPE MUST wait since the end of the last session with the ACS before establishing a new session for the purpose of delivering an active notification
+changeNotifiicationMinTime:time=The throttle time in seconds

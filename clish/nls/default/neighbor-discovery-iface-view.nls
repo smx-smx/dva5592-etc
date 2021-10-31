@@ -1,0 +1,7 @@
+[neighbor-discovery-iface-view:]
+routerSolicit=Enable/Disable router solicitation
+routerSolicit:value=Enable/Disable
+routerSolicitInt=Retransmission interval in milliseconds
+routerSolicitInt:value=Enter interval in milliseconds
+maxRouterSolicit=Maximum Number of Router Solicitation Transmission messages
+maxRouterSolicit:value=Enter Maximum Number of Router Solicitation

@@ -1,0 +1,12 @@
+[vpn-common-l2tp-pptp-client-view:]
+server=Set the IP address or DNS host name of the L2TP/PPTP server (on the WAN)
+server:srvr=IP address
+username=Set user name on the L2TP/PPTP server
+username:name=User name
+no username=Clear user name on the L2TP/PPTP server
+password=Set password on the L2TP/PPTP server
+password:pass=Password
+no password=Clear password on the L2TP/PPTP server
+autoDisconnectTime=Set time in seconds that the VPN connection is kept in Connected state if no data is transmitted on the interface
+autoDisconnectTime:time=Time in seconds
+reset=Abort the VPN link and immediately retry a new connection

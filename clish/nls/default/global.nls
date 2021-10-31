@@ -1,0 +1,7 @@
+quit=Quit the CLI
+exit=Exit the current config view
+return=Return to "configure" config view
+configSave=Save current configuration
+!=Comments
+showRunningConfigScript=Print current config view configuration in portable way
+showRunningConfigScript:url=Url to upload config

@@ -1,0 +1,7 @@
+[voip-profile-sip-event-view:]
+notifier=Setup event notify server
+notifier:addr=Host name or IP address of the event notify server
+notifier:port=Destination port to be used in connecting to the event notifier
+notifier:transport=Transport type entry
+expireTime=Set subscription refresh timer in seconds
+expireTime:time=Time

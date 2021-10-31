@@ -1,0 +1,21 @@
+[captiveportal-cfg-view:]
+alwaysAllow set=List IP addresses to which HTTP (port 80) traffic MUST always be permitted
+alwaysAllow set:codes=List of IP addresses
+alwaysAllow add=Add IP address to which HTTP (port 80) traffic MUST always be permitted
+alwaysAllow add:code=IP address to add
+alwaysAllow del=Delete IP address
+alwaysAllow del:code=IP address to del
+alwaysAllow clear=Clear all addresses
+alwaysAllow show=Show IP addresses to which HTTP (port 80) traffic MUST always be permitted
+portalURL=Set URL to CaptivePortal
+portalURL:url=Captive portal URL to which upstream HTTP (port 80) traffic
+connDownWarning=Set the Connection Down warning
+connDownWarning:val=Enable/Disable the Connection Down warning
+interface add=Add interface for which captive portal is active
+interface add:entry=Interface to add
+interface del=Delete interface for which captive portal is active
+interface del:entry=Interface to del
+interface set=Set list
+interface set:list=list of interfaces
+interface show=Show interfaces
+interface clear=Clear interfaces

@@ -1,0 +1,24 @@
+#####################################
+# File to prepare configuration
+# file for loadConfigScriptClear
+# command in CLI.
+# Every line in this file represent
+# leaves in CM to delete from
+# factory_*.xml settings files.
+#####################################
+Device.Users.User
+Device.Bridging.Bridge
+Device.IP.Interface
+Device.IP.Link
+Device.PPP.Interface
+Device.Ethernet.Link
+Device.Ethernet.VLANTermination
+Device.DHCPv6
+Device.DHCPv4
+Device.NAT
+Device.Firewall
+Device.DNS
+Device.QoS.Classification
+Device.QoS.Queue
+Device.Services.X_ADB_DynamicDNS.Provider
+Device.X_ADB_SystemLog.Service

@@ -1,0 +1,6 @@
+[vpn-ipsec-dnsCheck-view:]
+enable=Enable periodic check
+disable=Disable periodic check
+repetitionRate=Set time that should elapse between one DNS resolution and another
+repetitionRate:time=Time in seconds
+startTest= Perform test on all objects

@@ -1,0 +1,9 @@
+organization=ADB Broadband
+unit=Epicentro
+locality=Milan
+state=Italy
+country=IT
+cn=${mac}
+serial=${rnd}
+expiration_days=5000
+email=ADBB_Licensing@adbglobal.com

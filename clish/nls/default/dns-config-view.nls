@@ -1,0 +1,21 @@
+[dns-config-view:]
+address=Sets address
+address:addr=New address
+matchingDomain set=Sets domain matching
+matchingDomain set:domain_list=Comma separated domain list
+matchingDomain add=Adds domain matching
+matchingDomain add:domain=New domain matching
+matchingDomain del=Deletes domain matching element
+matchingDomain del:domain=Domain matching to delete
+matchingDomain clear=Clears domain matching
+matchingDomain show=Shows domain matching
+strictDomain=Strict domain matching
+strictDomain:value=New state
+domainInterface=Sets interface for outbound queries
+domainInterface:ifname=Interface's alias
+priority=Sets priority of DNS server
+priority:value=New priority
+domainPriority=Sets priority to the DNS server for a specific Domain 
+domainPriority:value=New priority
+timeout=Sets timeout to wait for a server response
+timeout:value=New timeout

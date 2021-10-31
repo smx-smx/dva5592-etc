@@ -1,0 +1,12 @@
+[mgmt-connectionrequest-view:]
+interface=Set the IP interface on which the CPE is listening for Connection Requests
+interface:ifname=Name of IP interface
+port=Set the TCP Port on which the CPE is listening for Connection Requests
+port:port=Port number
+urlPath=Set the path part of the Connection Request URL
+urlPath:path=Connection Request URL
+no urlPath=Clear the path part of the Connection Request URL
+randomPath=Enable or disable random generating by CPE suffix appended to the connection request URL
+randomPath:val=Enable or disable
+interval=Set period of time in seconds during CPE accepts Connection Requests, in order to reduce the possibility of a denial of service attack
+interval:time=Period of time

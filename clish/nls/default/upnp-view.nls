@@ -1,0 +1,18 @@
+[upnp-view:]
+mediaServer=Enable or disable UPnP Media Server
+mediaServer:val=Enable or disable
+igd=Enable or disable UPnP IGD
+igd:val=Enable or disable
+externalInterface=Set interface for the UPnP Media Server
+externalInterface:interface=Interface name
+externalInterface auto=Set automatic interface
+notifyInterval=Set notify time interval
+notifyInterval:val=Time value
+lanInterface set=Set list of lan interfaces
+lanInterface set:interfaces=Comma-separated list of interfaces
+lanInterface add=Add interface to list
+lanInterface add:interface=Name of interface
+lanInterface del=Delete interface from list
+lanInterface del:interface=Name of interface
+lanInterface clear=Clear interface list
+lanInterface show=Show entire interface list

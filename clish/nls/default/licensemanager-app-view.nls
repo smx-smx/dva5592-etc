@@ -1,0 +1,16 @@
+[licensemanager-app-view:]
+license=Set text includes a digital signature
+license:body=Text
+no license=Set no license
+publicKey=Set public key used to verify the digital signature of the license text and hex-encoded
+publicKey:key=Key
+no publicKey=Set no public key
+refreshPeriod=Set time period in days by which license must be renewed
+refreshPeriod:time=Time in days
+nearlyExpirationPeriod=Set time period, in days before expiration, for which a TimeLimited license feature is nearly expired
+nearlyExpirationPeriod:time=Time in days
+nearlyExpirationQuota=Set usage quota for which a MeteringLimited license feature is nearly expired
+nearlyExpirationQuota:time=Time
+validationCheck=Check validation
+show licenseInfo=Show license info
+show licenseFeatures=Show license features

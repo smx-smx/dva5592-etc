@@ -1,0 +1,17 @@
+[ipv6ra-option-config:]
+tag=Option tag (type)
+tag:val=Enter option tag
+value Hex=Hex option value
+value Hex:val=Enter hex option value
+value String=String option value
+value String:val=Enter string option value
+value IPv6Address=IPv6 address option value
+value IPv6Address:val=Enter IPv6 address option value
+value IPv6AddressList=IPv6 address list option value
+value IPv6AddressList:val=Enter IPv6 address list option value
+lifetime=The lifetime associated with this option in seconds
+lifetime:time=Enter time in seconds
+preference=Specifies the option preference
+preference:preference=Enter preference
+flush=Upon shutdown announce this option with a zero second lifetime
+flush:flush=Enable/Disable

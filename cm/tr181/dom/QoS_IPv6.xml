@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="QoS" version="2.2"><object name="QoS.Classification.{i}."><parameter name="X_ADB_IPVersion" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="15" step="1" /></int><default value="-1" /></syntax></parameter></object></datamodel>

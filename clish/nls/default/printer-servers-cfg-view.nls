@@ -1,0 +1,11 @@
+[printer-servers-cfg-view:]
+ipp=Set IPP protocol
+ipp:val=Enable/Disable
+ippPort=IPP port
+ippPort:port=Enter port
+smb=Set Samba print server
+smb:val=Enable/Disable
+raw=Set Raw print server
+raw:val=Enable/Disable
+rawPort=Set Raw port
+rawPort:port=Enter port

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="USB" version="2.0">
+    <object name="LANDevice.{i}.LANUSBInterfaceConfig.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+</datamodel>

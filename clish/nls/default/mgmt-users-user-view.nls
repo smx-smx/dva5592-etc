@@ -1,0 +1,23 @@
+[mgmt-users-user-view:]
+password=Set user password and how the password is stored in the CPE configuration
+password:pass=User password
+password:crypt=Password store type
+setCryptedPassword=Set user password in crypted form
+setCryptedPassword:pass=Crypted version of password
+no password=Clear password for current user
+userType=Set user type. Access to CLI commands and GUI pages depends of user type.
+userType:type=AdminUser is aimed to be the administrator of the device, with maximum configuration capabilities, PowerUser is aimed to deliver technical support, with intermediate configuration capabilities, NormalUser is an end user of the device, with limited configuration capabilities
+localAccess=Allows this user to locally access the UserInterface via defined interface
+localAccess:val=Enable or disable
+remoteAccess=Allows this user to remotely access the UserInterface via defined interface
+remoteAccess:val=Enable or disable
+guiAccess=Allows this user to access the User Interface via HTTP or HTTPS protocols
+guiAccess:val=Enable or disable
+guiLevels=Change GUI levels privilege for current user
+guiLevels:val=Basic or Advanced access to GUI
+cliAccess=Allows this user to access the Command Line Interface via SSH or Telnet protocols
+cliAccess:val=Enable or disable
+cliPrompt=Set user prompt on Command Line Interface
+cliPrompt:prompt=User prompt
+ipsecXAuth=Enable or disable Internet Protocol Security Authentication
+ipsecXAuth:val=Enable or disable

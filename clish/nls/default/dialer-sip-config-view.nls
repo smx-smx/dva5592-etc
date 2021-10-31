@@ -1,0 +1,8 @@
+[Dialer-sip-config-view:]
+enable=Enable dialer
+disable=Disable dialer
+calledPartyNumber=Set CalledPartyNumber to use with dialer
+calledPartyNumber:number=CalledPartyNumber
+no calledPartyNumber=Clear CalledPartyNumber
+port=Select PhyInterface instance to use with dialer
+port:id=PhyInterface instance entry

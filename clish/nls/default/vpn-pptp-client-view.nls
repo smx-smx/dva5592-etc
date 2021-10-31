@@ -1,0 +1,3 @@
+[vpn-pptp-client-view:]
+idleDisconnectTime=Set time in seconds that the VPN connection is kept in Connected state if no data is transmitted on the interface
+idleDisconnectTime:time=Time in seconds

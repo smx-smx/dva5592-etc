@@ -1,0 +1,14 @@
+[interfaces-view:]
+wifi=Enter "wifi" config view
+wifi:alias=Wifi alias
+mobileModem=Enter "mobileModem" config view
+dsl=Enter "dsl" config view
+dsl:alias=Dsl alias
+usbCdc=Enter "usbCdc" config view
+usbCdc:alias=UsbCdc alias
+ethWan=Enter "ethWan" config view
+ethWan:alias=EthWan alias
+ethLan=Enter "ethLan" config view
+ethLan:alias=EthLan alias
+usb=Enter "usb" config view
+usb:alias=Usb alias

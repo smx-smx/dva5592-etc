@@ -1,0 +1,21 @@
+[voip-dect-view:]
+enable=Enable this base
+disable=Disable this base
+maxHandset=Set maximum number of Portable Parts (PP) supported by the DECT base of the CPE
+maxHandset:value=Number of Portable Parts
+pin=Set PIN
+pin:pin=PIN
+no pin=Clear PIN
+nemo=Change NEMO (No Emission Mode)
+nemo:enable=Enable/disable
+# missing in tr-181
+paging=Change paging
+paging:enable=Enable/disable
+openSubscription=Enable the subscription mode of the DECT base
+ciphering=Change ciphering for the calls on the DECT domain
+ciphering:enable=Enable/disable
+# missing in tr-181
+fxsInterface=Command stub
+fxsInterface:fxs=Param stub
+extension=Enter "extension" config view
+extension:name=Extension entry

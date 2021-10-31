@@ -1,0 +1,5 @@
+[storage-device-view:]
+name=Change device name
+name:name=New unique name
+volume=Enter "volume" config view
+volume:name=Name of existing volume

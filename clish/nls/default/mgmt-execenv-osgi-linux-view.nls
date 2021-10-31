@@ -1,0 +1,10 @@
+[mgmt-execenv-osgi-linux-view:]
+repository=Set URL for the software packages repository
+repository:url=Repository URL
+sandbox=Enable or disable security sandbox for this execution environment
+sandbox:val=Enable or disable
+deploymentUnit=Enter "deploymentUnit" config view
+deploymentUnit:alias=Name of deploymentUnit
+executionUnit=Enter "executionUnit" config view
+executionUnit:alias=name of executionUnit
+reset=Reset- revert back to the state it was in when the device last issued a "0 BOOTSTRAP" Inform event

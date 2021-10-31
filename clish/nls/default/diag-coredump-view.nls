@@ -1,0 +1,9 @@
+[diag-coredump-view:]
+maxSize=Set maximum size of core dumps
+maxSize:value=Size of core dumps in MB or 0 for unlimited or -1 for disable local core dumps
+storePath=Set path used to store the generated dumps
+storePath:value=Path for storing the generated dumps or 'auto' to choose between external storage and '/tmp/' or '' to disable local core dumps
+server=Set remote machine address and port for storing generated dumps
+server:addr=Remote machine ipv4 address
+server:port=Remote machine port
+no server=Clear remote server address

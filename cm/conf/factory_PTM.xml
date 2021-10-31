@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.PTM.Link.1">
+		<parameter name="Alias">
+			<value>Link1</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.DSL.Channel.1</value>
+		</parameter>
+		<parameter name="Name">
+			<value>ptm0</value>
+		</parameter>
+	</object>
+</config>

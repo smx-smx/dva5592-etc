@@ -1,0 +1,26 @@
+[syslog-file-view:]
+identityFilter set=Set list of filters for logged messages
+identityFilter set:filters=Enter list
+identityFilter add=Add filter for logged messages
+identityFilter add:filter=Enter filter
+identityFilter del=Delete filter for logged messages
+identityFilter del:filter=Enter filter
+identityFilter clear=Clear filters for logged messages
+identityFilter show=Show filters for logged messages
+logFile=Set log file name
+logFile:name=Enter file name
+storageVolume=Set storage device
+storageVolume:name=Enter device name
+maxLogFileSize=The maximum log file size in bytes, or 0 for no such limit
+maxLogFileSize:value=Enter value
+logFileFormat=Enter "logFileFormat" config view
+severityFilter=Severity filter
+severityFilter:value=Value of severity filter
+serviceLabel add=Add service label to filter
+serviceLabel add:label=Service label
+serviceLabel set=Set service label
+serviceLabel set:label_list=List services label
+serviceLabel del=Delete service label
+serviceLabel del:label=Service label
+serviceLabel show=Show service label
+serviceLabel clear=Clear service label filter

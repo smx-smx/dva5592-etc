@@ -1,0 +1,25 @@
+[sipRegistrar-account-view:]
+enable=Enable the account
+disable=Disable the account
+alias=Set alias name for the account
+alias:alias=Account alias name
+quiescentMode=Set quiescent mode
+quiescentMode:enable=Enable or disable quiescent mode
+uri=Set URI of externally connected SIP user agent
+uri:value=URI value
+domain=Set domain name of registered SIP user agent
+domain:domain=Domain name value
+username=Set username to authenticate with to SIP registrar server
+username:name=Username for authentication
+no username=Clear username
+no password=Clear password
+password=Set password to authenticate with to SIP registrar server
+password:pass=Password for authentication
+timerT1=Set time of TimerT1
+timerT1:time=TimerT1 time
+timerT2=Set time of TimerT2
+timerT2:time=TimerT2 time
+timerB=Set time of TimerB
+timerB:time=TimerB time
+timerF=Set time of TimerF
+timerF:time=TimerF time

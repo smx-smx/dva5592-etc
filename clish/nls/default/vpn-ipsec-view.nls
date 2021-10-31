@@ -1,0 +1,27 @@
+[vpn-ipsec-view:]
+reset=Reset IPsec service
+dnsCheck=Enter "dnsCheck" config view
+add profile=Add new profile
+add profile:alias=Name of profile
+profile=Enter "profile" config view
+profile:alias=Name of profile
+del profile=Delete profile
+del profile:alias=Name of profile
+add filter=Add new filter
+add filter:alias=Name of filter
+filter=Enter "filter" config view
+filter:alias=Name of filter
+del filter=Delete filter
+del filter:alias=Name of filter
+add credentials=Add new IPsec PSK security credential
+add credentials:alias=Name of security credential
+credentials=Enter "credentials" config view
+credentials:alias=Name of security credential
+del credentials=Delete IPsec PSK security credential
+del credentials:alias=Name of security credential
+add template=Add new template
+add template:alias=Name of template
+template=Enter "template" config view
+template:alias=Name of template
+del template=Delete template
+del template:alias=Name of template

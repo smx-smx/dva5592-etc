@@ -1,0 +1,6 @@
+[vpn-l2tp-client-view:]
+idleDisconnectTime=Set time in seconds that the VPN connection is kept in Connected state if no data is transmitted on the interface
+idleDisconnectTime:time=Time in seconds
+defaultRoute=Set the VPN link as a default route
+defaultRoute:mask=The subnet mask that defines the default route
+no defaultRoute=Unset the VPN link as a default route

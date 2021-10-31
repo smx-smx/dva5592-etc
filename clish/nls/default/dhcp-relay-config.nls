@@ -1,0 +1,5 @@
+[dhcp-relay-config:]
+add pool=Add a DHCPv4 pool to DHCP relay
+add pool:alias=Name of DHCPv4 pool
+pool=Enter "pool" config view
+pool:alias=Name of DHCPv4 pool

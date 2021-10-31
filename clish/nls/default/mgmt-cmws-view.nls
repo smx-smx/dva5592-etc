@@ -1,0 +1,25 @@
+[mgmt-cmws-view:]
+port=Set CMWS port
+port:port=Port number
+interface set=Set interface list available for CMWS
+interface set:interfaces=Comma-separated list of CMWS interfaces
+interface add=Add single interface to list of available CMWS interfaces
+interface add:interface=Name of interface
+interface del=Delete single interface from list of available CMWS interfaces
+interface del:interface=Name of interface
+interface clear=Clear entire list of available CMWS interfaces
+interface show=Show list of available CMWS interfaces
+tlsClientCheck set=Set comma-separated list of parameters indicates TLS version used for the security handshake
+tlsClientCheck set:check=Comma-separated list of parameters
+tlsClientCheck add=Add single TLS validity check perform
+tlsClientCheck add:check=TLS validity check
+tlsClientCheck del=Delete single TLS validity check perform
+tlsClientCheck del:check=TLS validity check
+tlsClientCheck clear=Clear list of TLS validity check parameters
+tlsClientCheck show=Show entire list of TLS validity check parameters
+add client=Add new CMWS client
+add client:alias=Name of client
+del client=Delete CMWS client
+del client:alias=Name of client
+client=Enter "client" config view
+client:alias=Name of client

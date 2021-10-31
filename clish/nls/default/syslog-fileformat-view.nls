@@ -1,0 +1,16 @@
+[syslog-fileformat-view:]
+body=The log entry format
+body:format=Enter format
+header=An optional header printed when the logging is started
+header:format=Enter format
+footer=An optional footer printed (if possible) when the logging is stopped
+footer:format=Enter format
+no body=Clear log entry format
+no header=Clear optional header
+no footer=Clear optional footer
+maxSizeReached=An optional message printed when the maximum file size is reached
+maxSizeReached:format=Enter format
+no maxSizeReached=Clear optional message printed when the maximum file size is reached
+error=An optional message printed (if possible) when logging is stopped due to a write error
+error:format=Enter format
+no error=Clear optional message printed (if possible) when logging is stopped due to a write error

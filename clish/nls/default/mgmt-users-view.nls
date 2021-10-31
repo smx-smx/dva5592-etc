@@ -1,0 +1,6 @@
+[mgmt-users-view:]
+addUser:name=Name of user
+user=Enter "user" config view
+user:name=Name of user
+delUser:name=Name of user
+unlock:name=Name of user

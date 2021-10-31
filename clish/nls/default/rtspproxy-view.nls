@@ -1,0 +1,19 @@
+[rtspproxy-view:]
+port set=Set list of ports
+port set:standards=Enter list
+port add=Add port
+port add:port=Enter port
+port del=Delete port
+port del:port=Enter port
+port clear=Clear ports
+port show=Show ports
+downstreamInterface set=Set list of Interfaces (IP.Interface)
+downstreamInterface set:interfaces=Enter list
+downstreamInterface add=Add Interface (IP.Interface)
+downstreamInterface add:interface=Enter Interface
+downstreamInterface del=Delete Interface
+downstreamInterface del:interface=Enter Interface
+downstreamInterface clear=Clear Interfaces
+downstreamInterface show=Show Interfaces
+debug=Enables/Disables debug
+debug:val=Enable/Disable

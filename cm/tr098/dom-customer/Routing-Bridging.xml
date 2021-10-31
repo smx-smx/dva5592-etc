@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="Routing-Bridging" version="2.0">
+    <object name="Layer2Bridging.Bridge.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="Layer2Bridging.Bridge.{i}.Port.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="Layer2Bridging.Bridge.{i}.VLAN.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="Layer3Forwarding.Forwarding.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+</datamodel>

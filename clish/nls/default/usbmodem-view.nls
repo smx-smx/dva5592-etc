@@ -1,0 +1,14 @@
+[mobileModem-view:]
+add model=Add model
+add model:modelName=Model name
+del model=Delete model
+del model:modelObj=Model name
+model=Enter "model" config view
+model:name=Model name
+add operator=Add operator
+add operator:plmn=Plmn
+add operator:shortName=Short name
+operator=Enter "operator" config view
+operator:plmn=Plmn
+del operator=Delete operator
+del operator:plmn=Plmn

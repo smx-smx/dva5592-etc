@@ -1,0 +1,5 @@
+[portmapping-config-view:]
+host=The IP address or DNS host name of an internal client (on the LAN)
+host:host=Enter value
+host new=Add new (not previously known) host
+host new:ip=New host IP address

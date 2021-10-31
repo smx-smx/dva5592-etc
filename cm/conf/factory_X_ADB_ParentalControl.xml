@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Device.X_ADB_ParentalControl">
+	<parameter name="ShowLinkOnLogin">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.Policy.1">
+	<parameter name="TimeOfDayEnable">
+		<value>false</value>
+	</parameter>
+	<parameter name="ActionOnUrlLookupFail">
+		<value>Allowed</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.Policy.2">
+	<parameter name="TimeOfDayEnable">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_ParentalControl.Policy.3">
+	<parameter name="TimeOfDayEnable">
+		<value>false</value>
+	</parameter>
+</object>

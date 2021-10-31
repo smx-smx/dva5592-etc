@@ -1,0 +1,23 @@
+[voip-numberingPlan:]
+minDigitNumber=Set the minimum number of digits that must be collected before an outgoing request (e.g., a SIP INVITE) can be initiated
+minDigitNumber:value=Minimum number of digits
+maxDigitNumber=Set the maximum number of digits that may be collected before an outgoing request (e.g., a SIP INVITE) must be initiated
+maxDigitNumber:value=Maximum number of digits
+interDigitTimerStd=Set the maximum allowable time in milliseconds between the dialing of digits. Expiration of this timer indicates "End of Dialing"
+interDigitTimerStd:value=Time in milliseconds
+interDigitTimerOpen=Set the maximum allowable time in milliseconds between the dialing of digits once the minimum number of digits defined on a prefix based has been reached
+interDigitTimerOpen:value=Time in milliseconds
+fastDialKey=Set fast dial key
+fastDialKey:value=Fast dial key value
+fastDialKeyFilters=Set filter for fast dial key
+fastDialKeyFilters:value=Fast dial key filter value
+startDigitTime=Set time in milliseconds from dial tone to congestion tone
+startDigitTime:value=Time in milliseconds
+offHookWarnTimeout=Set time in milliseconds from congestion tone to warning tone, if 0 means no timeout (Off hook scenario)
+offHookWarnTimeout:value=Time in milliseconds
+add prefixInfo=Add new prefix info
+add prefixInfo:alias=Unique name of prefix info object
+del prefixInfo=Select prefix info to remove
+del prefixInfo:alias=Prefix info entry
+prefixInfo=Enter "prefixInfo" config view
+prefixInfo:alias=Prefix info entry

@@ -1,0 +1,17 @@
+[voip-profile-fax-view:]
+bitRate=Select maximum data rate for fax
+bitRate:value=Data rate entry
+packetRate=Select the rate at which high speed data will be sent across the network in milliseconds
+packetRate:value=Packet rate entry
+hsRedundancy=Set the packet-level redundancy for high-speed data transmissions
+hsRedundancy:value=Packet-level redundancy
+lsRedundancy=Set the packet-level redundancy for low-speed data transmissions
+lsRedundancy:value=Packet-level redundancy
+tcfMethod=Select the method with which data is handled over the network
+tcfMethod:method=Handling method
+reuseRtpPort=Enable/Disable RTP port reuse for UDPLT flows
+reuseRtpPort:disable_enable=Enable/disable
+udpTlPortMax=Set final value of port range user for UDPTL protocol
+udpTlPortMax:value=Port
+udpTlPortMin=Set initial value of port range user for UDPTL protocol
+udpTlPortMin:value=Port

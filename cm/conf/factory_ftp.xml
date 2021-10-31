@@ -1,0 +1,10 @@
+<config>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/storage/ftpserver</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+</config>

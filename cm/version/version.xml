@@ -1,0 +1,11 @@
+<object name="Device.DeviceInfo">
+	<parameter name="SoftwareVersion">
+		<value>DVA-5592_A1_WI_20191219</value>
+	</parameter>
+	<parameter name="X_ADB_PlatformSoftwareVersion">
+		<value>6.0.0.0028</value>
+	</parameter>
+	<parameter name="AdditionalSoftwareVersion">
+		<value>6.0.0.0027</value>
+	</parameter>
+</object>

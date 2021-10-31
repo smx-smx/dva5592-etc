@@ -1,0 +1,13 @@
+[voip-profile-rtp-view:]
+localPortMin=Set base of port range to be used for incoming RTP streams for this profile
+localPortMin:value=Port
+localPortMax=Set top of port range to be used for incoming RTP streams for this profile
+localPortMax:value=Port
+dscp=Set Diffserv code point to be used for outgoing RTP packets for this profile
+dscp:value=Diffserv code point
+phoneEventPayload=Set payload type to be used for RTP telephone events
+phoneEventPayload:value=Payload type
+rtcp=Enable or disable RTCP
+rtcp:disable_enable=Enable/disable
+rtcpTxInterval=Set transmission repeat interval in milliseconds
+rtcpTxInterval:value=Interval

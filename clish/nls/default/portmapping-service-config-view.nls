@@ -1,0 +1,3 @@
+[portmapping-service-config-view:]
+description=User-readable description of this port mapping
+description:description=Enter description

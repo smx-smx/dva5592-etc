@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<datamodel name="DSL" version="2.0"><object name="DSL.Line.{i}.X_ADB_AnnexAutosense." excludeUser="CWMP" /><object name="DSL.Line.{i}.X_ADB_AnnexAutosense.AnnexConfiguration.{i}." excludeUser="CWMP" /><object name="DSL.Line.{i}.X_ADB_AnnexAutosense.AnnexConfiguration.{i}.Parameter.{i}." excludeUser="CWMP" /></datamodel>

@@ -1,0 +1,18 @@
+[modem-operator-view:]
+name=Set name
+name:name=Name
+shortName=Set short name
+shortName:shortName=Short name
+description=Set description
+description:description=Description
+defaultApn=Set default apn
+defaultApn:apn=Apn name
+no defaultApn=No default apn
+currency=Set currency
+currency:currency=Currency
+add apn=Add apn
+add apn:apnName=Apn name
+apn=Enter "apn" config view
+apn:apn=Apn name
+del apn=Delete apn
+del apn:apnObj=Apn name

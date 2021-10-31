@@ -1,0 +1,197 @@
+# WAN connerctions
+(Device.Ethernet.Interface.[0-9]+.)Enable
+	dependsonpath = "\1Upstream"
+	dependsonvalue = "true"
+(Device.Ethernet.Interface.[0-9]+.)Name
+	dependsonpath = "\1Upstream"
+	dependsonvalue = "true"
+
+Device.PPP.Interface.[0-9]+.Enable
+Device.PPP.Interface.[0-9]+.Name
+Device.PPP.Interface.[0-9]+.Username
+Device.PPP.Interface.[0-9]+.Password
+
+# IP Address
+Device.IP.Interface.[0-9]+.Alias
+(Device.IP.Interface.[0-9]+.IPv4Address.[0-9]+.)IPAddress
+	dependsonpath = "\1AddressingType"
+	dependsonvalue = "Static"
+(Device.IP.Interface.[0-9]+.IPv4Address.[0-9]+.)SubnetMask
+	dependsonpath = "\1AddressingType"
+	dependsonvalue = "Static"
+
+
+# DHCP server
+Device.DHCPv4.Server.Enable
+Device.DHCPv4.Server.Pool.[0-9]+.Enable
+Device.DHCPv4.Server.Pool.[0-9]+.Alias
+Device.DHCPv4.Server.Pool.[0-9]+.MinAddress
+Device.DHCPv4.Server.Pool.[0-9]+.MaxAddress
+Device.DHCPv4.Server.Pool.[0-9]+.SubnetMask
+Device.DHCPv4.Server.Pool.[0-9]+.DNSServers
+Device.DHCPv4.Server.Pool.[0-9]+.IPRouters
+Device.DHCPv4.Server.Pool.[0-9]+.LeaseTime
+Device.DHCPv4.Server.Pool.[0-9]+.StaticAddress.[0-9]+.*
+
+# NAT
+Device.NAT.InterfaceSetting.[0-9]+.Enable
+
+# Port mapping
+Device.NAT.PortMapping.[0-9]+.*
+
+# NTP
+Device.Time.Enable
+Device.Time.LocalTimeZone
+Device.Time.NTPServer1
+Device.Time.NTPServer2
+Device.Time.NTPServer3
+Device.Time.NTPServer4
+Device.Time.NTPServer5
+
+# Management
+Device.ManagementServer.EnableCWMP
+Device.ManagementServer.X_ADB_TLSVersion
+
+Device.ManagementServer.PeriodicInformEnable
+Device.ManagementServer.PeriodicInformInterval
+
+Device.X_ADB_TelnetServer.LocalAccess.Enable
+Device.X_ADB_TelnetServer.LocalAccess.SessionLifeTime
+Device.X_ADB_TelnetServer.LocalAccess.X_ADB_AccessControlEnable
+Device.X_ADB_TelnetServer.LocalAccess.X_ADB_ACLRule.[0-9]+.*
+
+Device.X_ADB_TelnetServer.RemoteAccess.Enable
+Device.X_ADB_TelnetServer.RemoteAccess.SessionLifeTime
+Device.X_ADB_TelnetServer.RemoteAccess.X_ADB_AccessControlEnable
+Device.X_ADB_TelnetServer.RemoteAccess.X_ADB_ACLRule.[0-9]+.*
+
+Device.X_ADB_SSHServer.LocalAccess.Enable
+Device.X_ADB_SSHServer.LocalAccess.SessionLifeTime
+Device.X_ADB_SSHServer.LocalAccess.X_ADB_AccessControlEnable
+Device.X_ADB_SSHServer.LocalAccess.X_ADB_ACLRule.[0-9]+.*
+
+Device.X_ADB_SSHServer.RemoteAccess.Enable
+Device.X_ADB_SSHServer.RemoteAccess.SessionLifeTime
+Device.X_ADB_SSHServer.RemoteAccess.X_ADB_AccessControlEnable
+Device.X_ADB_SSHServer.RemoteAccess.X_ADB_ACLRule.[0-9]+.*
+
+Device.UserInterface.RemoteAccess.Enable
+Device.UserInterface.RemoteAccess.Port
+Device.UserInterface.RemoteAccess.X_ADB_HTTPSPort
+Device.UserInterface.RemoteAccess.X_ADB_SessionLifeTime
+Device.UserInterface.RemoteAccess.X_ADB_AccessControlEnable
+Device.UserInterface.RemoteAccess.X_ADB_ACLRule.[0-9]+.*
+
+Device.UserInterface.X_ADB_LocalAccess.Enable
+Device.UserInterface.X_ADB_LocalAccess.Port
+Device.UserInterface.X_ADB_LocalAccess.HTTPSPort
+Device.UserInterface.X_ADB_LocalAccess.SessionLifeTime
+Device.UserInterface.X_ADB_LocalAccess.X_ADB_AccessControlEnable
+Device.UserInterface.X_ADB_LocalAccess.X_ADB_ACLRule.[0-9]+.*
+
+Device.Users.User.[0-9]+.Username
+Device.Users.User.[0-9]+.Password
+
+# Voice
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.Enable
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.DirectoryNumber
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.PhyReferenceList
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.SIP.AuthUserName
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.SIP.AuthPassword
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.Codec.List.[0-9]+.Codec
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.Codec.List.[0-9]+.Priority
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.VoiceProcessing.EchoCancellationEnable
+
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Name
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Enable
+(Device.Services.VoiceService.[0-9]+.)VoiceProfile.[0-9]+.FaxT38.Enable
+	dependsonpath = "\1Capabilities.FaxT38"
+	dependsonvalue = "true"
+(Device.Services.VoiceService.[0-9]+.)VoiceProfile.[0-9]+.FaxPassThrough
+	dependsonpath = "\1Capabilities.FaxPassThrough"
+	dependsonvalue = "true"
+(Device.Services.VoiceService.[0-9]+.)VoiceProfile.[0-9]+.ModemPassThrough
+	dependsonpath = "\1Capabilities.ModemPassThrough"
+	dependsonvalue = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.X_ADB_FaxPassThroughCodec
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.DTMFMethod
+
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.ProxyServer
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.ProxyServerPort
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.RegistrarServer
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.RegistrarServerPort
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.OutboundProxy
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.OutboundProxyPort
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.UserAgentDomain
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.UserAgentPort
+Device.Services.VoiceService.[0-9]+.X_ADB_OutboundInterface
+Device.Services.VoiceService.[0-9]+.X_ADB_SIP.LocalPort
+
+# WiFi
+Device.WiFi.Radio.[0-9]+.Enable
+Device.WiFi.AccessPoint.[0-9]+.Enable
+Device.WiFi.SSID.[0-9]+.Enable
+
+Device.WiFi.SSID.[0-9]+.SSID
+Device.WiFi.AccessPoint.[0-9]+.SSIDAdvertisementEnabled
+
+Device.WiFi.AccessPoint.[0-9]+.Security.ModeEnabled
+Device.WiFi.AccessPoint.[0-9]+.Security.ModesSupported
+Device.WiFi.AccessPoint.[0-9]+.Security.X_ADB_EncryptionMode
+Device.WiFi.AccessPoint.[0-9]+.Security.X_ADB_EncryptionModesSupported
+Device.WiFi.AccessPoint.[0-9]+.WPS.Enable
+Device.WiFi.AccessPoint.[0-9]+.WPS.ConfigMethodsEnabled
+
+Device.WiFi.AccessPoint.[0-9]+.Security.KeyPassphrase
+Device.WiFi.AccessPoint.[0-9]+.Security.PreSharedKey
+Device.WiFi.AccessPoint.[0-9]+.Security.RadiusSecret
+Device.WiFi.AccessPoint.[0-9]+.Security.RadiusServerIPAddr
+Device.WiFi.AccessPoint.[0-9]+.Security.RadiusServerPort
+Device.WiFi.AccessPoint.[0-9]+.Security.SecondaryRadiusSecret
+Device.WiFi.AccessPoint.[0-9]+.Security.SecondaryRadiusServerIPAddr
+Device.WiFi.AccessPoint.[0-9]+.Security.SecondaryRadiusServerPort
+Device.WiFi.AccessPoint.[0-9]+.Security.RekeyingInterval
+Device.WiFi.AccessPoint.[0-9]+.Security.WEPKey
+
+Device.WiFi.Radio.[0-9]+.AutoChannelEnable
+Device.WiFi.Radio.[0-9]+.AutoChannelRefreshPeriod
+(Device.WiFi.Radio.[0-9]+.)Channel
+	dependsonpath = "\1AutoChannelEnable"
+	dependsonvalue = "false"
+
+Device.WiFi.Radio.[0-9]+.OperatingChannelBandwidth
+Device.WiFi.Radio.[0-9]+.OperatingFrequencyBand
+Device.WiFi.Radio.[0-9]+.OperatingStandards
+
+Device.WiFi.SSID.[0-9]+.X_ADB_MacMode
+Device.WiFi.SSID.[0-9]+.X_ADB_MacList
+
+# Security
+Device.X_ADB_DMZ.Enable
+Device.X_ADB_DMZ.Interface
+Device.X_ADB_DMZ.IPAddress
+
+# Misc
+Device.IPsec.X_ADB_Security.[0-9]+.IdentifierValue
+Device.IPsec.X_ADB_Security.[0-9]+.PSK
+Device.IPsec.X_ADB_Security.[0-9]+.RestrictedAddress
+Device.IPsec.Profile.[0-9]+.X_ADB_IKEv2CheckPeersID
+Device.IPsec.Profile.[0-9]+.RemoteEndpoints
+Device.IPsec.Profile.[0-9]+.X_ADB_RemoteEndpointMask
+Device.IPsec.Filter.[0-9]+.X_ADB_RoadWarrior.Address
+(Device.DNS.Client.Server.[0-9]+.)DNSServer
+	dependsonpath = "\1Type"
+	dependsonvalue = "Static"
+(Device.DNS.Client.Server.[0-9]+.)Enable
+	dependsonpath = "\1Type"
+	dependsonvalue = "Static"
+(Device.Routing.Router.1.IPv4Forwarding.[0-9]+.)(.*)
+	dependsonpath = "\1StaticRoute"
+	dependsonvalue = "true"
+Device.X_ADB_MobileModem.SIMCard.1.PIN
+(Device.QoS.Shaper.[0-9]+.)Alias
+	dependsonpath = "\1Alias"
+	dependsonvalue = "QoSPacer"
+(Device.QoS.Shaper.[0-9]+.)ShapingRate
+	dependsonpath = "\1Alias"
+	dependsonvalue = "QoSPacer"

@@ -1,0 +1,6 @@
+[hostname-config-view:]
+name=Set the hostname/domain for this static entry
+name:host=Hostname
+name:domain=Domain name
+address=Set the IP address for this static entry
+address:address=IP address

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.Bridging">
+		<parameter name="MaxDBridgeEntries">
+			<value>1</value>
+		</parameter>
+	</object>
+	<object name="Device.Bridging.Bridge.1">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Bridging.Bridge.1.Port.1">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.Bridging.Bridge.1.Port.2,Device.Bridging.Bridge.1.Port.3,Device.Bridging.Bridge.1.Port.4,Device.Bridging.Bridge.1.Port.5,Device.Bridging.Bridge.1.Port.6,Device.Bridging.Bridge.1.Port.7,Device.Bridging.Bridge.1.Port.8,Device.Bridging.Bridge.1.Port.9</value>
+		</parameter>
+		<parameter name="ManagementPort">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>br0</value>
+		</parameter>
+	</object>
+	<object name="Device.Bridging.Bridge.1.Port.2">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.Ethernet.Interface.1</value>
+		</parameter>
+	</object>
+	<object name="Device.Bridging.Bridge.1.Port.3">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.Ethernet.Interface.2</value>
+		</parameter>
+	</object>
+	<object name="Device.Bridging.Bridge.1.Port.4">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.Ethernet.Interface.3</value>
+		</parameter>
+	</object>
+	<object name="Device.Bridging.Bridge.1.Port.5">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.Ethernet.Interface.4</value>
+		</parameter>
+	</object>
+	<object name="Device.Bridging.Bridge.1.Port.6">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.WiFi.SSID.1</value>
+		</parameter>
+	</object>
+	<object name="Device.Bridging.Bridge.1.Port.7">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.WiFi.SSID.2</value>
+		</parameter>
+	</object>
+	<object name="Device.Bridging.Bridge.1.Port.8">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.WiFi.SSID.3</value>
+		</parameter>
+	</object>
+	<object name="Device.Bridging.Bridge.1.Port.9">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.WiFi.SSID.4</value>
+		</parameter>
+	</object>
+</config>

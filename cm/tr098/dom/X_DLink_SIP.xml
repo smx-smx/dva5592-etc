@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="X_DLink" version="2.0"><object name="Services.VoiceService.{i}.X_DLINK_SIP." access="readWrite" minEntries="1" maxEntries="1" aliasOnGet="Device.Services.VoiceService.%i1.X_ADB_SIP.%n%u" aliasOnSet="Device.Services.VoiceService.%i1.X_ADB_SIP.%n%u"><parameter name="NoCallOnOthersFXSEnable" access="readWrite"><syntax><boolean /></syntax></parameter></object></datamodel>

@@ -1,0 +1,10 @@
+[printer-cfg-view:]
+name=Name of printer device
+name:name=Enter name
+description=Description of printer device
+description:desc=Enter description
+location=Location of printer device
+location:desc=Enter location
+jobShow=Show actual jobs
+jobCancel=Cancel job
+jobCancel:jobID=Enter job ID to cancel

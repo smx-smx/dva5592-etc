@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Device.Services.VoiceService.1">
+	<parameter name="X_ADB_OutboundInterface">
+		<value>Device.IP.Interface.1</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.Capabilities">
+	<parameter name="FaxPassThrough">
+		<value>true</value>
+	</parameter>
+	<parameter name="FaxT38">
+		<value>true</value>
+	</parameter>
+	<parameter name="MaxLineCount">
+		<value>2</value>
+	</parameter>
+	<parameter name="MaxProfileCount">
+		<value>2</value>
+	</parameter>
+	<parameter name="NumberingPlan">
+		<value>true</value>
+	</parameter>
+	<parameter name="SignalingProtocols">
+		<value>SIP</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.Capabilities.Codecs.1">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.711MuLaw</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>1</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.Capabilities.Codecs.2">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.711ALaw</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>2</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.Capabilities.Codecs.3">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.726</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>3</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.Capabilities.Codecs.4">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.729</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>4</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.Capabilities.Codecs.5">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.723</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>5</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.PhyInterface.1">
+	<parameter name="Description">
+		<value>FXS1</value>
+	</parameter>
+	<parameter name="InterfaceID">
+		<value>1</value>
+	</parameter>
+	<parameter name="PhyPort">
+		<value>01</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.PhyInterface.2">
+	<parameter name="Description">
+		<value>FXS2</value>
+	</parameter>
+	<parameter name="InterfaceID">
+		<value>2</value>
+	</parameter>
+	<parameter name="PhyPort">
+		<value>02</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.1">
+	<parameter name="Enable">
+		<value>Enabled</value>
+	</parameter>
+	<parameter name="FaxPassThrough">
+		<value>Disable</value>
+	</parameter>
+	<parameter name="Name">
+		<value>factory_test</value>
+	</parameter>
+	<parameter name="Region">
+		<value>IT</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.1.FaxT38">
+	<parameter name="Enable">
+		<value>false</value>
+	</parameter>
+	<parameter name="X_ADB_UDPTLLocalPortMax">
+		<value>0</value>
+	</parameter>
+	<parameter name="X_ADB_UDPTLLocalPortMin">
+		<value>0</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.1.RTP">
+	<parameter name="LocalPortMax">
+		<value>5020</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.1.RTP.RTCP">
+	<parameter name="Enable">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.1.SIP">
+	<parameter name="ProxyServer">
+		<value>192.168.1.25</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.1.Line.1">
+	<parameter name="DirectoryNumber">
+		<value>1001</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>Enabled</value>
+	</parameter>
+	<parameter name="PhyReferenceList">
+		<value>1</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.1.Line.1.Codec.List.1">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.711MuLaw</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>1</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.1.Line.1.Codec.List.2">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.711ALaw</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>2</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.1.Line.1.Codec.List.3">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.726</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>3</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.1.Line.1.Codec.List.4">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.729</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>4</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.1.Line.1.Codec.List.5">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.723</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>5</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.2">
+	<parameter name="Enable">
+		<value>Enabled</value>
+	</parameter>
+	<parameter name="FaxPassThrough">
+		<value>Disable</value>
+	</parameter>
+	<parameter name="Name">
+		<value>factory_test2</value>
+	</parameter>
+	<parameter name="Region">
+		<value>IT</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.2.FaxT38">
+	<parameter name="Enable">
+		<value>false</value>
+	</parameter>
+	<parameter name="X_ADB_UDPTLLocalPortMax">
+		<value>0</value>
+	</parameter>
+	<parameter name="X_ADB_UDPTLLocalPortMin">
+		<value>0</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.2.RTP">
+	<parameter name="LocalPortMax">
+		<value>5020</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.2.RTP.RTCP">
+	<parameter name="Enable">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.2.SIP">
+	<parameter name="ProxyServer">
+		<value>192.168.1.25</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.2.Line.1">
+	<parameter name="DirectoryNumber">
+		<value>1002</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>Enabled</value>
+	</parameter>
+	<parameter name="PhyReferenceList">
+		<value>2</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.2.Line.1.Codec.List.1">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.711MuLaw</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>1</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.2.Line.1.Codec.List.2">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.711ALaw</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>2</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.2.Line.1.Codec.List.3">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.726</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>3</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.2.Line.1.Codec.List.4">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.729</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>4</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.VoiceProfile.2.Line.1.Codec.List.5">
+	<parameter name="BitRate">
+		<value>8000</value>
+	</parameter>
+	<parameter name="Codec">
+		<value>G.723.1</value>
+	</parameter>
+	<parameter name="EntryID">
+		<value>5</value>
+	</parameter>
+	<parameter name="PacketizationPeriod">
+		<value>20</value>
+	</parameter>
+	<parameter name="SilenceSuppression">
+		<value>true</value>
+	</parameter>
+</object>

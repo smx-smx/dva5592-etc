@@ -1,0 +1,20 @@
+[alg-sel-view:]
+enable=Enable this ALG
+disable=Disable this ALG
+classificationIndex=Set a forwarding policy to be used for the traffic associated with this ALG entry (provided it is not associated with any defined Flow)
+classificationIndex:index=Forwarding policy
+classificationIndex:new_value=Selects a not-yet-existing policy
+trafficClass=Set a traffic class to be used for the traffic associated with this ALG entry (provided it is not associated with any defined Flow)
+trafficClass:index=Traffic class
+trafficClass:new_value=Selects a not-yet existing class
+policer=Set a policer to be used for the traffic associated with this ALG entry (provided it is not associated with any defined Flow)
+policer:policer=Policer
+no policer=Clears the policer
+dscpMark sameAsInput=Set a DSCP (no change) to mark the traffic associated with this ALG entry (provided it is not associated with any defined Flow)
+dscpMark automatic=Set a DSCP (automatic - based upon the EthernetPriority value) to mark the traffic associated with this ALG entry (provided it is not associated with any defined Flow)
+dscpMark value=Set a DSCP (value) to mark the traffic associated with this ALG entry (provided it is not associated with any defined Flow)
+dscpMark value:value=DSCP value
+ethPrioMark sameAsInput=Set an Ethernet priority code (no change) to mark the traffic associated with this ALG entry (provided it is not associated with any defined Flow)
+ethPrioMark automatic=Set an Ethernet priority code (automatic - based on DSCP) to mark the traffic associated with this ALG entry (provided it is not associated with any defined Flow)
+ethPrioMark value=Set an Ethernet priority code (value) to mark the traffic associated with this ALG entry (provided it is not associated with any defined Flow)
+ethPrioMark value:value=DSCP value

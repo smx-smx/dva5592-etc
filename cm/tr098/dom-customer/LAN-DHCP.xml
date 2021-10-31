@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="DHCP" version="2.0">
+    <object name="LANDevice.{i}.Hosts.">
+        <parameter name="X_ADB_MaxHostCount" excludeUser="CWMP"/>
+        <parameter name="X_ADB_HostRetainPeriod" excludeUser="CWMP"/>
+    </object>
+    <object name="LANDevice.{i}.Hosts.Host.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="LANDevice.{i}.LANHostConfigManagement.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+        <parameter name="X_ADB_DHCPAddressProbe" excludeUser="CWMP"/>
+        <parameter name="X_ADB_DHCPAddressProbeDelay" excludeUser="CWMP"/>
+    </object>
+    <object name="LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}.DHCPOption.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="LANDevice.{i}.LANHostConfigManagement.DHCPConditionalServingPool.{i}.DHCPStaticAddress.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="LANDevice.{i}.LANHostConfigManagement.DHCPOption.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="LANDevice.{i}.LANHostConfigManagement.IPInterface.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="LANDevice.{i}.LANHostConfigManagement.DHCPStaticAddress.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+</datamodel>

@@ -1,0 +1,36 @@
+[dns-config:]
+ipVersionRestricted=Enable/disable forwarding of A-type queries to ipv4 dns servers only and AAAA-type queries to ipv6 dns servers only
+ipVersionRestricted:value=Enable/disable
+reqIpVersionOnRedirect=When enabled, in case the CPE receives an A-type query from an IPv6 client or an AAAA-type query from an IPv4 client,
+the reply value is related to the requested IP version (instead of the IP version used to generate the query by the client)
+reqIpVersionOnRedirect:value=Enable/disable
+tcpRestrcited=When enabled, dns server will be listening for TCP queries on interfaces listed in tcpAllowedInterfaces only. Otherwise dns server will listen on all available interfaces.
+tcpRestrcited:value=Enable/disable
+tcpAllowedInterfaces set=Set a list of IP interfaces to listen on for TCP queries (provided tcpRestricted was enabled)
+tcpAllowedInterfaces set:interfaces=Comma-separated list of IP interfaces
+tcpAllowedInterfaces add=Adds an IP interface to listen on for TCP queries (provided tcpRestricted was enabled)
+tcpAllowedInterfaces add:interface=IP interface alias
+tcpAllowedInterfaces del=Remove an IP interface to listen on for TCP queries (provided tcpRestricted was enabled)
+tcpAllowedInterfaces del:interface=IP interface alias
+tcpAllowedInterfaces clear=Remove all the IP interfaces to listen on for TCP queries (provided tcpRestricted was enabled)
+tcpAllowedInterfaces show=Show the IP interfaces to listen on for TCP queries (provided tcpRestricted was enabled)
+noFallbackRespCodes set=Set a list of Response Codes (RCODE) for which fallback will be disabled (up to 5 items)
+noFallbackRespCodes set:codes=Comma separated list
+noFallbackRespCodes add=Add a Response Code (RCODE) for which fallback will be disabled
+noFallbackRespCodes add:code=Response Code
+noFallbackRespCodes del=Remove a Response Code (RCODE) for which fallback will be disabled
+noFallbackRespCodes del:code=Response Code
+noFallbackRespCodes clear=Remove all the Response Codes (RCODE) for which fallback will be disabled
+noFallbackRespCodes show=Show the Response Codes (RCODE) for which fallback will be disabled
+cpeName set=Set the static hostname for this CPE itself
+cpeName set:host=Hostname
+cpeName set:domain=Domain name
+cpeName show=Show the static hostname of this CPE itself
+add hostName=Add a static hostname entry
+add hostName:alias_hostname=Entry alias
+hostName=Enter "hostName" config view
+hostName:hostname=Hostname alias
+del hostName=Remove a static hostname entry
+del hostName:hostname=Hostname alias
+client=Enter "client" config view
+relay=Enter "relay" config view

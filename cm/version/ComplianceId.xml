@@ -1,0 +1,8 @@
+<object name="Device.DeviceInfo">
+	<parameter name="X_ADB_HWComplianceId">
+		<value>ADBB-GT15012A</value>
+	</parameter>
+	<parameter name="X_ADB_SWComplianceId">
+		<value>E.E.02.02_0003</value>
+	</parameter>
+</object>

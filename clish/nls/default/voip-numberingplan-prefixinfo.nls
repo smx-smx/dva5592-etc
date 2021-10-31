@@ -1,0 +1,14 @@
+[voip-numberingPlan-prefixInfo:]
+range=Set the prefix range in form: From(-To). "From" part consisting of 1..n digits followed by an optional "To" of just one digit prefixed by a "-" char
+range:value=Prefix range
+minNumberOfDigit=Set minimum number of allowable digits for the prefix range
+minNumberOfDigit:value=Number of digits
+maxNumberOfDigit=Set maximum number of allowable digits for the prefix range
+maxNumberOfDigit:value=Number of digits
+digitsToRemove=Set number of digits to remove from the internal digit buffer from digitsToRemoveFrom position
+digitsToRemove:value=Number of digits
+digitsToRemoveFrom=Set position within the internal digit buffer from which the digitsToRemove digits will be removed
+digitsToRemoveFrom:value=Number of digits
+facilityAction=Set up Facility Action implemented by the VoIP device
+facilityAction:value=Select Facility Action
+facilityAction:arg=Select additional Facility Action parameter

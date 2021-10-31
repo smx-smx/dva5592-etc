@@ -1,0 +1,3 @@
+[mgmt-telnetserver-view:]
+localAccess=Enter "localAccess" config view
+remoteAccess=Enter "remoteAccess" config view

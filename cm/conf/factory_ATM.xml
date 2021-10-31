@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.ATM.Link.1">
+		<parameter name="LowerLayers">
+			<value>Device.DSL.Channel.1</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Link1</value>
+		</parameter>
+		<parameter name="DestinationAddress">
+			<value>8/35</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Encapsulation">
+			<value>LLC</value>
+		</parameter>
+		<parameter name="LinkType">
+			<value>EoA</value>
+		</parameter>
+		<parameter name="Name">
+			<value>atm0</value>
+		</parameter>
+		<parameter name="VCSearchList">
+			<value>8/40</value>
+		</parameter>
+		<parameter name="X_ADB_DisableOAMPing">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.ATM.Link.2">
+		<parameter name="LowerLayers">
+			<value>Device.DSL.Channel.1</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Link2</value>
+		</parameter>
+		<parameter name="DestinationAddress">
+			<value>8/36</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Encapsulation">
+			<value>LLC</value>
+		</parameter>
+		<parameter name="LinkType">
+			<value>EoA</value>
+		</parameter>
+		<parameter name="Name">
+			<value>atm1</value>
+		</parameter>
+		<parameter name="VCSearchList">
+			<value></value>
+		</parameter>
+		<parameter name="X_ADB_DisableOAMPing">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.ATM.Link.2.QoS">
+		<parameter name="QoSClass">
+			<value>CBR</value>
+		</parameter>
+		<parameter name="PeakCellRate">
+			<value>300</value>
+		</parameter>
+	</object>
+</config>

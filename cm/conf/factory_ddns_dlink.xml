@@ -1,0 +1,11 @@
+<object name="Device.Services.X_ADB_DynamicDNS.Provider.-1">
+	<parameter name="Name">
+		<value>dlinkddns.com</value>
+	</parameter>
+	<parameter name="Protocol">
+		<value>dyndns2</value>
+	</parameter>
+	<parameter name="BaseURI">
+		<value>http://members.dyndns.org/nic/update</value>
+	</parameter>
+</object>

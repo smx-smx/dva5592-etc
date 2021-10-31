@@ -1,0 +1,6 @@
+[usbhost-cfg-view:]
+reset=Reset the Host Controller and apply the reset signaling to all of the Host Controller Hub downstream ports
+powerManagement=Set the Host Controller to invoke Power Management policy
+powerManagement:val=Enable or disable
+show connectedDevice=Show details about connected device
+show connectedDevice:deviceNumber=Connected device number

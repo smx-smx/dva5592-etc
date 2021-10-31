@@ -1,0 +1,4 @@
+[ipaddress-config-view:]
+address=Add IP address
+address:addr=Enter IP address
+no address=Clear IP address

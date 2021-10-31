@@ -1,0 +1,22 @@
+[if-bridge-view:]
+mngPortAlias=ManagePort alias
+mngPortAlias:alias=Enter alias
+mngPortVlanIsolation enable=Enable mngPortVlanIsolation
+mngPortVlanIsolation disable=Disable mngPortVlanIsolation
+enable=Enable bridge
+disable=Disable bridge
+std=Bridge standard
+std:std=Enter standard
+lanRouting=Enable/Disable LAN routing
+lanRouting:enable=Enable/Disable
+mcastIsolation=Enable/Disable MulticastIsolation
+mcastIsolation:enable=Enable/Disable
+setPermissions=User access permissions to this Bridge
+setPermissions:permissions=Enter permissions
+add port=Add port to bridge
+add port:phyAlias=Enter port
+add port:portAlias=Enter port alias
+port=Enter "port" config view
+port:alias=Enter port alias
+del port=Delete port
+del port:alias=Enter port alias

@@ -1,0 +1,18 @@
+[vpn-ipsec-rwar-view:]
+type=Set the Road Warrior configuration type
+type:type=Road Warrior type
+poolSize=Set the maximum number of concurrent clients this IPsec Filter can accept
+poolSize:size=Number of the concurrent clients
+domain=Set default domain name for VPN clients
+domain:name=Domain name
+dnsServers add=Add IPv4 address represent DNS server offered to the DHCP client
+dnsServers add:addr=IPv4 address
+dnsServers del=Delete DNS server IPv4 address
+dnsServers del:addr=IPv4 address
+dnsServers set=Set list of the IPv4 addresses represent DNS server offered to the DHCP client
+dnsServers set:addr_list=Comma-separated list of IPv4 addresses
+dnsServers show=Show list of the IPv4 addresses represent DNS server offered to the DHCP client
+dnsServers clear=Clear list of the IPv4 addresses represent DNS server offered to the DHCP client
+addrPool=Set pool identifier from which addresses should be assigned to the remote peers
+addrPool:addr=IPv4 address that combined with the SubnetMask parameter identifies the pool
+addrPool:mask=Subnet mask that combined with the Address parameter identifies the pool

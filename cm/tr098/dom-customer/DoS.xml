@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="Firewall" version="2.0">
+    <object name="Firewall.X_ADB_DoS." excludeUser="CWMP"/>
+    <object name="Firewall.X_ADB_DoS.ICMPFloodProtection." excludeUser="CWMP"/>
+    <object name="Firewall.X_ADB_DoS.ICMPFloodProtection.Burst.{i}." excludeUser="CWMP"/>
+    <object name="Firewall.X_ADB_DoS.ICMPFloodProtection.TrustedIP.{i}." excludeUser="CWMP"/>
+    <object name="Firewall.X_ADB_DoS.TCPSYNFloodProtection." excludeUser="CWMP"/>
+    <object name="Firewall.X_ADB_DoS.TCPSYNFloodProtection.Burst.{i}." excludeUser="CWMP"/>
+    <object name="Firewall.X_ADB_DoS.TCPSYNFloodProtection.TrustedIP.{i}." excludeUser="CWMP"/>
+    <object name="Firewall.X_ADB_DoS.UDPFloodProtection." excludeUser="CWMP"/>
+    <object name="Firewall.X_ADB_DoS.UDPFloodProtection.Burst.{i}." excludeUser="CWMP"/>
+    <object name="Firewall.X_ADB_DoS.UDPFloodProtection.TrustedIP.{i}." excludeUser="CWMP"/>
+</datamodel>

@@ -1,0 +1,227 @@
+# WAN connections
+Device.Ethernet.Interface.[0-9]+.Enable
+	optional = "true"
+Device.Ethernet.Interface.[0-9]+.Name
+	optional = "true"
+
+Device.PPP.Interface.[0-9]+.Enable
+	optional = "true"
+Device.PPP.Interface.[0-9]+.Name
+	optional = "true"
+Device.PPP.Interface.[0-9]+.Username
+	optional = "true"
+Device.PPP.Interface.[0-9]+.Password
+	optional = "true"
+
+# IP Address
+Device.IP.Interface.[0-9]+.Alias
+Device.IP.Interface.[0-9]+.IPv4Address.[0-9]+.IPAddress
+Device.IP.Interface.[0-9]+.IPv4Address.[0-9]+.SubnetMask
+
+# DHCP server
+Device.DHCPv4.Server.Enable
+Device.DHCPv4.Server.Pool.[0-9]+.Enable
+Device.DHCPv4.Server.Pool.[0-9]+.Alias
+Device.DHCPv4.Server.Pool.[0-9]+.MinAddress
+Device.DHCPv4.Server.Pool.[0-9]+.MaxAddress
+Device.DHCPv4.Server.Pool.[0-9]+.SubnetMask
+Device.DHCPv4.Server.Pool.[0-9]+.DNSServers
+Device.DHCPv4.Server.Pool.[0-9]+.IPRouters
+Device.DHCPv4.Server.Pool.[0-9]+.LeaseTime
+Device.DHCPv4.Server.Pool.[0-9]+.StaticAddress.[0-9]+.Alias
+	optional = "true"
+Device.DHCPv4.Server.Pool.[0-9]+.StaticAddress.[0-9]+.Chaddr
+	optional = "true"
+Device.DHCPv4.Server.Pool.[0-9]+.StaticAddress.[0-9]+.Enable
+	optional = "true"
+Device.DHCPv4.Server.Pool.[0-9]+.StaticAddress.[0-9]+.Yiaddr
+	optional = "true"
+
+# NAT
+Device.NAT.InterfaceSetting.[0-9]+.Enable
+	optional = "true"
+
+# Port mapping
+Device.NAT.PortMapping.[0-9]+.*
+	optional = "true"
+
+# NTP
+Device.Time.Enable
+Device.Time.LocalTimeZone
+Device.Time.NTPServer1
+Device.Time.NTPServer2
+Device.Time.NTPServer3
+Device.Time.NTPServer4
+Device.Time.NTPServer5
+
+# Management
+Device.ManagementServer.EnableCWMP
+Device.ManagementServer.X_ADB_TLSVersion
+
+Device.ManagementServer.PeriodicInformEnable
+Device.ManagementServer.PeriodicInformInterval
+
+Device.X_ADB_TelnetServer.LocalAccess.Enable
+Device.X_ADB_TelnetServer.LocalAccess.SessionLifeTime
+Device.X_ADB_TelnetServer.LocalAccess.X_ADB_AccessControlEnable
+Device.X_ADB_TelnetServer.LocalAccess.X_ADB_ACLRule.[0-9]+.*
+	optional = "true"
+
+Device.X_ADB_TelnetServer.RemoteAccess.Enable
+Device.X_ADB_TelnetServer.RemoteAccess.SessionLifeTime
+Device.X_ADB_TelnetServer.RemoteAccess.X_ADB_AccessControlEnable
+Device.X_ADB_TelnetServer.RemoteAccess.X_ADB_ACLRule.[0-9]+.*
+	optional = "true"
+
+Device.X_ADB_SSHServer.LocalAccess.Enable
+Device.X_ADB_SSHServer.LocalAccess.SessionLifeTime
+Device.X_ADB_SSHServer.LocalAccess.X_ADB_AccessControlEnable
+Device.X_ADB_SSHServer.LocalAccess.X_ADB_ACLRule.[0-9]+.*
+	optional = "true"
+
+Device.X_ADB_SSHServer.RemoteAccess.Enable
+Device.X_ADB_SSHServer.RemoteAccess.SessionLifeTime
+Device.X_ADB_SSHServer.RemoteAccess.X_ADB_AccessControlEnable
+Device.X_ADB_SSHServer.RemoteAccess.X_ADB_ACLRule.[0-9]+.*
+	optional = "true"
+
+Device.UserInterface.RemoteAccess.Enable
+Device.UserInterface.RemoteAccess.Port
+Device.UserInterface.RemoteAccess.X_ADB_HTTPSPort
+Device.UserInterface.RemoteAccess.X_ADB_SessionLifeTime
+Device.UserInterface.RemoteAccess.X_ADB_AccessControlEnable
+Device.UserInterface.RemoteAccess.X_ADB_ACLRule.[0-9]+.*
+	optional = "true"
+
+Device.UserInterface.X_ADB_LocalAccess.Enable
+Device.UserInterface.X_ADB_LocalAccess.Port
+Device.UserInterface.X_ADB_LocalAccess.HTTPSPort
+Device.UserInterface.X_ADB_LocalAccess.SessionLifeTime
+Device.UserInterface.X_ADB_LocalAccess.X_ADB_AccessControlEnable
+Device.UserInterface.X_ADB_LocalAccess.X_ADB_ACLRule.[0-9]+.*
+	optional = "true"
+
+Device.Users.User.[0-9]+.Username
+Device.Users.User.[0-9]+.Password
+
+# Voice
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.Enable
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.DirectoryNumber
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.PhyReferenceList
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.SIP.AuthUserName
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.SIP.AuthPassword
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.Codec.List.[0-9]+.Codec
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.Codec.List.[0-9]+.Priority
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Line.[0-9]+.VoiceProcessing.EchoCancellationEnable
+	optional = "true"
+
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Name
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.Enable
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.FaxT38.Enable
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.FaxPassThrough
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.ModemPassThrough
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.X_ADB_FaxPassThroughCodec
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.DTMFMethod
+	optional = "true"
+
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.ProxyServer
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.ProxyServerPort
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.RegistrarServer
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.RegistrarServerPort
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.OutboundProxy
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.OutboundProxyPort
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.UserAgentDomain
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.VoiceProfile.[0-9]+.SIP.UserAgentPort
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.X_ADB_OutboundInterface
+	optional = "true"
+Device.Services.VoiceService.[0-9]+.X_ADB_SIP.LocalPort
+	optional = "true"
+
+# WiFi
+Device.WiFi.Radio.[0-9]+.Enable
+Device.WiFi.AccessPoint.[0-9]+.Enable
+Device.WiFi.SSID.[0-9]+.Enable
+
+Device.WiFi.SSID.[0-9]+.SSID
+Device.WiFi.AccessPoint.[0-9]+.SSIDAdvertisementEnabled
+
+Device.WiFi.AccessPoint.[0-9]+.Security.ModeEnabled
+Device.WiFi.AccessPoint.[0-9]+.Security.ModesSupported
+Device.WiFi.AccessPoint.[0-9]+.Security.X_ADB_EncryptionMode
+Device.WiFi.AccessPoint.[0-9]+.Security.X_ADB_EncryptionModesSupported
+Device.WiFi.AccessPoint.[0-9]+.WPS.Enable
+Device.WiFi.AccessPoint.[0-9]+.WPS.ConfigMethodsEnabled
+
+Device.WiFi.AccessPoint.[0-9]+.Security.KeyPassphrase
+Device.WiFi.AccessPoint.[0-9]+.Security.PreSharedKey
+Device.WiFi.AccessPoint.[0-9]+.Security.RadiusSecret
+Device.WiFi.AccessPoint.[0-9]+.Security.RadiusServerIPAddr
+Device.WiFi.AccessPoint.[0-9]+.Security.RadiusServerPort
+Device.WiFi.AccessPoint.[0-9]+.Security.SecondaryRadiusSecret
+Device.WiFi.AccessPoint.[0-9]+.Security.SecondaryRadiusServerIPAddr
+Device.WiFi.AccessPoint.[0-9]+.Security.SecondaryRadiusServerPort
+Device.WiFi.AccessPoint.[0-9]+.Security.RekeyingInterval
+Device.WiFi.AccessPoint.[0-9]+.Security.WEPKey
+
+Device.WiFi.Radio.[0-9]+.AutoChannelEnable
+Device.WiFi.Radio.[0-9]+.AutoChannelRefreshPeriod
+Device.WiFi.Radio.[0-9]+.Channel
+	optional = "true"
+
+Device.WiFi.Radio.[0-9]+.OperatingChannelBandwidth
+Device.WiFi.Radio.[0-9]+.OperatingFrequencyBand
+Device.WiFi.Radio.[0-9]+.OperatingStandards
+
+Device.WiFi.SSID.[0-9]+.X_ADB_MacMode
+Device.WiFi.SSID.[0-9]+.X_ADB_MacList
+	optional = "true"
+
+# Security
+Device.X_ADB_DMZ.Enable
+Device.X_ADB_DMZ.Interface
+Device.X_ADB_DMZ.IPAddress
+
+# Misc
+Device.IPsec.X_ADB_Security.[0-9]+.IdentifierValue
+	optional = "true"
+Device.IPsec.X_ADB_Security.[0-9]+.PSK
+	optional = "true"
+Device.IPsec.Profile.[0-9]+.X_ADB_IKEv2CheckPeersID
+	optional = "true"
+Device.IPsec.Profile.[0-9]+.RemoteEndpoints
+	optional = "true"
+Device.IPsec.Profile.[0-9]+.X_ADB_RemoteEndpointMask
+	optional = "true"
+Device.IPsec.Filter.[0-9]+.X_ADB_RoadWarrior.Address
+	optional = "true"
+Device.DNS.Client.Server.[0-9]+.DNSServer
+	optional = "true"
+Device.DNS.Client.Server.[0-9]+.Enable
+	optional = "true"
+Device.Routing.Router.1.IPv4Forwarding.[0-9]+.*
+	optional = "true"
+Device.X_ADB_MobileModem.SIMCard.1.PIN
+	optional = "true"
+Device.QoS.Shaper.[0-9]+.ShapingRate
+	optional = "true"

@@ -1,0 +1,24 @@
+[portmapping-config-view:]
+classificationIndex=Identifier of a set of QoS.Classification objects that have the corresponding ForwardingPolicy value.
+classificationIndex:index=Enter index
+classificationIndex:new_value=Enter value
+no classificationIndex=Clear classification index
+description=User-readable description of this port mapping
+description:description=Enter description
+hairpinning=Enables or disables the NAT Hairpinning mode
+hairpinning:value=Enable/Disable
+allInterfaces=Indicates whether this port mapping applies to all IP interfaces that support port mappings. If true, the value of Interface is ignored since all supported IP interfaces are indicated
+allInterfaces:value=Enable/Disable
+remoteHostSource=IP address of the source of inbound packets. An empty string indicates a "wildcard"
+remoteHostSource:addr=Enter address
+no remoteHostSource=Clear remote host source
+intPort=The port on InternalClient that the gateway SHOULD forward traffic to
+intPort:local_port=Enter port
+natRule=If the referenced object is deleted, the parameter value MUST be set to an empty string. Define this port mapping using the WAN external IP address specified in the referred object
+natRule:rule=Enter value
+service=If the referenced object is deleted, the parameter value MUST be set to an empty string. When a service reference is configured, then protocols and port ranges taken from the service definition are applied for this port mapping, ignoring protocols and port ranges defined in this PortMapping entry
+service:service=Enter service
+no service=Clear service
+interface=IP Interface for (NAT-PMP)
+interface:ifname=Select IP Interface for (NAT-PMP)
+no interface=Remove IP Interface

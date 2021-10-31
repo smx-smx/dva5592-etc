@@ -1,0 +1,12 @@
+[vpn-l2tp-pptp-server-view:]
+addressRange=Set the l2tp server address range
+addressRange:min-addr=Minimal address
+addressRange:max-addr=Maximal address
+users add=Add user able to authenticate to this PPTP server
+users add:user=Name of existing user
+users del=Delete user from users list
+users del:user=Name of user
+users set=Set comma-separated list of users able to authenticate to this PPTP server
+users set:user_list=Comma-separated list of users
+users show=Show list of users able to authenticate to this PPTP server
+users clear=Clear users list

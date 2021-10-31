@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Device.WiFi.Radio.1">
+	<parameter name="Alias">
+		<value>Radio1</value>
+	</parameter>
+	<parameter name="AutoChannelEnable">
+		<value>true</value>
+	</parameter>
+	<parameter name="AutoChannelRefreshPeriod">
+		<value>86400</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="ExtensionChannel">
+		<value>Auto</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl1</value>
+	</parameter>
+	<parameter name="OperatingChannelBandwidth">
+		<value>Auto</value>
+	</parameter>
+	<parameter name="RegulatoryDomain">
+		<value>EU </value>
+	</parameter>
+	<parameter name="SupportedFrequencyBands">
+		<value>2.4GHz</value>
+	</parameter>
+	<parameter name="OperatingFrequencyBand">
+		<value>2.4GHz</value>
+	</parameter>
+	<parameter name="OperatingStandards">
+		<value>b,g,n</value>
+	</parameter>
+	<parameter name="TransmitPower">
+		<value>-1</value>
+	</parameter>
+	<parameter name="X_ADB_InterferenceOverride">
+		<value>3</value>
+	</parameter>
+	<parameter name="X_ADB_TimeSchedulerEnable">
+		<value>true</value>
+	</parameter>
+	<parameter name="X_ADB_TimeScheduler">
+		<value>Device.X_ADB_Time.Scheduler.Profile.1</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.Radio.2">
+	<parameter name="Alias">
+		<value>Radio2</value>
+	</parameter>
+	<parameter name="AutoChannelEnable">
+		<value>true</value>
+	</parameter>
+	<parameter name="AutoChannelRefreshPeriod">
+		<value>86400</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="ExtensionChannel">
+		<value>Auto</value>
+	</parameter>
+	<parameter name="IEEE80211hEnabled">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl0</value>
+	</parameter>
+	<parameter name="OperatingChannelBandwidth">
+		<value>Auto</value>
+	</parameter>
+	<parameter name="RegulatoryDomain">
+		<value>EU </value>
+	</parameter>
+	<parameter name="SupportedFrequencyBands">
+		<value>5GHz</value>
+	</parameter>
+	<parameter name="OperatingFrequencyBand">
+		<value>5GHz</value>
+	</parameter>
+	<parameter name="SupportedStandards">
+		<value>a,n,ac</value>
+	</parameter>
+	<parameter name="OperatingStandards">
+		<value>a,n,ac</value>
+	</parameter>
+	<parameter name="TransmitPower">
+		<value>-1</value>
+	</parameter>
+	<parameter name="X_ADB_BasicDataTransmitRates">
+		<value>6,12,24</value>
+	</parameter>
+	<parameter name="X_ADB_OperationalDataTransmitRates">
+		<value>6,9,12,18,24,36,48,54</value>
+	</parameter>
+	<parameter name="X_ADB_UseE0Rev938RegulatoryDomain">
+		<value>true</value>
+	</parameter>
+	<parameter name="X_ADB_TimeSchedulerEnable">
+		<value>true</value>
+	</parameter>
+	<parameter name="X_ADB_TimeScheduler">
+		<value>Device.X_ADB_Time.Scheduler.Profile.2</value>
+	</parameter>
+	<parameter name="X_ADB_ZeroWaitDFSEnable">
+		<value>true</value>
+	</parameter>
+	<parameter name="X_ADB_ZeroWaitDFSSupported">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.SSID.1">
+	<parameter name="Alias">
+		<value>SSID1</value>
+	</parameter>
+	<parameter name="SSID">
+		<value>yapsie-wlan</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.WiFi.Radio.2</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl0</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.SSID.2">
+	<parameter name="Alias">
+		<value>SSID2</value>
+	</parameter>
+	<parameter name="SSID">
+		<value>yapsie-wlan</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.WiFi.Radio.1</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.SSID.3">
+	<parameter name="Alias">
+		<value>SSID3</value>
+	</parameter>
+	<parameter name="SSID">
+		<value>D-Link-Guest</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.WiFi.Radio.2</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl0.1</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.SSID.4">
+	<parameter name="Alias">
+		<value>SSID4</value>
+	</parameter>
+	<parameter name="SSID">
+		<value>D-Link-Guest</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.WiFi.Radio.1</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl1.1</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.1">
+	<parameter name="Alias">
+		<value>AccessPoint1</value>
+	</parameter>
+	<parameter name="RetryLimit">
+		<value>7</value>
+	</parameter>
+	<parameter name="X_ADB_LongRetryLimit">
+		<value>4</value>
+	</parameter>
+	<parameter name="SSIDReference">
+		<value>Device.WiFi.SSID.1</value>
+	</parameter>
+	<parameter name="UAPSDCapability">
+		<value>true</value>
+	</parameter>
+	<parameter name="UAPSDEnable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.1.Security">
+	<parameter name="ModeEnabled">
+		<value>WPA2-Personal</value>
+	</parameter>
+	<parameter name="ModesSupported">
+		<value>None,WPA2-Personal,WPA-WPA2-Personal</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.2">
+	<parameter name="Alias">
+		<value>AccessPoint2</value>
+	</parameter>
+	<parameter name="RetryLimit">
+		<value>7</value>
+	</parameter>
+	<parameter name="X_ADB_LongRetryLimit">
+		<value>4</value>
+	</parameter>
+	<parameter name="SSIDReference">
+		<value>Device.WiFi.SSID.2</value>
+	</parameter>
+	<parameter name="UAPSDCapability">
+		<value>true</value>
+	</parameter>
+	<parameter name="UAPSDEnable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.2.Security">
+	<parameter name="ModeEnabled">
+		<value>WPA2-Personal</value>
+	</parameter>
+	<parameter name="ModesSupported">
+		<value>None,WPA2-Personal,WPA-WPA2-Personal</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.3">
+	<parameter name="Alias">
+		<value>AccessPoint3</value>
+	</parameter>
+	<parameter name="RetryLimit">
+		<value>7</value>
+	</parameter>
+	<parameter name="X_ADB_LongRetryLimit">
+		<value>4</value>
+	</parameter>
+	<parameter name="SSIDReference">
+		<value>Device.WiFi.SSID.3</value>
+	</parameter>
+	<parameter name="UAPSDCapability">
+		<value>true</value>
+	</parameter>
+	<parameter name="UAPSDEnable">
+		<value>true</value>
+	</parameter>
+	<parameter name="X_ADB_APIsolation">
+		<value>true</value>
+	</parameter>
+	<parameter name="X_ADB_WirelessSegregation">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.3.Security">
+	<parameter name="ModeEnabled">
+		<value>WPA2-Personal</value>
+	</parameter>
+	<parameter name="ModesSupported">
+		<value>None,WPA2-Personal,WPA-WPA2-Personal</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.4">
+	<parameter name="Alias">
+		<value>AccessPoint4</value>
+	</parameter>
+	<parameter name="RetryLimit">
+		<value>7</value>
+	</parameter>
+	<parameter name="X_ADB_LongRetryLimit">
+		<value>4</value>
+	</parameter>
+	<parameter name="SSIDReference">
+		<value>Device.WiFi.SSID.4</value>
+	</parameter>
+	<parameter name="UAPSDCapability">
+		<value>true</value>
+	</parameter>
+	<parameter name="UAPSDEnable">
+		<value>true</value>
+	</parameter>
+	<parameter name="X_ADB_APIsolation">
+		<value>true</value>
+	</parameter>
+	<parameter name="X_ADB_WirelessSegregation">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.4.Security">
+	<parameter name="ModeEnabled">
+		<value>WPA2-Personal</value>
+	</parameter>
+	<parameter name="ModesSupported">
+		<value>None,WPA2-Personal,WPA-WPA2-Personal</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.1.WPS">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="ConfigMethodsEnabled">
+		<value>PushButton</value>
+	</parameter>
+	<parameter name="ConfigMethodsSupported">
+		<value>PushButton</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.2.WPS">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="ConfigMethodsEnabled">
+		<value>PushButton</value>
+	</parameter>
+	<parameter name="ConfigMethodsSupported">
+		<value>PushButton</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.3.WPS">
+	<parameter name="ConfigMethodsEnabled">
+		<value>PushButton</value>
+	</parameter>
+	<parameter name="ConfigMethodsSupported">
+		<value>PushButton</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.4.WPS">
+	<parameter name="ConfigMethodsEnabled">
+		<value>PushButton</value>
+	</parameter>
+	<parameter name="ConfigMethodsSupported">
+		<value>PushButton</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.X_ADB_BandSteering">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>

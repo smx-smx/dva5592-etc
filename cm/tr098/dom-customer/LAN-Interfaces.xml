@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="LAN" version="2.0">
+    <object name="LANInterfaces.LANEthernetInterfaceConfig.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+    <object name="LANInterfaces.WLANConfiguration.{i}.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+        <parameter name="X_ADB_TR181_SSID" excludeUser="CWMP"/>
+        <parameter name="X_ADB_TR181_AP" excludeUser="CWMP"/>
+        <parameter name="X_ADB_WMMGlobalEnable" excludeUser="CWMP"/>
+        <parameter name="X_ADB_WMMGlobalNoAck" excludeUser="CWMP"/>
+        <parameter name="X_ADB_STBC_Rx" excludeUser="CWMP"/>
+        <parameter name="X_ADB_STBC_Tx" excludeUser="CWMP"/>
+        <parameter name="X_ADB_AMPDU" excludeUser="CWMP"/>
+    </object>
+</datamodel>

@@ -1,0 +1,7 @@
+[voip-profile-line-codec-view:]
+silenceSuppression=Change silence suppression for this codec
+silenceSuppression:enable=Enable/disable
+priority=Set the priority for this combination of codec parameters (1 is the highest priority)
+priority:value=Priority
+packetizationPeriod=Select packetization period
+packetizationPeriod:entry=Packetization period

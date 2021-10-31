@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="Management" version="2.0">
+    <object name="UserInterface.">
+        <parameter name="X_ADB_HelpEnabled" excludeUser="CWMP"/>
+    </object>
+    <object name="UserInterface.RemoteAccess.">
+        <parameter name="X_ADB_SecondaryPort" excludeUser="CWMP"/>
+        <parameter name="X_ADB_HTTPSPort" excludeUser="CWMP"/>
+        <parameter name="X_ADB_SecondaryHTTPSPort" excludeUser="CWMP"/>
+        <parameter name="X_ADB_AccessControlEnable" excludeUser="CWMP"/>
+        <parameter name="X_ADB_ProtocolsEnabled" excludeUser="CWMP"/>
+        <parameter name="X_ADB_Interface" excludeUser="CWMP"/>
+        <parameter name="X_ADB_SessionLifeTime" excludeUser="CWMP"/>
+        <parameter name="X_ADB_ACLRuleNumberOfEntries" excludeUser="CWMP"/>
+    </object>
+    <object name="UserInterface.RemoteAccess.X_ADB_ACLRule.{i}." excludeUser="CWMP"/>
+    <object name="User.{i}.">
+        <parameter name="X_ADB_PasswordType" excludeUser="CWMP"/>
+        <parameter name="X_ADB_LocalAccessCapable" excludeUser="CWMP"/>
+        <parameter name="X_ADB_GUIAccessCapable" excludeUser="CWMP"/>
+        <parameter name="X_ADB_CLIAccessCapable" excludeUser="CWMP"/>
+        <parameter name="X_ADB_Permissions" excludeUser="CWMP"/>
+        <parameter name="X_ADB_Role" excludeUser="CWMP"/>
+        <parameter name="X_ADB_GUILevels" excludeUser="CWMP"/>
+    </object>
+</datamodel>

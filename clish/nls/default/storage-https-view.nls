@@ -1,0 +1,14 @@
+[storage-https-view:]
+port=The port number that the HTTPS server is listening on
+port:port=Port number(The factory default value is 4443)
+idleTime=Set the maximum amount of time in seconds that the HTTPS socket will remain open without any activity. If set to 0 an infinite timeout will apply
+idleTime:time=Amount of time in seconds
+tlsCheck set=Set list of validity parameters that checks must be performed on TLS peer's certificate
+tlsCheck set:check=List of comma-separated TLS check parameters. If the list is empty, no client certificate is requested during the TLS handshake. None means that the client certificate is accepted without validation (not trusted). All means that all the supported checks are performed on the client certificate
+tlsCheck add=Add element to comma-separated list of TLS validity parameters
+tlsCheck add:check=Name of validity parameter
+tlsCheck del=Delete one element from comma-separated list of validity parameters
+tlsCheck del:check=Name of validity parameter
+tlsCheck clear=Clear list of validity parameters
+tlsCheck show=Show entire validity parameters list
+reset=Reload status of local HTTPS server according to configuration

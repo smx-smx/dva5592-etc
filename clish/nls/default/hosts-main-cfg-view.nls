@@ -1,0 +1,4 @@
+[hosts-main-cfg-view:]
+rescan=Refreshes LAN Host table
+host=Enter "host" config view
+host:alias=Host's alias

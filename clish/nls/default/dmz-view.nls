@@ -1,0 +1,15 @@
+[dmz-view:]
+hairpinning=Enable/disable hairpinning
+hairpinning:enable=Enable/disable
+address=Set Internal IP Address
+address:ipaddr=IP address
+interface=Set External Interface
+interface:interface=Enter WAN interface
+upstreaminterface add=Add WAN interface through which the DMZ Host can be reached
+upstreaminterface add:entry=Enter WAN interface to add
+upstreaminterface del=Delete WAN interface through which the DMZ Host can be reached
+upstreaminterface del:entry=Enter WAN interface to delete
+upstreaminterface set=Set list of WAN interfaces through which the DMZ Host can be reached
+upstreaminterface set:list=Enter list
+upstreaminterface show=Show all WAN interfaces through which the DMZ Host can be reached
+upstreaminterface clear=Clear all WAN interface through which the DMZ Host can be reached

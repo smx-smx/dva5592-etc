@@ -1,0 +1,1345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1">
+		<parameter name="Alias">
+			<value>ToneProf1</value>
+		</parameter>
+		<parameter name="X_ADB_Country">
+			<value>IL</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.1">
+		<parameter name="Alias">
+			<value>EventProf1Dial</value>
+		</parameter>
+		<parameter name="Function">
+			<value>Dial</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.10101</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.2">
+		<parameter name="Alias">
+			<value>EventProf1Busy</value>
+		</parameter>
+		<parameter name="Function">
+			<value>Busy</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.10201</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.3">
+		<parameter name="Alias">
+			<value>EventProf1CW1</value>
+		</parameter>
+		<parameter name="Function">
+			<value>CallWaiting1</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.10301</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.4">
+		<parameter name="Alias">
+			<value>EventProf1Confirmation</value>
+		</parameter>
+		<parameter name="Function">
+			<value>Confirmation</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.10401</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.5">
+		<parameter name="Alias">
+			<value>EventProf1RingBack</value>
+		</parameter>
+		<parameter name="Function">
+			<value>RingBack</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.10501</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.6">
+		<parameter name="Alias">
+			<value>EventProf1Stutterdial</value>
+		</parameter>
+		<parameter name="Function">
+			<value>Stutterdial</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.10601</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.7">
+		<parameter name="Alias">
+			<value>EventProf1SpecialDial</value>
+		</parameter>
+		<parameter name="Function">
+			<value>SpecialDial</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.10701</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.8">
+		<parameter name="Alias">
+			<value>EventProf1ReOrder</value>
+		</parameter>
+		<parameter name="Function">
+			<value>ReOrder</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.10801</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.9">
+		<parameter name="Alias">
+			<value>EventProf1Congestion</value>
+		</parameter>
+		<parameter name="Function">
+			<value>Congestion</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.10901</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.10">
+		<parameter name="Alias">
+			<value>EventProf1Congestion1</value>
+		</parameter>
+		<parameter name="Function">
+			<value>X_ADB_Congestion1</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.11001</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.11">
+		<parameter name="Alias">
+			<value>EventProf1LineMW</value>
+		</parameter>
+		<parameter name="Function">
+			<value>LineMessagesWaiting</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.11101</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.12">
+		<parameter name="Alias">
+			<value>EventProf1OffHookWarning</value>
+		</parameter>
+		<parameter name="Function">
+			<value>OffHookWarning</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.11201</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.13">
+		<parameter name="Alias">
+			<value>EventProf1CallingCard</value>
+		</parameter>
+		<parameter name="Function">
+			<value>X_ADB_CallingCard</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.11301</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.14">
+		<parameter name="Alias">
+			<value>EventProf1CallWaiting2</value>
+		</parameter>
+		<parameter name="Function">
+			<value>CallWaiting2</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.11401</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.15">
+		<parameter name="Alias">
+			<value>EventProf1CallWaiting3</value>
+		</parameter>
+		<parameter name="Function">
+			<value>CallWaiting3</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.11501</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.EventProfile.1.Event.16">
+		<parameter name="Alias">
+			<value>EventProf1CallWaiting4</value>
+		</parameter>
+		<parameter name="Function">
+			<value>CallWaiting4</value>
+		</parameter>
+		<parameter name="Tone">
+			<value>Device.Services.VoiceService.1.Tone.Description.11601</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.10101">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc1</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>NormalDialtone</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10101</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>1000</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.10201">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc2</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserBusyTone</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10201</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>5000</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.10301">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc3</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserCallWaiting1</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10301</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>5000</value>
+		</parameter>
+		<parameter name="X_ADB_SteadyTone">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.10401">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc4</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserConfirmation</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10401</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>0</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.10501">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc5</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserRingBack</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10501</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>5000</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.10601">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc6</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserStutterdial</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10601</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>2</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.10701">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc7</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserSpecialDial</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10701</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>2</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.10801">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc8</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserReOrder</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10801</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>5000</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.10901">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc9</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserCongestion</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10901</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>0</value>
+		</parameter>
+		<parameter name="X_ADB_SteadyTone">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.11001">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc10</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserCongestion1</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11001</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>0</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.11101">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc11</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserLineMessagesWaiting</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11101</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>9</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.11201">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc12</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserOffHookWarning</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11201</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>5000</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.11301">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc13</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserCCard</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11301</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>0</value>
+		</parameter>
+		<parameter name="X_ADB_SteadyTone">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.11401">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc14</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserCW2</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11401</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>5000</value>
+		</parameter>
+		<parameter name="X_ADB_SteadyTone">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.11501">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc15</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserCW3</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11501</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>5000</value>
+		</parameter>
+		<parameter name="X_ADB_SteadyTone">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Description.11601">
+		<parameter name="ToneEnable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Desc16</value>
+		</parameter>
+		<parameter name="ToneName">
+			<value>UserCW4</value>
+		</parameter>
+		<parameter name="TonePattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11601</value>
+		</parameter>
+		<parameter name="ToneRepetitions">
+			<value>5000</value>
+		</parameter>
+		<parameter name="X_ADB_SteadyTone">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10101">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1Dial</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>500</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10102</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10102">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2Dial</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10201">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1Busy</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>500</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10202</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10202">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2Busy</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>500</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10301">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1CallW1</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>500</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10302</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10302">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2CallW1</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10401">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1Confirmation</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10402</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10402">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2Confirmation</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10501">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1RingBack</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>1000</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10502</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10502">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2RingBack</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>3000</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10601">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1Stutterdial</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10602</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10602">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2Stutterdial</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10701">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1SpecialDial</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10702</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10702">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2SpecialDial</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10801">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1ReOrder</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>200</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10802</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10802">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2ReOrder</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>200</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10901">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1Congestion</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>950</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>500</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10902</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10902">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2Congestion</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10903</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10903">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt3Congestion</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>1440</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>500</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10904</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10904">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt4Congestion</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10905</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10905">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt5Congestion</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>1750</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>500</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.10906</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.10906">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt6Congestion</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11001">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1Congestion1</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>950</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>500</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11002</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11002">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2Congestion1</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11003</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11003">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt3Congestion1</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>1400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>500</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11004</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11004">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt4Congestion1</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11005</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11005">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt5Congestion1</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>1750</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>500</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11006</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11006">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt6Congestion1</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11101">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1LineMW</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11102</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11102">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2LineMW</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11201">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1OffHookWarning</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>1400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-60</value>
+		</parameter>
+		<parameter name="Frequency2">
+			<value>2060</value>
+		</parameter>
+		<parameter name="Power2">
+			<value>-60</value>
+		</parameter>
+		<parameter name="Frequency3">
+			<value>2450</value>
+		</parameter>
+		<parameter name="Power3">
+			<value>-60</value>
+		</parameter>
+		<parameter name="Frequency4">
+			<value>2600</value>
+		</parameter>
+		<parameter name="Power4">
+			<value>-60</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11202</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11202">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2OffHookWarning</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11301">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1CallCard</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>941</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Frequency2">
+			<value>1477</value>
+		</parameter>
+		<parameter name="Power2">
+			<value>-160</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>60</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11302</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11302">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2CallCard</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11303</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11303">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt3CallCard</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>440</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Frequency2">
+			<value>350</value>
+		</parameter>
+		<parameter name="Power2">
+			<value>-160</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>940</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11304</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11304">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt4CallCard</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11401">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1CallWaiting2</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11402</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11402">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2CallWaiting2</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11403</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11403">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt3CallWaiting2</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11404</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11404">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt4CallWaiting2</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11501">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1CallWaiting3</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11502</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11502">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2CallWaiting3</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11503</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11503">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt3CallWaiting3</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11504</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11504">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt4CallWaiting3</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11601">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt1CallWaiting4</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11602</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11602">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt2CallWaiting4</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11603</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11603">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt3CallWaiting4</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>300</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11604</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11604">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt4CallWaiting4</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11605</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11605">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt5CallWaiting4</value>
+		</parameter>
+		<parameter name="ToneOn">
+			<value>true</value>
+		</parameter>
+		<parameter name="Frequency1">
+			<value>400</value>
+		</parameter>
+		<parameter name="Power1">
+			<value>-180</value>
+		</parameter>
+		<parameter name="Duration">
+			<value>100</value>
+		</parameter>
+		<parameter name="NextPattern">
+			<value>Device.Services.VoiceService.1.Tone.Pattern.11606</value>
+		</parameter>
+	</object>
+	<object name="Device.Services.VoiceService.1.Tone.Pattern.11606">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>TonePatt6CallWaiting4</value>
+		</parameter>
+	</object>
+</config>

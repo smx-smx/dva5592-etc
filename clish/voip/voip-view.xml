@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLISH_MODULE>
+  <PTYPE name="VOIP_PROFILE_SECT" method="select"
+         pattern="all(All) common(Common) sip(SIP) rtp(RTP) t38(FaxT38) numplan(NumberingPlan)"
+         help="Profile object to show"/>
+  <PTYPE name="VOIP_DIAL"    pattern="[0-9]{1,32}" help="Number to dial"/>
+  <PTYPE name="VOIP_RING_NUM"    method="integer" pattern="0..5" help="ring pattern"/>
+  <PTYPE name="VOIP_CW_NUM"    method="integer" pattern="0..7" help="cw pattern"/>
+  <PTYPE name="VOIP_PHY_NUM"    method="integer" pattern="1..8" help="Phy number to test"/>
+  <PTYPE name="VOIP_PROFILE_NUM" method="integer" pattern="0..255" help="Profile number or 0 for all profiles"/>
+  <PTYPE name="CLTLDR_TEST_NUM" method="integer" pattern="0..255" help="cltldr test number"/>
+  <PTYPE name="VOIP_LINE_SECT"   method="select"  pattern="stat(stat) config(config))" help="Line object to show"/>
+  <PTYPE name="VOIP_RADV_LOGLEVEL" method="integer" pattern="0..255" help="Log Level for RadVision debugging"/>
+  <PTYPE name="VOIP_LINE_NUM"    method="integer" pattern="0..255" help="Line number or 0 for all lines"/>
+  <PTYPE name="VOIP_LINEDSP_NUM"    method="integer" pattern="0..16" help="Line number for dsp starting from 0"/>
+  <PTYPE name="VOIP_TONE_ACTIVE"   method="select"  pattern="ON(ON) OFF(OFF)" help="ON for activation, OFF for deactivation"/>
+  <PTYPE name="VOIP_TONE"   method="select"  pattern="DIAL(DIAL) RINGBACK(RINGBACK) BUSY(BUSY) WARN(WARN) HOOK_OFF(HOOK_OFF) REORDER(REORDER) MWI(MWI) CALLER_WAITING(CALLER_WAITING) STUTTER_DIAL(STUTTER_DIAL) CONFIRM(CONFIRM) HOLD(HOLD) SPECIAL_INFO(SPECIAL_INFO) PSTN_CALL(PSTN_CALL) SPECIAL_DIAL(SPECIAL_DIAL)" help="tone to apply"/>
+ <PTYPE name="VOIP_MODULE"
+        method="select"
+                pattern="CallManager(CallManager) DECT(DECT) DigitalEndPoint(DigitalEndPoint) AnalogEndPoint(AnalogEndPoint) HardwareAbstractionLayer(HardwareAbstractionLayer) Statistics(Statistics) VoIP(VoIP) SIP(SIP) FXO(FXO) BSP(BSP)"
+                help="CallManager(CallManager) DECT(DECT) DigitalEndPoint(DigitalEndPoint) AnalogEndPoint(AnalogEndPoint) HardwareAbstractionLayer(HardwareAbstractionLayer) Statistics(Statistics) VoIP(VoIP) SIP(SIP) FXO(FXO) BSP(BSP)"/>
+
+ <PTYPE name="VOIP_LOGLEVEL"
+        method="select"
+                pattern="DEFAULT(DEFAULT) DEBUG(DEBUG) NONE(NONE)"
+                help="DEFAULT(DEFAULT) DEBUG(DEBUG) NONE(NONE)"/>
+
+ <PTYPE name="LOG_FILENAME"    pattern="[^\-]+" help="Filename to log"/>
+
+ <PTYPE name="VOIP_OUTPUT"
+        method="select"
+                pattern="console(CONSOLE) syslog(SYSLOG)"
+                help="console(CONSOLE) syslog(SYSLOG)"/>
+
+  <!--=======================================================-->
+  <VIEW name="voip-view" prompt="ADB(voip)# ">
+    <COMMAND name="exit" help="Exit this CLI session">
+      <ACTION builtin="clish_close"/>
+    </COMMAND>
+    <COMMAND name="show" help="show voip data and status"/>
+    <COMMAND name="show status" help="Show status of all configured lines">
+      <ACTION>/etc/clish/voip/voip-cli.sh status</ACTION>
+    </COMMAND>
+    <!--===== Configuration commands ==========================-->
+    <COMMAND name="show line" help="Show line">
+      <PARAM name="section" help="line section" ptype="VOIP_LINE_SECT"/>
+      <PARAM name="profileNumber" help="profile number [0=all profiles]" default="0" ptype="VOIP_PROFILE_NUM"/>
+      <PARAM name="lineNumber" help="line number [0=all lines]" default="0" ptype="VOIP_LINE_NUM"/>
+      <ACTION>/etc/clish/voip/voip-cli.sh line "${lineNumber}" "${profileNumber}" "${section}"</ACTION>
+    </COMMAND>
+    <!--===== LOG =============================================-->
+    <COMMAND name="show calllog" help="Show call log">
+      <ACTION>/etc/clish/voip/voip-calllog.sh</ACTION>
+    </COMMAND>
+    <!--===== CPE commands ====================================-->
+    <COMMAND name="dsp" help="dsp low level commands"/>
+    <COMMAND name="dsp ring" help="control ring signal to fxs line"/>
+    <COMMAND name="dsp ring on" help="apply a ring signal to fxs line">
+      <PARAM name="line" help="line number" ptype="VOIP_LINEDSP_NUM"/>
+      <PARAM name="ring" help="kind of ring to apply" default="0" ptype="VOIP_RING_NUM"/>
+      <ACTION>echo "DSP RING ${line} ${ring} ON" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="dsp ring off" help="stop a ring signal to fxs line">
+      <PARAM name="line" help="line number" ptype="VOIP_LINEDSP_NUM"/>
+      <ACTION>echo "DSP RING ${line} OFF" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="dsp callwait" help="send a call waiting signal to fxs line"/>
+    <COMMAND name="dsp callwait on" help="send a call waiting signal to fxs line">
+      <PARAM name="line" help="line number" ptype="VOIP_LINEDSP_NUM"/>
+      <PARAM name="tone" help="kind of tone to apply" default="0" ptype="VOIP_CW_NUM"/>
+      <ACTION>echo "DSP CALLWAIT ${line} ${tone} ON" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="dsp callwait off" help="stop a call waiting signal to fxs line">
+      <PARAM name="line" help="line number" ptype="VOIP_LINEDSP_NUM"/>
+      <ACTION>echo "DSP CALLWAIT ${line} OFF" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="dsp fxo" help="set a signal to a fxo line"/>
+    <COMMAND name="dsp fxo onhook" help="set onhook fxo">
+      <ACTION>echo "DSP FXO ONHOOK" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="dsp fxo offhook" help="set offhook fxo">
+      <ACTION>echo "DSP FXO OFFHOOK" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="dsp fxo answer" help="answer fxo">
+      <ACTION>echo "DSP FXO ANSWER" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="dsp fxo setup" help="setup a fxo call">
+      <PARAM name="phonenumber" help="phone number" ptype="VOIP_DIAL"/>
+      <ACTION>echo "DSP FXO SETUP ${phonenumber}" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="dsp fxo connect" help="connect fxo">
+      <PARAM name="phonenumber" help="phone number" ptype="VOIP_DIAL"/>
+      <ACTION>echo "DSP FXO CONNECT ${phonenumber}" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="dsp tone" help="set a tone on a line">
+      <PARAM name="line" help="line number" ptype="VOIP_LINEDSP_NUM"/>
+      <PARAM name="tone" help="tone to apply to the line" ptype="VOIP_TONE"/>
+      <PARAM name="state" help="tone active or inactive" default="ON" ptype="VOIP_TONE_ACTIVE"/>
+      <ACTION>echo "DSP TONE ${line} ${tone} ${state}" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="test" help="Execute test"/>
+    <COMMAND name="test fxs" help="">
+      <PARAM name="line" help="line number" ptype="VOIP_PHY_NUM"/>
+      <ACTION> cmclient SET Device.Services.VoiceService.1.PhyInterface.${line}.Tests.TestSelector Requested</ACTION>
+    </COMMAND>
+    <COMMAND name="test result" help="">
+      <PARAM name="line" help="line number" ptype="VOIP_PHY_NUM"/>
+      <ACTION>/etc/clish/voip/voip-cli.sh result ${line}</ACTION>
+    </COMMAND>
+    <COMMAND name="cltldr" help="Execute cltldr"/>
+    <COMMAND name="cltldr test" help="cltldr test">
+      <PARAM name="number" help="test number" ptype="CLTLDR_TEST_NUM"/>
+      <ACTION>echo "CLTLDR_TEST ${number}" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal" help="Show status of internal data"/>
+    <COMMAND name="show internal sipstack" help="Show status of SIP stack">
+      <ACTION>echo "SIPSTATS" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal DEP" help="Show status of DEP channels">
+      <ACTION>echo "STATUS DEP" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal AEP" help="Show status of AEP channels">
+      <ACTION>echo "STATUS AEP" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal DECT" help="Show status of DECT channels">
+      <ACTION>echo "STATUS DECT" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal SIP" help="Show status of SIP UA">
+      <ACTION>echo "STATUS SIP" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal registrar" help="Show SIP registrations">
+      <ACTION>echo "PROXYSTATS REG" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal transactions" help="Show SIP proxy transactions">
+      <ACTION>echo "PROXYSTATS TRX" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal b2bua" help="Show SIP back-to-back user agent status">
+      <ACTION>echo "PROXYSTATS B2B" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal proxyconf" help="Show SIP proxy configuration">
+      <ACTION>echo "PROXYSTATS CNF" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal memory" help="Show memory allocation">
+      <ACTION>echo "MEMORY" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <!--================SECTION LIST Command ========================-->
+    <COMMAND name="show internal list" help="Show status of internal list"/>
+    <COMMAND name="show internal list phonebook" help="Show status of internal PhoneBook">
+      <ACTION>echo "LIST PHONEBOOK" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+   <COMMAND name="show internal list phonebook all" help="Show all entries of PhoneBook">
+      <ACTION>echo "LIST PHONEBOOK ALL" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal list calllog" help="Show status of internal CAllLog">
+      <ACTION>echo "LIST CALLLOG" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal list calllog all" help="Show all entries of CAllLog">
+      <ACTION>echo "LIST CALLLOG ALL" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal list linesetting" help="Show status of internal LineSetting">
+      <ACTION>echo "LIST LINESETTING" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <COMMAND name="show internal list linesetting all" help="Show all entries of LineSetting">
+      <ACTION>echo "LIST LINESETTING ALL" | nc  local:/tmp/voip_socket</ACTION>
+    </COMMAND>
+    <!--================SECTION LIST END========================-->
+    <COMMAND name="tloop" help="tloop settings" view="tloop-view">
+    </COMMAND>
+    <COMMAND name="line status"
+         help="VoIP line status">
+   <ACTION>/etc/clish/voip/voip-cli.sh status</ACTION>
+   </COMMAND>
+   <COMMAND name="line config" help="Show line config">
+      <PARAM name="profileNumber" help="profile number [0=all profiles]" default="0" ptype="VOIP_PROFILE_NUM"/>
+      <PARAM name="lineNumber" help="line number [0=all lines]" default="0" ptype="VOIP_LINE_NUM"/>
+      <ACTION>/etc/clish/voip/voip-cli.sh line "${lineNumber}" "${profileNumber}" config</ACTION>
+   </COMMAND>
+<COMMAND name="line statistics" help="Show line stats">
+   <PARAM name="profileNumber" help="profile number [0=all profiles]" default="0" ptype="VOIP_PROFILE_NUM"/>
+   <PARAM name="lineNumber" help="line number [0=all lines]" default="0" ptype="VOIP_LINE_NUM"/>
+   <ACTION>/etc/clish/voip/voip-cli.sh line "${lineNumber}" "${profileNumber}" stat</ACTION>
+</COMMAND>
+<!--===== Dect commands ==========================-->
+<COMMAND name="dect" help="dect related commands"/>
+<COMMAND name="dect register" help="dect registration"/>
+
+<COMMAND name="dect register on" help="set dect registration">
+        <ACTION>echo "DECT SUBSCRIBE TRUE" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<COMMAND name="dect register off" help="stop dect registration">
+        <ACTION>echo "DECT SUBSCRIBE FALSE" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<COMMAND name="dect paging" help="dect paging command"/>
+
+<COMMAND name="dect paging on" help="start dect paging">
+        <ACTION>echo "DECT PAGING TRUE" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<COMMAND name="dect paging off" help="stop dect paging">
+        <ACTION>echo "DECT PAGING FALSE" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<COMMAND name="dect reset" help="dect reset commands"/>
+
+<COMMAND name="dect reset soft" help="soft reset dect module">
+        <ACTION>echo "DECT RESET SOFT" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+
+<COMMAND name="dect backlog" help="show DECT message backlog">
+        <ACTION>echo "DECT DUMPMSG ALL" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+
+<!--===== DECT LIST commands ==========================-->
+<COMMAND name="dect list" help="show DECT list entries"/>
+
+<COMMAND name="dect list phonebook" help="show DECT list Phonebook entries in HOST DB">
+        <ACTION>echo "DECT LIST PHONEBOOK" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+
+<COMMAND name="dect list calllog" help="show DECT list CAllLog entries in HOST DB">
+        <ACTION>echo "DECT LIST CALLLOG" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+
+<COMMAND name="dect list linesetting" help="show DECT list LineSetting entries in HOST DB">
+        <ACTION>echo "DECT LIST LINESETTING" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<!--===== DECT LIST commands END ==========================-->
+<!--===== Log commands ==========================-->
+<COMMAND name="report" help="generate a report">
+      <ACTION>
+      ps
+      netstat -uln
+      cat /proc/rtp/stats
+      cat /proc/dsp/stats
+      cat /proc/dsp/debug
+      echo "PS" | nc  local:/tmp/voip_socket
+      echo "SIPSTATS" | nc  local:/tmp/voip_socket
+      echo "STATUS DEP" | nc  local:/tmp/voip_socket
+      echo "STATUS AEP" | nc  local:/tmp/voip_socket
+      echo "STATUS SIP" | nc  local:/tmp/voip_socket
+      echo "STATUS DECT" | nc  local:/tmp/voip_socket
+      echo "PROXYSTATS REG" | nc  local:/tmp/voip_socket
+      echo "PROXYSTATS TRX" | nc  local:/tmp/voip_socket
+      echo "PROXYSTATS B2B" | nc  local:/tmp/voip_socket
+      echo "PROXYSTATS CNF" | nc  local:/tmp/voip_socket
+      echo "MEMORY" | nc  local:/tmp/voip_socket
+      /etc/clish/voip/voip-cli.sh line 0 0 config 
+      </ACTION>
+</COMMAND>
+<COMMAND name="factory_voice_test" help="factory voip test"/>
+<COMMAND name="factory_voice_test on" help="voip log monitor enable">
+        <ACTION>echo "FACTORYTEST ON" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<COMMAND name="factory_voice_test off" help="voip log monitor enable">
+        <ACTION>echo "FACTORYTEST OFF" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<COMMAND name="factory_voice_test status" help="voip log monitor enable">
+        <ACTION>echo "FACTORYTEST STATUS" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<COMMAND name="log" help="voip log"/>
+
+<COMMAND name="log output" help="set voip log output">
+        <PARAM name="voip_output" help="module name" ptype="VOIP_OUTPUT"/>
+        <ACTION>/etc/clish/voip/voip-log-setting.sh OUTPUT ${voip_output} > /dev/null</ACTION>
+</COMMAND>
+<COMMAND name="log monitor" help="monitor log debug output"/>
+
+<COMMAND name="log monitor on" help="voip log monitor enable">
+        <ACTION>echo "LOGMONITOR ON" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<COMMAND name="log monitor off" help="voip log message sip disable">
+        <ACTION>echo "LOGMONITOR OFF" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<COMMAND name="log monitor file" help="voip log on file">
+        <PARAM name="filename" help="filename" ptype="LOG_FILENAME"/>
+        <ACTION>echo "LOGMONITOR FILE ${filename}" | nc local:/tmp/voip_socket</ACTION>
+</COMMAND>
+
+<COMMAND name="log message" help="voip log message"/>
+
+<COMMAND name="log message sip" help="sip log"/>
+<COMMAND name="log message sip on" help="voip log message sip">
+   <ACTION>/etc/clish/voip/voip-log-setting.sh SIP MESSAGE SET > /dev/null</ACTION>
+</COMMAND>
+<COMMAND name="log message sip off" help="voip log message sip off">
+   <ACTION>/etc/clish/voip/voip-log-setting.sh SIP NOMESSAGE SET > /dev/null</ACTION>
+</COMMAND>
+
+<COMMAND name="log message sipproxy" help="sip log"/>
+<COMMAND name="log message sipproxy on" help="log message of sip proxy on">
+   <ACTION>/etc/clish/voip/voip-log-setting.sh SIP PROXYMESSAGE SET > /dev/null</ACTION>
+</COMMAND>
+<COMMAND name="log message sipproxy off" help="log message of sip proxy off">
+   <ACTION>/etc/clish/voip/voip-log-setting.sh SIP NOPROXYMESSAGE SET > /dev/null</ACTION>
+</COMMAND>
+
+<COMMAND name="log message dect" help="dect log"/>
+<COMMAND name="log message dect on" help="voip log message from dect base">
+   <ACTION>/etc/clish/voip/voip-log-setting.sh DECT MESSAGE SET > /dev/null</ACTION>
+</COMMAND>
+
+<COMMAND name="log message dect off" help="voip log message from dect base off">
+   <ACTION>/etc/clish/voip/voip-log-setting.sh DECT NOMESSAGE SET > /dev/null</ACTION>
+</COMMAND>
+
+
+<COMMAND name="log set" help="voip log set">
+       <PARAM name="module" help="module name" ptype="VOIP_MODULE"/>
+       <PARAM name="loglevel" help="log level" ptype="VOIP_LOGLEVEL"/>
+       <ACTION>/etc/clish/voip/voip-log-setting.sh "${module}" "${loglevel}" SET > /dev/null</ACTION>
+</COMMAND>
+
+<COMMAND name="log get" help="voip log get">
+       <PARAM name="module" help="module name" ptype="VOIP_MODULE"/>
+       <ACTION>/etc/clish/voip/voip-log-setting.sh "${module}" dummy GET</ACTION>
+</COMMAND>
+<COMMAND name="log radvision" help="log radvision">
+</COMMAND>
+<COMMAND name="log radvision on" help="log radvision on">
+      <ACTION>echo "RADVLOG ON" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<COMMAND name="log radvision set" help="log radvision set">
+      <PARAM name="radvloglevel" help="radvision log level" ptype="VOIP_RADV_LOGLEVEL"/>
+      <ACTION>echo "RADVLOG SET ${radvloglevel}" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+<COMMAND name="log radvision off" help="log radvision off">
+      <ACTION>echo "RADVLOG OFF" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+
+<COMMAND name="ps" help="dump voip threads">
+    <ACTION>echo "PS" | nc  local:/tmp/voip_socket</ACTION>
+</COMMAND>
+
+</VIEW>
+</CLISH_MODULE>

@@ -1,0 +1,19 @@
+[storage-nas-view:]
+smbEnable=Enable the SMB network protocol
+smbDisable=Disable the SMB network protocol
+auth=Enable or disable request login credentials or authenticate access from network layer protocols such as AFP, NFS, and SMB
+auth:value=Enable or disable
+autoShare enable=Enable auto sharing immediately after plugging medium
+autoShare enable:name=Name of the samba sharing when the automatic sharing is enabled
+autoShare enable:perm=Access permissions for the root folder in the automatic sharing. Enumeration of:rw, ro (Read Write, Read Only)
+autoShare disable=Disable auto sharing immediately after plugging medium
+autoShareUser=Set user or group name with access rights for automatic shared folder. When the field is empty, it will provide to an anonymous samba sharing
+autoShareUser:user_or_group=User or group name
+interface set=Set list of interfaces for accessing the NAS server
+interface set:interfaces=Comma-separated list of interfaces names
+interface add=Add one interface to interface list
+interface add:interface=Name of interface
+interface del=Delete one interface from interface list
+interface del:interface=Name of interface
+interface clear=Clear interface list
+interface show=Show entire interface list

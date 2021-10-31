@@ -1,0 +1,26 @@
+[ipv6rd-tunnel-view:]
+borderRelayAddr set=Set list of IPv4 addresses of the IPv6 Rapid Deployment
+borderRelayAddr set:addr_list=Enter list of IPv4 addresses
+borderRelayAddr add=Add IPv4 address of the IPv6 Rapid Deployment
+borderRelayAddr add:addr=Enter IPv4 address
+borderRelayAddr del=Delete IPv4 address of the IPv6 Rapid Deployment
+borderRelayAddr del:addr=Enter IPv4 address
+borderRelayAddr clear=Clear all IPv4 addresses of the IPv6 Rapid Deployment
+borderRelayAddr show=Show all IPv4 addresses of the IPv6 Rapid Deployment
+allTrafficToBorderRelay=If true, the destination address for all 6rd traffic will be set (IPv4 destination address) to one of the borderRelayAddr
+allTrafficToBorderRelay:val=Enable/Disable
+spipPrefix=The Service Provider's 6rd IPv6 prefix for this deployment and this 6rd RG
+spipPrefix:prefix=Enter IPv6 prefix
+no prefix=Clear prefix
+ipv4MaskLength=The number of high-order bits that are identical across all IPv4 addresses within a given 6rd domain
+ipv4MaskLength:mask=Enter IPv4 mask
+no ipv4MaskLength=Clear IPv4 mask
+addressSource=Points to the IPv4 address that is the source of the IPv4 address embedded in the IPv6 6rd prefix, and used as the source encapsulating IPv4 address
+addressSource:addr=Enter AddressSource
+no addressSource=Clear AddressSource
+wanInterface=This is an IP interface of Type Tunneled that provides information about the IPv4 headers used to encapsulate the IPv6 packets
+wanInterface:interface=Enter WAN interface
+lanInterface=This is an IP interface of Type Tunnel that is logically the tunnel entry point for upstream IPv6 traffic and is also logically the tunnel exit point for downstream IPv6 traffic
+lanInterface:interface=Enter LAN interface
+reset stat=Reset statistics
+show stat=Show statistics

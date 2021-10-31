@@ -1,0 +1,19 @@
+[storage-folder-view:]
+name=Change folder name
+name:name=New unique folder name
+share=Share this folder
+share:name=Shared folder name
+share:perm=Type of permission (rw/ro - Read Write/Read Only)
+unshare=Stop sharing this folder
+guest=Enable or disable guest access right
+guest:value=Enable or disable
+user=Set access right for the specific user
+user:user=Name of the existing user account
+user:perm=Integer value like the xNIX systems use for access permissions, meaning that it is a 3-bit field with the following structure: 100=read field, 010=write field, 001=execute field
+no user=Disable access right for the specific user
+no user:user=Name of the existing user account
+group=Set access right for the specific group
+group:group=Name of the existing group
+group:perm=Integer value like the xNIX systems use for access permissions, meaning that it is a 3-bit field with the following structure: 100=read field, 010=write field, 001=execute field
+no group=Disable access right for the specific group
+no group:group=Name of the group

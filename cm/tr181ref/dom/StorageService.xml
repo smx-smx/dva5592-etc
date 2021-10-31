@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="Services" version="2.0"><object name="Services.StorageService.{i}." aliasOnAdd="InternetGatewayDevice.Services.StorageService.%i" aliasOnDel="InternetGatewayDevice.Services.StorageService.%i">
+    </object><object name="Services.StorageService.{i}.LogicalVolume.{i}." aliasOnAdd="InternetGatewayDevice.Services.StorageService.%i1.LogicalVolume.%i" aliasOnDel="InternetGatewayDevice.Services.StorageService.%i1.LogicalVolume.%i">
+    </object><object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}." aliasOnAdd="InternetGatewayDevice.Services.StorageService.1.LogicalVolume.%i1.Folder.%i" aliasOnDel="InternetGatewayDevice.Services.StorageService.1.LogicalVolume.%i1.Folder.%i">
+    </object><object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}.UserAccess.{i}." aliasOnAdd="InternetGatewayDevice.Services.StorageService.1.LogicalVolume.%i2.Folder.%i1.UserAccess.%i" aliasOnDel="InternetGatewayDevice.Services.StorageService.1.LogicalVolume.%i2.Folder.%i1.UserAccess.%i">
+    </object><object name="Services.StorageService.{i}.PhysicalMedium.{i}." aliasOnAdd="InternetGatewayDevice.Services.StorageService.%i1.PhysicalMedium.%i" aliasOnDel="InternetGatewayDevice.Services.StorageService.%i1.PhysicalMedium.%i">
+    </object><object name="Services.StorageService.{i}.UserAccount.{i}." aliasOnAdd="InternetGatewayDevice.Services.StorageService.%i1.UserAccount.%i" aliasOnDel="InternetGatewayDevice.Services.StorageService.%i1.UserAccount.%i" aliasOnSet="InternetGatewayDevice.Services.StorageService.%i1.UserAccount.%i.%n">
+    </object><object name="Services.StorageService.{i}.UserGroup.{i}." aliasOnAdd="InternetGatewayDevice.Services.StorageService.%i1.UserGroup.%i" aliasOnDel="InternetGatewayDevice.Services.StorageService.%i1.UserGroup.%i">
+    </object></datamodel>

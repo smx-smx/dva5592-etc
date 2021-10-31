@@ -1,0 +1,19 @@
+[modem-view:]
+apn=Set APN that will be used for the SIM of this operator
+apn:apn=APN
+no apn=Use first APN in the list
+pin=Pin
+pin:pin=Pin
+puk=Puk
+puk:puk=Puk
+pinUsage=Enable or disable usage pin
+pinUsage:value=Enable or disable
+pinChange=Change pin
+pinChange:value=Pin
+credit show=Show residual credit read from the network
+stat reset=Reset statistics
+stat show=Show statistics
+sim=Enter "sim" config view
+sim:iccid=SIM Integrated Circuit Card Identifier
+del sim=Delete SIM
+del sim:iccid=SIM Integrated Circuit Card Identifier

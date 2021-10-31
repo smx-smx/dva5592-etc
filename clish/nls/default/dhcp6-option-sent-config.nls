@@ -1,0 +1,14 @@
+[dhcp6-option-sent-config:]
+tag=Option tag (code)
+tag:val=Enter option tag
+value Empty=Clear value option data
+value Hex=Hex value option data
+value Hex:val=Enter value
+value Boolean=Boolean value option data
+value Boolean:val=true/false
+value String=String value option data
+value String:val=Enter value
+value IPv6Address=IPv6 address option data
+value IPv6Address:val=Enter IPv6 address
+value IPv6AddressList=IPv6 address list option data
+value IPv6AddressList:val=Enter IPv6 address list

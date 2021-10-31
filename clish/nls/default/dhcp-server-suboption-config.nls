@@ -1,0 +1,7 @@
+[dhcp-server-suboption-config:]
+tag=Tag
+tag:val=New tag value
+value Hex=Hex type
+value Hex:val=New value
+value String=String type
+value String:val=New value

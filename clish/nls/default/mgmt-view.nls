@@ -1,0 +1,13 @@
+[mgmt-view:]
+tr069Agent=Enter "tr069Agent" config view
+managementAgent=Enter "managementAgent" config view
+snmp=Enter "snmp" config view
+telnetServer=Enter "telnetServer" config view
+sshServer=Enter "sshServer" config view
+users=Enter "users" config view
+cmws=Enter "cmws" config view
+execEnv=Enter "execEnv" config view
+factoryMode=Enter "factoryMode" config view
+webGui=Enter "webGui" config view
+bsd_gui_visible=Flag that allow set BSD to visible or not in gui
+bsd_gui_visible:val=(true/false): true - BSD menu available in GUI, false - menu not available even when feature is up and running.

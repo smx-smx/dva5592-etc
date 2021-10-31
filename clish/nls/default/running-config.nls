@@ -1,0 +1,6 @@
+[config-view:]
+loadConfigScript=Command stub
+loadConfigScriptClear=Command stub
+loadConfigScriptClear:url=Param stub
+loadConfigScript:url=Param stub
+

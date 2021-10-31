@@ -1,0 +1,15 @@
+[licensemanager-view:]
+userID=Set identifier of the end-user
+userID:id=Identifier of the end-user
+no userID=Set no user identifier
+licenseCheck=Check license
+licenseCheckPeriod=Set time period in hours by which the license status is automatically checked for all applications
+licenseCheckPeriod:time=Time period in hours
+closeToExpireTime=Set time period in days before the license manager server is notified of the CloseToExpire status
+closeToExpireTime:time=Time in days
+add app=Add application
+add app:appID=Application ID
+app=Enter "app" config view
+app:appid=Application ID
+del app=Delete application
+del app:appid=Application ID

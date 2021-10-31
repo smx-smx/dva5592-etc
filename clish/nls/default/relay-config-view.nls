@@ -1,0 +1,14 @@
+[relay-config-view:]
+add rule=Add a DNS server forwarding rule to be used by the DNS relay
+add rule:address=Address of a DNS server
+add rule:alias=Rule alias
+rule=Enter "rule" config view
+rule:rule=Rule alias
+del rule=Remove a DNS server forwarding rule used by the DNS relay
+del rule:rule=Rule alias
+add dynamicRule=Add a rule for dynamically-acquired DNS Relay forwarding entries.
+add dynamicRule:alias=Rule alias
+dynamicRule=Enter "dynamicRule" config view
+dynamicRule:rule=Rule alias
+del dynamicRule=Remove a rule for dynamically-acquired DNS Relay forwarding entries.
+del dynamicRule:rule=Rule alias

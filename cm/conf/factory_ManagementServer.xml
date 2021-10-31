@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.ManagementServer">
+		<parameter name="ConnectionRequestPassword" notify="4">
+			<value>00052f122493fe24d9912c6abb68d73be35b2acc</value>
+		</parameter>
+		<parameter name="ConnectionRequestURL" notify="2">
+			<value>http://192.168.1.1:7547/cpe</value>
+		</parameter>
+		<parameter name="ConnectionRequestUsername" notify="4">
+			<value>libero</value>
+		</parameter>
+		<parameter name="X_ADB_ConnectionRequestInterface" notify="4">
+			<value>Device.IP.Interface.2</value>
+		</parameter>
+		<parameter name="Password" notify="4">
+			<value>40031326119daeb97c2c342e66975fdbb3a05148</value>
+		</parameter>
+		<parameter name="PeriodicInformEnable" notify="4">
+			<value>true</value>
+		</parameter>
+		<parameter name="PeriodicInformInterval" notify="4">
+			<value>86400</value>
+		</parameter>
+		<parameter name="URL" notify="4">
+			<value>http://acswind.wind.it:8016/TR069</value>
+		</parameter>
+		<parameter name="Username" notify="4">
+			<value>hdm</value>
+		</parameter>
+		<parameter name="X_ADB_TLSCheck">
+			<value>CertInvalid,CertRevoked,CertExpired,CertNotActivated,CertSignerNotFound,CNMatch</value>
+		</parameter>
+		<parameter name="X_ADB_EnableTR181">
+			<value>false</value>
+		</parameter>
+	</object>
+</config>

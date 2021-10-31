@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="Ethernet" version="2.0">
+    <object name="WANDevice.{i}.WANConnectionDevice.{i}.WANEthernetLinkConfig.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+        <parameter name="X_ADB_Enable" excludeUser="CWMP"/>
+        <parameter name="X_ADB_VLANID" excludeUser="CWMP"/>
+    </object>
+    <object name="WANDevice.{i}.WANEthernetInterfaceConfig.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+    </object>
+</datamodel>

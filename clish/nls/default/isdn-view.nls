@@ -1,0 +1,7 @@
+[isdn-view:]
+teiNegotiation=Select TEI negotiation mode
+teiNegotiation:mode=TEI negotiation mode entry
+staticTei=Set TEI
+staticTei:value=TEI
+
+

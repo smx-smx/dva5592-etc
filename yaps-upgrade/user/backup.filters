@@ -1,0 +1,22 @@
+Device.DeviceInfo.ModelName
+Device.DeviceInfo.ProductClass
+Device.DHCPv4.Server.Enable
+Device.DHCPv4.Server.Pool.1.*
+Device.DHCPv4.Server.Pool.1.Client.*
+	exclude = "true"
+Device.IP.Interface.1.*
+Device.WiFi.*
+Device.UPnP.*
+Device.NAT.PortMapping.*
+Device.X_ADB_ParentalControl.*
+Device.Services.StorageService.*
+Device.Services.X_ADB_PrinterService.*
+Device.Services.X_ADB_IGMPProxy.*
+Device.Services.X_ADB_DynamicDNS.*
+Device.Time.*
+(Device.Users.User.[0-9]+.)(.*)
+        dependsonpath = "\1X_ADB_Role"
+        dependsonvalue = "NormalUser"
+Device.DLNA.*
+Device.Services.X_ADB_UPnPAV.*
+Device.X_ADB_Time.Scheduler.*

@@ -1,0 +1,7 @@
+[vpn-users-view:]
+add user=Add new user
+add user:alias=Name of user
+user=Enter "user" config view
+user:alias=Name of user
+del user=Delete user
+del user:alias=Name of user

@@ -1,0 +1,8 @@
+[mgmt-deploymentunit-view:]
+allowRemoving=Enable or disable removing
+allowRemoving:val=Enable or disable
+allowUpgrade= Enable or disable software package upgrade possibility
+allowUpgrade:val=Enable or disable
+install=Trigger installation of this software package
+install:destination=The installation destination for this software package
+uninstall=Trigger uninstallation of this software package

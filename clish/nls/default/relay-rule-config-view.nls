@@ -1,0 +1,8 @@
+[relay-rule-config-view:]
+interfaceOutbound=Specify the IP interface over which the DNS query is sent
+interfaceOutbound:ifname=IP interface
+no interfaceOutbound=Clear the reference to the IP interface over which the DNS query is sent
+interfaceInbound=Specify the IP interface this DNS relay is bound to for incoming requests.
+interfaceInbound:ifname=IP interface
+no interfaceInbound=Remove the reference to the IP interface this DNS relay is bound to for incoming requests.
+

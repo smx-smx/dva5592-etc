@@ -1,0 +1,5 @@
+[vpn-main-view:]
+ipsec=Enter "ipsec" config view
+l2tp=Enter "l2tp" config view
+pptp=Enter "pptp" config view
+users=Enter "users" config view

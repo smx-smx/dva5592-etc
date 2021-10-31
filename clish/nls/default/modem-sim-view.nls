@@ -1,0 +1,13 @@
+[modem-sim-view:]
+name=Set name
+name:name=New name
+pin=Pin
+pin:pin=Pin
+pinUsage enable=Enable usage pin
+pinUsage disable=Disable usage pin
+apn=Set APN that will be used for the SIM of this operator, unless differently specified by the user
+apn:apn=APN
+no apn=Use first APN in the list
+credit show=Show residual credit read from the network
+stat reset=Reset statistics
+stat show=Show statistics

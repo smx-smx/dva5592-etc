@@ -1,0 +1,63 @@
+<object name="Device.Services.X_ADB_DynamicDNS.Provider.-1">
+	<parameter name="Name">
+		<value>dyn.com</value>
+	</parameter>
+	<parameter name="Protocol">
+		<value>dyndns2</value>
+	</parameter>
+	<parameter name="BaseURI">
+		<value>http://members.dyndns.org/nic/update</value>
+	</parameter>
+</object>
+<object name="Device.Services.X_ADB_DynamicDNS.Provider.-1">
+	<parameter name="Name">
+		<value>no-ip.com</value>
+	</parameter>
+	<parameter name="Protocol">
+		<value>dyndns2</value>
+	</parameter>
+	<parameter name="BaseURI">
+		<value>http://dynupdate.no-ip.com/nic/update</value>
+	</parameter>
+</object>
+<object name="Device.Services.X_ADB_DynamicDNS.Provider.-1">
+	<parameter name="Name">
+		<value>changeip.com</value>
+	</parameter>
+	<parameter name="Protocol">
+		<value>dyndns2</value>
+	</parameter>
+	<parameter name="BaseURI">
+		<value>http://nic.changeip.com/nic/update</value>
+	</parameter>
+</object>
+<object name="Device.Services.X_ADB_DynamicDNS.Provider.-1">
+	<parameter name="Name">
+		<value>easydns.com</value>
+	</parameter>
+	<parameter name="Protocol">
+		<value>dyndns2</value>
+	</parameter>
+	<parameter name="BaseURI">
+		<value>http://api.cp.easydns.com/dyn/tomato.php</value>
+	</parameter>
+</object>
+<object name="Device.Services.X_ADB_DynamicDNS.Provider.-1">
+	<parameter name="Name">
+		<value>zoneedit.com</value>
+	</parameter>
+	<parameter name="Protocol">
+		<value>zoneedit</value>
+	</parameter>
+	<parameter name="BaseURI">
+		<value>http://dynamic.zoneedit.com/auth/dynamic.html</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/dyndns</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>

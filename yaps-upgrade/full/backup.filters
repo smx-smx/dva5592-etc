@@ -1,0 +1,21 @@
+Device.*
+Device.NAT.PortMapping.*
+	exclude = "true"
+Device.Routing.Router.1.IPv4Forwarding.*
+	exclude = "true"
+Device.DHCPv4.Server.Pool.[0-9]+.StaticAddress.*
+	exclude = "true"
+Device.ManagementServer.ConnectionRequestUsername
+	exclude = "true"
+Device.ManagementServer.ConnectionRequestPassword
+	exclude = "true"
+Device.ManagementServer.Username
+	exclude = "true"
+Device.ManagementServer.Password
+	exclude = "true"
+Device.ManagementServer.URL
+	exclude = "true"
+Device.DeviceInfo.X_DLINK_SecureDevice
+	exclude = "true"
+Device.DeviceInfo.X_DLINK_AllowFirmwareDowngrade
+	exclude = "true"

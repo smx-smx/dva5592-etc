@@ -1,0 +1,14 @@
+[voip-profile-line-sip-view:]
+eventSubscription=Enter "eventSubscription" config view
+eventSubscription:name=Event Subscription entry
+authUsername=Set username used to authenticate the connection to the server
+authUsername:name=Username
+authPassword=Set password used to authenticate the connection to the server
+authPassword:passwd=Password
+uri=Set URI by which the user agent will identify itself for this line
+uri:uri=URI
+no uri=Clear URI
+escapeDigits=Set digits used in a sip uri that needs to be escaped
+escapeDigits:esc=Digits
+paiHeader=Change support of P-Asserted-Identity to get caller name
+paiHeader:enable=Enable/disable

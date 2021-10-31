@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.Hosts.X_ADB_HostName.1">
+		<parameter name="AddressSource">
+			<value>X_ADB_CPEName</value>
+		</parameter>
+		<parameter name="HostName">
+			<value>dlinkrouter.local</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>CPE_Name</value>
+		</parameter>
+	</object>
+</config>

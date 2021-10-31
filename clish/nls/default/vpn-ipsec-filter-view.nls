@@ -1,0 +1,19 @@
+[vpn-ipsec-filter-view:]
+order=Set position of the Filter entry in the order of precedence
+order:position=Position of the filter
+interface=Set the ingress interface associated with the entry
+interface:ifname=Interface name
+no interface=Clear the ingress interface associated with the entry
+destIpAddr=Set destination IP address
+destIpAddr:ip=IP address, an empty string indicates this criterion is not used
+destIpAddr:exclude=If disable, the rule matches only those packets that match the (masked) destIpAddr entry. If enable, the rule matches all packets except those that match the (masked) destIpAddr entry
+no destIpAddr=Clear destination IP address
+sourceIpAddr=Set source IP address
+sourceIpAddr:ip=Source IP address
+sourceIpAddr:exclude=If disable, the rule matches only those packets that match the (masked) sourceIpAddr entry. If enable, the rule matches all packets except those that match the (masked) sourceIpAddr entry
+no sourceIpAddr=Clear source IP address
+processing=Set how packets that match this rule will be processed
+processing:choice=Discard- Packet is not allowed to traverse the IPsec boundary; packet will be discarded, Bypass- Packet is allowed to bypass traverse the IPsec boundary without protection, Protect- Packet is afforded protection as specified by Profile
+profile=Change profile
+profile:profile=Profile name
+roadWarrior=Enter "roadWarrior" config view

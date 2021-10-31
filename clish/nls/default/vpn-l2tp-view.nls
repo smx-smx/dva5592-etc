@@ -1,0 +1,13 @@
+[vpn-l2tp-view:]
+add client=Add new l2tp client
+add client:alias=Name of client
+client=Enter "client" config view
+client:alias=Name of client
+del client=Delete client
+del client:alias=Name of client
+add server=Add new l2tp server
+add server:alias=Name of new server
+server=Enter "server" config view
+server:alias=Name of server
+del server=Delete server
+del server:alias=Name of server

@@ -1,0 +1,13 @@
+[routing-view:]
+add ipv6Route=Add IPv6 Route entry
+add ipv6Route:alias=Enter IPv6 Route alias
+ipv6Route=Enter "ipv6Route" config view
+ipv6Route:alias=Enter IPv6 Route alias
+del ipv6Route=Delete IPv6 Route entry
+del ipv6Route:appid=Enter IPv6 Route
+add ipv4Route=Add IPv4 Route entry
+add ipv4Route:alias=Enter IPv4 Route alias
+ipv4Route=Enter "ipv4Route" config view
+ipv4Route:alias=Enter IPv4 Route alias
+del ipv4Route=Delete IPv4 Route entry
+del ipv4Route:appid=Enter IPv4 Route alias

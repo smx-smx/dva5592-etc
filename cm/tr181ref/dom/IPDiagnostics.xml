@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="IP" version="2.0"><object name="IP.Diagnostics.TraceRoute."><parameter name="DiagnosticsState" set="TR098_Notify.sh" /></object><object name="IP.Diagnostics.TraceRoute.RouteHops.{i}." aliasOnAdd="InternetGatewayDevice.TraceRouteDiagnostics.RouteHops.%i" aliasOnDel="InternetGatewayDevice.TraceRouteDiagnostics.RouteHops.%i">
+    </object><object name="IP.Diagnostics.IPPing."><parameter name="DiagnosticsState" set="TR098_Notify.sh" /></object><object name="IP.Diagnostics.DownloadDiagnostics."><parameter name="DiagnosticsState" set="TR098_Notify.sh" /></object><object name="IP.Diagnostics.UploadDiagnostics."><parameter name="DiagnosticsState" set="TR098_Notify.sh" /></object></datamodel>

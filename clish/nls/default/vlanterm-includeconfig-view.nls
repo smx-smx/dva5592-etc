@@ -1,0 +1,7 @@
+[vlanterm-includeconfig-view:]
+add vlan=Add VLAN Termination entry
+add vlan:alias=Enter VLAN Termination alias
+vlan=Enter "vlan" config view
+vlan:alias=Enter VLAN Termination alias
+del vlan=Delete VLAN Termination
+del vlan:alias=Enter VLAN Termination alias

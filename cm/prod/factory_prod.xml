@@ -1,0 +1,980 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Device.Bridging">
+	<parameter name="MaxDBridgeEntries">
+		<value>1</value>
+	</parameter>
+</object>
+<object name="Device.Bridging.Bridge.1">
+	<parameter name="Alias">
+		<value>Bridge1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Bridging.Bridge.1.Port.1">
+	<parameter name="Alias">
+		<value>Port1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.Bridging.Bridge.1.Port.2,Device.Bridging.Bridge.1.Port.3,Device.Bridging.Bridge.1.Port.4,Device.Bridging.Bridge.1.Port.5,Device.Bridging.Bridge.1.Port.6,Device.Bridging.Bridge.1.Port.7,Device.Bridging.Bridge.1.Port.8,Device.Bridging.Bridge.1.Port.9,Device.Bridging.Bridge.1.Port.10</value>
+	</parameter>
+	<parameter name="ManagementPort">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>br0</value>
+	</parameter>
+</object>
+<object name="Device.Bridging.Bridge.1.Port.2">
+	<parameter name="Alias">
+		<value>Port2</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.Ethernet.Interface.1</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth1</value>
+	</parameter>
+</object>
+<object name="Device.Bridging.Bridge.1.Port.3">
+	<parameter name="Alias">
+		<value>Port3</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.Ethernet.Interface.2</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth2</value>
+	</parameter>
+</object>
+<object name="Device.Bridging.Bridge.1.Port.4">
+	<parameter name="Alias">
+		<value>Port4</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.Ethernet.Interface.3</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth3</value>
+	</parameter>
+</object>
+<object name="Device.Bridging.Bridge.1.Port.5">
+	<parameter name="Alias">
+		<value>Port5</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.Ethernet.Interface.4</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth4</value>
+	</parameter>
+</object>
+<object name="Device.Bridging.Bridge.1.Port.6">
+	<parameter name="Alias">
+		<value>Port6</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.Ethernet.Interface.5</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth5</value>
+	</parameter>
+</object>
+<object name="Device.Bridging.Bridge.1.Port.7">
+	<parameter name="Alias">
+		<value>Port7</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.WiFi.SSID.1</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl0</value>
+	</parameter>
+</object>
+<object name="Device.Bridging.Bridge.1.Port.8">
+	<parameter name="Alias">
+		<value>Port8</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.WiFi.SSID.2</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl1</value>
+	</parameter>
+</object>
+<object name="Device.Bridging.Bridge.1.Port.9">
+	<parameter name="Alias">
+		<value>Port9</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.PTM.Link.1</value>
+	</parameter>
+	<parameter name="Name">
+		<value>ptm0</value>
+	</parameter>
+</object>
+<object name="Device.Bridging.Bridge.1.Port.10">
+	<parameter name="Alias">
+		<value>Port10</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.Ethernet.Interface.6</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth0</value>
+	</parameter>
+</object>
+
+<object name="Device.DSL.Line.1">
+	<parameter name="AllowedProfiles">
+		<value>8a,8b,8c,8d,12a,12b,17a,17b,30a,35b</value>
+	</parameter>
+	<parameter name="Alias">
+		<value>Line1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>dsl0</value>
+	</parameter>
+	<parameter name="StandardsSupported">
+		<value>G.992.2,G.992.1_Annex_A,G.992.1_Annex_B,G.992.3_Annex_A,G.992.3_Annex_B,G.992.5_Annex_A,G.992.5_Annex_B,G.993.2_Annex_A,G.993.2_Annex_B,T1.413</value>
+	</parameter>
+	<parameter name="LineNumber">
+		<value>1</value>
+	</parameter>
+	<parameter name="Upstream">
+		<value>true</value>
+	</parameter>
+	<parameter name="TRELLISds">
+		<value>1</value>
+	</parameter>
+	<parameter name="TRELLISus">
+		<value>1</value>
+	</parameter>
+	<parameter name="X_ADB_V43">
+		<value>1</value>
+	</parameter>
+	<parameter name="X_ADB_BitSwap">
+		<value>1</value>
+	</parameter>
+	<parameter name="X_ADB_GINP">
+		<value>3</value>
+	</parameter>
+	<parameter name="X_ADB_MonitorTone">
+		<value>1</value>
+	</parameter>
+</object>
+<object name="Device.DSL.Channel.1">
+	<parameter name="LowerLayers">
+		<value>Device.DSL.Line.1</value>
+	</parameter>
+	<parameter name="Alias">
+		<value>Channel1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>chan0</value>
+	</parameter>
+</object>
+
+<object name="Device.Ethernet.Interface.1">
+	<parameter name="Alias">
+		<value>Interface1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth1</value>
+	</parameter>
+	<parameter name="Upstream">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.Ethernet.Interface.2">
+	<parameter name="Alias">
+		<value>Interface2</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth2</value>
+	</parameter>
+	<parameter name="Upstream">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.Ethernet.Interface.3">
+	<parameter name="Alias">
+		<value>Interface3</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth3</value>
+	</parameter>
+	<parameter name="Upstream">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.Ethernet.Interface.4">
+	<parameter name="Alias">
+		<value>Interface4</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth4</value>
+	</parameter>
+	<parameter name="Upstream">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.Ethernet.Interface.5">
+	<parameter name="Alias">
+		<value>Interface5</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth5</value>
+	</parameter>
+	<parameter name="Upstream">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.Ethernet.Interface.6">
+	<parameter name="Alias">
+		<value>Interface6</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>eth0</value>
+	</parameter>
+	<parameter name="Upstream">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Ethernet.Link.1">
+	<parameter name="LowerLayers">
+		<value>Device.Bridging.Bridge.1.Port.1</value>
+	</parameter>
+	<parameter name="Alias">
+		<value>Link1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>br0</value>
+	</parameter>
+</object>
+
+<object name="Device.IP.Interface.1">
+	<parameter name="LowerLayers">
+		<value>Device.Ethernet.Link.1</value>
+	</parameter>
+	<parameter name="X_ADB_Upstream">
+		<value>true</value>
+	</parameter>
+	<parameter name="Alias">
+		<value>LAN/WAN Bridge</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="IPv4Enable">
+		<value></value>
+	</parameter>
+	<parameter name="Name">
+		<value>ip0</value>
+	</parameter>
+</object>
+<object name="Device.IP.Interface.1.IPv4Address.1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="IPAddress">
+		<value>192.168.1.1</value>
+	</parameter>
+	<parameter name="Alias">
+		<value>IPv4Address1</value>
+	</parameter>
+	<parameter name="SubnetMask">
+		<value>255.255.255.0</value>
+	</parameter>
+</object>
+
+<object name="Device.PTM.Link.1">
+	<parameter name="Alias">
+		<value>Link1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.DSL.Channel.1</value>
+	</parameter>
+	<parameter name="Name">
+		<value>ptm0</value>
+	</parameter>
+</object>
+
+<object name="Device.QoS">
+	<parameter name="MaxAppEntries">
+		<value>64</value>
+	</parameter>
+	<parameter name="MaxClassificationEntries">
+		<value>255</value>
+	</parameter>
+	<parameter name="MaxFlowEntries">
+		<value>64</value>
+	</parameter>
+	<parameter name="MaxPolicerEntries">
+		<value>64</value>
+	</parameter>
+	<parameter name="MaxQueueEntries">
+		<value>255</value>
+	</parameter>
+	<parameter name="MaxShaperEntries">
+		<value>255</value>
+	</parameter>
+</object>
+<object name="Device.QoS.App.1">
+	<parameter name="Alias">
+		<value>App1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>FTP</value>
+	</parameter>
+	<parameter name="ProtocolIdentifier">
+		<value>urn:dslforum-org:ftp</value>
+	</parameter>
+</object>
+<object name="Device.QoS.App.2">
+	<parameter name="Alias">
+		<value>App2</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>TFTP</value>
+	</parameter>
+	<parameter name="ProtocolIdentifier">
+		<value>urn:dslforum-org:tftp</value>
+	</parameter>
+</object>
+<object name="Device.QoS.App.3">
+	<parameter name="Alias">
+		<value>App3</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>SIP</value>
+	</parameter>
+	<parameter name="ProtocolIdentifier">
+		<value>urn:dslforum-org:sip</value>
+	</parameter>
+</object>
+<object name="Device.QoS.App.4">
+	<parameter name="Alias">
+		<value>App4</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>H323</value>
+	</parameter>
+	<parameter name="ProtocolIdentifier">
+		<value>urn:dslforum-org:h323</value>
+	</parameter>
+</object>
+<object name="Device.QoS.App.5">
+	<parameter name="Alias">
+		<value>App5</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>PPTP</value>
+	</parameter>
+	<parameter name="ProtocolIdentifier">
+		<value>urn:dslforum-org:pptp</value>
+	</parameter>
+</object>
+<object name="Device.QoS.App.6">
+	<parameter name="Alias">
+		<value>App6</value>
+	</parameter>
+	<parameter name="Name">
+		<value>IPsec</value>
+	</parameter>
+	<parameter name="ProtocolIdentifier">
+		<value>urn:dslforum-org:ipsec</value>
+	</parameter>
+</object>
+
+<object name="Device.Routing.Router.1">
+	<parameter name="Alias">
+		<value>Router1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>
+
+<object name="Device.Services.X_ADB_IGMPProxy">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="UpstreamInterfaceAutoConfig">
+		<value>true</value>
+	</parameter>
+	<parameter name="DownstreamInterfaces">
+		<value>Device.WiFi.SSID.1,Device.WiFi.SSID.2,Device.Ethernet.Interface.1,Device.Ethernet.Interface.2,Device.Ethernet.Interface.3,Device.Ethernet.Interface.4,Device.Ethernet.Interface.5</value>
+	</parameter>
+	<parameter name="SkipGroups">
+		<value>239.255.255.250</value>
+	</parameter>
+</object>
+
+<object name="Device.Time">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LocalTimeZone">
+		<value>CET-1CEST-2,M3.5.0/2,M10.5.0/3</value>
+	</parameter>
+	<parameter name="NTPServer1">
+		<value>time.ien.it</value>
+	</parameter>
+</object>
+
+<object name="Device.USB.Port.1">
+	<parameter name="Alias">
+		<value>Port1</value>
+	</parameter>
+	<parameter name="Name">
+		<value>USB Port 1</value>
+	</parameter>
+	<parameter name="Power">
+		<value>Unknown</value>
+	</parameter>
+	<parameter name="Receptacle">
+		<value>Standard-A</value>
+	</parameter>
+	<parameter name="Type">
+		<value>Host</value>
+	</parameter>
+	<parameter name="Rate">
+		<value>High</value>
+	</parameter>
+	<parameter name="Standard">
+		<value>3.0</value>
+	</parameter>
+</object>
+<object name="Device.USB.Port.2">
+	<parameter name="Alias">
+		<value>Port2</value>
+	</parameter>
+	<parameter name="Name">
+		<value>USB Port 2</value>
+	</parameter>
+	<parameter name="Power">
+		<value>Unknown</value>
+	</parameter>
+	<parameter name="Receptacle">
+		<value>Standard-A</value>
+	</parameter>
+	<parameter name="Type">
+		<value>Host</value>
+	</parameter>
+	<parameter name="Rate">
+		<value>High</value>
+	</parameter>
+	<parameter name="Standard">
+		<value>3.0</value>
+	</parameter>
+</object>
+
+<object name="Device.UserInterface.X_ADB_LocalAccess">
+	<parameter name="SupportedProtocols">
+		<value>HTTP</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.RemoteAccess">
+	<parameter name="Port">
+		<value>8080</value>
+	</parameter>
+	<parameter name="SupportedProtocols">
+		<value>HTTP</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2220</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/storage/ftpserver/remoteaccess</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/storage/ftpserver</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/diagnostics</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/system</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/selfedit</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/edit/wps</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2220</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/edit/wan</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2220</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/edit/lan</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2220</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/edit/wpsresult</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2220</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/edit/wifi</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2220</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/apps/appnew</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/apps/appinstall</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/apps/templates/installFields</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/apps/appremove</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/apps</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/storage/storageusers/addstorageusers</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/storage/storageusers/addstoragegroups</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+
+<object name="Device.Users.User.1">
+	<parameter name="Alias">
+		<value>User1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Password">
+		<value>40c51ac317a5a3498f4e657df1da4a10af6a7a8b</value>
+	</parameter>
+	<parameter name="Username">
+		<value>admin</value>
+	</parameter>
+	<parameter name="X_ADB_Role">
+		<value>AdminUser</value>
+	</parameter>
+	<parameter name="RemoteAccessCapable">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.Users.User.2">
+	<parameter name="Alias">
+		<value>User2</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Password">
+		<value>00440d57016aa2a190554e0fe1698c78fe024374</value>
+	</parameter>
+	<parameter name="Username">
+		<value>user</value>
+	</parameter>
+</object>
+<object name="Device.Users.User.3">
+	<parameter name="Alias">
+		<value>User3</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Password">
+		<value>00440d57016aa2a190554e0fe1698c78fe024374</value>
+	</parameter>
+	<parameter name="Username">
+		<value>power</value>
+	</parameter>
+	<parameter name="X_ADB_Role">
+		<value>PowerUser</value>
+	</parameter>
+</object>
+
+<object name="Device.WiFi.Radio.1">
+	<parameter name="Alias">
+		<value>Radio1</value>
+	</parameter>
+	<parameter name="AutoChannelEnable">
+		<value>false</value>
+	</parameter>
+	<parameter name="Channel">
+		<value>6</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="ExtensionChannel">
+		<value>Auto</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl1</value>
+	</parameter>
+	<parameter name="OperatingChannelBandwidth">
+		<value>20MHz</value>
+	</parameter>
+	<parameter name="RegulatoryDomain">
+		<value>EU </value>
+	</parameter>
+	<parameter name="SupportedFrequencyBands">
+		<value>2.4GHz</value>
+	</parameter>
+	<parameter name="OperatingFrequencyBand">
+		<value>2.4GHz</value>
+	</parameter>
+	<parameter name="OperatingStandards">
+		<value>b,g,n</value>
+	</parameter>
+	<parameter name="TransmitPower">
+		<value>100</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.Radio.2">
+	<parameter name="Alias">
+		<value>Radio2</value>
+	</parameter>
+	<parameter name="AutoChannelEnable">
+		<value>false</value>
+	</parameter>
+	<parameter name="Channel">
+		<value>36</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="ExtensionChannel">
+		<value>Auto</value>
+	</parameter>
+	<parameter name="IEEE80211hEnabled">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl0</value>
+	</parameter>
+	<parameter name="OperatingChannelBandwidth">
+		<value>Auto</value>
+	</parameter>
+	<parameter name="RegulatoryDomain">
+		<value>EU </value>
+	</parameter>
+	<parameter name="SupportedFrequencyBands">
+		<value>5GHz</value>
+	</parameter>
+	<parameter name="OperatingFrequencyBand">
+		<value>5GHz</value>
+	</parameter>
+	<parameter name="SupportedStandards">
+		<value>a,n,ac</value>
+	</parameter>
+	<parameter name="OperatingStandards">
+		<value>a,n,ac</value>
+	</parameter>
+	<parameter name="TransmitPower">
+		<value>100</value>
+	</parameter>
+	<parameter name="X_ADB_BasicDataTransmitRates">
+		<value>6,12,24</value>
+	</parameter>
+	<parameter name="X_ADB_OperationalDataTransmitRates">
+		<value>6,9,12,18,24,36,48,54</value>
+	</parameter>
+	<parameter name="X_ADB_UseE0Rev938RegulatoryDomain">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.SSID.1">
+	<parameter name="Alias">
+		<value>SSID1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.WiFi.Radio.1</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl1</value>
+	</parameter>
+	<parameter name="SSID">
+		<value>yapsie-wlan-prod</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.SSID.2">
+	<parameter name="Alias">
+		<value>SSID2</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.WiFi.Radio.2</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wl0</value>
+	</parameter>
+	<parameter name="SSID">
+		<value>yapsie-wlan-prod2</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.1">
+	<parameter name="Alias">
+		<value>AccessPoint1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="RetryLimit">
+		<value>7</value>
+	</parameter>
+	<parameter name="X_ADB_LongRetryLimit">
+		<value>4</value>
+	</parameter>
+	<parameter name="SSIDReference">
+		<value>Device.WiFi.SSID.1</value>
+	</parameter>
+	<parameter name="UAPSDCapability">
+		<value>true</value>
+	</parameter>
+	<parameter name="UAPSDEnable">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.1.Security">
+	<parameter name="KeyPassphrase">
+		<value>theverysecretdefaultkey</value>
+	</parameter>
+	<parameter name="X_ADB_EncryptionMode">
+		<value>AES</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.1.WPS">
+	<parameter name="ConfigMethodsEnabled">
+		<value>PIN,PushButton</value>
+	</parameter>
+	<parameter name="ConfigMethodsSupported">
+		<value>PIN,PushButton</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.2">
+	<parameter name="Alias">
+		<value>AccessPoint2</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="RetryLimit">
+		<value>7</value>
+	</parameter>
+	<parameter name="X_ADB_LongRetryLimit">
+		<value>4</value>
+	</parameter>
+	<parameter name="SSIDReference">
+		<value>Device.WiFi.SSID.2</value>
+	</parameter>
+	<parameter name="UAPSDCapability">
+		<value>true</value>
+	</parameter>
+	<parameter name="UAPSDEnable">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.2.Security">
+	<parameter name="KeyPassphrase">
+		<value>theverysecretdefaultkey</value>
+	</parameter>
+	<parameter name="X_ADB_EncryptionMode">
+		<value>AES</value>
+	</parameter>
+</object>
+<object name="Device.WiFi.AccessPoint.2.WPS">
+	<parameter name="ConfigMethodsEnabled">
+		<value>PIN,PushButton</value>
+	</parameter>
+	<parameter name="ConfigMethodsSupported">
+		<value>PIN,PushButton</value>
+	</parameter>
+</object>
+
+<object name="Device.X_ADB_TelnetServer.RemoteAccess">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_SSHServer.RemoteAccess">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>

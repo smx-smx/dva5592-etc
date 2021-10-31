@@ -1,0 +1,26 @@
+[sipRegistrar-config-view:]
+enable=Enable SIP registrar
+disable=Disable SIP registrar
+quiescentMode=Set quiescent mode
+quiescentMode:enable=Enable or disable quiescent mode
+address=Set IP address and port of SIP registrar
+address:addr=IP address of SIP registrar
+address:port=Port number of SIP registrar
+expireTime=Set minimum register expire time
+expireTime:time=Register expiration time
+pingInterval=Set interval between periodic ping requests to external SIP user agents
+pingInterval:time=Interval time between periodic ping requests
+authenticationRealm=Realm for authentication with username/password
+authenticationRealm:value=Realm value
+add account=Create account for SIP registration
+add account:alias=Account alias name
+account=Enter "account" config view
+account:alias=Account alias name
+del account=Delete account for SIP registration
+del account:alias=Account alias name
+add interface=Create interface for SIP registrar purposes
+add interface:alias=Interface alias name
+interface=Enter "interface" config view
+interface:alias=Interface alias name
+del interface=Delete interface for SIP registrar purposes
+del interface:alias=Interface alias name

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Device.X_ADB_MobileModem.Interface.1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.USB.Interface.1</value>
+	</parameter>
+</object>
+<object name="Device.PPP.Interface.3">
+	<parameter name="Name">
+		<value>ppp2</value>
+	</parameter>
+	<parameter name="Alias">
+		<value>WAN_USB_PPP</value>
+	</parameter>
+	<parameter name="AuthenticationProtocol">
+		<value>Auto</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.X_ADB_MobileModem.Interface.1</value>
+	</parameter>
+	<parameter name="AutoDisconnectTime">
+		<value>0</value>
+	</parameter>
+</object>
+<object name="Device.Ethernet.Link.10">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.X_ADB_MobileModem.Interface.1</value>
+	</parameter>
+	<parameter name="Name">
+		<value>wwan0</value>
+	</parameter>
+</object>
+<object name="Device.IP.Interface.5">
+	<parameter name="Alias">
+		<value>Wan PPP USB</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="LowerLayers">
+		<value>Device.PPP.Interface.3,Device.Ethernet.Link.10</value>
+	</parameter>
+	<parameter name="X_ADB_ActiveLowerLayer">
+		<value>Device.PPP.Interface.3</value>
+	</parameter>
+	<parameter name="Name">
+		<value>ip4</value>
+	</parameter>
+	<parameter name="X_ADB_ConnectionType">
+		<value>Generic</value>
+	</parameter>
+	<parameter name="X_ADB_Upstream">
+		<value>true</value>
+	</parameter>
+</object>

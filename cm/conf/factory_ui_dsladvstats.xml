@@ -1,0 +1,8 @@
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/netif/dsline/advstats</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2001</value>
+	</parameter>
+</object>

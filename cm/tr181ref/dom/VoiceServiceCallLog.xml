@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="VoIP" version="2.0"><object name="Services.VoiceService.{i}.CallLog.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i.%n">
+    </object><object name="Services.VoiceService.{i}.CallLog.{i}.SignalingPerformance.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.SignalingPerformance.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.SignalingPerformance.%i.%n">
+    </object><object name="Services.VoiceService.{i}.CallLog.{i}.Session.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i.%n">
+    </object><object name="Services.VoiceService.{i}.CallLog.{i}.Session.{i}.Source." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i.Source.%n" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i.Source.%n">
+    </object><object name="Services.VoiceService.{i}.CallLog.{i}.Session.{i}.Source.RTP." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i.RTP.%n" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i.RTP.%n">
+    </object><object name="Services.VoiceService.{i}.CallLog.{i}.Session.{i}.Source.DSP." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i.DSP.%n" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i.DSP.%n">
+    </object><object name="Services.VoiceService.{i}.CallLog.{i}.Session.{i}.Source.DSP.ReceiveCodec." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i.DSP.ReceiveCodec.%n" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i.DSP.ReceiveCodec.%n">
+    </object><object name="Services.VoiceService.{i}.CallLog.{i}.Session.{i}.Source.DSP.TransmitCodec." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i.DSP.TransmitCodec.%n" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.CallLog.%i1.Session.%i.DSP.TransmiCodec.%n">
+    </object></datamodel>

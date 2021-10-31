@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.Firewall">
+		<parameter name="Config">
+			<value>Advanced</value>
+		</parameter>
+		<parameter name="AdvancedLevel">
+			<value>Device.Firewall.Level.1</value>
+		</parameter>
+	</object>
+	<object name="Device.Firewall.Level.1">
+		<parameter name="Alias">
+			<value>Level1</value>
+		</parameter>
+		<parameter name="Name">
+			<value>Default</value>
+		</parameter>
+		<parameter name="Chain">
+			<value>Device.Firewall.Chain.1</value>
+		</parameter>
+		<parameter name="DefaultPolicy">
+			<value>Accept</value>
+		</parameter>
+	</object>
+	<object name="Device.Firewall.Chain.1">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>Chain1</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Chain1</value>
+		</parameter>
+		<parameter name="Creator">
+			<value>UserInterface</value>
+		</parameter>
+	</object>
+	<object name="Device.Firewall.Chain.1.Rule.1">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Rule1</value>
+		</parameter>
+		<parameter name="Description">
+			<value>DROP</value>
+		</parameter>
+		<parameter name="SourceInterface">
+			<value>Device.IP.Interface.2</value>
+		</parameter>
+		<parameter name="DestAllInterfaces">
+			<value>true</value>
+		</parameter>
+		<parameter name="X_ADB_ConnectionStatus">
+			<value>NEW,INVALID,UNTRACKED</value>
+		</parameter>
+	</object>
+	<object name="Device.Firewall.Chain.1.Rule.2">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Rule2</value>
+		</parameter>
+		<parameter name="Description">
+			<value>WAN PING</value>
+		</parameter>
+		<parameter name="SourceInterface">
+			<value>Device.PPP.Interface.1</value>
+		</parameter>
+		<parameter name="DestInterface">
+			<value>X_ADB_Local</value>
+		</parameter>
+		<parameter name="IPVersion">
+			<value>4</value>
+		</parameter>
+		<parameter name="Protocol">
+			<value>1</value>
+		</parameter>
+		<parameter name="X_ADB_ConnectionStatus">
+			<value>NEW,INVALID,UNTRACKED</value>
+		</parameter>
+	</object>
+</config>

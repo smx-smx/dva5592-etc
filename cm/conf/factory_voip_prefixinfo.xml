@@ -1,0 +1,65 @@
+<object name="Device.Services.VoiceService.1.X_ADB_NumberingPlan.PrefixInfo.1">
+	<parameter name="FacilityAction">
+		<value>X_ADB_CW_INVOKE_ACTIVE_DROP</value>
+	</parameter>
+	<parameter name="PrefixRange">
+		<value>1</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.X_ADB_NumberingPlan.PrefixInfo.2">
+	<parameter name="FacilityAction">
+		<value>CW_INVOKE</value>
+	</parameter>
+	<parameter name="PrefixRange">
+		<value>2</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.X_ADB_NumberingPlan.PrefixInfo.3">
+	<parameter name="FacilityAction">
+		<value>X_ADB_CONFERENCE_INVOKE</value>
+	</parameter>
+	<parameter name="PrefixRange">
+		<value>3</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.X_ADB_NumberingPlan.PrefixInfo.4">
+	<parameter name="FacilityAction">
+		<value>X_ADB_WAITING_DROP</value>
+	</parameter>
+	<parameter name="PrefixRange">
+		<value>0</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.X_ADB_NumberingPlan.PrefixInfo.5">
+	<parameter name="FacilityAction">
+		<value>X_ADB_HOLD_DROP</value>
+	</parameter>
+	<parameter name="PrefixRange">
+		<value>0</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.X_ADB_NumberingPlan.PrefixInfo.6">
+	<parameter name="FacilityAction">
+		<value>X_ADB_ATTENDED_TRANSFER_INVOKE</value>
+	</parameter>
+	<parameter name="PrefixRange">
+		<value>*</value>
+	</parameter>
+</object>
+<object name="Device.Services.VoiceService.1.X_ADB_NumberingPlan.PrefixInfo.7">
+	<parameter name="FacilityAction">
+		<value>X_ADB_UNATTENDED_TRANSFER_INVOKE</value>
+	</parameter>
+	<parameter name="NumberOfDigitsToRemove">
+		<value>1</value>
+	</parameter>
+	<parameter name="PrefixMaxNumberOfDigits">
+		<value>40</value>
+	</parameter>
+	<parameter name="PrefixMinNumberOfDigits">
+		<value>2</value>
+	</parameter>
+	<parameter name="PrefixRange">
+		<value>*</value>
+	</parameter>
+</object>

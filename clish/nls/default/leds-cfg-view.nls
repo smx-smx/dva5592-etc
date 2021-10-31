@@ -1,0 +1,3 @@
+[leds-cfg-view:]
+led=Enter "led" config view
+led:alias=Led alias

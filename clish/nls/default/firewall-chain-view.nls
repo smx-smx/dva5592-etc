@@ -1,0 +1,7 @@
+[firewall-chain-view:]
+add rule=Add new firewall rule to this chain
+add rule:alias=Name of firewall rule
+del rule=Remove firewall rule from this chain
+del rule:rule=Rule entry
+rule=Enter "rule" config view
+rule:rule=Rule entry

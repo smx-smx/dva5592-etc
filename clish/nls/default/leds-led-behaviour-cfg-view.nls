@@ -1,0 +1,13 @@
+[leds-led-behaviour-cfg-view:]
+color=Set led color
+color:color=Color
+dutyCycle=Set duty cycle
+dutyCycle:type=Duty cycle
+activity=Set activity
+activity:type=Activity
+add trigger=Add trigger
+add trigger:alias=Trigger alias
+trigger=Enter "trigger" config view
+trigger:alias=Trigger alias
+del trigger=Delete trigger
+del trigger:alias=Trigger alias

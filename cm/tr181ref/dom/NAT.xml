@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="IP" version="2.0"><object name="NAT.PortMapping.{i}." del="TR098_ADD_NATPortMapping.sh"><parameter name="Interface" set="TR098_ADD_NATPortMapping.sh" /><parameter name="InternalClient" access="readWrite" aliasOnSet="%(%p.X_ADB_TR098Reference).%n" /><parameter name="X_ADB_TR098Reference" access="readWrite"><syntax><string><size minLength="0" maxLength="1024" /></string><default value="" /></syntax></parameter></object></datamodel>

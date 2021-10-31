@@ -1,0 +1,17 @@
+[dhcp6v-server-option-config:]
+tag=Option tag (code)
+tag:tag=Enter tag
+value Empty=Empty option value
+value Hex=Hex option value
+value Hex:val=Enter value
+value Boolean=Boolean option value
+value Boolean:val=True/False
+value String=String option value
+value String:val=Enter value
+value IPv6Address=IPv6 address option value
+value IPv6Address:val=Enter value
+value IPv6AddressList=IPv6 address list option value
+value IPv6AddressList:val=Enter list
+passthroughClient=Indicates whether this Option entry is configured for passthrough
+passthroughClient:cli=Enter value
+no passthroughClient=Clear PassthroughClient

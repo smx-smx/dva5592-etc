@@ -1,0 +1,4 @@
+[dhcp-client-view:]
+dhcpv4Client=Enter "dhcpv4Client" config view
+dhcpv4Client:alias=Alias
+del dhcpv4Client=Delete a DHCPv4 client

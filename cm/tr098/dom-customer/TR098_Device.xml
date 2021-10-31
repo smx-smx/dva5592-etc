@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="InternetGatewayDevice." version="2.0">
+    <object name="DeviceInfo.">
+        <parameter name="DeviceLog" excludeUser="CWMP"/>
+    </object>
+</datamodel>

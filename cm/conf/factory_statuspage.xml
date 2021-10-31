@@ -1,0 +1,10 @@
+<object name="Device.UserInterface">
+	<parameter name="X_ADB_IndexPage">
+		<value>statuspage.html</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_StatusPage">
+	<parameter name="LoginRequired">
+		<value>true</value>
+	</parameter>
+</object>

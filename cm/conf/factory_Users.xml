@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.Users">
+		<parameter name="X_ADB_DefaultPasswordCheck">
+			<value>true</value>
+		</parameter>
+		<parameter name="X_ADB_PasswordMinLength">
+			<value>8</value>
+		</parameter>
+		<parameter name="X_ADB_PasswordEnforcementRules">
+			<value>OneDigit,OneUppercaseLetter,OneLowercaseLetter</value>
+		</parameter>
+	</object>
+	<object name="Device.Users.User.1">
+		<parameter name="Alias">
+			<value>User1</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Password">
+			<value>40c51ac317a5a3498f4e657df1da4a10af6a7a8b</value>
+		</parameter>
+		<parameter name="Username">
+			<value>admin</value>
+		</parameter>
+		<parameter name="X_ADB_CLIPrompt">
+			<value>DLINK</value>
+		</parameter>
+		<parameter name="X_ADB_Role">
+			<value>AdminUser</value>
+		</parameter>
+		<parameter name="X_ADB_GUILevels">
+			<value>Advanced</value>
+		</parameter>
+		<parameter name="RemoteAccessCapable">
+			<value>true</value>
+		</parameter>
+	</object>
+</config>

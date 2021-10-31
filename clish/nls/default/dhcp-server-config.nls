@@ -1,0 +1,5 @@
+[dhcp-server-config:]
+add pool=Add DHCPv4 pool to DHCP server
+add pool:alias=Name of DHCPv4 pool
+pool=Enter "pool" config view
+pool:alias=Name of DHCPv4 pool

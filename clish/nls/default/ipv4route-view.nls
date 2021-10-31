@@ -1,0 +1,20 @@
+[ipv4Route-view:]
+destAddr=Destination IPv4 address. An empty string indicates no destination address is specified
+destAddr:addr=Enter IPv4 address
+destAddr:mask=Enter IPv4 mask
+no destAddr=Clear destination IPv4 address
+classificationIndex=Classification Index
+classificationIndex:index=Enter index
+classificationIndex:new_value=Enter new index
+no classificationIndex=Clear Classification Index
+gateway=IPv4 address of the gateway
+gateway:addr=Enter IPv4 gateway address
+no gateway=Clear gateway
+interface=Specifies the egress layer 3 interface associated with this entry
+interface:ifname=Enter Interface
+no interface=Clear Interface
+autoGateway=If true populate the GatewayIPAddress parameter with the DHCP provided value
+autoGateway:val=Enable/Disable
+forwardingMetric=Forwarding metric. A value of -1 indicates this metric is not used
+forwardingMetric:metric=Enter value
+no forwardingMetric=Clear ForwardingMetric

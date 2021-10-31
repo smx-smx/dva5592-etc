@@ -1,0 +1,21 @@
+[if-bridge-port-view:]
+name=The textual name of the bridge port as assigned by the CPE
+name:name=Enter name
+defaultVlanID=Default vlanID
+defaultVlanID:vlanId=Enter default vlanID
+vlanID=Change or add vlanID
+vlanID:vlanId=Enter vlanID
+vlanID new=Add a new vlan id
+vlanID new:new_value=New vlan id
+no vlanID=Clear vlanID
+untagged=Enables or disables untagged port membership to the VLAN and determines whether egress frames for this VLAN are sent untagged or tagged
+untagged:enable=Enable/Disable
+vlanIsolation enable=If enabled, causes frames arriving on this port to be discarded if the port is not in the VLAN ID's member set
+vlanIsolation disable=Disable vlan isolation
+add filter=Add filter
+add filter:vlanID=Enter vlanID
+add filter:alias=Enter filter alias
+filter=Enter "filter" config view
+filter:alias=Enter filter alias
+del filter=Delete filter
+del filter:alias=Enter filter alias

@@ -1,0 +1,4 @@
+[mgmt-execenv-view:]
+duStateChangeCompletePolicy=Enter "duStateChangeCompletePolicy" config view
+linux=Enter "linux" config view
+osgi=Enter "osgi" config view

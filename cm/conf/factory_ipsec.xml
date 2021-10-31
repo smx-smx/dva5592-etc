@@ -1,0 +1,53 @@
+<object name="IPsec">
+	<parameter name="Enable">
+		<value>false</value>
+	</parameter>
+	<parameter name="AHSupported">
+		<value>false</value>
+	</parameter>
+	<parameter name="IKEv2SupportedEncryptionAlgorithms">
+		<value>DES,3DES,BLOWFISH,CAST,AES-CBC</value>
+	</parameter>
+	<parameter name="ESPSupportedEncryptionAlgorithms">
+		<value>NULL,DES,3DES,DES-IV32,DES-IV64,AES-CBC</value>
+	</parameter>
+	<parameter name="SupportedIntegrityAlgorithms">
+		<value>HMAC-MD5-96,HMAC-SHA1-96,HMAC-MD5-128,HMAC-SHA1-160,HMAC-SHA2-256-128,HMAC-SHA2-256-192,HMAC-SHA2-256-256</value>
+	</parameter>
+	<parameter name="SupportedDiffieHellmanGroupTransforms">
+		<value>NONE,MODP-768,MODP-1024,MODP-1536,MODP-2048,MODP-3072,MODP-4096,MODP-6144,MODP-8192</value>
+	</parameter>
+	<parameter name="MaxFilterEntries" access="readOnly">
+		<value>0</value>
+	</parameter>
+	<parameter name="MaxProfileEntries" access="readOnly">
+		<value>0</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/vpn/ipsec</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/ipsec</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_SystemLog.Service.-1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Alias">
+		<value>IPsec</value>
+	</parameter>
+	<parameter name="Identity">
+		<value>racoon</value>
+	</parameter>
+</object>

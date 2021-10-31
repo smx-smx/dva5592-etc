@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.DHCPv4.Server">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.DHCPv4.Server.Pool.1">
+		<parameter name="Alias">
+			<value>First Pool</value>
+		</parameter>
+		<parameter name="DNSServers">
+			<value>192.168.1.1</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="IPRouters">
+			<value>192.168.1.1</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.1</value>
+		</parameter>
+		<parameter name="LeaseTime">
+			<value>43320</value>
+		</parameter>
+		<parameter name="MaxAddress">
+			<value>192.168.1.150</value>
+		</parameter>
+		<parameter name="MinAddress">
+			<value>192.168.1.100</value>
+		</parameter>
+		<parameter name="Order">
+			<value>1</value>
+		</parameter>
+		<parameter name="SubnetMask">
+			<value>255.255.255.0</value>
+		</parameter>
+	</object>
+	<object name="Device.DHCPv4.Server.Pool.1.Option.1">
+		<parameter name="Alias">
+			<value>VendorSpecificInformation</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Tag">
+			<value>125</value>
+		</parameter>
+		<parameter name="Value">
+			<value>00000DE9</value>
+		</parameter>
+	</object>
+	<object name="Device.DHCPv4.Server.Pool.1.Option.1.X_ADB_SubOption.1">
+		<parameter name="Alias">
+			<value>GatewayManufacturerOUI</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Tag">
+			<value>4</value>
+		</parameter>
+		<parameter name="Reference">
+			<value>Device.DeviceInfo.ManufacturerOUI</value>
+		</parameter>
+	</object>
+	<object name="Device.DHCPv4.Server.Pool.1.Option.1.X_ADB_SubOption.2">
+		<parameter name="Alias">
+			<value>GatewaySerialNumber</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Tag">
+			<value>5</value>
+		</parameter>
+		<parameter name="Reference">
+			<value>Device.DeviceInfo.SerialNumber</value>
+		</parameter>
+	</object>
+	<object name="Device.DHCPv4.Server.Pool.1.Option.1.X_ADB_SubOption.3">
+		<parameter name="Alias">
+			<value>GatewayProductClass</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Tag">
+			<value>6</value>
+		</parameter>
+		<parameter name="Reference">
+			<value>Device.DeviceInfo.ProductClass</value>
+		</parameter>
+	</object>
+	<object name="Device.DHCPv4.Client.1">
+		<parameter name="Alias">
+			<value>Client1</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.3</value>
+		</parameter>
+	</object>
+	<object name="Device.DHCPv4.Client.1.ReqOption.1">
+		<parameter name="Alias">
+			<value>ReqOption1</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Tag">
+			<value>1</value>
+		</parameter>
+	</object>
+	<object name="Device.DHCPv4.Client.1.ReqOption.2">
+		<parameter name="Alias">
+			<value>ReqOption2</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Tag">
+			<value>3</value>
+		</parameter>
+	</object>
+	<object name="Device.DHCPv4.Client.1.ReqOption.3">
+		<parameter name="Alias">
+			<value>ReqOption3</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Tag">
+			<value>6</value>
+		</parameter>
+	</object>
+</config>

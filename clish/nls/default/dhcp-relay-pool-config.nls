@@ -1,0 +1,8 @@
+[dhcp-relay-pool-config:]
+no interface out=Clear out interface
+interface out=Set out interface
+interface out:ifname=Interface entry
+localService=Enable/disable locally-served
+localService:val=Enable/disable
+server=IPv4 address of the DHCP server, where the request has to be sent to when there is a conditional match with this forwarding entry and locally served is false
+server:ip=IPv4 address

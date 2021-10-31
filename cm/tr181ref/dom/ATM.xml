@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="DSL" version="2.0"><object name="ATM.Link.{i}." del="TR098_ADD_ATM.sh"><parameter name="X_ADB_TR098Reference" access="readWrite"><syntax><string><size minLength="0" maxLength="1024" /></string><default value="" /></syntax></parameter><parameter name="LinkType" set="TR098_ADD_ATMLinkType.sh" /><parameter name="LowerLayers" set="TR098_ADD_ATM.sh" /></object></datamodel>

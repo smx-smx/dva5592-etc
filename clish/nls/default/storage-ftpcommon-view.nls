@@ -1,0 +1,25 @@
+[storage-ftpcommon-view:]
+maxUsers=Set the maximum number of users allowed to log in to the device at once via FTP
+maxUsers:num=The maximum number of users
+idleTime=Set the maximum amount of time in seconds that the FTP socket will remain open without any activity
+idleTime:time=The amount of time in seconds,  if 0 an infinite timeout will apply
+port=Set the port number that the FTP server is listening on
+port:port=Port number(Factory default value is 21)
+startingFolder=Select the FTP service starting(home) folder
+startingFolder:folder=Name of the existing folder
+interface set=Set list of interfaces able to access the FTP server
+interface set:interfaces=Comma-separated list of interfaces names
+interface add=Add one interface to the interface list
+interface add:interface=Name of interface
+interface del=Delete one interface from interface list
+interface del:interface=Name of interface
+interface clear=Clear interface list
+interface show=Show entire interface list
+anonUser=Enables or disables support for anonymous access into the FTP server
+anonUser:value=Enable or disable
+anonStartingFolder=Select the FTP service starting(home) folder for anonymous access
+anonStartingFolder:folder=Name of existing folder
+anonReadOnly=Set read only rights for anonymous user
+anonReadOnly:value=Enable or disable
+anonOnly=Set only anonymous access
+anonOnly:value=Enable or disable

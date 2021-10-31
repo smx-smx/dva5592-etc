@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="Services" version="2.0"><object name="UPnP.Device."><parameter name="X_ADB_ExternalInterface" excludeUser="CWMP" /><parameter name="X_ADB_CurrentIface" excludeUser="CWMP" /><parameter name="X_ADB_Port" excludeUser="CWMP" /><parameter name="X_ADB_AutoExternalInterface" excludeUser="CWMP" /><parameter name="X_ADB_NotifyInterval" excludeUser="CWMP" /><parameter name="X_ADB_LanInterface" excludeUser="CWMP" /></object></datamodel>

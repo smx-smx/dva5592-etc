@@ -1,0 +1,18 @@
+[diag-pingtest-view:]
+testStart=Launch test
+interface=Select interface to test
+interface:ifname=Interface entry
+no interface=Clear interface
+host=Set host name or ip address of the host to ping
+host:host=Host name or ip address
+no host=Clear host
+protocol=Set the IP protocol to be used
+protocol:protocol=IP protocol
+count=Set number of repetitions of the ping test to perform before reporting the results
+count:value=Number of repetitions
+timeout=Set timeout in milliseconds for the ping test
+timeout:time=Timeout in milliseconds
+size=Set size of the data block in bytes to be sent for each ping
+size:value=Size of the data block in bytes
+dscp=Set DiffServ codepoint to be used for the test packets
+dscp:value=DiffServ codepoint

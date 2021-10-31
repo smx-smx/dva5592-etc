@@ -1,0 +1,4 @@
+Device.DeviceInfo.ModelName
+	checkvalue = "%(Device.DeviceInfo.ModelName)"
+Device.DeviceInfo.ProductClass
+	checkvalue = "%(Device.DeviceInfo.ProductClass)"

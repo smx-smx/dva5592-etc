@@ -1,0 +1,11 @@
+[x-adb-extportlist-config-view:]
+gre=Set GRE protocol
+no gre=Clear GRE protocol
+extPortList set=Set list of additional external ports for this mapping
+extPortList set:ports=Enter list
+extPortList add=Add additional external port for this mapping
+extPortList add:port=Enter port
+extPortList del=Delete additional external port for this mapping
+extPortList del:port=Enter port
+extPortList show=Show additional external ports for this mapping
+extPortList clear=Clear additional external ports for this mapping

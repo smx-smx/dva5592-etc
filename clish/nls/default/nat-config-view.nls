@@ -1,0 +1,23 @@
+[nat-config-view:]
+del rule=Delete entry
+del rule:name=Enter entry name
+add rule=Add entry
+add rule:ifname=Enter value
+add rule:alias_nat=Enter entry alias
+rule=Enter "rule" config view
+rule:alias_nat=Enter entry alias
+portmappingClear=Clear port mapping table
+add portmapping=Add port mapping entry
+add portmapping:ifname=Enter value
+add portmapping:alias_portmap=Enter port mapping alias
+del portmapping=Delete port mapping entry
+del portmapping:alias=Enter port mapping alias
+portmapping=Enter "portmapping" config view
+portmapping:alias=Enter port mapping alias
+add service=Add network service
+add service:alias=Enter network service alias
+del service=Delete network service
+del service:alias=Enter network service alias
+service=Enter "service" config view
+service:alias=Enter network service alias
+show=Show port mapping table

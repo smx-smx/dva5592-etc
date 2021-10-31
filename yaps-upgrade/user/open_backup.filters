@@ -1,0 +1,2 @@
+Device.NAT.PortMapping.[0-9]+.*
+Device.DHCPv4.Server.Pool.[0-9]+.StaticAddress.[0-9]+.*

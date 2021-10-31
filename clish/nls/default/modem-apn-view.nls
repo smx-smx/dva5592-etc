@@ -1,0 +1,21 @@
+[modem-apn-view:]
+url=Set url
+url:url=Url
+no url=Set no url
+dial=Set dial
+dial:dial=Dial
+no dial=Set no dial
+username=Set username
+username:username=Username
+no username=Set no username
+password=Set password
+password:password=Password
+no password=Set no password
+authProtocol=Set PPP authentication protocol which Username and Password apply to
+authProtocol:proto=Protocol
+accounting server=Set URL of the server that the user can contact to manage his credits for accessing the service
+accounting server:server=URL of the server
+no accounting server=Set no accounting server
+accounting command=Set USSD command that the modem uses to get information about current user credit
+accounting command:command=Command
+no accounting command=Set no accounting command

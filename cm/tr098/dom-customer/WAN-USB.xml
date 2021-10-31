@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="USB" version="2.0">
+    <object name="WANDevice.{i}.X_ADB_WANUSBInterfaceConfig." excludeUser="CWMP"/>
+</datamodel>

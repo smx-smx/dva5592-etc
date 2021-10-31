@@ -1,0 +1,4 @@
+[dhcp6-client-view:]
+dhcpv6Client=Enter "dhcpv6Client" config view
+dhcpv6Client:alias=Enter DHCPv6 client alias
+del dhcpv6Client=Delete DHCPv6 client

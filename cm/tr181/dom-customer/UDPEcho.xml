@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="IP" version="2.0"><object name="IP.Diagnostics.UDPEchoDiagnostics."><parameter name="X_ADB_UDPPort" excludeUser="CWMP" /><parameter name="X_ADB_TrafficClass" excludeUser="CWMP" /><parameter name="X_ADB_StartTime" excludeUser="CWMP" /><parameter name="X_ADB_IndividualPacketResults" excludeUser="CWMP" /></object></datamodel>

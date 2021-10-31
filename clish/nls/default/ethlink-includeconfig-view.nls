@@ -1,0 +1,7 @@
+[ethlink-includeconfig-view:]
+add ethLink=Adds ethernet link
+add ethLink:alias_ethlink=Ethernet link's alias
+ethLink=Enter "ethLink" config view
+ethLink:alias=Ethernet link's alias
+del ethLink=Deletes ethernet link layer
+del ethLink:alias=Ethernet link's alias

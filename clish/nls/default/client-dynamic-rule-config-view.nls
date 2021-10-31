@@ -1,0 +1,4 @@
+[client-dynamic-rule-config-view:]
+interface=Specify the IP interface over which the DNS query is sent
+interface:ifname=IP interface alias
+no interface=Clear the IP interface reference

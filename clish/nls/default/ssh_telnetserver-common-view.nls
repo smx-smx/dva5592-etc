@@ -1,0 +1,21 @@
+[ssh_telnetserver-common-view:]
+port=Set telnet server port
+port:port=Port number
+interface set=Set comma-separated interfaces list
+interface set:interfaces=Comma-separated list
+interface add=Add interface to interfaces list
+interface add:interface=Name of interface
+interface del=Delete interface from interfaces list
+interface del:interface=Name of interface
+interface clear=Clear list of interfaces
+interface show=Show entire interfaces list
+sessionLifetime=The maximum idle time in seconds
+sessionLifetime:time=Number of seconds
+acl=Enables or disables the Access Control List for local access
+acl:val=Enable or disable
+add aclRule=Add new rule to Access Control List
+add aclRule:alias=Name of new rule
+aclRule=Enter "aclRule" config view
+aclRule:alias=Name of rule
+del aclRule=Delete rule from Access Control List
+del aclRule:alias=Name of rule

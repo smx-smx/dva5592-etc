@@ -1,0 +1,15 @@
+[firewall-level-view:]
+description=Set the level description
+description:dsc=Description text
+order=Set the level order
+order:val=Level order
+portMap=Enable/disable portmapping
+portMap:enable=Enable/Disable
+defaultPolicy=Select the default packet processing policy
+defaultPolicy:policy=Processing policy 
+defaultPolicyLog=Log packets not matching any of the level rules.
+defaultPolicyLog:enable=Enable/Disable
+localServicesFilter=Always accept local services in LAN (CWMP, CWMP2, SSH, Telnet, Web UI)
+localServicesFilter:enable=Enable/Disable
+setPermissions=Configure permissions
+setPermissions:permissions=Three character string 'XYZ' (X-Admin, Y- Normal, Z- Power). Each can be set to: 1-Read, 2-Read/Write, 3-Read/Write/Delete

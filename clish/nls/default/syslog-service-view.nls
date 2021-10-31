@@ -1,0 +1,12 @@
+[syslog-service-view:]
+identity=Set identity of log service
+identity:value=Enter identity
+priority=Set priority of log service
+priority:value=Enter priority
+remoteLogging=Enables/Disables remote logging
+remoteLogging:val=Enable/Disable
+fileLogging=Enables/Disables file logging
+fileLogging:val=Enable/Disable
+rateLimit=Log rate limit
+rateLimit:value=Enter value
+rateLimit:unit=Enter unit

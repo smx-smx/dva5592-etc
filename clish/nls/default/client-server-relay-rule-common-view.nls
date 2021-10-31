@@ -1,0 +1,6 @@
+[client-server-relay-rule-common-view:]
+address=DNS server IP address (only writable when Type is Static)
+address:address=IP address
+domainInterface=Set the interface to be used for outbound queries (only for domains specified with matchingDomain).
+domainInterface:ifname=IP interface
+

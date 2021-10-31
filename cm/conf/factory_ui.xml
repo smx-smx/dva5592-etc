@@ -1,0 +1,562 @@
+<config>
+<object name="Device.UserInterface">
+	<parameter name="AvailableLanguages">
+		<value>EN,IT</value>
+	</parameter>
+	<parameter name="CurrentLanguage">
+		<value>IT</value>
+	</parameter>
+	<parameter name="X_ADB_PBCRadioSelector">
+		<value>Device.WiFi.AccessPoint.1,Device.WiFi.AccessPoint.3</value>
+	</parameter>
+	<parameter name="X_ADB_HomePage">
+		<value>status</value>
+	</parameter>
+	<parameter name="X_ADB_SupportedBackupTypes">
+		<value>full</value>
+	</parameter>
+	<parameter name="X_ADB_OnlyOneSession">
+		<value>true</value>
+	</parameter>
+	<parameter name="X_ADB_CLIOnlyOneSession">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_LocalAccess">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Port">
+		<value>80</value>
+	</parameter>
+	<parameter name="SupportedProtocols">
+		<value>HTTP,HTTPS</value>
+	</parameter>
+	<parameter name="ProtocolsEnabled">
+		<value>HTTP,HTTPS</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.RemoteAccess">
+	<parameter name="Enable">
+		<value>false</value>
+	</parameter>
+	<parameter name="Port">
+		<value>8080</value>
+	</parameter>
+	<parameter name="SupportedProtocols">
+		<value>HTTP,HTTPS</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2220</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/diagnostics</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/diagnostics/mirroring</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2121</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/dhcpsrv</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/dns/client</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/dns/relay</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/dns/names</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/nat/natif</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/nat/natif</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/nat/portmapping</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/management/users</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/management/webgui</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/management/webgui/permissions</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/management/webgui/localacl</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/management/webgui/remoteacl</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/management/telnetserver</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/management/tr069</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/management/sshserver</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/interface-failover</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>1001</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/proxy</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/bridgevlan</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/routing</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/alg</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/netif/newwan</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/netif/newlan</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/netif/wradio/reg</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/security</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2121</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/security/firewall</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/security/firewall/advanced</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2001</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/confwizard</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/system</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/system/factory/profile</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/selfedit</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2220</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/diagnostics</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/diagnostics/interfaceMirroring</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2121</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/dhcp</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/dns/client</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/dns/relay</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/dns/add hostName</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/dns/hostName</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/nat</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/nat/add portmapping</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/nat/portmapping</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/management/users</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/management/webGui</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/management/telnetServer</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/management/tr069Agent</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/management/sshServer</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/igmProxy</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/bridging</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/routing</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/alg</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/interface/ethWan</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/interface/ethLan</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/dmz</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2121</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/firewall</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/firewall/add level</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2001</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/firewall/advancedLevel</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2001</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/factory</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2011</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/debug</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2021</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/system/upgrade/secureDevice</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/system/customerDefault EnableButtonbackToFactory</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>
+</config>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.PPP.Interface.1">
+		<parameter name="Alias">
+			<value>Interface1</value>
+		</parameter>
+		<parameter name="AuthenticationProtocol">
+			<value>Auto</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.Ethernet.Link.2,Device.Ethernet.VLANTermination.1,Device.Ethernet.VLANTermination.2,Device.Ethernet.VLANTermination.4</value>
+		</parameter>
+		<parameter name="Name">
+			<value>ppp0</value>
+		</parameter>
+		<parameter name="Password">
+			<value>c00615610302b0e48eae57e76185951367390714</value>
+		</parameter>
+		<parameter name="Username">
+			<value>benvenuto</value>
+		</parameter>
+		<parameter name="AutoDisconnectTime">
+			<value>0</value>
+		</parameter>
+	</object>
+	<object name="Device.PPP.Interface.2">
+		<parameter name="Alias">
+			<value>Interface2</value>
+		</parameter>
+		<parameter name="AuthenticationProtocol">
+			<value>Auto</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="LowerLayers">
+			<value>Device.Ethernet.VLANTermination.3,Device.Ethernet.VLANTermination.5</value>
+		</parameter>
+		<parameter name="Name">
+			<value>ppp1</value>
+		</parameter>
+		<parameter name="Password">
+			<value>c00615610302b0e48eae57e76185951367390714</value>
+		</parameter>
+		<parameter name="Username">
+			<value>benvenuto</value>
+		</parameter>
+		<parameter name="AutoDisconnectTime">
+			<value>0</value>
+		</parameter>
+	</object>
+</config>

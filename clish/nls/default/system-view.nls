@@ -1,0 +1,16 @@
+[system-view:]
+memory=Shows information about free and used memory
+top=Shows current running processes in the system
+reboot now=Immediately reboots the device
+reboot delayTimer=Reboots the device in "delay" seconds
+reboot delayTimer:delay=Delay in seconds, after which reboot will occur
+reboot cancelTimer=Cancel a pending reboot
+reboot showTimer=Shows the timing remaining before reboot
+restore defaultSettings=Restores factory default settings and reboots the device
+customerDefault EnableButtonbackToFactory=Restore current configuration via reset button
+customerDefault EnableButtonbackToFactory:val=Enable or disable
+customerDefault save=Save current configuration as default
+customerDefault restore=Restore current configuration
+customerDefault backToFactory=Delete customer default
+upgrade=Enter "system upgrade" config view
+upload=Enter "system upload" config view

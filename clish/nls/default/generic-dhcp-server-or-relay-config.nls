@@ -1,0 +1,3 @@
+[generic-dhcp-server-or-relay-config:]
+del pool=Delete DHCPv4 pool
+del pool:alias=Pool alias

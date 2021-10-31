@@ -1,0 +1,13 @@
+[voip-profile-service-info-view:]
+name=Set human-readable string identifying the service provider
+name:name=String
+no name=Clear name
+url=Set internet URL of the web service exposed by the service provider to perform queries
+url:url=URL
+no url=Clear URL
+phoneNumber=Set phone number to contact the service provider for this profile instance
+phoneNumber:phone=Phone number
+no phoneNumber=Clear phone number
+email=Set email address to contact the service provider for this profile instance
+email:email=Email address
+no email=Clear email address

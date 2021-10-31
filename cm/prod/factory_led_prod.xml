@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Device.X_ADB_LED.">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>
+
+<object name="Device.X_ADB_LED.ServiceLED.1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>POWER</value>
+	</parameter>
+	<parameter name="SupportedColours">
+		<value>Green,Red</value>
+	</parameter>
+	<parameter name="DefaultColour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DefaultDutyCycle">
+		<value>On</value>
+	</parameter>
+	<parameter name="SupportedDutyCycles">
+		<value>Off,On,Blinking,BlinkingFast</value>
+	</parameter>
+</object>
+
+<object name="Device.X_ADB_LED.ServiceLED.2">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>SERVICE</value>
+	</parameter>
+	<parameter name="SupportedColours">
+		<value>Green,Red</value>
+	</parameter>
+	<parameter name="DefaultColour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DefaultDutyCycle">
+		<value>Off</value>
+	</parameter>
+	<parameter name="SupportedDutyCycles">
+		<value>Off,On,Blinking,BlinkingFast</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.2.Behaviour.1">
+	<parameter name="Colour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>On</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.2.Behaviour.1.Trigger.1">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.DSL.Line.1.LinkStatus</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Up</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.2.Behaviour.2">
+	<parameter name="Colour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>Blinking</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.2.Behaviour.2.Trigger.1">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.DSL.Line.1.LinkStatus</value>
+	</parameter>
+	<parameter name="Value">
+		<value>EstablishingLink</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.2.Behaviour.3">
+	<parameter name="Colour">
+		<value>Red</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>On</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.2.Behaviour.3.Trigger.1">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.DSL.Line.1.LinkStatus</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Error</value>
+	</parameter>
+</object>
+
+<object name="Device.X_ADB_LED.ServiceLED.3">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>INTERNET</value>
+	</parameter>
+	<parameter name="SupportedColours">
+		<value>Green,Red</value>
+	</parameter>
+	<parameter name="DefaultColour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DefaultDutyCycle">
+		<value>Off</value>
+	</parameter>
+	<parameter name="SupportedDutyCycles">
+		<value>Off,On,Blinking,BlinkingFast</value>
+	</parameter>
+</object>
+
+<object name="Device.X_ADB_LED.ServiceLED.4">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>WIFI</value>
+	</parameter>
+	<parameter name="SupportedColours">
+		<value>Green,Red</value>
+	</parameter>
+	<parameter name="DefaultColour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DefaultDutyCycle">
+		<value>Off</value>
+	</parameter>
+	<parameter name="SupportedDutyCycles">
+		<value>Off,On,Blinking,BlinkingFast</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.4.Behaviour.1">
+	<parameter name="Colour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>Off</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.4.Behaviour.1.Trigger.1">
+	<parameter name="Operator">
+		<value>NotEqual</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.WiFi.Radio.1.Status</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Up</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.4.Behaviour.2">
+	<parameter name="Colour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>BlinkingFast</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.4.Behaviour.2.Trigger.1">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.WiFi.AccessPoint.1.WPS.X_ADB_Status</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Ongoing</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.4.Behaviour.3">
+	<parameter name="Colour">
+		<value>Red</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>on</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.4.Behaviour.3.Trigger.1">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.WiFi.AccessPoint.1.WPS.X_ADB_Status</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Error</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.4.Behaviour.4">
+	<parameter name="Colour">
+		<value>Red</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>BlinkingFast</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.4.Behaviour.4.Trigger.1">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.WiFi.AccessPoint.1.WPS.X_ADB_Status</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Error_Overlap</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.4.Behaviour.5">
+	<parameter name="Colour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>On</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.4.Behaviour.5.Trigger.1">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.WiFi.Radio.1.Status</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Up</value>
+	</parameter>
+</object>
+
+<object name="Device.X_ADB_LED.ServiceLED.5">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>WIFI5G</value>
+	</parameter>
+	<parameter name="SupportedColours">
+		<value>Green,Red</value>
+	</parameter>
+	<parameter name="DefaultColour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DefaultDutyCycle">
+		<value>Off</value>
+	</parameter>
+	<parameter name="SupportedDutyCycles">
+		<value>Off,On,Blinking,BlinkingFast</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.5.Behaviour.1">
+	<parameter name="Colour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>Off</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.5.Behaviour.1.Trigger.1">
+	<parameter name="Operator">
+		<value>NotEqual</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.WiFi.Radio.2.Status</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Up</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.5.Behaviour.2">
+	<parameter name="Colour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>Blinking</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.5.Behaviour.2.Trigger.1">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.WiFi.AccessPoint.2.WPS.X_ADB_Status</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Ongoing</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.5.Behaviour.3">
+	<parameter name="Colour">
+		<value>Red</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>On</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.5.Behaviour.3.Trigger.1">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.WiFi.AccessPoint.2.WPS.X_ADB_Status</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Error</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.5.Behaviour.4">
+	<parameter name="Colour">
+		<value>Red</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>BlinkingFast</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.5.Behaviour.4.Trigger.1">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.WiFi.AccessPoint.2.WPS.X_ADB_Status</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Error_Overlap</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.5.Behaviour.5">
+	<parameter name="Colour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>On</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.5.Behaviour.5.Trigger.1">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.WiFi.Radio.2.Status</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Up</value>
+	</parameter>
+</object>
+
+<object name="Device.X_ADB_LED.ServiceLED.6">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>LINE1</value>
+	</parameter>
+	<parameter name="SupportedColours">
+		<value>Green,Red</value>
+	</parameter>
+	<parameter name="DefaultColour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DefaultDutyCycle">
+		<value>Off</value>
+	</parameter>
+	<parameter name="SupportedDutyCycles">
+		<value>Off,On,Blinking,BlinkingFast</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.6.Behaviour.1">
+	<parameter name="Colour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>On</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.6.Behaviour.1.Trigger.1">
+	<parameter name="Operator">
+		<value>NotEqual</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.VoiceService.1.VoiceProfileNumberOfEntries</value>
+	</parameter>
+	<parameter name="Value">
+		<value>0</value>
+	</parameter>
+</object>
+
+<object name="Device.X_ADB_LED.ServiceLED.7">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>USB</value>
+	</parameter>
+	<parameter name="SupportedColours">
+		<value>Green,Red</value>
+	</parameter>
+	<parameter name="DefaultColour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DefaultDutyCycle">
+		<value>Off</value>
+	</parameter>
+	<parameter name="SupportedDutyCycles">
+		<value>Off,On,Blinking,BlinkingFast</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.7.Behaviour.1.">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Colour">
+		<value>Green</value>
+	</parameter>
+	<parameter name="DutyCycle">
+		<value>On</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_LED.ServiceLED.7.Behaviour.1.Trigger.1.">
+	<parameter name="Operator">
+		<value>Equal</value>
+	</parameter>
+	<parameter name="Parameter">
+		<value>Device.Services.StorageService.1.PhysicalMedium.*.Status</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Online</value>
+	</parameter>
+</object>

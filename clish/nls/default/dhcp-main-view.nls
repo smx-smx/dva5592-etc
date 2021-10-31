@@ -1,0 +1,7 @@
+[dhcp-main-view:]
+v4Server=Enables or disables DHCPv4 server
+v4Server:val=boolean
+v6Server=Enables or disables DHCPv6 server
+v6Server:val=boolean
+relay=Enables or disables DHCP Relay
+relay:val=boolean

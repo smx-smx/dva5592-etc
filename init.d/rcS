@@ -1,0 +1,21 @@
+#!/bin/sh
+# Copyright (C) 2006 OpenWrt.org
+
+run_scripts() {
+	echo Starting boot.sh ...
+	[ "$1" = "S" ] && /etc/init.d/boot.sh $2 2>&1
+	for i in /etc/rc.d/$1*; do
+		echo Starting $i ...
+		[ -x $i ] && $i $2 2>&1
+	done
+}
+
+foreground=0
+
+. /etc/functions.sh
+
+if [ "$1" = "S" -a "$foreground" != "1" ]; then
+	run_scripts "$1" "$2" &
+else
+	run_scripts "$1" "$2"
+fi

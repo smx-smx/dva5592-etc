@@ -1,0 +1,24 @@
+[dhcp-client-config:]
+renew=Renew lease
+release=Release lease
+passThrough=Change passthrough
+passThrough:value=boolean
+opt121Routes=Enables or disables client dhcp immediately setting the routes received by option 121
+opt121Routes:value=boolean
+no passThrough pool=Turning off passThrough
+passThrough pool=Chooses DHCP Pool
+passThrough pool:alias_pool=DHCP Pool alias
+add option requested=Add option requested
+add option requested:tag=Tag
+add option requested:alias=Option's alias or tag
+del option requested=Del option requested
+del option requested:val=Option's alias or tag
+option requested=Enter "option requested" config view
+option requested:val=Option's alias or tag
+add option sent=add option sent
+add option sent:tag=Tag
+add option sent:alias=Option's alias
+del option sent=Del option sent
+del option sent:val=Option's alias or tag
+option sent=Enter "option sent" config view
+option sent:val=Option's alias or tag

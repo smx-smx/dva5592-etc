@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.USB.Interface.1">
+		<parameter name="Alias">
+			<value>Interface1</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Name">
+			<value>usb0</value>
+		</parameter>
+		<parameter name="Upstream">
+			<value>true</value>
+		</parameter>
+	</object>
+	<object name="Device.USB.Port.1">
+		<parameter name="Alias">
+			<value>Port1</value>
+		</parameter>
+		<parameter name="Name">
+			<value>USB Port 1</value>
+		</parameter>
+		<parameter name="Power">
+			<value>Unknown</value>
+		</parameter>
+		<parameter name="Receptacle">
+			<value>Standard-A</value>
+		</parameter>
+		<parameter name="Type">
+			<value>Host</value>
+		</parameter>
+		<parameter name="Rate">
+			<value>Full</value>
+		</parameter>
+		<parameter name="Standard">
+			<value>2.0</value>
+		</parameter>
+	</object>
+	<object name="Device.USB.Port.2">
+		<parameter name="Alias">
+			<value>Port2</value>
+		</parameter>
+		<parameter name="Name">
+			<value>USB Port 2</value>
+		</parameter>
+		<parameter name="Power">
+			<value>Unknown</value>
+		</parameter>
+		<parameter name="Receptacle">
+			<value>Standard-A</value>
+		</parameter>
+		<parameter name="Type">
+			<value>Host</value>
+		</parameter>
+		<parameter name="Rate">
+			<value>Full</value>
+		</parameter>
+		<parameter name="Standard">
+			<value>2.0</value>
+		</parameter>
+	</object>
+</config>

@@ -1,0 +1,7 @@
+[mgmt-config-view:]
+apply=Apply custom configuration
+configurationSet=Set the type of configuration set
+configurationSet:set=CustomConf (To apply a specific configuration set), RestoreConf (To restore a configuration set to default values)
+object=Enter "object" config view
+object:name=The object full name
+object:action=The action to be applied. Delete(The object in Name is deleted), Set(The parameters of the object in Name are set), Restore(The parameters of the object in Name are restored to the default value), Add(The object in Name is added)

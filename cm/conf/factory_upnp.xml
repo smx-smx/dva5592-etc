@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Device.UPnP.Device">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="X_ADB_ExternalInterface">
+		<value>Device.IP.Interface.2</value>
+	</parameter>
+	<parameter name="X_ADB_LanInterface">
+		<value>Device.IP.Interface.1</value>
+	</parameter>
+        <parameter name="X_ADB_FriendlyName">
+		<value>D-Link router</value>
+	</parameter>
+        <parameter name="X_ADB_ModelName">
+		<value>D-Link router</value>
+	</parameter>
+        <parameter name="X_ADB_ModelDescription">
+		<value>DVA-5592/W</value>
+	</parameter>
+        <parameter name="X_ADB_ManufacturerURL">
+		<value>www.dlink.com</value>
+	</parameter>
+        <parameter name="X_ADB_ModelURL">
+		<value>www.dlink.com</value>
+	</parameter>
+</object>

@@ -1,0 +1,11 @@
+[system-applications-view:]
+applicationFromHttp=Install application downloading it from an external HTTP server
+applicationFromHttp:url=URL to download the application package e.g. http://192.168.1.100/example-pkg.ipk
+applicationFromHttp:username=Username for HTTP server
+applicationFromHttp:password=Password for HTTP server
+applicationFromFtp=Install application downloading it from an external FTP server
+applicationFromFtp:url=URL to download the application package e.g. ftp://192.168.1.100/example-pkg.ipk
+applicationFromFtp:username=Username for FTP server
+applicationFromFtp:password=Password for FTP server
+uninstallApplication=Uninstall selected application
+uninstallApplication:applicationName=Application name

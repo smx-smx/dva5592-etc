@@ -1,0 +1,7 @@
+[if-bridgingwrapper-view:]
+bridge=Enter "bridge" config view
+bridge:alias=Enter bridge alias
+add bridge=Add new bridge
+add bridge:alias=Enter bridge alias
+del bridge=Delete bridge
+del bridge:alias=Enter bridge alias

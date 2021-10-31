@@ -1,0 +1,7 @@
+[diag-interfacemonitored-view:]
+mirrorInterface=Set the ethernet port for traffic mirroring
+mirrorInterface:ifname=Interface entry
+interfaceToMirror=Set the monitored DSL link
+interfaceToMirror:ifname=Interface entry
+direction=Set direction of mirroring
+direction:direction=Direction of mirroring

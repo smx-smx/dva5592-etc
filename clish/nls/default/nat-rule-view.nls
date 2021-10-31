@@ -1,0 +1,18 @@
+[nat-rule-view:]
+port=The external port (or the first port of a range of external ports) used to limit the NAT
+port:port=Enter port
+port:port_end=Enter end port
+ip address=The external IP address used to do SNAT (NAPT) or NAT 1:1
+ip address:ip=Enter IP address
+no ip address=Clear IP address
+no port=Clear port
+type=Type of NAT to be created
+type:type=Enter type
+filtering=Filtering Behavior of NAT to be created
+filtering:mode=Enter filtering mode
+classificationIndex=Identifier of a set of QoS.Classification objects
+classificationIndex:index=Enter index
+classificationIndex:new_value=Enter value
+no classificationIndex=Clear classification index
+order=Position of the InterfaceSetting entry in the order of precedence
+order:value=Enter value

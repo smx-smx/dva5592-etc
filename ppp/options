@@ -1,0 +1,8 @@
+noaccomp
+nopcomp
+nobsdcomp
+nodeflate
+maxfail 0
+plugin rp-pppoe.so
+plugin pppoatm.so
+

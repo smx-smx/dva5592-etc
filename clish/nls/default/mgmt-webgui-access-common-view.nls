@@ -1,0 +1,25 @@
+[mgmt-webgui-access-common-view:]
+tlsVersion set=Set comma-separated list of parameters indicates TLS version used for the security handshake when the HTTPS protocol is used to connect to the ACS
+tlsVersion set:check=Comma-separated list of parameters: Auto, SSL3.0, TLS1.0, TLS1.1, TLS1.2
+tlsVersion add=Add TLS version to use for the HTTPS security handshake
+tlsVersion add:check=TLS version
+tlsVersion del=Delete TLS version
+tlsVersion del:check=TLS version
+tlsVersion clear=Clear entire list of supported TLS versions
+tlsVersion show=Show entire list of supported TLS versions
+tlsCheck set=Set comma-separated list of parameters indicates which validity checks must be performed on TLS peer's certificate, if any
+tlsCheck set:check=Comma-separated list of parameters: CertInvalid, CertSignerNotFound, CertRevoked, CertExpired, CertNotActivated, All, None. If the list is empty, no client certificate is requested during the TLS handshake. None means that the client certificate is accepted without validation (not trusted). All means that all the supported checks are performed on the client certificate.
+tlsCheck add=Add single TLS validity check perform
+tlsCheck add:check=TLS validity check
+tlsCheck del=Del single TLS validity check perform
+tlsCheck del:check=TLS validity check
+tlsCheck clear=Clear list of TLS validity check parameters
+tlsCheck show=Show entire list of TLS validity check parameters
+acl=Enables or disables the Access Control List for remote access
+acl:val=Enable or disable
+add aclRule=Add new ACL rule
+add aclRule:alias=Unique name to reference ACL rule
+aclRule=Enter "aclRule" config view
+aclRule:alias=Name of ACL rule
+del aclRule=Delete ACL rule
+del aclRule:alias=Name of ACL rule

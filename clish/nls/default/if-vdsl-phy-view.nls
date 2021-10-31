@@ -1,0 +1,13 @@
+[if-vdsl-phy-view:]
+dynamicD=Manage dynamic D
+dynamicD:val=Enable/Disable
+dynamicF=Manage dynamic F
+dynamicF:val=Enable/Disable
+vdslProfiles set=Set list of VDSL profiles
+vdslProfiles set:profiles=Enter list
+vdslProfiles add=Add VDSL profile
+vdslProfiles add:profile=Enter VDSL profile
+vdslProfiles del=Delete VDSL profile
+vdslProfiles del:profile=Enter VDSL profile
+vdslProfiles clear=Clear VDSL profiles
+vdslProfiles show=Show VDSL profiles

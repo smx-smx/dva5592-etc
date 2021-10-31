@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="X_ADB_CustomConf.1">
+	<parameter name="GroupName">
+		<value>user</value>
+	</parameter>
+	<parameter name="ConfigurationSet">
+		<value>RestoreConf</value>
+	</parameter>
+</object>
+<object name="X_ADB_CustomConf.1.Object.1">
+	<parameter name="Name">
+		<value>Device.NAT.PortMapping</value>
+	</parameter>
+	<parameter name="Action">
+		<value>Delete</value>
+	</parameter>
+</object>
+<object name="X_ADB_CustomConf.1.Object.2">
+	<parameter name="Name">
+		<value>Device.DHCPv4.Server.Pool.*.StaticAddress</value>
+	</parameter>
+	<parameter name="Action">
+		<value>Delete</value>
+	</parameter>
+</object>

@@ -1,0 +1,7 @@
+[ipv6rd-main-view:]
+add tunnel=Add IPv6 tunnel
+add tunnel:alias=Enter IPv6 tunnel alias
+del tunnel=Delete IPv6 tunnel
+del tunnel:alias=Enter IPv6 tunnel alias
+tunnel=Enter "tunnel" config view
+tunnel:alias=Enter IPv6 tunnel alias

@@ -1,0 +1,20 @@
+<object name="Device.DeviceInfo">
+	<parameter name="Manufacturer">
+		<value>D-Link</value>
+	</parameter>
+	<parameter name="ManufacturerOUI">
+		<value>D4D184</value>
+	</parameter>
+	<parameter name="ModelName">
+		<value>VT5920</value>
+	</parameter>
+	<parameter name="HardwareVersion">
+		<value>VT5920</value>
+	</parameter>
+	<parameter name="ProductClass">
+		<value>VT5920</value>
+	</parameter>
+	<parameter name="X_ADB_UpgradeFilename">
+		<value>DVA-5592_A1_WI.sig</value>
+	</parameter>
+</object>

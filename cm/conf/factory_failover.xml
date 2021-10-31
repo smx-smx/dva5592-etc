@@ -1,0 +1,346 @@
+<object name="Device.X_ADB_InterfaceMonitor">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>Group1</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>DSL Interface</value>
+	</parameter>
+	<parameter name="MonitoredInterface">
+		<value>Device.DSL.Line.1</value>
+	</parameter>
+	<parameter name="Priority">
+		<value>3</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.1.Action.1">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.Services.VoiceService.1.X_DLINK_Enable</value>
+	</parameter>
+	<parameter name="Value">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.1.Action.2">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.IP.Interface.2.X_ADB_DefaultRoute</value>
+	</parameter>
+	<parameter name="Value">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.2">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>WAN ETH Interface</value>
+	</parameter>
+	<parameter name="MonitoredInterface">
+		<value>Device.Ethernet.Interface.5</value>
+	</parameter>
+	<parameter name="Priority">
+		<value>2</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.2.Action.1">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.Services.VoiceService.1.X_DLINK_Enable</value>
+	</parameter>
+	<parameter name="Value">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.2.Action.2">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.IP.Interface.2.X_ADB_DefaultRoute</value>
+	</parameter>
+	<parameter name="Value">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.3">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>Fiber Interface</value>
+	</parameter>
+	<parameter name="MonitoredInterface">
+		<value>Device.Ethernet.Interface.6</value>
+	</parameter>
+	<parameter name="HysteresisUp">
+		<value>30</value>
+	</parameter>
+	<parameter name="Priority">
+		<value>1</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.3.Action.1">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.Services.VoiceService.1.X_DLINK_Enable</value>
+	</parameter>
+	<parameter name="Value">
+		<value>false</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.3.Action.2">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.PPP.Interface.1.Reset</value>
+	</parameter>
+	<parameter name="Value">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.3.Action.3">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.PPP.Interface.2.Reset</value>
+	</parameter>
+	<parameter name="Value">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.3.Action.4">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.IP.Interface.2.X_ADB_DefaultRoute</value>
+	</parameter>
+	<parameter name="Value">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.4">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>USB Interface</value>
+	</parameter>
+	<parameter name="MonitoredInterface">
+		<value>Device.USB.Interface.1</value>
+	</parameter>
+	<parameter name="Priority">
+		<value>10</value>
+	</parameter>
+	<parameter name="StartupTimeout">
+		<value>60</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.1.Interface.4.Action.1">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.IP.Interface.5.X_ADB_DefaultRoute</value>
+	</parameter>
+	<parameter name="Value">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>VoIP IP Interfaces</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2.Interface.1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>VoIP DSL Interface</value>
+	</parameter>
+	<parameter name="MonitoredInterface">
+		<value>Device.IP.Interface.3</value>
+	</parameter>
+	<parameter name="DetectionMode">
+		<value>ARP</value>
+	</parameter>
+	<parameter name="HysteresisUp">
+		<value>5</value>
+	</parameter>
+	<parameter name="HysteresisDown">
+		<value>5</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2.Interface.1.ARP">
+	<parameter name="Interval">
+		<value>60</value>
+	</parameter>
+	<parameter name="Retries">
+		<value>1</value>
+	</parameter>
+	<parameter name="TimerInterval">
+		<value>1</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2.Interface.1.Action.1">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.Services.VoiceService.1.X_DLINK_OutboundInterface</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Device.IP.Interface.3</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2.Interface.1.Action.2">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.QoS.Queue.2.Interface</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Device.ATM.Link.2</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2.Interface.1.Action.4">
+	<parameter name="Event">
+		<value>Down</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.Services.VoiceService.1.X_DLINK_OutboundInterface</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Device.IP.Interface.2</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2.Interface.1.Action.5">
+	<parameter name="Event">
+		<value>Down</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.QoS.Queue.2.Interface</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Device.ATM.Link.1</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2.Interface.2">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>VoIP WAN ETH Interface</value>
+	</parameter>
+	<parameter name="MonitoredInterface">
+		<value>Device.IP.Interface.4</value>
+	</parameter>
+	<parameter name="DetectionMode">
+		<value>IP</value>
+	</parameter>
+	<parameter name="HysteresisUp">
+		<value>5</value>
+	</parameter>
+	<parameter name="HysteresisDown">
+		<value>5</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2.Interface.2.Action.1">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.Services.VoiceService.1.X_DLINK_OutboundInterface</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Device.IP.Interface.4</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2.Interface.2.Action.2">
+	<parameter name="Event">
+		<value>Up</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.QoS.Classification.7.EthernetPriorityMark</value>
+	</parameter>
+	<parameter name="Value">
+		<value>5</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2.Interface.2.Action.3">
+	<parameter name="Event">
+		<value>Down</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.Services.VoiceService.1.X_DLINK_OutboundInterface</value>
+	</parameter>
+	<parameter name="Value">
+		<value>Device.IP.Interface.2</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.2.Interface.2.Action.4">
+	<parameter name="Event">
+		<value>Down</value>
+	</parameter>
+	<parameter name="Path">
+		<value>Device.QoS.Classification.7.EthernetPriorityMark</value>
+	</parameter>
+	<parameter name="Value">
+		<value>5</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.3">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>USB Interface</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_InterfaceMonitor.Group.3.Interface.1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Name">
+		<value>USB Interface 1</value>
+	</parameter>
+	<parameter name="MonitoredInterface">
+		<value>Device.IP.Interface.5</value>
+	</parameter>
+	<parameter name="ReferenceInterface">
+		<value>Device.X_ADB_InterfaceMonitor.Group.1.Interface.4</value>
+	</parameter>
+	<parameter name="DetectionMode">
+		<value>IP</value>
+	</parameter>
+</object>

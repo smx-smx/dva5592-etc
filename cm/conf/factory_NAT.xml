@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<object name="Device.NAT.InterfaceSetting.1">
+		<parameter name="Alias">
+			<value>InterfaceSetting1</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.2</value>
+		</parameter>
+	</object>
+	<object name="Device.NAT.InterfaceSetting.2">
+		<parameter name="Alias">
+			<value>InterfaceSetting2</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.3</value>
+		</parameter>
+		<parameter name="X_ADB_Order">
+			<value>2</value>
+		</parameter>
+	</object>
+	<object name="Device.NAT.InterfaceSetting.3">
+		<parameter name="Alias">
+			<value>InterfaceSetting3</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.4</value>
+		</parameter>
+		<parameter name="X_ADB_Order">
+			<value>3</value>
+		</parameter>
+	</object>
+	<object name="Device.NAT.InterfaceSetting.4">
+		<parameter name="Alias">
+			<value>InterfaceSetting4</value>
+		</parameter>
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Interface">
+			<value>Device.IP.Interface.5</value>
+		</parameter>
+		<parameter name="X_ADB_Order">
+			<value>4</value>
+		</parameter>
+	</object>
+</config>

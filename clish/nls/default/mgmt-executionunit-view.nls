@@ -1,0 +1,3 @@
+[mgmt-executionunit-view:]
+requestedState=Set the state transition that the ACS is requesting for this ExecutionUnit
+requestedState:state=Idle, Active 

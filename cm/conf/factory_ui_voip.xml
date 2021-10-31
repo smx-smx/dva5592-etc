@@ -1,0 +1,16 @@
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/voip</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2220</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/voip/commonnumberingplan</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>0000</value>
+	</parameter>
+</object>

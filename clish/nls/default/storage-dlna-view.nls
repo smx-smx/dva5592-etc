@@ -1,0 +1,3 @@
+[storage-dlna-view:]
+interface=Change DLNA IP interface
+interface:ifname=Name of IP interface

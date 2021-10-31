@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="DSL" version="2.0">
+    <object name="WANDevice.{i}.WANConnectionDevice.{i}.WANPTMLinkConfig.">
+        <parameter name="X_ADB_TR181Name" excludeUser="CWMP"/>
+        <parameter name="X_ADB_VLANID" excludeUser="CWMP"/>
+    </object>
+</datamodel>

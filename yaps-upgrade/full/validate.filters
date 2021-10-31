@@ -1,0 +1,11 @@
+Device.DeviceInfo.ModelName
+	checkvalue = "%(Device.DeviceInfo.ModelName)"
+Device.DeviceInfo.ProductClass
+	checkvalue = "%(Device.DeviceInfo.ProductClass)"
+Device.IP.Interface.[0-9]+.Enable
+	checkvalue = "true"
+Device.IP.Interface.[0-9]+.IPv4Address.[0-9]+.Enable
+	checkvalue = "true"
+Device.IP.Interface.[0-9]+.IPv4Address.[0-9]+.IPAddress
+Device.UserInterface.X_ADB_LocalAccess.Enable
+	checkvalue = "true"

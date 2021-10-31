@@ -1,0 +1,20 @@
+[mgmt-stun-view:]
+enable=Enable use of STUN to allow operation through NAT
+disable=Disable use of STUN to allow operation through NAT
+server address=Set host name or IP address of the STUN server for the CPE to send Binding Requests
+server address:address=Host name or IP address
+no server address=Clear host name or IP address of the STUN server
+server port=Port number of the STUN server for the CPE to send Binding Requests
+server port:port=Port number
+username=Set value of the STUN USERNAME attribute to be used in Binding Requests
+username:username=Name of user
+no username=Clear value of the STUN USERNAME attribute
+password=Set value of the STUN Password to be used in computing the MESSAGE-INTEGRITY attribute
+password:password=Password
+no password=Clear value of the STUN Password
+maxKeepalivePeriod=Set maximum period, in seconds, that STUN Binding Requests MUST be sent by the CPE for the purpose of maintaining the binding in the Gateway. This applies specifically to Binding Requests sent from the UDP Connection Request address and port
+maxKeepalivePeriod:time=Period time in seconds. A value of -1 indicates that no maximum period is specified
+no maxKeepalivePeriod=Clear maxKeepalivePeriod
+minKeepalivePeriod=Set minimum period, in seconds, that STUN Binding Requests can be sent by the CPE for the purpose of maintaining the binding in the Gateway. This limit applies only to Binding Requests sent from the UDP Connection Request address and port, and only those that do not contain the BINDING-CHANGE attribute
+minKeepalivePeriod:time=Period time in seconds
+no minKeepalivePeriod=Clear minKeepalivePeriod

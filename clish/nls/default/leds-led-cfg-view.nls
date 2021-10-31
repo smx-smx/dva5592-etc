@@ -1,0 +1,13 @@
+[leds-led-cfg-view:]
+defaultColor=Set default color
+defaultColor:color=Color
+defaultDutyCycle=Set default duty cycle
+defaultDutyCycle:type=Duty cycle
+defaultActivity=Set default activity
+defaultActivity:type=Activity
+add behaviour=Add new behaviour
+add behaviour:alias=Behaviour alias
+behaviour=Enter "behaviour" config view
+behaviour:alias=Behaviour alias
+del behaviour=Delete behaviour
+del behaviour:alias=Behaviour alias

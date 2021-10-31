@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="Services" version="2.0">
+    <object name="SoftwareModules.DeploymentUnit.{i}.">
+        <parameter name="X_ADB_Removable" excludeUser="CWMP"/>
+        <parameter name="X_ADB_Upgradable" excludeUser="CWMP"/>
+        <parameter name="X_ADB_Operation" excludeUser="CWMP"/>
+        <parameter name="X_ADB_InstallDest" excludeUser="CWMP"/>
+    </object>
+    <object name="SoftwareModules.ExecEnv.{i}.">
+        <parameter name="X_ADB_RepositoryURL" excludeUser="CWMP"/>
+    </object>
+</datamodel>

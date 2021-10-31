@@ -1,0 +1,14 @@
+<object name="Device.NeighborDiscovery.InterfaceSetting.-1">
+	<parameter name="Alias">
+		<value>InterfaceSetting1</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Interface">
+		<value>Device.IP.Interface.1</value>
+	</parameter>
+	<parameter name="RSEnable">
+		<value>false</value>
+	</parameter>
+</object>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Device.X_ADB_FactoryData">
+	<parameter name="HardwareVersion">
+		<value>A1</value>
+	</parameter>
+	<parameter name="ProductClass">
+		<value>DVA-5592</value>
+	</parameter>
+	<parameter name="ModelName">
+		<value>DVA-5592</value>
+	</parameter>
+	<parameter name="ManufacturerOUI">
+		<value>54B80A</value>
+	</parameter>
+	<parameter name="Manufacturer">
+		<value>D-Link</value>
+	</parameter>
+</object>

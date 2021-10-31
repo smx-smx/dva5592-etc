@@ -1,0 +1,11 @@
+[extportlist-config-view:]
+icmp=Sets protocol to ICMP protocol
+no icmp=Fallback to TCP protocol
+extPortList set=Sets portmapping triplets list
+extPortList set:ports=Triplets specifying the portmapping protocol (TCP, UDP), external port and (optionally) port range.
+extPortList add=Adds portmapping triplet to list
+extPortList add:port=Triplets specifying the portmapping protocol (TCP, UDP), external port and (optionally) port range.
+extPortList del=Deletes portmapping triplet
+extPortList del:port=Triplets specifying the portmapping protocol (TCP, UDP), external port and (optionally) port range to remove
+extPortList show=Shows portmapping triplets list
+extPortList clear=Clears portmapping triplets list

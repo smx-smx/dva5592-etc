@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="Device" version="2.0"><object name="IP.Interface.{i}."><parameter name="X_ADB_ActiveLowerLayer" excludeUser="CWMP" /></object><object name="PPP.Interface.{i}."><parameter name="X_ADB_ActiveLowerLayer" excludeUser="CWMP" /></object><object name="Ethernet.Link.{i}."><parameter name="X_ADB_ActiveLowerLayer" excludeUser="CWMP" /></object><object name="Ethernet.VLANTermination.{i}."><parameter name="X_ADB_ActiveLowerLayer" excludeUser="CWMP" /></object></datamodel>

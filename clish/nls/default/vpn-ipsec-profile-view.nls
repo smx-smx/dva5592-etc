@@ -1,0 +1,20 @@
+[vpn-ipsec-profile-view:]
+maxSas=Set the maximum number of child Security Association (SA) pairs that can be negotiated by a single IKEv2 session
+maxSas:count=The maximum number of child Security Association
+remoteEndpoint=Set host name or IP address for IPsec tunnel endpoint.
+remoteEndpoint:addr=Ip address
+remoteEndpoint:mask=Network mask
+no remoteEndpoint=Clear remoteEndpoint
+localEndpoint=Set the (public) IP address to be used as IPsec tunnel source
+localEndpoint:ifname=IP address
+no localEndpoint=Clear localEndpoint
+IKEAuthenticationMethod=Set IKEv2 CPE authentication method
+IKEAuthenticationMethod:credentials=Security certificate
+ikeCheckPeers add=Add remote peer credential
+ikeCheckPeers add:credentials=Peer credential
+ikeCheckPeers del=Delete remote peer credential
+ikeCheckPeers del:credentials=Peer credential
+ikeCheckPeers set=Command stub
+ikeCheckPeers set:credentials_list=Set list of the remote peer credential
+ikeCheckPeers show=Show list of the remote peer credential
+ikeCheckPeers clear=Clear list of the remote peer credential

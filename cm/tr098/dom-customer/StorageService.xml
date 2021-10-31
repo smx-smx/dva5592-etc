@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamodel name="Services" version="2.0">
+    <object name="Services.StorageService.{i}.LogicalVolume.{i}.">
+        <parameter name="X_ADB_DeleteFolders" excludeUser="CWMP"/>
+        <parameter name="X_ADB_MountPoint" excludeUser="CWMP"/>
+        <parameter name="X_ADB_Create" excludeUser="CWMP"/>
+        <parameter name="X_ADB_Format" excludeUser="CWMP"/>
+        <parameter name="X_ADB_QUOTAEnabled" excludeUser="CWMP"/>
+        <parameter name="X_ADB_QUOTANumberOfEntries" excludeUser="CWMP"/>
+        <parameter name="X_ADB_StartSector" excludeUser="CWMP"/>
+        <parameter name="X_ADB_SizeSectors" excludeUser="CWMP"/>
+    </object>
+    <object name="Services.StorageService.{i}.LogicalVolume.{i}.X_ADB_QUOTA.{i}." excludeUser="CWMP"/>
+    <object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}.">
+        <parameter name="X_ADB_NfsIpAddresNumberOfEntries" excludeUser="CWMP"/>
+        <parameter name="X_ADB_ShareName" excludeUser="CWMP"/>
+        <parameter name="X_ADB_Permission" excludeUser="CWMP"/>
+    </object>
+    <object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}.X_ADB_NfsIpAddress.{i}." excludeUser="CWMP"/>
+    <object name="Services.StorageService.{i}.PhysicalMedium.{i}.">
+        <parameter name="X_ADB_DeviceName" excludeUser="CWMP"/>
+    </object>
+    <object name="Services.StorageService.{i}.UserGroup.{i}.">
+        <parameter name="X_ADB_Refresh" excludeUser="CWMP"/>
+    </object>
+</datamodel>

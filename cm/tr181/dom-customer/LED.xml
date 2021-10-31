@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<datamodel name="Device" version="2.0"><object name="X_ADB_LED." excludeUser="CWMP" /><object name="X_ADB_LED.ServiceLED.{i}." excludeUser="CWMP" /><object name="X_ADB_LED.ServiceLED.{i}.Behaviour.{i}." excludeUser="CWMP" /><object name="X_ADB_LED.ServiceLED.{i}.Behaviour.{i}.Trigger.{i}." excludeUser="CWMP" /></datamodel>

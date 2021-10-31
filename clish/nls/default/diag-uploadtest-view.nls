@@ -1,0 +1,18 @@
+[diag-uploadtest-view:]
+testStart=Launch test
+interface=Select interface to test
+interface:interface=Interface entry
+no interface=Clear interface
+serverUrl=Set server URL to perform download test on
+serverUrl:url=Valid HTTP or FTP URL
+no serverUrl=Clear server URL
+dscp=Set DiffServ code point for marking packets transmitted in the test
+dscp:value=DiffServ code point
+ethPrio=Set ethernet priority code for marking packets transmitted in the test
+ethPrio:value=Ethernet priority code
+fileSize=Set the size of the file in bytes to be uploaded to the server
+fileSize:value=Size of the file in bytes
+timeTest=Set time for test to run
+timeTest:duration=Total time of test in seconds. NOTE that the file needs to be large enough
+timeTest:increments=Time of single subinterval in seconds
+timeTest:offset=Time to skip from start of downloading in seconds

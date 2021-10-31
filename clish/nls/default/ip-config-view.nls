@@ -1,0 +1,14 @@
+[ip-config-view:]
+ip=Enter "ip" config view
+ip:alias_ip=Alias
+ipDetach=Remove from IP or from ethlink (if integrated) - don't touch ppp, vlan or ethlink (if standalone)
+[ipinterface-config-view:]
+connectionType=Controls the list of connection types
+connectionType set=Set the list of connection types
+connectionType set:connTypes=Input a list of connection types to set
+connectionType add=Add the connection type
+connectionType add:connType=Select the connection type to add
+connectionType del=Del the connection type
+connectionType del:connTypes=Select the connection type to delete
+connectionType clear=Clear the connection type
+connectionType show=Show the connection types

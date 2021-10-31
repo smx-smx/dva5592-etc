@@ -1,0 +1,14 @@
+[storage-http-view:]
+port=Set the port number that the HTTP server is listening on
+port:port=Port number(The factory default value is 8080)
+root=Set initial folder used as "document root" for shared resources
+root:root=Name of existing folder
+interface set=Set list of interfaces able to access the HTTP server
+interface set:interfaces=Comma-separated list of interfaces names
+interface add=Add one interface to interface list
+interface add:interface=Name of interface
+interface del=Delete one interface from interface list
+interface del:interface=Name of interface
+interface clear=Clear interface list
+interface show=Show entire interface list
+reset=Reload status of local HTTP server according to configuration

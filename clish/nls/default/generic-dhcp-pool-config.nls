@@ -1,0 +1,21 @@
+[generic-dhcp-pool-config:]
+order=Set order
+order:num=Position of the Pool entry in the order of precedence
+vendorClassId=Set vendor class id
+vendorClassId:id=Pool association criterion
+vendorClassId:mode=VendorClassID pattern match criteria
+vendorClassId:exclude=Set vendor class id exclude to true
+no vendorClassId=Remove vendor class id
+no clientId=Remove client id
+clientId=DHCPv4 set client id
+clientId:id=Pool association criteria
+clientId:exclude=Set client id exclude to true
+no chaddr=Remove chaddr
+chaddr=Set chaddr
+chaddr:mac=Pool association criterion
+chaddr:mac_mask=Bit-mask for the MAC address
+chaddr:exclude=Set chaddr exclude to true
+no userClassId=Remove user class id
+userClassId=Set user class id
+userClassId:id=Pool association criterion
+userClassId:exclude=Set user class id exclude to true

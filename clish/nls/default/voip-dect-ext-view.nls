@@ -1,0 +1,5 @@
+voip-dect-ext-view:]
+name=Set name of portable
+name:name=New name of portable
+control=Control the registration status of the portable
+control:option=Unregister/ Disable portable

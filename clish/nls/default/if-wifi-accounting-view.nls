@@ -1,0 +1,9 @@
+[if-wifi-accounting-view:]
+enable=Enables accounting functionality for the access point
+disable=Disables accounting functionality for the access point
+radius=RADIUS Server
+radius:secret=The secret used for handshaking with the RADIUS server
+radius:ipaddr=The IP Address of the RADIUS server used for WLAN security
+radius:portno=The port number of the RADIUS server used for WLAN security
+interimInterval=Default interim accounting interval
+interimInterval:value=Interim interval in seconds

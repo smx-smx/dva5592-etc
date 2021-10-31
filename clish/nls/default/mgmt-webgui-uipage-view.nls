@@ -1,0 +1,3 @@
+[mgmt-webgui-uipage-view:]
+permissions=Set access permissions to the GUI page for AdminUser, Normaluser and PowerUser and set level of GUI page(basic/advance)
+permissions:value=Four digits in order AdminUser, NormalUser, PowerUser, GUI level. The digits MUST be in range 0-2 for users and 0-1 for GUI page level. For users: 0- no access, 1- read-only access, 2- read-write access. For GUI page: 0- the page is available at the basic level, 1-  the page is available at the advanced level only

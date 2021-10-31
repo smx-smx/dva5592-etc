@@ -1,0 +1,7 @@
+[mgmt-custom-config-view:]
+add config=Add new custom config
+add config:alias=Name of custom config
+config=Enter "config" config view
+config:alias=Name of config
+del config=Delete custom config
+del config:alias=Name of config

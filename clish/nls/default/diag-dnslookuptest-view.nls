@@ -1,0 +1,15 @@
+[diag-dnslookuptest-view:]
+testStart=Launch test
+interface=Select interface to test
+interface:ifname=Interface entry
+no interface=Clear interface
+host=Set the hostname to test
+host:host=Hostname
+no host=Clear host
+dnsServer=Set DNS Server ip address to use during test to resolve hostname
+dnsServer:server=Ip address
+no dnsServer=Clear dnsServer
+timeout=Set timeout for hostname resolving
+timeout:time=Time in milliseconds
+count=Set number of executions
+count:value=Number of executions

@@ -1,0 +1,5 @@
+[Extension-sip-config-view:]
+extension=Select extension which makes/receives the outgoing/incoming call
+extension:ex=Extension entry
+line=Select line to be used for outgoing/incoming calls
+line:line=Line entry

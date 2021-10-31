@@ -1,0 +1,15 @@
+[dyndns-view:]
+add client=Add Dynamic DNS client
+add client:client_alias=Enter client name
+del client=Delete Dynamic DNS client
+del client:alias=Enter client name
+client=Enter "client" config view
+client:client_alias=Enter client name
+add provider=Add Dynamic DNS provider
+add provider:provider_name=Enter provider name
+del provider=Delete Dynamic DNS provider
+del provider:alias=Enter provider name
+provider=Enter "provider" config view
+provider:provider_name=Enter provider name
+show providers=Show all Dynamic DNS providers
+show clients=Show all Dynamic DNS clients

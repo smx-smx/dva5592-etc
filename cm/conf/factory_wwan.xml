@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object name="Device.USB.Interface.1">
+	<parameter name="Name">
+		<value>usb0</value>
+	</parameter>
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Alias">
+		<value>Interface1</value>
+	</parameter>
+	<parameter name="Upstream">
+		<value>true</value>
+	</parameter>
+</object>
+<object name="Device.X_ADB_SystemLog.Service.-1">
+	<parameter name="Enable">
+		<value>true</value>
+	</parameter>
+	<parameter name="Alias">
+		<value>WWAN Modem</value>
+	</parameter>
+	<parameter name="Identity">
+		<value>wwanmodem</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/netif/usbif</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2121</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/settings/netif/modemif</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2121</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/modem</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/modem/operator</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/modem/usbmodem</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2001</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>dboard/modem/usbmodem/edit</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2001</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/interface/usbCdc</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2121</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/interface/mobileModem</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2221</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/interface/mobileModem/add model</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2001</value>
+	</parameter>
+</object>
+<object name="Device.UserInterface.X_ADB_AccessControl.Feature.-1">
+	<parameter name="PagePath">
+		<value>clish/configure/interface/mobileModem/model</value>
+	</parameter>
+	<parameter name="Permissions">
+		<value>2001</value>
+	</parameter>
+</object>

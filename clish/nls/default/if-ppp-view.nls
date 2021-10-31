@@ -1,0 +1,7 @@
+[if-ppp-view:]
+add ppp=Add Point-to-Point Protocol
+add ppp:ppp_alias=Enter PPP alias
+ppp=Enter "ppp" config view
+ppp:alias_ppp=Enter PPP alias
+del ppp=Delete Point-to-Point Protocol
+del ppp:alias_ppp=Enter PPP alias

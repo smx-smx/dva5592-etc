@@ -1,0 +1,5 @@
+[ethlink-config-view:]
+promiscuousMode=Enables or disables promiscuous mode
+promiscuousMode:value=New mode state
+prioTag=Sets priority
+prioTag:value=New priority value

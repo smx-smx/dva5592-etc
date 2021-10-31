@@ -1,0 +1,5 @@
+[duStateChangeCompletePolicy-view:]
+operation=Set list of the Deployment Unit operations that MUST be included when the CPE notifies the ACS of "12 AUTONOMOUS DU STATE CHANGE COMPLETE" events
+operation:type=Comma-separated list of operations
+result=Set the Deployment Unit state change results that MUST be included when the CPE notifies the ACS of "12 AUTONOMOUS DU STATE CHANGE COMPLETE" events
+result:type=Enumeration of: Success(The autonomous state change completed successfully, Failure(The autonomous state change did not complete successfully, Both(All result types independent of Success or Failure)

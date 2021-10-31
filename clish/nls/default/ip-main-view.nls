@@ -1,0 +1,15 @@
+[ip-main-view:]
+ipv4=Enables or disables the IPv4 stack, and so the use of IPv4 on the device
+ipv4:val=Enable/Disable
+ipv6=Enables or disables the IPv6 stack, and so the use of IPv6 on the device
+ipv6:val=Enable/Disable
+neighborDiscovery=Enables or disables this InterfaceSetting entry
+neighborDiscovery:val=Enable/Disable
+routerAdverisement=Enables or disables Router Advertisement
+routerAdverisement:val=Enable/Disable
+ulaPrefix=The ULA /48 prefix
+ulaPrefix:prefix=Enter IPv6 prefix
+no ulaPrefix=Clear ULA /48 prefix
+ulaSubnet=The ULA /16 subnet ID prefix part
+ulaSubnet:prefix=Enter subnet ID prefix part
+no ulaSubnet=Clear subnet ID prefix part

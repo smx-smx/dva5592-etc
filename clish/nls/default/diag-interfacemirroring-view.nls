@@ -1,0 +1,7 @@
+[diag-interfacemirroring-view:]
+add interface=Add new interface mirror
+add interface:alias=Unique name of interface mirror
+del interface=Select interface mirror to del
+del interface:alias=Interface mirror entry
+interface=Enter "interface" config view
+interface:alias=Interface mirror entry

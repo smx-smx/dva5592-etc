@@ -1,0 +1,14 @@
+[storage-volume-view:]
+mount=Mount logical volume on the current device
+unmount=Unmount logical volume on the current device
+format=Format the partition related to this volume according to the given file system type
+format:name=File system name
+label=Set label name for the current partition
+label:label=Label string
+add folder=Add a folder in the current logical volume
+add folder:name=Name of folder
+folder=Enter "folder" config view
+folder:name=Name of folder
+del folder=Deletes a folder in the current logical volume
+del folder:name=Name of folder
+dlna=Enter "dlna" config view
