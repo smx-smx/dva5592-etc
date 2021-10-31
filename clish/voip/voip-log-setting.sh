@@ -2,7 +2,6 @@
 
 . /etc/clish/clish-commons.sh
 
-
 module=$1
 loglevel=$2
 command=$3
@@ -17,66 +16,67 @@ USR2=32
 MESSAGE=$USR1
 PROXYMESSAGE=$USR2
 
-if [ "`pidof voip`" = "" ]; then
+if [ "$(pidof voip)" = "" ]; then
     echo "voip not running: log commands are not available"
     exit 0
 fi
 
 case "$module" in
-    "CallManager" )
-        modname=CM
+"CallManager")
+    modname=CM
     ;;
-    "AnalogEndPoint" )
-        modname=AEP
+"AnalogEndPoint")
+    modname=AEP
     ;;
-    "DECT" )
-        modname=DECT
+"DECT")
+    modname=DECT
     ;;
-    "DigitalEndPoint" )
-        modname=DEP
+"DigitalEndPoint")
+    modname=DEP
     ;;
-    "HardwareAbstractionLayer" )
-        modname=HAL
+"HardwareAbstractionLayer")
+    modname=HAL
     ;;
-    "Statistics" )
-        modname=STATS
+"Statistics")
+    modname=STATS
     ;;
-    "VoIP" )
-        modname=VoIP
+"VoIP")
+    modname=VoIP
     ;;
-    "SIP" )
-        modname=SIP
+"SIP")
+    modname=SIP
     ;;
-    "FXO" )
-        modname=FXO
+"FXO")
+    modname=FXO
     ;;
-    "BSP" )
-        if [ "$command" = "SET" ] ; then
-            case "$loglevel" in
-                "DEBUG" )
-                    echo l ept 3 > /proc/bcmlog
-                    echo l xdrv 3 > /proc/bcmlog
-                    echo l xdrv_slic 3 > /proc/bcmlog
-                    ;;
-                "NONE"|"DEFAULT" )
-                    echo l ept 0 > /proc/bcmlog
-                    echo l xdrv 0 > /proc/bcmlog
-                    echo l xdrv_slic 0 > /proc/bcmlog
-                ;;
-            esac
-        fi
-        exit 0
+"BSP")
+    if [ "$command" = "SET" ]; then
+        case "$loglevel" in
+        "DEBUG")
+            echo l ept 3 >/proc/bcmlog
+            echo l xdrv 3 >/proc/bcmlog
+            echo l xdrv_slic 3 >/proc/bcmlog
+            ;;
+        "NONE" | "DEFAULT")
+            echo l ept 0 >/proc/bcmlog
+            echo l xdrv 0 >/proc/bcmlog
+            echo l xdrv_slic 0 >/proc/bcmlog
+            ;;
+        esac
+    fi
+    exit 0
     ;;
-    "OUTPUT" )
-        output="$2"
-        command="OUTPUT"
+"OUTPUT")
+    output="$2"
+    command="OUTPUT"
+    ;;
 esac
 
-if [ "$command" = "SET" ] ; then
+if [ "$command" = "SET" ]; then
     siplevel=0
     if [ "$modname" = "SIP" ]; then
-        siplevel=`echo LOGLEVEL GET SIP | nc local:/tmp/voip_socket`
-        siplevel=`printf "%d" 0x$siplevel`
+        siplevel=$(echo LOGLEVEL GET SIP | nc local:/tmp/voip_socket)
+        siplevel=$(printf "%d" 0x$siplevel)
         if [ "$siplevel" -gt "$MESSAGE" ]; then
             siplevel=$MESSAGE
         else
@@ -85,74 +85,73 @@ if [ "$command" = "SET" ] ; then
     fi
     messagename=""
     case "$loglevel" in
-        "DEBUG" )
-            newlevel=$((ERROR+WARNING+INFO+DEBUG))
+    "DEBUG")
+        newlevel=$((ERROR + WARNING + INFO + DEBUG))
         ;;
-        "DEFAULT" )
-            newlevel=$((ERROR+WARNING+INFO))
+    "DEFAULT")
+        newlevel=$((ERROR + WARNING + INFO))
         ;;
-         "PROXYMESSAGE" | "NOPROXYMESSAGE" )
-            messagelevel=$PROXYMESSAGE
-            messagename="PROXYMESSAGE"
+    "PROXYMESSAGE" | "NOPROXYMESSAGE")
+        messagelevel=$PROXYMESSAGE
+        messagename="PROXYMESSAGE"
         ;;
-         "MESSAGE" | "NOMESSAGE" )
-            messagelevel=$MESSAGE
-            messagename="MESSAGE"
+    "MESSAGE" | "NOMESSAGE")
+        messagelevel=$MESSAGE
+        messagename="MESSAGE"
         ;;
-        "NONE" )
-            newlevel=0
+    "NONE")
+        newlevel=0
         ;;
-        "dummy" )
-        ;;
+    "dummy") ;;
+
     esac
     if [ "$messagename" != "" ]; then
-        newlevel=`echo LOGLEVEL GET $modname | nc local:/tmp/voip_socket`
-        newlevel=`printf "%d" 0x$newlevel`
+        newlevel=$(echo LOGLEVEL GET $modname | nc local:/tmp/voip_socket)
+        newlevel=$(printf "%d" 0x$newlevel)
         if [ "$loglevel" = "$messagename" ]; then
             siplevel=$messagelevel
         else
-            if [ "$newlevel" = "$((newlevel|$messagelevel))" ]; then
-                newlevel=$((newlevel-messagelevel))
+            if [ "$newlevel" = "$((newlevel | $messagelevel))" ]; then
+                newlevel=$((newlevel - messagelevel))
             fi
             siplevel=0
         fi
     fi
-    newlevel=$((newlevel|siplevel))
-    newlevel=`printf "%X" $newlevel`
+    newlevel=$((newlevel | siplevel))
+    newlevel=$(printf "%X" $newlevel)
 
     echo LOGLEVEL SET $modname $newlevel | nc local:/tmp/voip_socket
-elif [ "$command" = "GET" ] ; then
-    oldlevel=`echo LOGLEVEL GET $modname | nc local:/tmp/voip_socket`
-    oldlevel=`printf "%d" 0x$oldlevel`
+elif [ "$command" = "GET" ]; then
+    oldlevel=$(echo LOGLEVEL GET $modname | nc local:/tmp/voip_socket)
+    oldlevel=$(printf "%d" 0x$oldlevel)
     oldstring=""
-    if [ "$oldlevel" = "0" ] ; then
+    if [ "$oldlevel" = "0" ]; then
         oldstring=NONE
     else
-        if [ "$oldlevel" -ge "$USR1" ] ; then
+        if [ "$oldlevel" -ge "$USR1" ]; then
             oldstring="$oldstring MESSAGE"
-            oldlevel=$((oldlevel-MESSAGE))
+            oldlevel=$((oldlevel - MESSAGE))
         fi
-        if [ "$oldlevel" -ge "$DEBUG" ] ; then
+        if [ "$oldlevel" -ge "$DEBUG" ]; then
             oldstring="$oldstring DEBUG"
-            oldlevel=$((oldlevel-DEBUG))
+            oldlevel=$((oldlevel - DEBUG))
         fi
-        if [ "$oldlevel" -ge "$INFO" ] ; then
+        if [ "$oldlevel" -ge "$INFO" ]; then
             oldstring="$oldstring INFO"
-            oldlevel=$((oldlevel-INFO))
+            oldlevel=$((oldlevel - INFO))
         fi
-        if [ "$oldlevel" -ge "$WARNING" ] ; then
+        if [ "$oldlevel" -ge "$WARNING" ]; then
             oldstring="$oldstring WARNING"
-            oldlevel=$((oldlevel-WARNING))
+            oldlevel=$((oldlevel - WARNING))
         fi
-        if [ "$oldlevel" -ge "$ERROR" ] ; then
+        if [ "$oldlevel" -ge "$ERROR" ]; then
             oldstring="$oldstring ERROR"
         fi
     fi
     echo "Current LOGLEVEL for module $module is: $oldstring"
-elif [ "$command" = "OUTPUT" ] ; then
+elif [ "$command" = "OUTPUT" ]; then
     if [ "$output" != "CONSOLE" ]; then
-       output="SYSLOG"
+        output="SYSLOG"
     fi
     echo LOGOUTPUT SET "$output" | nc local:/tmp/voip_socket
 fi
-

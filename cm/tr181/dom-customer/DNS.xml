@@ -1,3 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DNS" version="2.0"><object name="DNS."><parameter name="X_ADB_IPVersionRestricted" excludeUser="CWMP" /><parameter name="X_ADB_ReqIPVersionOnRedirect" excludeUser="CWMP" /><parameter name="X_ADB_TCPRestricted" excludeUser="CWMP" /><parameter name="X_ADB_TCPAllowedIfaces" excludeUser="CWMP" /><parameter name="X_ADB_NoFallbackRCODEs" excludeUser="CWMP" /></object><object name="DNS.Client."><parameter name="X_ADB_DynamicServerRuleNumberOfEntries" excludeUser="CWMP" /><parameter name="X_ADB_CacheEnable" excludeUser="CWMP" /></object><object name="DNS.Client.Server.{i}."><parameter name="X_ADB_DomainFiltering" excludeUser="CWMP" /><parameter name="X_ADB_DomainFilteringRestricted" excludeUser="CWMP" /><parameter name="X_ADB_DomainInterface" excludeUser="CWMP" /><parameter name="X_ADB_Timeout" excludeUser="CWMP" /><parameter name="X_ADB_PrioBase" excludeUser="CWMP" /><parameter name="X_ADB_PrioDomain" excludeUser="CWMP" /><parameter name="X_ADB_Permissions" excludeUser="CWMP" /></object><object name="DNS.Client.X_ADB_DynamicServerRule.{i}." excludeUser="CWMP" /><object name="DNS.Relay."><parameter name="X_ADB_DynamicForwardingRuleNumberOfEntries" excludeUser="CWMP" /></object><object name="DNS.Relay.Forwarding.{i}."><parameter name="X_ADB_InboundInterface" excludeUser="CWMP" /><parameter name="X_ADB_DomainFiltering" excludeUser="CWMP" /><parameter name="X_ADB_DomainFilteringRestricted" excludeUser="CWMP" /><parameter name="X_ADB_DomainInterface" excludeUser="CWMP" /><parameter name="X_ADB_Timeout" excludeUser="CWMP" /><parameter name="X_ADB_PrioBase" excludeUser="CWMP" /><parameter name="X_ADB_PrioDomain" excludeUser="CWMP" /><parameter name="X_ADB_Permissions" excludeUser="CWMP" /></object><object name="DNS.Relay.X_ADB_DynamicForwardingRule.{i}." excludeUser="CWMP" /></datamodel>
+<datamodel name="DNS" version="2.0">
+	<object name="DNS.">
+		<parameter name="X_ADB_IPVersionRestricted" excludeUser="CWMP" />
+		<parameter name="X_ADB_ReqIPVersionOnRedirect" excludeUser="CWMP" />
+		<parameter name="X_ADB_TCPRestricted" excludeUser="CWMP" />
+		<parameter name="X_ADB_TCPAllowedIfaces" excludeUser="CWMP" />
+		<parameter name="X_ADB_NoFallbackRCODEs" excludeUser="CWMP" />
+	</object>
+	<object name="DNS.Client.">
+		<parameter name="X_ADB_DynamicServerRuleNumberOfEntries" excludeUser="CWMP" />
+		<parameter name="X_ADB_CacheEnable" excludeUser="CWMP" />
+	</object>
+	<object name="DNS.Client.Server.{i}.">
+		<parameter name="X_ADB_DomainFiltering" excludeUser="CWMP" />
+		<parameter name="X_ADB_DomainFilteringRestricted" excludeUser="CWMP" />
+		<parameter name="X_ADB_DomainInterface" excludeUser="CWMP" />
+		<parameter name="X_ADB_Timeout" excludeUser="CWMP" />
+		<parameter name="X_ADB_PrioBase" excludeUser="CWMP" />
+		<parameter name="X_ADB_PrioDomain" excludeUser="CWMP" />
+		<parameter name="X_ADB_Permissions" excludeUser="CWMP" />
+	</object>
+	<object name="DNS.Client.X_ADB_DynamicServerRule.{i}." excludeUser="CWMP" />
+	<object name="DNS.Relay.">
+		<parameter name="X_ADB_DynamicForwardingRuleNumberOfEntries" excludeUser="CWMP" />
+	</object>
+	<object name="DNS.Relay.Forwarding.{i}.">
+		<parameter name="X_ADB_InboundInterface" excludeUser="CWMP" />
+		<parameter name="X_ADB_DomainFiltering" excludeUser="CWMP" />
+		<parameter name="X_ADB_DomainFilteringRestricted" excludeUser="CWMP" />
+		<parameter name="X_ADB_DomainInterface" excludeUser="CWMP" />
+		<parameter name="X_ADB_Timeout" excludeUser="CWMP" />
+		<parameter name="X_ADB_PrioBase" excludeUser="CWMP" />
+		<parameter name="X_ADB_PrioDomain" excludeUser="CWMP" />
+		<parameter name="X_ADB_Permissions" excludeUser="CWMP" />
+	</object>
+	<object name="DNS.Relay.X_ADB_DynamicForwardingRule.{i}." excludeUser="CWMP" />
+</datamodel>

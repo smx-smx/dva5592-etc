@@ -3,8 +3,8 @@
 
 START=95
 boot() {
-	[ -e /proc/driver/xtm/dropmcast ] && echo 0 > /proc/driver/xtm/dropmcast
-	[ -e /proc/driver/bcmsw/drop_mcast ] && echo 0 > /proc/driver/bcmsw/drop_mcast
+	[ -e /proc/driver/xtm/dropmcast ] && echo 0 >/proc/driver/xtm/dropmcast
+	[ -e /proc/driver/bcmsw/drop_mcast ] && echo 0 >/proc/driver/bcmsw/drop_mcast
 	[ -d /tmp/root ] && {
 		lock /tmp/.switch2jffs
 		firstboot switch2jffs

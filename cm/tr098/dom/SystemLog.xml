@@ -1,3 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="X_ADB_SystemLog." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" aliasOnGet="Device.X_ADB_SystemLog.%n" aliasOnSet="Device.X_ADB_SystemLog.%n"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Enabled" /><enumeration value="Disabled" /></string><default value="Disabled" /></syntax></parameter><parameter name="ServiceNumberOfEntries" access="readOnly"><syntax><unsignedInt /></syntax></parameter><parameter name="ServerNumberOfEntries" access="readOnly"><syntax><unsignedInt /></syntax></parameter><parameter name="NumberOfEntries" access="readWrite"><syntax><unsignedInt><range minInclusive="2" maxInclusive="10000" step="1" /></unsignedInt><default value="1000" /></syntax></parameter></object><object name="X_ADB_SystemLog.Service.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ServiceNumberOfEntries" enableParameter="Enable" aliasOnGet="Device.X_ADB_SystemLog.Service.%i.%n" aliasOnSet="Device.X_ADB_SystemLog.Service.%i.%n" aliasOnAdd="Device.X_ADB_SystemLog.Service.%i" aliasOnDel="Device.X_ADB_SystemLog.Service.%i"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Enabled" /><enumeration value="Disabled" /></string><default value="Disabled" /></syntax></parameter><parameter name="Priority" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="7" step="1" /></unsignedInt><default value="6" /></syntax></parameter><parameter name="Identity" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="RateLimit" access="readWrite"><syntax><int><range minInclusive="0" maxInclusive="9999" step="1" /></int><default value="0" /></syntax></parameter><parameter name="RateLimitUnit" access="readWrite"><syntax><string><enumeration value="Seconds" /><enumeration value="Minutes" /><enumeration value="Hours" /><enumeration value="Days" /></string><default value="Minutes" /></syntax></parameter></object><object name="X_ADB_SystemLog.Server.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ServerNumberOfEntries" enableParameter="Enable" aliasOnGet="Device.X_ADB_SystemLog.Server.%i.%n" aliasOnSet="Device.X_ADB_SystemLog.Server.%i.%n" aliasOnAdd="Device.X_ADB_SystemLog.Server.%i" aliasOnDel="Device.X_ADB_SystemLog.Server.%i"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="RemoteServer" access="readWrite"><syntax><string><size minLength="0" maxLength="255" /></string></syntax></parameter><parameter name="RemotePort" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="65535" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="UseTLS" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="UseRFC5424Format" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter></object></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="X_ADB_SystemLog." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" aliasOnGet="Device.X_ADB_SystemLog.%n" aliasOnSet="Device.X_ADB_SystemLog.%n">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Enabled" />
+					<enumeration value="Disabled" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="ServiceNumberOfEntries" access="readOnly">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ServerNumberOfEntries" access="readOnly">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="NumberOfEntries" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="2" maxInclusive="10000" step="1" />
+				</unsignedInt>
+				<default value="1000" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_SystemLog.Service.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ServiceNumberOfEntries" enableParameter="Enable" aliasOnGet="Device.X_ADB_SystemLog.Service.%i.%n" aliasOnSet="Device.X_ADB_SystemLog.Service.%i.%n" aliasOnAdd="Device.X_ADB_SystemLog.Service.%i" aliasOnDel="Device.X_ADB_SystemLog.Service.%i">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Enabled" />
+					<enumeration value="Disabled" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="Priority" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="7" step="1" />
+				</unsignedInt>
+				<default value="6" />
+			</syntax>
+		</parameter>
+		<parameter name="Identity" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="RateLimit" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="0" maxInclusive="9999" step="1" />
+				</int>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="RateLimitUnit" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Seconds" />
+					<enumeration value="Minutes" />
+					<enumeration value="Hours" />
+					<enumeration value="Days" />
+				</string>
+				<default value="Minutes" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_SystemLog.Server.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ServerNumberOfEntries" enableParameter="Enable" aliasOnGet="Device.X_ADB_SystemLog.Server.%i.%n" aliasOnSet="Device.X_ADB_SystemLog.Server.%i.%n" aliasOnAdd="Device.X_ADB_SystemLog.Server.%i" aliasOnDel="Device.X_ADB_SystemLog.Server.%i">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="RemoteServer" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="255" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="RemotePort" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="65535" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="UseTLS" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="UseRFC5424Format" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

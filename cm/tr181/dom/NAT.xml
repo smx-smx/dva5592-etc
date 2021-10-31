@@ -1,3 +1,308 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="IP" version="2.0"><object name="NAT." access="readOnly" minEntries="1" maxEntries="1"><parameter name="InterfaceSettingNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="PortMappingNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="NAT.InterfaceSetting.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceSettingNumberOfEntries" enableParameter="Enable" set="NATInterfaceSetting.sh" add="NATInterfaceSetting.sh" del="NATInterfaceSetting.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="X_ADB_ExternalPort" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_ExternalPortEndRange" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_ExternalIPAddress" access="readWrite"><syntax><dataType ref="IPv4Address" /><default value="" /></syntax></parameter><parameter name="X_ADB_ExternalIPMask" access="readWrite"><syntax><dataType ref="IPv4Address" /><default value="" /></syntax></parameter><parameter name="X_ADB_ForwardingPolicy" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="255" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="X_ADB_ForwardingPolicyMask" access="readWrite"><syntax><int><range minInclusive="0" maxInclusive="255" step="1" /></int><default value="255" /></syntax></parameter><parameter name="X_ADB_Type" access="readWrite"><syntax><string><enumeration value="None" /><enumeration value="NAPT" /><enumeration value="NAT1:1" /></string><default value="NAPT" /></syntax></parameter><parameter name="X_ADB_Order" access="readWrite"><syntax><unsignedInt><range minInclusive="1" step="1" /></unsignedInt><default value="1" /></syntax></parameter><parameter name="X_ADB_Permissions" access="readWrite"><syntax><dataType ref="UserPermission" /><default value="333" /></syntax></parameter></object><object name="NAT.PortMapping.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="PortMappingNumberOfEntries" enableParameter="Enable" set="NATPortMapping.sh" add="NATPortMapping.sh" del="NATPortMapping.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="AllInterfaces" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Description" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string><default value="" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_ExternalIPAddress" access="readWrite"><syntax><string><pathRef targetParent=".NAT.InterfaceSetting." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="ExternalPort" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="ExternalPortEndRange" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="InternalClient" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string><default value="" /></syntax></parameter><parameter name="InternalPort" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="LeaseDuration" access="readWrite" activeNotify="canDeny" supported="no"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="Protocol" access="readWrite"><syntax><string><enumeration value="TCP" /><enumeration value="UDP" /><enumeration value="X_ADB_GRE" /><enumeration value="X_ADB_TCPUDP" /></string><default value="TCP" /></syntax></parameter><parameter name="RemoteHost" access="readWrite"><syntax><string /><default value="" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="X_ADB_AdditionalExternalPort" access="readWrite"><syntax><list /><string><pattern value="(TCP|UDP|X_ADB_TCPUDP):[1-9][0-9]{0,4}" /><pattern value="(TCP|UDP|X_ADB_TCPUDP):[1-9][0-9]{0,4}-[1-9][0-9]{0,4}" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_Hairpinning" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="X_ADB_ErrorReason" access="readOnly" store="no"><syntax><list /><string><enumeration value="GUILocal" /><enumeration value="GUIRemote" /><enumeration value="SSHLocal" /><enumeration value="SSHRemote" /><enumeration value="TelnetLocal" /><enumeration value="TelnetRemote" /><enumeration value="TR069" /><enumeration value="RuleConflict" /><enumeration value="LocalIP" /><enumeration value="NotAllowedPort" /><enumeration value="ClientUnknown" /><enumeration value="ClientDuplicated" /><enumeration value="ClientDisconnected" /></string></syntax></parameter><parameter name="X_ADB_WanConnectionType" access="readWrite"><syntax><list /><string><enumeration value="Data" /><enumeration value="Management" /><enumeration value="Iptv" /><enumeration value="Voip" /><enumeration value="Generic" /><enumeration value="Lan" /><enumeration value="" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_ForwardingPolicy" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="255" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="X_ADB_Creator" access="readOnly"><syntax><string><enumeration value="Defaults" /><enumeration value="UPnP" /><enumeration value="ACS" /><enumeration value="UserInterface" /><enumeration value="Other" /></string><default type="object" value="ACS" /></syntax></parameter><parameter name="X_ADB_Permissions" access="readWrite"><syntax><dataType ref="UserPermission" /><default value="333" /></syntax></parameter></object></datamodel>
+<datamodel name="IP" version="2.0">
+	<object name="NAT." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="InterfaceSettingNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="PortMappingNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="NAT.InterfaceSetting.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceSettingNumberOfEntries" enableParameter="Enable" set="NATInterfaceSetting.sh" add="NATInterfaceSetting.sh" del="NATInterfaceSetting.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error_Misconfigured" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ExternalPort" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ExternalPortEndRange" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ExternalIPAddress" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ExternalIPMask" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ForwardingPolicy" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="255" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ForwardingPolicyMask" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="0" maxInclusive="255" step="1" />
+				</int>
+				<default value="255" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Type" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="NAPT" />
+					<enumeration value="NAT1:1" />
+				</string>
+				<default value="NAPT" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Order" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" step="1" />
+				</unsignedInt>
+				<default value="1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Permissions" access="readWrite">
+			<syntax>
+				<dataType ref="UserPermission" />
+				<default value="333" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="NAT.PortMapping.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="PortMappingNumberOfEntries" enableParameter="Enable" set="NATPortMapping.sh" add="NATPortMapping.sh" del="NATPortMapping.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="AllInterfaces" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Description" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ExternalIPAddress" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent=".NAT.InterfaceSetting." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ExternalPort" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ExternalPortEndRange" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="InternalClient" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="InternalPort" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="LeaseDuration" access="readWrite" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Protocol" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="TCP" />
+					<enumeration value="UDP" />
+					<enumeration value="X_ADB_GRE" />
+					<enumeration value="X_ADB_TCPUDP" />
+				</string>
+				<default value="TCP" />
+			</syntax>
+		</parameter>
+		<parameter name="RemoteHost" access="readWrite">
+			<syntax>
+				<string />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error_Misconfigured" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AdditionalExternalPort" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<pattern value="(TCP|UDP|X_ADB_TCPUDP):[1-9][0-9]{0,4}" />
+					<pattern value="(TCP|UDP|X_ADB_TCPUDP):[1-9][0-9]{0,4}-[1-9][0-9]{0,4}" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Hairpinning" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ErrorReason" access="readOnly" store="no">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="GUILocal" />
+					<enumeration value="GUIRemote" />
+					<enumeration value="SSHLocal" />
+					<enumeration value="SSHRemote" />
+					<enumeration value="TelnetLocal" />
+					<enumeration value="TelnetRemote" />
+					<enumeration value="TR069" />
+					<enumeration value="RuleConflict" />
+					<enumeration value="LocalIP" />
+					<enumeration value="NotAllowedPort" />
+					<enumeration value="ClientUnknown" />
+					<enumeration value="ClientDuplicated" />
+					<enumeration value="ClientDisconnected" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_WanConnectionType" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="Data" />
+					<enumeration value="Management" />
+					<enumeration value="Iptv" />
+					<enumeration value="Voip" />
+					<enumeration value="Generic" />
+					<enumeration value="Lan" />
+					<enumeration value="" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ForwardingPolicy" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="255" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Creator" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Defaults" />
+					<enumeration value="UPnP" />
+					<enumeration value="ACS" />
+					<enumeration value="UserInterface" />
+					<enumeration value="Other" />
+				</string>
+				<default type="object" value="ACS" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Permissions" access="readWrite">
+			<syntax>
+				<dataType ref="UserPermission" />
+				<default value="333" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

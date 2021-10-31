@@ -1,3 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DynamicDNS" version="2.0"><object name="Services.X_ADB_DynamicDNS." access="readOnly" minEntries="1" maxEntries="1" /><object name="Services.X_ADB_DynamicDNS.Client.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" enableParameter="Enable" set="DynamicDNS.sh" del="DynamicDNS.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Up" /><enumeration value="Disabled" /><enumeration value="Down" /><enumeration value="Unregistered" /><enumeration value="Registering" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="Hostname" access="readWrite"><syntax><list maxItems="20" /><string /></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="LastError" access="readOnly" store="no"><syntax><string /></syntax></parameter><parameter name="Provider" access="readWrite"><syntax><string><pathRef targetParent=".Services.X_ADB_DynamicDNS.Provider." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="Username" access="readWrite"><syntax><string /></syntax></parameter><parameter name="Password" access="readWrite"><syntax mangled="true"><string /></syntax></parameter><parameter name="Offline" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter></object><object name="Services.X_ADB_DynamicDNS.Provider.{i}." access="readWrite" minEntries="0" maxEntries="unbounded"><parameter name="Name" access="readWrite"><syntax><string /></syntax></parameter><parameter name="Protocol" access="readWrite"><syntax><string><enumeration value="dyndns2" /><enumeration value="tzodns" /><enumeration value="ods" /><enumeration value="zoneedit" /><enumeration value="dtdns" /></string></syntax></parameter><parameter name="BaseURI" access="readWrite"><syntax><string /></syntax></parameter></object></datamodel>
+<datamodel name="DynamicDNS" version="2.0">
+	<object name="Services.X_ADB_DynamicDNS." access="readOnly" minEntries="1" maxEntries="1" />
+	<object name="Services.X_ADB_DynamicDNS.Client.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" enableParameter="Enable" set="DynamicDNS.sh" del="DynamicDNS.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Up" />
+					<enumeration value="Disabled" />
+					<enumeration value="Down" />
+					<enumeration value="Unregistered" />
+					<enumeration value="Registering" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="Hostname" access="readWrite">
+			<syntax>
+				<list maxItems="20" />
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="LastError" access="readOnly" store="no">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="Provider" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent=".Services.X_ADB_DynamicDNS.Provider." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Username" access="readWrite">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="Password" access="readWrite">
+			<syntax mangled="true">
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="Offline" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Services.X_ADB_DynamicDNS.Provider.{i}." access="readWrite" minEntries="0" maxEntries="unbounded">
+		<parameter name="Name" access="readWrite">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="Protocol" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="dyndns2" />
+					<enumeration value="tzodns" />
+					<enumeration value="ods" />
+					<enumeration value="zoneedit" />
+					<enumeration value="dtdns" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="BaseURI" access="readWrite">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

@@ -18,7 +18,7 @@
         <parameter name="X_ADB_NumberingPlan" excludeUser="CWMP"/>
         <parameter name="X_ADB_ProfileOutboundInterface" excludeUser="CWMP"/>
         <parameter name="X_ADB_Proxy" excludeUser="CWMP"/>
-     </object>
+    </object>
     <object name="Services.VoiceService.{i}.X_ADB_NumberingPlan." excludeUser="CWMP"/>
     <object name="Services.VoiceService.{i}.X_ADB_NumberingPlan.PrefixInfo.{i}." excludeUser="CWMP"/>
     <object name="Services.VoiceService.{i}.X_ADB_SIP." excludeUser="CWMP"/>
@@ -26,7 +26,7 @@
         <parameter name="X_ADB_OutboundInterface" excludeUser="CWMP"/>
         <parameter name="X_ADB_FaxPassThroughCodec" excludeUser="CWMP"/>
         <parameter name="X_DLINK_OutboundInterface" access="readWrite" aliasOnGet="%(Device.Services.VoiceService.%i1.VoiceProfile.%i.X_ADB_OutboundInterface).X_ADB_TR098Reference%u" set="TR098_Interface.sh">
-           <description>Interface for outgoing VoIP traffic</description>
+            <description>Interface for outgoing VoIP traffic</description>
             <syntax>
                 <string/>
             </syntax>

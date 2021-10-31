@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DMS" version="2.0"><object name="X_ADB_DMS." excludeUser="CWMP" /></datamodel>
+<datamodel name="DMS" version="2.0">
+	<object name="X_ADB_DMS." excludeUser="CWMP" />
+</datamodel>

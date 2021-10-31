@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="X_ADB_VPN." excludeUser="CWMP" /><object name="X_ADB_VPN.Users." excludeUser="CWMP" /><object name="X_ADB_VPN.Users.User.{i}." excludeUser="CWMP" /></datamodel>
+<datamodel name="Services" version="2.0">
+	<object name="X_ADB_VPN." excludeUser="CWMP" />
+	<object name="X_ADB_VPN.Users." excludeUser="CWMP" />
+	<object name="X_ADB_VPN.Users.User.{i}." excludeUser="CWMP" />
+</datamodel>

@@ -1,3 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="SoftwareModules" version="2.0"><object name="ManagementServer.DUStateChangeComplPolicy." access="readOnly" minEntries="1" maxEntries="1"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="OperationTypeFilter" access="readWrite"><syntax><list /><string><enumeration value="Install" /><enumeration value="Update" /><enumeration value="Uninstall" /></string><default value="Install,Update,Uninstall" /></syntax></parameter><parameter name="ResultTypeFilter" access="readWrite"><syntax><string><enumeration value="Success" /><enumeration value="Failure" /><enumeration value="Both" /></string><default value="Both" /></syntax></parameter></object><object name="ManagementServer.X_ADB_CWMPState."><parameter name="DUStateChangeCompleteNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="ManagementServer.X_ADB_CWMPState.DUStateChangeComplete.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="DUStateChangeCompleteNumberOfEntries"><parameter name="Autonomous" access="readOnly"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="CommandKey" access="readOnly"><syntax><string><size maxLength="32" /></string></syntax></parameter><parameter name="OperationNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="ManagementServer.X_ADB_CWMPState.DUStateChangeComplete.{i}.Operation.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="OperationNumberOfEntries"><parameter name="URL" access="readOnly"><syntax><string><size maxLength="1024" /></string></syntax></parameter><parameter name="UUID" access="readOnly"><syntax><string><size maxLength="36" /></string></syntax></parameter><parameter name="Username" access="readOnly"><syntax><string><size maxLength="256" /></string></syntax></parameter><parameter name="Password" access="readOnly"><syntax><string><size maxLength="256" /></string></syntax></parameter><parameter name="ExecutionEnvRef" access="readOnly"><syntax><string><size maxLength="256" /><pathRef targetParent=".SoftwareModules.ExecEnv." refType="weak" targetType="row" /></string></syntax></parameter><parameter name="DeploymentUnitRef" access="readOnly"><syntax><string><size maxLength="256" /><pathRef targetParent=".SoftwareModules.DeploymentUnit." refType="weak" targetType="row" /></string></syntax></parameter><parameter name="Version" access="readOnly"><syntax><string><size maxLength="32" /></string></syntax></parameter><parameter name="CurrentState" access="readOnly" localNotify="forceEnabled"><syntax><string><enumeration value="None" /><enumeration value="Installed" /><enumeration value="Uninstalled" /><enumeration value="Failed" /></string><default value="None" /></syntax></parameter><parameter name="Resolved" access="readOnly"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="ExecutionUnitRefList" access="readOnly"><syntax><list /><string><pathRef targetParent=".SoftwareModules.ExecutionUnit." refType="weak" targetType="row" /></string></syntax></parameter><parameter name="StartTime" access="readOnly"><syntax><dateTime /><default value="0001-01-01T00:00:00Z" /></syntax></parameter><parameter name="CompleteTime" access="readOnly"><syntax><dateTime /><default value="0001-01-01T00:00:00Z" /></syntax></parameter><parameter name="FaultCode" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="OperationPerformed" access="readOnly"><syntax><string><enumeration value="Install" /><enumeration value="Update" /><enumeration value="Uninstall" /></string><default value="Install" /></syntax></parameter></object></datamodel>
+<datamodel name="SoftwareModules" version="2.0">
+	<object name="ManagementServer.DUStateChangeComplPolicy." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="OperationTypeFilter" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="Install" />
+					<enumeration value="Update" />
+					<enumeration value="Uninstall" />
+				</string>
+				<default value="Install,Update,Uninstall" />
+			</syntax>
+		</parameter>
+		<parameter name="ResultTypeFilter" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Success" />
+					<enumeration value="Failure" />
+					<enumeration value="Both" />
+				</string>
+				<default value="Both" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="ManagementServer.X_ADB_CWMPState.">
+		<parameter name="DUStateChangeCompleteNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="ManagementServer.X_ADB_CWMPState.DUStateChangeComplete.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="DUStateChangeCompleteNumberOfEntries">
+		<parameter name="Autonomous" access="readOnly">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="CommandKey" access="readOnly">
+			<syntax>
+				<string>
+					<size maxLength="32" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="OperationNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="ManagementServer.X_ADB_CWMPState.DUStateChangeComplete.{i}.Operation.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="OperationNumberOfEntries">
+		<parameter name="URL" access="readOnly">
+			<syntax>
+				<string>
+					<size maxLength="1024" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="UUID" access="readOnly">
+			<syntax>
+				<string>
+					<size maxLength="36" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Username" access="readOnly">
+			<syntax>
+				<string>
+					<size maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Password" access="readOnly">
+			<syntax>
+				<string>
+					<size maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ExecutionEnvRef" access="readOnly">
+			<syntax>
+				<string>
+					<size maxLength="256" />
+					<pathRef targetParent=".SoftwareModules.ExecEnv." refType="weak" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="DeploymentUnitRef" access="readOnly">
+			<syntax>
+				<string>
+					<size maxLength="256" />
+					<pathRef targetParent=".SoftwareModules.DeploymentUnit." refType="weak" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Version" access="readOnly">
+			<syntax>
+				<string>
+					<size maxLength="32" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="CurrentState" access="readOnly" localNotify="forceEnabled">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Installed" />
+					<enumeration value="Uninstalled" />
+					<enumeration value="Failed" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="Resolved" access="readOnly">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="ExecutionUnitRefList" access="readOnly">
+			<syntax>
+				<list />
+				<string>
+					<pathRef targetParent=".SoftwareModules.ExecutionUnit." refType="weak" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="StartTime" access="readOnly">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00Z" />
+			</syntax>
+		</parameter>
+		<parameter name="CompleteTime" access="readOnly">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00Z" />
+			</syntax>
+		</parameter>
+		<parameter name="FaultCode" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="OperationPerformed" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Install" />
+					<enumeration value="Update" />
+					<enumeration value="Uninstall" />
+				</string>
+				<default value="Install" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

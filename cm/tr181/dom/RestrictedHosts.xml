@@ -1,3 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="X_ADB_ParentalControl.RestrictedHosts." access="readOnly" minEntries="1" maxEntries="1"><parameter name="TimeOfDayEnabled" access="readOnly" store="no" get="RestrictedHost.sh"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="TimeOfDayProfileNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="HostNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="Verification" access="readWrite" set="RestrictedHost.sh"><syntax><unsignedInt><units value="seconds" /><range minInclusive="120" maxInclusive="86339" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="UsageInterval" access="readWrite"><syntax><unsignedInt><units value="seconds" /><range maxInclusive="86339" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="Update" access="readWrite" excludeUser="CWMP" store="no" set="UpdateRestrictedHost.sh"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="Check" access="readWrite" excludeUser="CWMP" store="no" set="CheckRestrictedHost.sh"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="LastReset" access="readOnly" excludeUser="CWMP"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="DefaultRestriction" access="readOnly" excludeUser="CWMP" set="RestrictedHost.sh"><syntax><string><enumeration value="NONE" /><enumeration value="PARENTALCONTROL" /></string><default value="PARENTALCONTROL" /></syntax></parameter></object><object name="X_ADB_ParentalControl.RestrictedHosts.Host.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="HostNumberOfEntries" set="RestrictedHostEntry.sh" del="RestrictedHostEntry.sh" add="RestrictedHostEntry.sh"><parameter name="Enable" access="readWrite" set="CheckRestrictedHost.sh"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="SubnetID" access="readOnly" get="RestrictedHostEntry.sh" store="no"><syntax><unsignedInt /></syntax></parameter><parameter name="HostID" access="readOnly" get="RestrictedHostEntry.sh" store="no"><syntax><unsignedInt /></syntax></parameter><parameter name="MACAddress" access="readWrite" set="CheckRestrictedHost.sh"><syntax><dataType ref="MACAddress" /></syntax></parameter><parameter name="TypeOfRestriction" access="readWrite" set="CheckRestrictedHost.sh"><syntax><string><enumeration value="NONE" /><enumeration value="GUESTNETWORK" /><enumeration value="BLACKLIST" /><enumeration value="TIMEOFDAY" /></string><default value="NONE" /></syntax></parameter><parameter name="Profile" access="readWrite" set="CheckRestrictedHost.sh"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="Blocked" access="readOnly" store="no"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="CurrentUsage" access="readOnly"><syntax><unsignedInt><units value="seconds" /><range maxInclusive="86399" step="1" /></unsignedInt><default value="0" /></syntax></parameter></object><object name="X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="TimeOfDayProfileNumberOfEntries" del="TimeOfDayProfile.sh"><parameter name="ProfileID" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="TimeOfDayNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.{i}.TimeOfDay.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="TimeOfDayNumberOfEntries" set="TimeOfDay.sh" add="TimeOfDay.sh" del="TimeOfDay.sh"><parameter name="Day" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="7" step="1" /></unsignedInt></syntax></parameter><parameter name="UsagePeriodBegin" access="readWrite" set="CheckRestrictedHost.sh"><syntax><unsignedInt><units value="seconds" /><range maxInclusive="86399" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="UsagePeriodEnd" access="readWrite" set="CheckRestrictedHost.sh"><syntax><unsignedInt><units value="seconds" /><range maxInclusive="86399" step="1" /></unsignedInt><default value="86399" /></syntax></parameter><parameter name="MaxUsagePerPeriod" access="readWrite" set="CheckRestrictedHost.sh"><syntax><unsignedInt><units value="seconds" /><range maxInclusive="86399" step="1" /></unsignedInt><default value="86399" /></syntax></parameter></object><object name="X_ADB_ParentalControl.Policy.{i}."><parameter name="TimeOfDayProfile" access="readWrite"><syntax><string><pathRef targetParent="#.RestrictedHosts.TimeOfDayProfile." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="TimeOfDayEnable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter></object></datamodel>
+<datamodel name="Services" version="2.0">
+	<object name="X_ADB_ParentalControl.RestrictedHosts." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="TimeOfDayEnabled" access="readOnly" store="no" get="RestrictedHost.sh">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="TimeOfDayProfileNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="HostNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Verification" access="readWrite" set="RestrictedHost.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+					<range minInclusive="120" maxInclusive="86339" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="UsageInterval" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+					<range maxInclusive="86339" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Update" access="readWrite" excludeUser="CWMP" store="no" set="UpdateRestrictedHost.sh">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Check" access="readWrite" excludeUser="CWMP" store="no" set="CheckRestrictedHost.sh">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="LastReset" access="readOnly" excludeUser="CWMP">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="DefaultRestriction" access="readOnly" excludeUser="CWMP" set="RestrictedHost.sh">
+			<syntax>
+				<string>
+					<enumeration value="NONE" />
+					<enumeration value="PARENTALCONTROL" />
+				</string>
+				<default value="PARENTALCONTROL" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_ParentalControl.RestrictedHosts.Host.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="HostNumberOfEntries" set="RestrictedHostEntry.sh" del="RestrictedHostEntry.sh" add="RestrictedHostEntry.sh">
+		<parameter name="Enable" access="readWrite" set="CheckRestrictedHost.sh">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="SubnetID" access="readOnly" get="RestrictedHostEntry.sh" store="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="HostID" access="readOnly" get="RestrictedHostEntry.sh" store="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="MACAddress" access="readWrite" set="CheckRestrictedHost.sh">
+			<syntax>
+				<dataType ref="MACAddress" />
+			</syntax>
+		</parameter>
+		<parameter name="TypeOfRestriction" access="readWrite" set="CheckRestrictedHost.sh">
+			<syntax>
+				<string>
+					<enumeration value="NONE" />
+					<enumeration value="GUESTNETWORK" />
+					<enumeration value="BLACKLIST" />
+					<enumeration value="TIMEOFDAY" />
+				</string>
+				<default value="NONE" />
+			</syntax>
+		</parameter>
+		<parameter name="Profile" access="readWrite" set="CheckRestrictedHost.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Blocked" access="readOnly" store="no">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="CurrentUsage" access="readOnly">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+					<range maxInclusive="86399" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="TimeOfDayProfileNumberOfEntries" del="TimeOfDayProfile.sh">
+		<parameter name="ProfileID" access="readWrite">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="TimeOfDayNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.{i}.TimeOfDay.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="TimeOfDayNumberOfEntries" set="TimeOfDay.sh" add="TimeOfDay.sh" del="TimeOfDay.sh">
+		<parameter name="Day" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="7" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="UsagePeriodBegin" access="readWrite" set="CheckRestrictedHost.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+					<range maxInclusive="86399" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="UsagePeriodEnd" access="readWrite" set="CheckRestrictedHost.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+					<range maxInclusive="86399" step="1" />
+				</unsignedInt>
+				<default value="86399" />
+			</syntax>
+		</parameter>
+		<parameter name="MaxUsagePerPeriod" access="readWrite" set="CheckRestrictedHost.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+					<range maxInclusive="86399" step="1" />
+				</unsignedInt>
+				<default value="86399" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_ParentalControl.Policy.{i}.">
+		<parameter name="TimeOfDayProfile" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent="#.RestrictedHosts.TimeOfDayProfile." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="TimeOfDayEnable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

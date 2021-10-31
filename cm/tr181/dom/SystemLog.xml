@@ -1,3 +1,322 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="X_ADB_SystemLog." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="SystemLog.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Enabled" /><enumeration value="Disabled" /></string><default value="Disabled" /></syntax></parameter><parameter name="ServiceNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="ServerNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="FileLoggingNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="NumberOfEntries" access="readWrite"><syntax><unsignedInt><range minInclusive="2" maxInclusive="10000" step="1" /></unsignedInt><default value="1000" /></syntax></parameter></object><object name="X_ADB_SystemLog.Service.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ServiceNumberOfEntries" enableParameter="Enable" set="SystemLog.sh"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Enabled" /><enumeration value="Disabled" /></string><default value="Disabled" /></syntax></parameter><parameter name="Priority" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="7" step="1" /></unsignedInt><default value="6" /></syntax></parameter><parameter name="Facility" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="23" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="Identity" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="RateLimit" access="readWrite"><syntax><unsignedInt><range maxInclusive="9999" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="RateLimitUnit" access="readWrite"><syntax><string><enumeration value="Seconds" /><enumeration value="Minutes" /><enumeration value="Hours" /><enumeration value="Days" /></string><default value="Minutes" /></syntax></parameter><parameter name="X_ADB_Permissions" access="readWrite"><syntax><dataType ref="UserPermission" /><default value="333" /></syntax></parameter></object><object name="X_ADB_SystemLog.Server.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ServerNumberOfEntries" enableParameter="Enable" set="SystemLog.sh" add="SystemLog.sh" del="SystemLog.sh"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="BufferedEntriesLimit" access="readWrite"><syntax><unsignedInt /><default value="1000" /></syntax></parameter><parameter name="RemoteServer" access="readWrite"><syntax><string><size minLength="0" maxLength="255" /></string></syntax></parameter><parameter name="RemotePort" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="65535" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="BufferSize" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" step="1" /><units value="kilobytes" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="UseTLS" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="UseRFC5424Format" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="ServiceLabel" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter><parameter name="IdentityFilter" access="readWrite"><syntax><list /><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter><parameter name="SeverityFilter" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="7" step="1" /></unsignedInt><default value="7" /></syntax></parameter></object><object name="X_ADB_SystemLog.FileLogging.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="FileLoggingNumberOfEntries" enableParameter="Enable" set="SystemLog.sh" add="SystemLog.sh" del="SystemLog.sh"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" activeNotify="canDeny" store="no" get="SystemLog.sh"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error" /><enumeration value="Overflow" /><enumeration value="Done" /></string><default value="Disabled" /></syntax></parameter><parameter name="Append" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="ServiceLabel" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter><parameter name="IdentityFilter" access="readWrite"><syntax><list /><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter><parameter name="SeverityFilter" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="7" step="1" /></unsignedInt><default value="7" /></syntax></parameter><parameter name="StorageVolume" access="readWrite"><syntax><string><pathRef targetParent=".Services.StorageService.1.LogicalVolume." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="Filename" access="readWrite"><syntax><string><size minLength="1" maxLength="64" /></string><default value="yaps.log" /></syntax></parameter><parameter name="SizeLimit" access="readWrite"><syntax><unsignedInt><units value="bytes" /></unsignedInt><default value="100000" /></syntax></parameter><parameter name="BufferedEntriesLimit" access="readWrite"><syntax><unsignedInt /><default value="1000" /></syntax></parameter><parameter name="Format" access="readWrite"><syntax><string><size minLength="0" maxLength="255" /></string><default value="%Y-%M-%D %H:%m:%s - %p %t - %g%n" /></syntax></parameter><parameter name="HeaderFormat"><syntax><string><size minLength="0" maxLength="1023" /></string><default value="Product Class: {pc}%nSerial Number: {sn}%nSoftware Version: {sv}%n%Y-%M-%D %H:%m:%s - START%n" /></syntax></parameter><parameter name="FooterFormat"><syntax><string><size minLength="0" maxLength="1023" /></string><default value="%Y-%M-%D %H:%m:%s - END%n" /></syntax></parameter><parameter name="SizeLimitFormat"><syntax><string><size minLength="0" maxLength="255" /></string><default value="%Y-%M-%D %H:%m:%s - MAXSIZE%n" /></syntax></parameter><parameter name="ErrorFormat"><syntax><string><size minLength="0" maxLength="255" /></string><default value="%Y-%M-%D %H:%m:%s - ERROR%n" /></syntax></parameter></object></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="X_ADB_SystemLog." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="SystemLog.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Enabled" />
+					<enumeration value="Disabled" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="ServiceNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ServerNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="FileLoggingNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="NumberOfEntries" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="2" maxInclusive="10000" step="1" />
+				</unsignedInt>
+				<default value="1000" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_SystemLog.Service.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ServiceNumberOfEntries" enableParameter="Enable" set="SystemLog.sh">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Enabled" />
+					<enumeration value="Disabled" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="Priority" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="7" step="1" />
+				</unsignedInt>
+				<default value="6" />
+			</syntax>
+		</parameter>
+		<parameter name="Facility" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="23" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Identity" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="RateLimit" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range maxInclusive="9999" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="RateLimitUnit" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Seconds" />
+					<enumeration value="Minutes" />
+					<enumeration value="Hours" />
+					<enumeration value="Days" />
+				</string>
+				<default value="Minutes" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Permissions" access="readWrite">
+			<syntax>
+				<dataType ref="UserPermission" />
+				<default value="333" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_SystemLog.Server.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ServerNumberOfEntries" enableParameter="Enable" set="SystemLog.sh" add="SystemLog.sh" del="SystemLog.sh">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="BufferedEntriesLimit" access="readWrite">
+			<syntax>
+				<unsignedInt />
+				<default value="1000" />
+			</syntax>
+		</parameter>
+		<parameter name="RemoteServer" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="255" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="RemotePort" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="65535" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="BufferSize" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" step="1" />
+					<units value="kilobytes" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="UseTLS" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="UseRFC5424Format" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="ServiceLabel" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="IdentityFilter" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="SeverityFilter" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="7" step="1" />
+				</unsignedInt>
+				<default value="7" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_SystemLog.FileLogging.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="FileLoggingNumberOfEntries" enableParameter="Enable" set="SystemLog.sh" add="SystemLog.sh" del="SystemLog.sh">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" activeNotify="canDeny" store="no" get="SystemLog.sh">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error" />
+					<enumeration value="Overflow" />
+					<enumeration value="Done" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="Append" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="ServiceLabel" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="IdentityFilter" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="SeverityFilter" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="7" step="1" />
+				</unsignedInt>
+				<default value="7" />
+			</syntax>
+		</parameter>
+		<parameter name="StorageVolume" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent=".Services.StorageService.1.LogicalVolume." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Filename" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="1" maxLength="64" />
+				</string>
+				<default value="yaps.log" />
+			</syntax>
+		</parameter>
+		<parameter name="SizeLimit" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="bytes" />
+				</unsignedInt>
+				<default value="100000" />
+			</syntax>
+		</parameter>
+		<parameter name="BufferedEntriesLimit" access="readWrite">
+			<syntax>
+				<unsignedInt />
+				<default value="1000" />
+			</syntax>
+		</parameter>
+		<parameter name="Format" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="255" />
+				</string>
+				<default value="%Y-%M-%D %H:%m:%s - %p %t - %g%n" />
+			</syntax>
+		</parameter>
+		<parameter name="HeaderFormat">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="1023" />
+				</string>
+				<default value="Product Class: {pc}%nSerial Number: {sn}%nSoftware Version: {sv}%n%Y-%M-%D %H:%m:%s - START%n" />
+			</syntax>
+		</parameter>
+		<parameter name="FooterFormat">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="1023" />
+				</string>
+				<default value="%Y-%M-%D %H:%m:%s - END%n" />
+			</syntax>
+		</parameter>
+		<parameter name="SizeLimitFormat">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="255" />
+				</string>
+				<default value="%Y-%M-%D %H:%m:%s - MAXSIZE%n" />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorFormat">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="255" />
+				</string>
+				<default value="%Y-%M-%D %H:%m:%s - ERROR%n" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

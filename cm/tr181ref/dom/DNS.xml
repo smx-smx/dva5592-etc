@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DNS" version="2.0"><object name="DNS.Client.Server.{i}." aliasOnAdd="InternetGatewayDevice.DNS.Client.Server.%i" aliasOnDel="InternetGatewayDevice.DNS.Client.Server.%i" aliasOnSets="InternetGatewayDevice.DNS.Client.Server.%i">
-    </object><object name="DNS.Client.X_ADB_DynamicServerRule.{i}." aliasOnAdd="InternetGatewayDevice.DNS.Client.X_ADB_DynamicServerRule.%i" aliasOnDel="InternetGatewayDevice.DNS.Client.X_ADB_DynamicServerRule.%i">
-    </object><object name="DNS.Relay.Forwarding.{i}." aliasOnAdd="InternetGatewayDevice.DNS.Relay.Forwarding.%i" aliasOnDel="InternetGatewayDevice.DNS.Relay.Forwarding.%i" aliasOnSets="InternetGatewayDevice.DNS.Relay.Forwarding.%i">
-    </object><object name="DNS.Relay.X_ADB_DynamicForwardingRule.{i}." aliasOnAdd="InternetGatewayDevice.DNS.Relay.X_ADB_DynamicForwardingRule.%i" aliasOnDel="InternetGatewayDevice.DNS.Relay.X_ADB_DynamicForwardingRule.%i">
-    </object></datamodel>
+<datamodel name="DNS" version="2.0">
+    <object name="DNS.Client.Server.{i}." aliasOnAdd="InternetGatewayDevice.DNS.Client.Server.%i" aliasOnDel="InternetGatewayDevice.DNS.Client.Server.%i" aliasOnSets="InternetGatewayDevice.DNS.Client.Server.%i">
+    </object>
+    <object name="DNS.Client.X_ADB_DynamicServerRule.{i}." aliasOnAdd="InternetGatewayDevice.DNS.Client.X_ADB_DynamicServerRule.%i" aliasOnDel="InternetGatewayDevice.DNS.Client.X_ADB_DynamicServerRule.%i">
+    </object>
+    <object name="DNS.Relay.Forwarding.{i}." aliasOnAdd="InternetGatewayDevice.DNS.Relay.Forwarding.%i" aliasOnDel="InternetGatewayDevice.DNS.Relay.Forwarding.%i" aliasOnSets="InternetGatewayDevice.DNS.Relay.Forwarding.%i">
+    </object>
+    <object name="DNS.Relay.X_ADB_DynamicForwardingRule.{i}." aliasOnAdd="InternetGatewayDevice.DNS.Relay.X_ADB_DynamicForwardingRule.%i" aliasOnDel="InternetGatewayDevice.DNS.Relay.X_ADB_DynamicForwardingRule.%i">
+    </object>
+</datamodel>

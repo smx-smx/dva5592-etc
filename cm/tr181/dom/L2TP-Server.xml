@@ -1,4 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="X_ADB_VPN." access="readOnly" minEntries="1" maxEntries="1">
-    </object><object name="X_ADB_VPN.Server." access="readOnly" minEntries="1" maxEntries="1"><parameter name="L2TPNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="X_ADB_VPN.Server.L2TP.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" enableParameter="Enable" numEntriesParameter="L2TPNumberOfEntries" set="L2TPServer.sh" del="L2TPServer.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="AuthenticationProtocol" access="readWrite"><syntax><list /><string><enumeration value="PAP" /><enumeration value="CHAP" /><enumeration value="MS-CHAP" /><enumeration value="MS-CHAPv2" /></string></syntax></parameter><parameter name="X_ADB_EncryptionProtocol" access="readWrite"><syntax><list minItems="1" maxItems="4" /><string><enumeration value="None" /><enumeration value="MPPE-40bit" /><enumeration value="MPPE-56bit" /><enumeration value="MPPE-128bit" /><enumeration value="MPPE-Stateless" /></string><default value="None" /></syntax></parameter><parameter name="EncryptionProtocol" access="readOnly"><syntax><string><enumeration value="None" /><enumeration value="MPPE" /></string><default value="None" /></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef refType="strong" targetParent=".IP.Interface." targetType="row" /></string></syntax></parameter><parameter name="MinAddress" access="readWrite"><syntax><dataType ref="IPv4Address" /><default value="" /></syntax></parameter><parameter name="MaxAddress" access="readWrite"><syntax><dataType ref="IPv4Address" /><default value="" /></syntax></parameter><parameter name="Users" access="readWrite"><syntax><list><size maxLength="1024" /></list><string><pathRef refType="strong" targetParent=".X_ADB_VPN.Users.User." targetType="row" /></string><default value="" /></syntax></parameter></object></datamodel>
+<datamodel name="Services" version="2.0">
+    <object name="X_ADB_VPN." access="readOnly" minEntries="1" maxEntries="1">
+    </object>
+    <object name="X_ADB_VPN.Server." access="readOnly" minEntries="1" maxEntries="1">
+        <parameter name="L2TPNumberOfEntries" access="readOnly" store="no">
+            <syntax>
+                <unsignedInt />
+                <default value="0" />
+            </syntax>
+        </parameter>
+    </object>
+    <object name="X_ADB_VPN.Server.L2TP.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" enableParameter="Enable" numEntriesParameter="L2TPNumberOfEntries" set="L2TPServer.sh" del="L2TPServer.sh">
+        <parameter name="Alias" access="readWrite" key="yes">
+            <syntax>
+                <dataType ref="Alias" />
+            </syntax>
+        </parameter>
+        <parameter name="Enable" access="readWrite">
+            <syntax>
+                <boolean />
+                <default value="false" />
+            </syntax>
+        </parameter>
+        <parameter name="Status" access="readOnly">
+            <syntax>
+                <string>
+                    <enumeration value="Disabled" />
+                    <enumeration value="Enabled" />
+                    <enumeration value="Error_Misconfigured" />
+                    <enumeration value="Error" />
+                </string>
+                <default value="Disabled" />
+            </syntax>
+        </parameter>
+        <parameter name="AuthenticationProtocol" access="readWrite">
+            <syntax>
+                <list />
+                <string>
+                    <enumeration value="PAP" />
+                    <enumeration value="CHAP" />
+                    <enumeration value="MS-CHAP" />
+                    <enumeration value="MS-CHAPv2" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="X_ADB_EncryptionProtocol" access="readWrite">
+            <syntax>
+                <list minItems="1" maxItems="4" />
+                <string>
+                    <enumeration value="None" />
+                    <enumeration value="MPPE-40bit" />
+                    <enumeration value="MPPE-56bit" />
+                    <enumeration value="MPPE-128bit" />
+                    <enumeration value="MPPE-Stateless" />
+                </string>
+                <default value="None" />
+            </syntax>
+        </parameter>
+        <parameter name="EncryptionProtocol" access="readOnly">
+            <syntax>
+                <string>
+                    <enumeration value="None" />
+                    <enumeration value="MPPE" />
+                </string>
+                <default value="None" />
+            </syntax>
+        </parameter>
+        <parameter name="Interface" access="readWrite">
+            <syntax>
+                <string>
+                    <size minLength="0" maxLength="256" />
+                    <pathRef refType="strong" targetParent=".IP.Interface." targetType="row" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="MinAddress" access="readWrite">
+            <syntax>
+                <dataType ref="IPv4Address" />
+                <default value="" />
+            </syntax>
+        </parameter>
+        <parameter name="MaxAddress" access="readWrite">
+            <syntax>
+                <dataType ref="IPv4Address" />
+                <default value="" />
+            </syntax>
+        </parameter>
+        <parameter name="Users" access="readWrite">
+            <syntax>
+                <list>
+                    <size maxLength="1024" />
+                </list>
+                <string>
+                    <pathRef refType="strong" targetParent=".X_ADB_VPN.Users.User." targetType="row" />
+                </string>
+                <default value="" />
+            </syntax>
+        </parameter>
+    </object>
+</datamodel>

@@ -1,3 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="DeviceInfo."><parameter name="X_ADB_CustomerDefault" access="readWrite" set="CustomerDefault.sh"><syntax><string><enumeration value="None" /><enumeration value="Save" /><enumeration value="Restore" /></string><default value="None" /></syntax></parameter><parameter name="X_ADB_CustomerDefaultStatus" access="readOnly" store="no"><syntax><string /><default value="Inactive" /></syntax></parameter><parameter name="X_ADB_CustomerDefaultLongPressedEnabled" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter></object></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="DeviceInfo.">
+		<parameter name="X_ADB_CustomerDefault" access="readWrite" set="CustomerDefault.sh">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Save" />
+					<enumeration value="Restore" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_CustomerDefaultStatus" access="readOnly" store="no">
+			<syntax>
+				<string />
+				<default value="Inactive" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_CustomerDefaultLongPressedEnabled" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

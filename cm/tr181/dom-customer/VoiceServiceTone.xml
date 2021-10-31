@@ -1,3 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="Services.VoiceService.{i}.Tone.Description.{i}."><parameter name="X_ADB_SteadyTone" excludeUser="CWMP" /></object><object name="Services.VoiceService.{i}.Tone.EventProfile.{i}."><parameter name="X_ADB_Country" excludeUser="CWMP" /></object><object name="Services.VoiceService.{i}.Tone.EventProfile.{i}.Event.{i}."><parameter name="Function" access="readWrite"><syntax><string><size minLength="0" maxLength="32" /><enumeration value="Busy" /><enumeration value="Confirmation" /><enumeration value="Dial" /><enumeration value="LineMessagesWaiting" /><enumeration value="OffHookWarning" /><enumeration value="RingBack" /><enumeration value="ReOrder" /><enumeration value="Stutterdial" /><enumeration value="CallWaiting1" /><enumeration value="CallWaiting2" /><enumeration value="CallWaiting3" /><enumeration value="CallWaiting4" /><enumeration value="AlertingSignal" /><enumeration value="SpecialDial" /><enumeration value="SpecialInfo" /><enumeration value="Release" /><enumeration value="Congestion" /><enumeration value="X_ADB_Congestion1" /><enumeration value="UserDefined1" /><enumeration value="UserDefined2" /><enumeration value="UserDefined3" /><enumeration value="UserDefined4" /><enumeration value="X_ADB_CallingCard" /></string></syntax></parameter></object></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="Services.VoiceService.{i}.Tone.Description.{i}.">
+		<parameter name="X_ADB_SteadyTone" excludeUser="CWMP" />
+	</object>
+	<object name="Services.VoiceService.{i}.Tone.EventProfile.{i}.">
+		<parameter name="X_ADB_Country" excludeUser="CWMP" />
+	</object>
+	<object name="Services.VoiceService.{i}.Tone.EventProfile.{i}.Event.{i}.">
+		<parameter name="Function" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="32" />
+					<enumeration value="Busy" />
+					<enumeration value="Confirmation" />
+					<enumeration value="Dial" />
+					<enumeration value="LineMessagesWaiting" />
+					<enumeration value="OffHookWarning" />
+					<enumeration value="RingBack" />
+					<enumeration value="ReOrder" />
+					<enumeration value="Stutterdial" />
+					<enumeration value="CallWaiting1" />
+					<enumeration value="CallWaiting2" />
+					<enumeration value="CallWaiting3" />
+					<enumeration value="CallWaiting4" />
+					<enumeration value="AlertingSignal" />
+					<enumeration value="SpecialDial" />
+					<enumeration value="SpecialInfo" />
+					<enumeration value="Release" />
+					<enumeration value="Congestion" />
+					<enumeration value="X_ADB_Congestion1" />
+					<enumeration value="UserDefined1" />
+					<enumeration value="UserDefined2" />
+					<enumeration value="UserDefined3" />
+					<enumeration value="UserDefined4" />
+					<enumeration value="X_ADB_CallingCard" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

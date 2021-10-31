@@ -1,3 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DSL" version="2.0"><object name="DSL.Line.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LineNumberOfEntries"><parameter name="ACTSNRMODEds" access="readOnly" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="ACTSNRMODEus" access="readOnly" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="ACTUALCE" access="readOnly" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="AllowedProfiles" access="readOnly"><syntax><list /><string><enumeration value="8a" /><enumeration value="8b" /><enumeration value="8c" /><enumeration value="8d" /><enumeration value="12a" /><enumeration value="12b" /><enumeration value="17a" /><enumeration value="17b" /><enumeration value="30a" /><enumeration value="35b" /></string></syntax></parameter><parameter name="X_ADB_AllowedProfiles" access="readWrite"><syntax><list minItems="1" /><string><enumeration value="8a" /><enumeration value="8b" /><enumeration value="8c" /><enumeration value="8d" /><enumeration value="12a" /><enumeration value="12b" /><enumeration value="17a" /><enumeration value="17b" /><enumeration value="30a" /><enumeration value="35b" /><enumeration value="Auto" /></string><default value="Auto" /></syntax></parameter><parameter name="CurrentProfile" access="readOnly" get="DslLine.sh" store="no"><syntax><string><enumerationRef targetParam="AllowedProfiles" /></string></syntax></parameter><parameter name="SNRMpbds" access="readOnly" supported="no" store="no"><syntax><list><size minLength="0" maxLength="24" /></list><string /></syntax></parameter><parameter name="SNRMpbus" access="readOnly" supported="no" store="no"><syntax><list><size minLength="0" maxLength="24" /></list><string /></syntax></parameter><parameter name="X_ADB_DynamicD" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="1" step="1" /></unsignedInt><default value="1" /></syntax></parameter><parameter name="X_ADB_DynamicF" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="1" step="1" /></unsignedInt><default value="1" /></syntax></parameter></object><object name="DSL.Line.{i}.TestParams." access="readOnly" minEntries="1" maxEntries="1" supported="no"><parameter name="HLOGGds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="HLOGGus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="QLNGds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="QLNGus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="SNRGds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="SNRGus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter></object></datamodel>
+<datamodel name="DSL" version="2.0">
+	<object name="DSL.Line.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LineNumberOfEntries">
+		<parameter name="ACTSNRMODEds" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ACTSNRMODEus" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ACTUALCE" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="AllowedProfiles" access="readOnly">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="8a" />
+					<enumeration value="8b" />
+					<enumeration value="8c" />
+					<enumeration value="8d" />
+					<enumeration value="12a" />
+					<enumeration value="12b" />
+					<enumeration value="17a" />
+					<enumeration value="17b" />
+					<enumeration value="30a" />
+					<enumeration value="35b" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AllowedProfiles" access="readWrite">
+			<syntax>
+				<list minItems="1" />
+				<string>
+					<enumeration value="8a" />
+					<enumeration value="8b" />
+					<enumeration value="8c" />
+					<enumeration value="8d" />
+					<enumeration value="12a" />
+					<enumeration value="12b" />
+					<enumeration value="17a" />
+					<enumeration value="17b" />
+					<enumeration value="30a" />
+					<enumeration value="35b" />
+					<enumeration value="Auto" />
+				</string>
+				<default value="Auto" />
+			</syntax>
+		</parameter>
+		<parameter name="CurrentProfile" access="readOnly" get="DslLine.sh" store="no">
+			<syntax>
+				<string>
+					<enumerationRef targetParam="AllowedProfiles" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SNRMpbds" access="readOnly" supported="no" store="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="24" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="SNRMpbus" access="readOnly" supported="no" store="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="24" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_DynamicD" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="1" step="1" />
+				</unsignedInt>
+				<default value="1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_DynamicF" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="1" step="1" />
+				</unsignedInt>
+				<default value="1" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Line.{i}.TestParams." access="readOnly" minEntries="1" maxEntries="1" supported="no">
+		<parameter name="HLOGGds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="HLOGGus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="QLNGds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="QLNGus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="SNRGds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="SNRGus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

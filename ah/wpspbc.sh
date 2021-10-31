@@ -42,14 +42,15 @@ radio_toggle() {
 }
 
 case $1 in
-	"wps" )
-		wps_trigger
+"wps")
+	wps_trigger
 	;;
-	"radio" )
-		radio_toggle
+"radio")
+	radio_toggle
 	;;
-	* )
-		echo "Invalid arguments"
-		exit 1
+*)
+	echo "Invalid arguments"
+	exit 1
+	;;
 esac
 exit 0

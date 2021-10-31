@@ -1,3 +1,1364 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="IPsec" version="2.0"><object name="IPsec." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="IPsec.sh"><parameter name="Enable" access="readWrite" set="Yatta.sh"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error" optional="true" /></string><default value="Disabled" /></syntax></parameter><parameter name="X_ADB_Reset" access="readWrite" store="no"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_CheckDNSEnable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_CheckDNSFrequency" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="180" /></syntax></parameter><parameter name="X_ADB_CheckDNSTrigger" access="readWrite" store="no"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="AHSupported" access="readOnly"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="IKEv2SupportedEncryptionAlgorithms" access="readOnly"><syntax><list /><string><enumeration value="DES" /><enumeration value="3DES" /><enumeration value="RC5" /><enumeration value="IDEA" /><enumeration value="CAST" /><enumeration value="BLOWFISH" /><enumeration value="3IDEA" /><enumeration value="AES-CBC" /><enumeration value="AES-CTR" /><enumeration value="AES-CCM-8" /><enumeration value="AES-CCM-12" /><enumeration value="AES-CCM-16" /><enumeration value="AES-GCM-8" /><enumeration value="AES-GCM-12" /><enumeration value="AES-GCM-16" /><enumeration value="CAMELLIA-CBC" /></string><default value="DES,3DES,BLOWFISH,CAST,AES-CBC" /></syntax></parameter><parameter name="ESPSupportedEncryptionAlgorithms" access="readOnly"><syntax><list /><string><enumeration value="NULL" /><enumeration value="DES-IV64" /><enumeration value="DES" /><enumeration value="3DES" /><enumeration value="RC5" /><enumeration value="IDEA" /><enumeration value="CAST" /><enumeration value="BLOWFISH" /><enumeration value="3IDEA" /><enumeration value="DES-IV32" /><enumeration value="AES-CBC" /><enumeration value="AES-CTR" /><enumeration value="AES-CCM-8" /><enumeration value="AES-CCM-12" /><enumeration value="AES-CCM-16" /><enumeration value="AES-GCM-8" /><enumeration value="AES-GCM-12" /><enumeration value="AES-GCM-16" /><enumeration value="NULL-AUTH-AES-GMAC" /><enumeration value="CAMELLIA-CBC" /><enumeration value="CAMELLIA-CTR" /><enumeration value="CAMELLIA-CCM-8" /><enumeration value="CAMELLIA-CCM-12" /><enumeration value="CAMELLIA-CCM-16" /></string><default value="NULL,DES,3DES,DES-IV32,DES-IV64,AES-CBC" /></syntax></parameter><parameter name="IKEv2SupportedPseudoRandomFunctions" access="readOnly" supported="no"><syntax><list /><string><enumeration value="HMAC-MD5" /><enumeration value="HMAC-SHA1" /><enumeration value="HMAC-TIGER" /><enumeration value="AES-128-XCBC" /><enumeration value="HMAC-SHA2-256" /><enumeration value="HMAC-SHA2-384" /><enumeration value="HMAC-SHA2-512" /><enumeration value="AES-128-CMAC" /></string></syntax></parameter><parameter name="SupportedIntegrityAlgorithms" access="readOnly"><syntax><list /><string><enumeration value="NONE" /><enumeration value="HMAC-MD5-96" /><enumeration value="HMAC-SHA1-96" /><enumeration value="DES-MAC" /><enumeration value="KPDK-MD5" /><enumeration value="AES-XCBC-96" /><enumeration value="HMAC-MD5-128" /><enumeration value="HMAC-SHA1-160" /><enumeration value="AES-CMAC-96" /><enumeration value="AES-128-GMAC" /><enumeration value="AES-192-GMAC" /><enumeration value="AES-256-GMAC" /><enumeration value="HMAC-SHA2-256-128" /><enumeration value="HMAC-SHA2-256-192" /><enumeration value="HMAC-SHA2-256-256" /></string><default value="HMAC-MD5-96,HMAC-SHA1-96,HMAC-MD5-128,HMAC-SHA1-160,HMAC-SHA2-256-128,HMAC-SHA2-256-192,HMAC-SHA2-256-256" /></syntax></parameter><parameter name="SupportedDiffieHellmanGroupTransforms" access="readOnly"><syntax><list /><string><enumeration value="NONE" /><enumeration value="MODP-768" /><enumeration value="MODP-1024" /><enumeration value="MODP-1536" /><enumeration value="MODP-2048" /><enumeration value="MODP-3072" /><enumeration value="MODP-4096" /><enumeration value="MODP-6144" /><enumeration value="MODP-8192" /><enumeration value="ECP-256" /><enumeration value="ECP-384" /><enumeration value="ECP-521" /><enumeration value="MODP-1024-PRIME-160" /><enumeration value="MODP-2048-PRIME-224" /><enumeration value="MODP-2048-PRIME-256" /><enumeration value="ECP-192" /><enumeration value="ECP-224" /></string><default value="NONE,MODP-768,MODP-1024,MODP-1536,MODP-2048,MODP-3072,MODP-4096,MODP-6144,MODP-8192" /></syntax></parameter><parameter name="MaxFilterEntries" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="MaxProfileEntries" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="FilterNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /></syntax></parameter><parameter name="ProfileNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /></syntax></parameter><parameter name="TunnelNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /></syntax></parameter><parameter name="IKEv2SANumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /></syntax></parameter><parameter name="X_ADB_SecurityNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /></syntax></parameter><parameter name="X_ADB_TemplateNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /></syntax></parameter></object><object name="IPsec.Stats." access="readOnly" minEntries="1" maxEntries="1" supported="no" store="no"><parameter name="NegotiationFailures" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32" /></syntax></parameter><parameter name="BytesSent" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter64"><units value="bytes" /></dataType></syntax></parameter><parameter name="BytesReceived" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter64"><units value="bytes" /></dataType></syntax></parameter><parameter name="PacketsSent" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="PacketsReceived" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="ErrorsSent" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="UnknownSPIErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="DecryptionErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="IntegrityErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="ReplayErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="PolicyErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="OtherReceiveErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter></object><object name="IPsec.Filter.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="FilterNumberOfEntries" enableParameter="Enable" set="IPsecFilter.sh" add="IPsecFilter.sh" del="IPsecFilter.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default type="object" value="false" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error" optional="true" /></string><default type="object" value="Disabled" /></syntax></parameter><parameter name="Order" access="readWrite"><syntax><unsignedInt><range minInclusive="1" step="1" /></unsignedInt><default value="1" /></syntax></parameter><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size maxLength="256" /><pathRef refType="strong" targetType="row" /></string><default type="object" value="" /></syntax></parameter><parameter name="AllInterfaces" access="readWrite"><syntax><boolean /><default type="object" value="true" /></syntax></parameter><parameter name="DestIP" access="readWrite"><syntax><dataType ref="IPAddress" /><default type="object" value="" /></syntax></parameter><parameter name="DestMask" access="readWrite"><syntax><dataType ref="IPAddress" /><default type="object" value="" /></syntax></parameter><parameter name="DestIPExclude" access="readWrite"><syntax><boolean /><default type="object" value="false" /></syntax></parameter><parameter name="SourceIP" access="readWrite"><syntax><dataType ref="IPAddress" /><default type="object" value="" /></syntax></parameter><parameter name="SourceMask" access="readWrite"><syntax><dataType ref="IPAddress" /><default type="object" value="" /></syntax></parameter><parameter name="SourceIPExclude" access="readWrite"><syntax><boolean /><default type="object" value="false" /></syntax></parameter><parameter name="Protocol" access="readWrite" supported="no"><syntax><int><range minInclusive="-1" maxInclusive="255" /></int><default type="object" value="-1" /></syntax></parameter><parameter name="ProtocolExclude" access="readWrite" supported="no"><syntax><boolean /><default type="object" value="false" /></syntax></parameter><parameter name="DestPort" access="readWrite" supported="no"><syntax><int><range minInclusive="-1" maxInclusive="65535" /></int><default type="object" value="-1" /></syntax></parameter><parameter name="DestPortRangeMax" access="readWrite" supported="no"><syntax><int><range minInclusive="-1" maxInclusive="65535" /></int><default type="object" value="-1" /></syntax></parameter><parameter name="DestPortExclude" access="readWrite" supported="no"><syntax><boolean /><default type="object" value="false" /></syntax></parameter><parameter name="SourcePort" access="readWrite" supported="no"><syntax><int><range minInclusive="-1" maxInclusive="65535" /></int><default type="object" value="-1" /></syntax></parameter><parameter name="SourcePortRangeMax" access="readWrite" supported="no"><syntax><int><range minInclusive="-1" maxInclusive="65535" /></int><default type="object" value="-1" /></syntax></parameter><parameter name="SourcePortExclude" access="readWrite" supported="no"><syntax><boolean /><default type="object" value="false" /></syntax></parameter><parameter name="ProcessingChoice" access="readWrite"><syntax><string><enumeration value="Discard" /><enumeration value="Bypass" /><enumeration value="Protect" /></string><default type="object" value="Protect" /></syntax></parameter><parameter name="Profile" access="readWrite"><syntax><string><pathRef refType="strong" targetParent="#.Profile." targetType="row" /></string></syntax></parameter><parameter name="X_ADB_SPGeneration" access="readWrite"><syntax><string><enumeration value="Static" /><enumeration value="Script" /><enumeration value="Dynamic" /><enumeration value="Full" /><enumeration value="Auto" /></string><default value="Auto" /></syntax></parameter><parameter name="X_ADB_ForcePassive" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter></object><object name="IPsec.Filter.{i}.X_ADB_RoadWarrior." access="readOnly" minEntries="1" maxEntries="1" set="IPsecFilter.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Type" access="readWrite"><syntax><string><enumeration value="Pure" /><enumeration value="XAuth" /><enumeration value="L2TP" /></string><default value="Pure" /></syntax></parameter><parameter name="PoolSize" access="readWrite"><syntax><unsignedInt /><default value="3" /></syntax></parameter><parameter name="DomainName" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="DNSServers" access="readWrite"><syntax><list maxItems="4" /><dataType ref="IPv4Address" /></syntax></parameter><parameter name="Address" access="readWrite"><syntax><dataType ref="IPv4Address" /></syntax></parameter><parameter name="SubnetMask" access="readWrite"><syntax><dataType ref="IPv4Address" /><default value="" /></syntax></parameter></object><object name="IPsec.Profile.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ProfileNumberOfEntries" set="IPsecProfile.sh" del="IPsecProfile.sh"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="MaxChildSAs" access="readWrite"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="X_ADB_LocalEndpoint" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="RemoteEndpoints" access="readWrite"><syntax><list maxItems="4" /><string><size maxLength="64" /></string></syntax></parameter><parameter name="X_ADB_RemoteEndpointMask" access="readWrite"><syntax><dataType ref="IPv4Address" /><default value="" /></syntax></parameter><parameter name="X_ADB_ResolvedIP" access="readOnly" store="no"><syntax><dataType ref="IPv4Address" /><default value="" /></syntax></parameter><parameter name="ForwardingPolicy" access="readWrite" supported="no"><syntax><unsignedInt /><default type="object" value="0" /></syntax></parameter><parameter name="Protocol" access="readWrite"><syntax><string><enumeration value="AH" /><enumeration value="ESP" /></string><default value="ESP" /></syntax></parameter><parameter name="X_ADB_IKEv2ExchangeMode" access="readWrite"><syntax><string><enumeration value="Main" /><enumeration value="Aggressive" /><enumeration value="Auto" /></string><default value="Main" /></syntax></parameter><parameter name="X_ADB_IKEv2Check" access="readWrite"><syntax><string><enumeration value="Obey" /><enumeration value="Strict" /><enumeration value="Claim" /><enumeration value="Exact" /></string><default value="Strict" /></syntax></parameter><parameter name="IKEv2AuthenticationMethod" access="readWrite"><syntax><string><pathRef refType="strong" targetType="row" /></string><default type="object" value="" /></syntax></parameter><parameter name="X_ADB_IKEv2CheckPeersID" access="readWrite"><syntax><list minItems="0" maxItems="10"><string><pathRef targetParent="#.X_ADB_Security." refType="strong" targetType="row" /></string></list><default value="" /></syntax></parameter><parameter name="IKEv2AllowedEncryptionAlgorithms" access="readWrite"><syntax><list /><string><enumerationRef targetParam=".IPsec.IKEv2SupportedEncryptionAlgorithms" /><size maxLength="64" /></string></syntax></parameter><parameter name="ESPAllowedEncryptionAlgorithms" access="readWrite"><syntax><list /><string><enumerationRef targetParam=".IPsec.ESPSupportedEncryptionAlgorithms" /><size maxLength="64" /></string></syntax></parameter><parameter name="IKEv2AllowedPseudoRandomFunctions" access="readWrite" supported="no"><syntax><list /><string><enumerationRef targetParam=".IPsec.IKEv2SupportedPseudoRandomFunctions" /><size maxLength="64" /></string></syntax></parameter><parameter name="IKEv2AllowedIntegrityAlgorithms" access="readWrite"><syntax><list /><string><enumerationRef targetParam=".IPsec.SupportedIntegrityAlgorithms" /><size maxLength="64" /></string></syntax></parameter><parameter name="AHAllowedIntegrityAlgorithms" access="readWrite" supported="no"><syntax><list /><string><enumerationRef targetParam=".IPsec.SupportedIntegrityAlgorithms" /><size maxLength="64" /></string><default type="object" value="" /></syntax></parameter><parameter name="ESPAllowedIntegrityAlgorithms" access="readWrite"><syntax><list /><string><enumerationRef targetParam=".IPsec.SupportedIntegrityAlgorithms" /><size maxLength="64" /></string><default type="object" value="" /></syntax></parameter><parameter name="IKEv2AllowedDiffieHellmanGroupTransforms" access="readWrite"><syntax><list /><string><enumerationRef targetParam=".IPsec.SupportedDiffieHellmanGroupTransforms" /><size maxLength="64" /></string></syntax></parameter><parameter name="X_ADB_ESPAllowedDiffieHellmanGroupTransform" access="readWrite"><syntax><string><enumerationRef targetParam=".IPsec.SupportedDiffieHellmanGroupTransforms" /><size maxLength="64" /></string></syntax></parameter><parameter name="IKEv2DeadPeerDetectionTimeout" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="30" /></syntax></parameter><parameter name="IKEv2NATTKeepaliveTimeout" access="readWrite" supported="no"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="20" /></syntax></parameter><parameter name="AntiReplayWindowSize" access="readWrite" supported="no"><syntax><unsignedInt /><default type="object" value="0" /></syntax></parameter><parameter name="DoNotFragment" access="readWrite" supported="no"><syntax><string><enumeration value="Set" /><enumeration value="Clear" /><enumeration value="Copy" /></string></syntax></parameter><parameter name="DSCPMarkPolicy" access="readWrite" supported="no"><syntax><int><range minInclusive="-2" maxInclusive="63" /></int></syntax></parameter><parameter name="IKEv2SATrafficLimit" access="readWrite" supported="no"><syntax><unsignedLong><units value="bytes" /></unsignedLong></syntax></parameter><parameter name="IKEv2SATimeLimit" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="IKEv2SAExpiryAction" access="readWrite"><syntax><string><enumeration value="Renegotiate" /><enumeration value="Delete" /></string><default value="Delete" /></syntax></parameter><parameter name="ChildSATrafficLimit" access="readWrite" supported="no"><syntax><unsignedLong><units value="bytes" /></unsignedLong></syntax></parameter><parameter name="ChildSATimeLimit" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="ChildSAExpiryAction" access="readWrite"><syntax><string><enumeration value="Renegotiate" /><enumeration value="Delete" /></string><default value="Delete" /></syntax></parameter><parameter name="SentCPAttrNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="IPsec.X_ADB_Security.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="X_ADB_SecurityNumberOfEntries" set="IPsecSecurity.sh" add="IPsecSecurity.sh" del="IPsecSecurity.sh"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Side" access="readWrite"><syntax><string><enumeration value="Local" /><enumeration value="Remote" /></string><default value="Local" /></syntax></parameter><parameter name="IdentifierType" access="readWrite"><syntax><string><enumeration value="Address" /><enumeration value="FQDN" /><enumeration value="UserFQDN" /><enumeration value="KeyID" /></string><default value="Address" /></syntax></parameter><parameter name="IdentifierValue" access="readWrite"><syntax><size maxLenght="128" /></syntax></parameter><parameter name="PSK" access="readWrite"><syntax hidden="true" mangled="true"><size maxLength="128" /></syntax></parameter><parameter name="Order" access="readWrite"><syntax><unsignedInt><range minInclusive="1" step="1" /></unsignedInt><default value="1" /></syntax></parameter><parameter name="RestrictedAddress" access="readWrite"><syntax><dataType ref="IPv4Address" /><default value="" /></syntax></parameter><parameter name="RestrictedSubnet" access="readWrite"><syntax><dataType ref="IPv4Address" /><default value="" /></syntax></parameter></object><object name="IPsec.Profile.{i}.SentCPAttr.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" enableParameter="Enable" numEntriesParameter="SentCPAttrNumberOfEntries" supported="no"><parameter name="Enable" access="readWrite" supported="no"><syntax><boolean /></syntax></parameter><parameter name="Alias" access="readWrite" supported="no"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Type" access="readWrite" supported="no"><syntax><unsignedInt><range minInclusive="0" maxInclusive="32767" /></unsignedInt></syntax></parameter><parameter name="Value" access="readWrite" supported="no"><syntax><hexBinary><size maxLength="65535" /></hexBinary></syntax></parameter></object><object name="IPsec.Tunnel.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="TunnelNumberOfEntries"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="TunnelInterface" access="readOnly" supported="no"><syntax><string><pathRef refType="strong" targetParent=".IP.Interface." targetType="row" /></string></syntax></parameter><parameter name="TunneledInterface" access="readOnly" supported="no"><syntax><string><pathRef refType="strong" targetParent=".IP.Interface." targetType="row" /></string></syntax></parameter><parameter name="Filters" access="readOnly"><syntax><list /><string><pathRef refType="strong" targetType="row" targetParent=".IPsec.Filter." /></string></syntax></parameter></object><object name="IPsec.Tunnel.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" supported="no"><parameter name="DecryptionErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="IntegrityErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="ReplayErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="PolicyErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="OtherReceiveErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter></object><object name="IPsec.IKEv2SA.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="IKEv2SANumberOfEntries" store="no"><parameter name="Status" access="readOnly"><syntax><string><enumeration value="Up" /><enumeration value="Down" /><enumeration value="Unknown" /><enumeration value="Dormant" /><enumeration value="Error" optional="true" /></string></syntax></parameter><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Tunnel" access="readOnly"><syntax><string><pathRef refType="strong" targetParent="#.Tunnel." targetType="row" /></string></syntax></parameter><parameter name="LocalAddress" access="readOnly"><syntax><dataType ref="IPAddress" /></syntax></parameter><parameter name="RemoteAddress" access="readOnly"><syntax><dataType ref="IPAddress" /></syntax></parameter><parameter name="EncryptionAlgorithm" access="readOnly" supported="no"><syntax><string><size maxLength="64" /></string></syntax></parameter><parameter name="EncryptionKeyLength" access="readOnly" supported="no"><syntax><unsignedInt><units value="bits" /></unsignedInt></syntax></parameter><parameter name="PseudoRandomFunction" access="readOnly" supported="no"><syntax><string><size maxLength="64" /></string></syntax></parameter><parameter name="IntegrityAlgorithm" access="readOnly" supported="no"><syntax><string><size maxLength="64" /></string></syntax></parameter><parameter name="DiffieHellmanGroupTransform" access="readOnly" supported="no"><syntax><string><size maxLength="64" /></string></syntax></parameter><parameter name="CreationTime" access="readOnly" supported="no"><syntax><dateTime /></syntax></parameter><parameter name="NATDetected" access="readOnly" supported="no"><syntax><string><enumeration value="None" /><enumeration value="Local" /><enumeration value="Remote" /><enumeration value="Unsupported" /></string></syntax></parameter><parameter name="ReceivedCPAttrNumberOfEntries" access="readOnly" supported="no" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="ChildSANumberOfEntries" access="readOnly" supported="no" store="no"><syntax><unsignedInt /></syntax></parameter><parameter name="X_ADB_ID" access="readOnly" store="no"><syntax><string><size minLength="0" maxLength="65" /></string></syntax></parameter></object><object name="IPsec.IKEv2SA.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" supported="no"><parameter name="BytesSent" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter64"><units value="bytes" /></dataType></syntax></parameter><parameter name="BytesReceived" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter64"><units value="bytes" /></dataType></syntax></parameter><parameter name="PacketsSent" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="PacketsReceived" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="ErrorsSent" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="DecryptionErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="IntegrityErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="OtherReceiveErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter></object><object name="IPsec.IKEv2SA.{i}.ReceivedCPAttr.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ReceivedCPAttrNumberOfEntries" supported="no"><parameter name="Type" access="readOnly" supported="no"><syntax><unsignedInt><range minInclusive="0" maxInclusive="32767" /></unsignedInt></syntax></parameter><parameter name="Value" access="readOnly" supported="no"><syntax><hexBinary><size maxLength="65535" /></hexBinary></syntax></parameter></object><object name="IPsec.IKEv2SA.{i}.ChildSA.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ChildSANumberOfEntries"><parameter name="Status" access="readOnly"><syntax><string><enumeration value="Up" /><enumeration value="Down" /><enumeration value="Unknown" /><enumeration value="Dormant" /><enumeration value="Error" optional="true" /></string></syntax></parameter><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="InboundSPI" access="readOnly"><syntax><unsignedInt /></syntax></parameter><parameter name="OutboundSPI" access="readOnly"><syntax><unsignedInt /></syntax></parameter><parameter name="CreationTime" access="readOnly"><syntax><dateTime /></syntax></parameter></object><object name="IPsec.IKEv2SA.{i}.ChildSA.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" supported="no"><parameter name="BytesSent" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter64"><units value="bytes" /></dataType></syntax></parameter><parameter name="BytesReceived" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter64"><units value="bytes" /></dataType></syntax></parameter><parameter name="PacketsSent" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="PacketsReceived" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="ErrorsSent" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="DecryptionErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="IntegrityErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="ReplayErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="PolicyErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter><parameter name="OtherReceiveErrors" access="readOnly" supported="no"><syntax><dataType ref="StatsCounter32"><units value="packets" /></dataType></syntax></parameter></object><object name="IPsec.X_ADB_Template.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="X_ADB_TemplateNumberOfEntries"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="X_ADB_IKEv2ExchangeMode" access="readWrite"><syntax><string><enumeration value="Main" /><enumeration value="Aggressive" /><enumeration value="Auto" /></string><default value="Main" /></syntax></parameter><parameter name="X_ADB_IKEv2Check"><syntax><string><enumeration value="Obey" /><enumeration value="Strict" /><enumeration value="Claim" /><enumeration value="Exact" /></string><default value="Strict" /></syntax></parameter><parameter name="IKEv2AllowedEncryptionAlgorithms" access="readWrite"><syntax><list /><string><enumerationRef targetParam=".IPsec.IKEv2SupportedEncryptionAlgorithms" /><size maxLength="64" /></string></syntax></parameter><parameter name="ESPAllowedEncryptionAlgorithms" access="readWrite"><syntax><list /><string><enumerationRef targetParam=".IPsec.ESPSupportedEncryptionAlgorithms" /><size maxLength="64" /></string></syntax></parameter><parameter name="IKEv2AllowedIntegrityAlgorithms" access="readWrite"><syntax><list /><string><enumerationRef targetParam=".IPsec.SupportedIntegrityAlgorithms" /><size maxLength="64" /></string></syntax></parameter><parameter name="ESPAllowedIntegrityAlgorithms" access="readWrite"><syntax><list /><string><enumerationRef targetParam=".IPsec.SupportedIntegrityAlgorithms" /><size maxLength="64" /></string><default type="object" value="" /></syntax></parameter><parameter name="IKEv2AllowedDiffieHellmanGroupTransforms" access="readWrite"><syntax><list /><string><enumerationRef targetParam=".IPsec.SupportedDiffieHellmanGroupTransforms" /><size maxLength="64" /></string></syntax></parameter><parameter name="X_ADB_ESPAllowedDiffieHellmanGroupTransform" access="readWrite"><syntax><list /><string><enumerationRef targetParam=".IPsec.SupportedDiffieHellmanGroupTransforms" /><size maxLength="64" /></string></syntax></parameter><parameter name="IKEv2DeadPeerDetectionTimeout" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="IKEv2SATimeLimit" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="ChildSATimeLimit" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter></object><object name="IPsec.X_ADB_Template.{i}.X_ADB_RoadWarrior." access="readOnly" minEntries="1" maxEntries="1"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Type" access="readWrite"><syntax><string><enumeration value="Pure" /><enumeration value="XAuth" /><enumeration value="L2TP" /></string><default value="Pure" /></syntax></parameter><parameter name="PoolSize" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="DomainName" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="DNSServers" access="readWrite"><syntax><list maxItems="4" /></syntax></parameter><parameter name="Address" access="readWrite"><syntax /></parameter><parameter name="SubnetMask" access="readWrite"><syntax /></parameter></object></datamodel>
+<datamodel name="IPsec" version="2.0">
+	<object name="IPsec." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="IPsec.sh">
+		<parameter name="Enable" access="readWrite" set="Yatta.sh">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error" optional="true" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Reset" access="readWrite" store="no">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_CheckDNSEnable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_CheckDNSFrequency" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="180" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_CheckDNSTrigger" access="readWrite" store="no">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="AHSupported" access="readOnly">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2SupportedEncryptionAlgorithms" access="readOnly">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="DES" />
+					<enumeration value="3DES" />
+					<enumeration value="RC5" />
+					<enumeration value="IDEA" />
+					<enumeration value="CAST" />
+					<enumeration value="BLOWFISH" />
+					<enumeration value="3IDEA" />
+					<enumeration value="AES-CBC" />
+					<enumeration value="AES-CTR" />
+					<enumeration value="AES-CCM-8" />
+					<enumeration value="AES-CCM-12" />
+					<enumeration value="AES-CCM-16" />
+					<enumeration value="AES-GCM-8" />
+					<enumeration value="AES-GCM-12" />
+					<enumeration value="AES-GCM-16" />
+					<enumeration value="CAMELLIA-CBC" />
+				</string>
+				<default value="DES,3DES,BLOWFISH,CAST,AES-CBC" />
+			</syntax>
+		</parameter>
+		<parameter name="ESPSupportedEncryptionAlgorithms" access="readOnly">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="NULL" />
+					<enumeration value="DES-IV64" />
+					<enumeration value="DES" />
+					<enumeration value="3DES" />
+					<enumeration value="RC5" />
+					<enumeration value="IDEA" />
+					<enumeration value="CAST" />
+					<enumeration value="BLOWFISH" />
+					<enumeration value="3IDEA" />
+					<enumeration value="DES-IV32" />
+					<enumeration value="AES-CBC" />
+					<enumeration value="AES-CTR" />
+					<enumeration value="AES-CCM-8" />
+					<enumeration value="AES-CCM-12" />
+					<enumeration value="AES-CCM-16" />
+					<enumeration value="AES-GCM-8" />
+					<enumeration value="AES-GCM-12" />
+					<enumeration value="AES-GCM-16" />
+					<enumeration value="NULL-AUTH-AES-GMAC" />
+					<enumeration value="CAMELLIA-CBC" />
+					<enumeration value="CAMELLIA-CTR" />
+					<enumeration value="CAMELLIA-CCM-8" />
+					<enumeration value="CAMELLIA-CCM-12" />
+					<enumeration value="CAMELLIA-CCM-16" />
+				</string>
+				<default value="NULL,DES,3DES,DES-IV32,DES-IV64,AES-CBC" />
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2SupportedPseudoRandomFunctions" access="readOnly" supported="no">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="HMAC-MD5" />
+					<enumeration value="HMAC-SHA1" />
+					<enumeration value="HMAC-TIGER" />
+					<enumeration value="AES-128-XCBC" />
+					<enumeration value="HMAC-SHA2-256" />
+					<enumeration value="HMAC-SHA2-384" />
+					<enumeration value="HMAC-SHA2-512" />
+					<enumeration value="AES-128-CMAC" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SupportedIntegrityAlgorithms" access="readOnly">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="NONE" />
+					<enumeration value="HMAC-MD5-96" />
+					<enumeration value="HMAC-SHA1-96" />
+					<enumeration value="DES-MAC" />
+					<enumeration value="KPDK-MD5" />
+					<enumeration value="AES-XCBC-96" />
+					<enumeration value="HMAC-MD5-128" />
+					<enumeration value="HMAC-SHA1-160" />
+					<enumeration value="AES-CMAC-96" />
+					<enumeration value="AES-128-GMAC" />
+					<enumeration value="AES-192-GMAC" />
+					<enumeration value="AES-256-GMAC" />
+					<enumeration value="HMAC-SHA2-256-128" />
+					<enumeration value="HMAC-SHA2-256-192" />
+					<enumeration value="HMAC-SHA2-256-256" />
+				</string>
+				<default value="HMAC-MD5-96,HMAC-SHA1-96,HMAC-MD5-128,HMAC-SHA1-160,HMAC-SHA2-256-128,HMAC-SHA2-256-192,HMAC-SHA2-256-256" />
+			</syntax>
+		</parameter>
+		<parameter name="SupportedDiffieHellmanGroupTransforms" access="readOnly">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="NONE" />
+					<enumeration value="MODP-768" />
+					<enumeration value="MODP-1024" />
+					<enumeration value="MODP-1536" />
+					<enumeration value="MODP-2048" />
+					<enumeration value="MODP-3072" />
+					<enumeration value="MODP-4096" />
+					<enumeration value="MODP-6144" />
+					<enumeration value="MODP-8192" />
+					<enumeration value="ECP-256" />
+					<enumeration value="ECP-384" />
+					<enumeration value="ECP-521" />
+					<enumeration value="MODP-1024-PRIME-160" />
+					<enumeration value="MODP-2048-PRIME-224" />
+					<enumeration value="MODP-2048-PRIME-256" />
+					<enumeration value="ECP-192" />
+					<enumeration value="ECP-224" />
+				</string>
+				<default value="NONE,MODP-768,MODP-1024,MODP-1536,MODP-2048,MODP-3072,MODP-4096,MODP-6144,MODP-8192" />
+			</syntax>
+		</parameter>
+		<parameter name="MaxFilterEntries" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="MaxProfileEntries" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="FilterNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ProfileNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="TunnelNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2SANumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SecurityNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TemplateNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.Stats." access="readOnly" minEntries="1" maxEntries="1" supported="no" store="no">
+		<parameter name="NegotiationFailures" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32" />
+			</syntax>
+		</parameter>
+		<parameter name="BytesSent" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter64">
+					<units value="bytes" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="BytesReceived" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter64">
+					<units value="bytes" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="PacketsSent" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="PacketsReceived" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsSent" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="UnknownSPIErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="DecryptionErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="IntegrityErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="ReplayErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="PolicyErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="OtherReceiveErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.Filter.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="FilterNumberOfEntries" enableParameter="Enable" set="IPsecFilter.sh" add="IPsecFilter.sh" del="IPsecFilter.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default type="object" value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error_Misconfigured" />
+					<enumeration value="Error" optional="true" />
+				</string>
+				<default type="object" value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="Order" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" step="1" />
+				</unsignedInt>
+				<default value="1" />
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<size maxLength="256" />
+					<pathRef refType="strong" targetType="row" />
+				</string>
+				<default type="object" value="" />
+			</syntax>
+		</parameter>
+		<parameter name="AllInterfaces" access="readWrite">
+			<syntax>
+				<boolean />
+				<default type="object" value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="DestIP" access="readWrite">
+			<syntax>
+				<dataType ref="IPAddress" />
+				<default type="object" value="" />
+			</syntax>
+		</parameter>
+		<parameter name="DestMask" access="readWrite">
+			<syntax>
+				<dataType ref="IPAddress" />
+				<default type="object" value="" />
+			</syntax>
+		</parameter>
+		<parameter name="DestIPExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default type="object" value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="SourceIP" access="readWrite">
+			<syntax>
+				<dataType ref="IPAddress" />
+				<default type="object" value="" />
+			</syntax>
+		</parameter>
+		<parameter name="SourceMask" access="readWrite">
+			<syntax>
+				<dataType ref="IPAddress" />
+				<default type="object" value="" />
+			</syntax>
+		</parameter>
+		<parameter name="SourceIPExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default type="object" value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Protocol" access="readWrite" supported="no">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="255" />
+				</int>
+				<default type="object" value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="ProtocolExclude" access="readWrite" supported="no">
+			<syntax>
+				<boolean />
+				<default type="object" value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="DestPort" access="readWrite" supported="no">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="65535" />
+				</int>
+				<default type="object" value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="DestPortRangeMax" access="readWrite" supported="no">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="65535" />
+				</int>
+				<default type="object" value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="DestPortExclude" access="readWrite" supported="no">
+			<syntax>
+				<boolean />
+				<default type="object" value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="SourcePort" access="readWrite" supported="no">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="65535" />
+				</int>
+				<default type="object" value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="SourcePortRangeMax" access="readWrite" supported="no">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="65535" />
+				</int>
+				<default type="object" value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="SourcePortExclude" access="readWrite" supported="no">
+			<syntax>
+				<boolean />
+				<default type="object" value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="ProcessingChoice" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Discard" />
+					<enumeration value="Bypass" />
+					<enumeration value="Protect" />
+				</string>
+				<default type="object" value="Protect" />
+			</syntax>
+		</parameter>
+		<parameter name="Profile" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef refType="strong" targetParent="#.Profile." targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SPGeneration" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Static" />
+					<enumeration value="Script" />
+					<enumeration value="Dynamic" />
+					<enumeration value="Full" />
+					<enumeration value="Auto" />
+				</string>
+				<default value="Auto" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ForcePassive" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.Filter.{i}.X_ADB_RoadWarrior." access="readOnly" minEntries="1" maxEntries="1" set="IPsecFilter.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Type" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Pure" />
+					<enumeration value="XAuth" />
+					<enumeration value="L2TP" />
+				</string>
+				<default value="Pure" />
+			</syntax>
+		</parameter>
+		<parameter name="PoolSize" access="readWrite">
+			<syntax>
+				<unsignedInt />
+				<default value="3" />
+			</syntax>
+		</parameter>
+		<parameter name="DomainName" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="DNSServers" access="readWrite">
+			<syntax>
+				<list maxItems="4" />
+				<dataType ref="IPv4Address" />
+			</syntax>
+		</parameter>
+		<parameter name="Address" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+			</syntax>
+		</parameter>
+		<parameter name="SubnetMask" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+				<default value="" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.Profile.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ProfileNumberOfEntries" set="IPsecProfile.sh" del="IPsecProfile.sh">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="MaxChildSAs" access="readWrite">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LocalEndpoint" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="RemoteEndpoints" access="readWrite">
+			<syntax>
+				<list maxItems="4" />
+				<string>
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_RemoteEndpointMask" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ResolvedIP" access="readOnly" store="no">
+			<syntax>
+				<dataType ref="IPv4Address" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ForwardingPolicy" access="readWrite" supported="no">
+			<syntax>
+				<unsignedInt />
+				<default type="object" value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Protocol" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="AH" />
+					<enumeration value="ESP" />
+				</string>
+				<default value="ESP" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_IKEv2ExchangeMode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Main" />
+					<enumeration value="Aggressive" />
+					<enumeration value="Auto" />
+				</string>
+				<default value="Main" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_IKEv2Check" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Obey" />
+					<enumeration value="Strict" />
+					<enumeration value="Claim" />
+					<enumeration value="Exact" />
+				</string>
+				<default value="Strict" />
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2AuthenticationMethod" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef refType="strong" targetType="row" />
+				</string>
+				<default type="object" value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_IKEv2CheckPeersID" access="readWrite">
+			<syntax>
+				<list minItems="0" maxItems="10">
+					<string>
+						<pathRef targetParent="#.X_ADB_Security." refType="strong" targetType="row" />
+					</string>
+				</list>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2AllowedEncryptionAlgorithms" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.IKEv2SupportedEncryptionAlgorithms" />
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ESPAllowedEncryptionAlgorithms" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.ESPSupportedEncryptionAlgorithms" />
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2AllowedPseudoRandomFunctions" access="readWrite" supported="no">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.IKEv2SupportedPseudoRandomFunctions" />
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2AllowedIntegrityAlgorithms" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.SupportedIntegrityAlgorithms" />
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="AHAllowedIntegrityAlgorithms" access="readWrite" supported="no">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.SupportedIntegrityAlgorithms" />
+					<size maxLength="64" />
+				</string>
+				<default type="object" value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ESPAllowedIntegrityAlgorithms" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.SupportedIntegrityAlgorithms" />
+					<size maxLength="64" />
+				</string>
+				<default type="object" value="" />
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2AllowedDiffieHellmanGroupTransforms" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.SupportedDiffieHellmanGroupTransforms" />
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ESPAllowedDiffieHellmanGroupTransform" access="readWrite">
+			<syntax>
+				<string>
+					<enumerationRef targetParam=".IPsec.SupportedDiffieHellmanGroupTransforms" />
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2DeadPeerDetectionTimeout" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="30" />
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2NATTKeepaliveTimeout" access="readWrite" supported="no">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="20" />
+			</syntax>
+		</parameter>
+		<parameter name="AntiReplayWindowSize" access="readWrite" supported="no">
+			<syntax>
+				<unsignedInt />
+				<default type="object" value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="DoNotFragment" access="readWrite" supported="no">
+			<syntax>
+				<string>
+					<enumeration value="Set" />
+					<enumeration value="Clear" />
+					<enumeration value="Copy" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="DSCPMarkPolicy" access="readWrite" supported="no">
+			<syntax>
+				<int>
+					<range minInclusive="-2" maxInclusive="63" />
+				</int>
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2SATrafficLimit" access="readWrite" supported="no">
+			<syntax>
+				<unsignedLong>
+					<units value="bytes" />
+				</unsignedLong>
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2SATimeLimit" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2SAExpiryAction" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Renegotiate" />
+					<enumeration value="Delete" />
+				</string>
+				<default value="Delete" />
+			</syntax>
+		</parameter>
+		<parameter name="ChildSATrafficLimit" access="readWrite" supported="no">
+			<syntax>
+				<unsignedLong>
+					<units value="bytes" />
+				</unsignedLong>
+			</syntax>
+		</parameter>
+		<parameter name="ChildSATimeLimit" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="ChildSAExpiryAction" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Renegotiate" />
+					<enumeration value="Delete" />
+				</string>
+				<default value="Delete" />
+			</syntax>
+		</parameter>
+		<parameter name="SentCPAttrNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.X_ADB_Security.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="X_ADB_SecurityNumberOfEntries" set="IPsecSecurity.sh" add="IPsecSecurity.sh" del="IPsecSecurity.sh">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Side" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Local" />
+					<enumeration value="Remote" />
+				</string>
+				<default value="Local" />
+			</syntax>
+		</parameter>
+		<parameter name="IdentifierType" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Address" />
+					<enumeration value="FQDN" />
+					<enumeration value="UserFQDN" />
+					<enumeration value="KeyID" />
+				</string>
+				<default value="Address" />
+			</syntax>
+		</parameter>
+		<parameter name="IdentifierValue" access="readWrite">
+			<syntax>
+				<size maxLenght="128" />
+			</syntax>
+		</parameter>
+		<parameter name="PSK" access="readWrite">
+			<syntax hidden="true" mangled="true">
+				<size maxLength="128" />
+			</syntax>
+		</parameter>
+		<parameter name="Order" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" step="1" />
+				</unsignedInt>
+				<default value="1" />
+			</syntax>
+		</parameter>
+		<parameter name="RestrictedAddress" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="RestrictedSubnet" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+				<default value="" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.Profile.{i}.SentCPAttr.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" enableParameter="Enable" numEntriesParameter="SentCPAttrNumberOfEntries" supported="no">
+		<parameter name="Enable" access="readWrite" supported="no">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite" supported="no">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Type" access="readWrite" supported="no">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="32767" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Value" access="readWrite" supported="no">
+			<syntax>
+				<hexBinary>
+					<size maxLength="65535" />
+				</hexBinary>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.Tunnel.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="TunnelNumberOfEntries">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="TunnelInterface" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<pathRef refType="strong" targetParent=".IP.Interface." targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="TunneledInterface" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<pathRef refType="strong" targetParent=".IP.Interface." targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Filters" access="readOnly">
+			<syntax>
+				<list />
+				<string>
+					<pathRef refType="strong" targetType="row" targetParent=".IPsec.Filter." />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.Tunnel.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" supported="no">
+		<parameter name="DecryptionErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="IntegrityErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="ReplayErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="PolicyErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="OtherReceiveErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.IKEv2SA.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="IKEv2SANumberOfEntries" store="no">
+		<parameter name="Status" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Up" />
+					<enumeration value="Down" />
+					<enumeration value="Unknown" />
+					<enumeration value="Dormant" />
+					<enumeration value="Error" optional="true" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Tunnel" access="readOnly">
+			<syntax>
+				<string>
+					<pathRef refType="strong" targetParent="#.Tunnel." targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="LocalAddress" access="readOnly">
+			<syntax>
+				<dataType ref="IPAddress" />
+			</syntax>
+		</parameter>
+		<parameter name="RemoteAddress" access="readOnly">
+			<syntax>
+				<dataType ref="IPAddress" />
+			</syntax>
+		</parameter>
+		<parameter name="EncryptionAlgorithm" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="EncryptionKeyLength" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt>
+					<units value="bits" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="PseudoRandomFunction" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="IntegrityAlgorithm" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="DiffieHellmanGroupTransform" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="CreationTime" access="readOnly" supported="no">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="NATDetected" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Local" />
+					<enumeration value="Remote" />
+					<enumeration value="Unsupported" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ReceivedCPAttrNumberOfEntries" access="readOnly" supported="no" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ChildSANumberOfEntries" access="readOnly" supported="no" store="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ID" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="65" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.IKEv2SA.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" supported="no">
+		<parameter name="BytesSent" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter64">
+					<units value="bytes" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="BytesReceived" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter64">
+					<units value="bytes" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="PacketsSent" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="PacketsReceived" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsSent" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="DecryptionErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="IntegrityErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="OtherReceiveErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.IKEv2SA.{i}.ReceivedCPAttr.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ReceivedCPAttrNumberOfEntries" supported="no">
+		<parameter name="Type" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="32767" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Value" access="readOnly" supported="no">
+			<syntax>
+				<hexBinary>
+					<size maxLength="65535" />
+				</hexBinary>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.IKEv2SA.{i}.ChildSA.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ChildSANumberOfEntries">
+		<parameter name="Status" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Up" />
+					<enumeration value="Down" />
+					<enumeration value="Unknown" />
+					<enumeration value="Dormant" />
+					<enumeration value="Error" optional="true" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="InboundSPI" access="readOnly">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="OutboundSPI" access="readOnly">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="CreationTime" access="readOnly">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.IKEv2SA.{i}.ChildSA.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" supported="no">
+		<parameter name="BytesSent" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter64">
+					<units value="bytes" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="BytesReceived" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter64">
+					<units value="bytes" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="PacketsSent" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="PacketsReceived" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsSent" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="DecryptionErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="IntegrityErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="ReplayErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="PolicyErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+		<parameter name="OtherReceiveErrors" access="readOnly" supported="no">
+			<syntax>
+				<dataType ref="StatsCounter32">
+					<units value="packets" />
+				</dataType>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.X_ADB_Template.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="X_ADB_TemplateNumberOfEntries">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_IKEv2ExchangeMode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Main" />
+					<enumeration value="Aggressive" />
+					<enumeration value="Auto" />
+				</string>
+				<default value="Main" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_IKEv2Check">
+			<syntax>
+				<string>
+					<enumeration value="Obey" />
+					<enumeration value="Strict" />
+					<enumeration value="Claim" />
+					<enumeration value="Exact" />
+				</string>
+				<default value="Strict" />
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2AllowedEncryptionAlgorithms" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.IKEv2SupportedEncryptionAlgorithms" />
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ESPAllowedEncryptionAlgorithms" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.ESPSupportedEncryptionAlgorithms" />
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2AllowedIntegrityAlgorithms" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.SupportedIntegrityAlgorithms" />
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ESPAllowedIntegrityAlgorithms" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.SupportedIntegrityAlgorithms" />
+					<size maxLength="64" />
+				</string>
+				<default type="object" value="" />
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2AllowedDiffieHellmanGroupTransforms" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.SupportedDiffieHellmanGroupTransforms" />
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ESPAllowedDiffieHellmanGroupTransform" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumerationRef targetParam=".IPsec.SupportedDiffieHellmanGroupTransforms" />
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2DeadPeerDetectionTimeout" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="IKEv2SATimeLimit" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="ChildSATimeLimit" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPsec.X_ADB_Template.{i}.X_ADB_RoadWarrior." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Type" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Pure" />
+					<enumeration value="XAuth" />
+					<enumeration value="L2TP" />
+				</string>
+				<default value="Pure" />
+			</syntax>
+		</parameter>
+		<parameter name="PoolSize" access="readWrite">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="DomainName" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="DNSServers" access="readWrite">
+			<syntax>
+				<list maxItems="4" />
+			</syntax>
+		</parameter>
+		<parameter name="Address" access="readWrite">
+			<syntax />
+		</parameter>
+		<parameter name="SubnetMask" access="readWrite">
+			<syntax />
+		</parameter>
+	</object>
+</datamodel>

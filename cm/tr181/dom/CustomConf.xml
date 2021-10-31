@@ -1,3 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="X_ADB_CustomConf.{i}" access="readOnly" minEntries="0" maxEntries="unbounded" enableParameter="Enable" excludeUser="CWMP"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Apply" access="readWrite" aliasOnGet="%s(false)" set="CustomConf.sh"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="ConfigurationSet" access="readWrite"><syntax><string><enumeration value="CustomConf" /><enumeration value="RestoreConf" /></string><default value="RestoreConf" /></syntax></parameter><parameter name="GroupName" access="readWrite"><syntax><string><size minLength="0" maxLength="40" /></string></syntax></parameter></object><object name="X_ADB_CustomConf.{i}.Object.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" excludeUser="CWMP"><parameter name="Name" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="Action" access="readWrite"><syntax><string><enumeration value="Delete" /><enumeration value="Set" /><enumeration value="Restore" /><enumeration value="Add" /></string><default value="Restore" /></syntax></parameter></object><object name="X_ADB_CustomConf.{i}.Object.{i}.Parameter.{i}" access="readWrite" minEntries="0" maxEntries="unbounded" excludeUser="CWMP"><parameter name="Name" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="Value" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter></object></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="X_ADB_CustomConf.{i}" access="readOnly" minEntries="0" maxEntries="unbounded" enableParameter="Enable" excludeUser="CWMP">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Apply" access="readWrite" aliasOnGet="%s(false)" set="CustomConf.sh">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="ConfigurationSet" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="CustomConf" />
+					<enumeration value="RestoreConf" />
+				</string>
+				<default value="RestoreConf" />
+			</syntax>
+		</parameter>
+		<parameter name="GroupName" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="40" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_CustomConf.{i}.Object.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" excludeUser="CWMP">
+		<parameter name="Name" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Action" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Delete" />
+					<enumeration value="Set" />
+					<enumeration value="Restore" />
+					<enumeration value="Add" />
+				</string>
+				<default value="Restore" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_CustomConf.{i}.Object.{i}.Parameter.{i}" access="readWrite" minEntries="0" maxEntries="unbounded" excludeUser="CWMP">
+		<parameter name="Name" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Value" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

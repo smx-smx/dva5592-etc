@@ -1,3 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="VoIP" version="2.0"><object name="Services.VoiceService.{i}.PhyInterface.{i}.Tests." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="X_ADB_Vloop_DC" access="readOnly" excludeUser="CWMP,Assurance"><syntax><int /><default value="0" /></syntax></parameter><parameter name="X_ADB_Vloop_AC" access="readOnly" excludeUser="CWMP,Assurance"><syntax><int /><default value="0" /></syntax></parameter><parameter name="X_ADB_Rloop" access="readOnly" excludeUser="CWMP,Assurance"><syntax><int /><default value="0" /></syntax></parameter><parameter name="X_ADB_OffHook" access="readOnly" excludeUser="CWMP,Assurance"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_REN" access="readOnly" excludeUser="CWMP,Assurance"><syntax><int /><default value="0" /></syntax></parameter><parameter name="X_ADB_PSTN" access="readOnly" excludeUser="CWMP,Assurance"><syntax><boolean /><default value="false" /></syntax></parameter></object><object name="Services.VoiceService.{i}.PhyInterface.{i}.Tests.X_ADB_Monitor." access="readOnly" minEntries="1" maxEntries="1" excludeUser="CWMP,Assurance"><parameter name="Enable" access="readWrite" excludeUser="CWMP,Assurance" set="VoIPService.sh"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="PhoneConnectivity" access="readOnly" excludeUser="CWMP,Assurance" set="Led.sh" store="no"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="ForeignVoltage" access="readOnly" excludeUser="CWMP,Assurance" set="Led.sh" store="no"><syntax><boolean /><default value="false" /></syntax></parameter></object></datamodel>
+<datamodel name="VoIP" version="2.0">
+	<object name="Services.VoiceService.{i}.PhyInterface.{i}.Tests." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="X_ADB_Vloop_DC" access="readOnly" excludeUser="CWMP,Assurance">
+			<syntax>
+				<int />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Vloop_AC" access="readOnly" excludeUser="CWMP,Assurance">
+			<syntax>
+				<int />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Rloop" access="readOnly" excludeUser="CWMP,Assurance">
+			<syntax>
+				<int />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_OffHook" access="readOnly" excludeUser="CWMP,Assurance">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_REN" access="readOnly" excludeUser="CWMP,Assurance">
+			<syntax>
+				<int />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_PSTN" access="readOnly" excludeUser="CWMP,Assurance">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Services.VoiceService.{i}.PhyInterface.{i}.Tests.X_ADB_Monitor." access="readOnly" minEntries="1" maxEntries="1" excludeUser="CWMP,Assurance">
+		<parameter name="Enable" access="readWrite" excludeUser="CWMP,Assurance" set="VoIPService.sh">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="PhoneConnectivity" access="readOnly" excludeUser="CWMP,Assurance" set="Led.sh" store="no">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="ForeignVoltage" access="readOnly" excludeUser="CWMP,Assurance" set="Led.sh" store="no">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

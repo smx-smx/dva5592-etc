@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="X_ADB_LED.ServiceLED.{i}." aliasOnAdd="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i" aliasOnDel="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i">
-    </object><object name="X_ADB_LED.ServiceLED.{i}.Behaviour.{i}." aliasOnAdd="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i1.Behaviour.%i" aliasOnDel="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i1.Behaviour.%i">
-    </object><object name="X_ADB_LED.ServiceLED.{i}.Behaviour.{i}.Trigger.{i}." aliasOnAdd="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i2.Behaviour.%i1.Trigger.%i" aliasOnDel="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i2.Behaviour.%i1.Trigger.%i">
-    </object></datamodel>
+<datamodel name="Device" version="2.0">
+    <object name="X_ADB_LED.ServiceLED.{i}." aliasOnAdd="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i" aliasOnDel="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i">
+    </object>
+    <object name="X_ADB_LED.ServiceLED.{i}.Behaviour.{i}." aliasOnAdd="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i1.Behaviour.%i" aliasOnDel="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i1.Behaviour.%i">
+    </object>
+    <object name="X_ADB_LED.ServiceLED.{i}.Behaviour.{i}.Trigger.{i}." aliasOnAdd="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i2.Behaviour.%i1.Trigger.%i" aliasOnDel="InternetGatewayDevice.X_ADB_LED.ServiceLED.%i2.Behaviour.%i1.Trigger.%i">
+    </object>
+</datamodel>

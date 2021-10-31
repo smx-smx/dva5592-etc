@@ -135,25 +135,25 @@ hwTotHits="0"
 
 if [ -f /tmp/nflist ]; then
 	if [ -s /tmp/nflist ]; then
-		cat /tmp/nflist | while IFS=" " read flowObject idle swhit swTotHits totalBytes CMFtpl hwTotHits V4Conntrack V6Conntrack L1Info Prot sourceIpAddress destinIpAddress vlanID tag IqPrio SkbMark ; do
+		cat /tmp/nflist | while IFS=" " read flowObject idle swhit swTotHits totalBytes CMFtpl hwTotHits V4Conntrack V6Conntrack L1Info Prot sourceIpAddress destinIpAddress vlanID tag IqPrio SkbMark; do
 			if [ $line_count -gt 1 ]; then
 				if [ "${swTotHits%%":"}" != "0" ]; then
-					count_sw=`expr $count_sw + 1`
-					echo "$count_sw" > /tmp/nflist_sw_acc
+					count_sw=$(expr $count_sw + 1)
+					echo "$count_sw" >/tmp/nflist_sw_acc
 				fi
 				if [ "$hwTotHits" != "0" ]; then
-					count_hw=`expr $count_hw + 1`
-					echo "$count_hw" > /tmp/nflist_hw_acc
+					count_hw=$(expr $count_hw + 1)
+					echo "$count_hw" >/tmp/nflist_hw_acc
 				fi
 			fi
-			line_count=`expr $line_count + 1`
+			line_count=$(expr $line_count + 1)
 		done
 
-		count_sw=`cat /tmp/nflist_sw_acc`
-		count_hw=`cat /tmp/nflist_hw_acc`
-		count_sw=`expr $count_sw - 1`
-		count_hw=`expr $count_hw - 1`
-		echo "$count_sw" > /tmp/nflist_sw_acc
-		echo "$count_hw" > /tmp/nflist_hw_acc
+		count_sw=$(cat /tmp/nflist_sw_acc)
+		count_hw=$(cat /tmp/nflist_hw_acc)
+		count_sw=$(expr $count_sw - 1)
+		count_hw=$(expr $count_hw - 1)
+		echo "$count_sw" >/tmp/nflist_sw_acc
+		echo "$count_hw" >/tmp/nflist_hw_acc
 	fi
 fi

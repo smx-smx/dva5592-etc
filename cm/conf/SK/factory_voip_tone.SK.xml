@@ -38,7 +38,7 @@
    <parameter name="Function">
       <value>Busy</value>
    </parameter>
-     <parameter name="Tone">
+   <parameter name="Tone">
       <value>Device.Services.VoiceService.1.Tone.Description.10201</value>
    </parameter>
 </object>
@@ -1247,13 +1247,13 @@
    <parameter name="Power2">
       <value>-60</value>
    </parameter>
-      <parameter name="Frequency3">
+   <parameter name="Frequency3">
       <value>2450</value>
    </parameter>
    <parameter name="Power3">
       <value>-60</value>
    </parameter>
-      <parameter name="Frequency4">
+   <parameter name="Frequency4">
       <value>2600</value>
    </parameter>
    <parameter name="Power4">
@@ -1631,7 +1631,7 @@
    </parameter>
 
    <parameter name="NextPattern">
-     <value>Device.Services.VoiceService.1.Tone.Pattern.011605</value>
+      <value>Device.Services.VoiceService.1.Tone.Pattern.011605</value>
    </parameter>
 </object>
 <object name="Device.Services.VoiceService.1.Tone.Pattern.011605.">
@@ -1673,6 +1673,6 @@
    </parameter>
 
    <parameter name="NextPattern">
-     <value></value>
+      <value></value>
    </parameter>
 </object>

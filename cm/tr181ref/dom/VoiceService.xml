@@ -1,27 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="VoIP" version="2.0"><object name="Services.VoiceService.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i">
-    </object><object name="Services.VoiceService.{i}.X_ADB_NumberingPlan." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i1.X_ADB_NumberingPlan.%n">
-    </object><object name="Services.VoiceService.{i}.X_ADB_NumberingPlan.PrefixInfo.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.X_ADB_NumberingPlan.PrefixInfo.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.X_ADB_NumberingPlan.PrefixInfo.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.X_ADB_NumberingPlan.PrefixInfo.%i.%n">
-    </object><object name="Services.VoiceService.{i}.Capabilities.Codecs.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.Capabilities.Codecs.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.Capabilities.Codecs.%i">
-    </object><object name="Services.VoiceService.{i}.X_ADB_SIP." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i.X_ADB_SIP.%n">
-    </object><object name="Services.VoiceService.{i}.PhyInterface.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i1.PhyInterface.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i1.PhyInterface.%i">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i1.VoiceProfile.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i1.VoiceProfile.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i1.VoiceProfile.%i.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.FaxT38." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.FaxT38.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.Line.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.Line.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.Line.%i.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.CallingFeatures." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.CallingFeatures.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.Codec.X_ADB_CodecFeatures." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.X_ADB_CodecFeatures.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.Codec.List.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i4.VoiceProfile.%i3.Line.%i2.Codec.List.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i4.VoiceProfile.%i3.Line.%i2.Codec.List.%i">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.SIP." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.SIP.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.SIP.EventSubscribe.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i4.VoiceProfile.%i3.Line.%i2.SIP.EventSubscribe.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i4.VoiceProfile.%i3.Line.%i2.SIP.EventSubscribe.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i4.VoiceProfile.%i3.Line.%i2.SIP.EventSubscribe.%i.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.Session.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.Session.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.Session.%i">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.VoiceProcessing." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.VoiceProcessing.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.NumberingPlan." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.NumberingPlan.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.NumberingPlan.PrefixInfo.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.NumberingPlan.PrefixInfo.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.NumberingPlan.PrefixInfo.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.NumberingPlan.PrefixInfo.%i.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.RTP." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.RTP.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.RTP.RTCP." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.RTP.RTCP.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.SIP." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.SIP.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.SIP.EventSubscribe.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.EventSubscribe.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.EventSubscribe.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.EventSubscribe.%i.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.SIP.ResponseMap.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.ResponseMap.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.ResponseMap.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.ResponseMap.%i.%n">
-    </object><object name="Services.VoiceService.{i}.VoiceProfile.{i}.ServiceProviderInfo." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.ServiceProviderInfo.%n">
-    </object></datamodel>
+<datamodel name="VoIP" version="2.0">
+    <object name="Services.VoiceService.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i">
+    </object>
+    <object name="Services.VoiceService.{i}.X_ADB_NumberingPlan." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i1.X_ADB_NumberingPlan.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.X_ADB_NumberingPlan.PrefixInfo.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.X_ADB_NumberingPlan.PrefixInfo.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.X_ADB_NumberingPlan.PrefixInfo.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.X_ADB_NumberingPlan.PrefixInfo.%i.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.Capabilities.Codecs.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.Capabilities.Codecs.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.Capabilities.Codecs.%i">
+    </object>
+    <object name="Services.VoiceService.{i}.X_ADB_SIP." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i.X_ADB_SIP.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.PhyInterface.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i1.PhyInterface.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i1.PhyInterface.%i">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i1.VoiceProfile.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i1.VoiceProfile.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i1.VoiceProfile.%i.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.FaxT38." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.FaxT38.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.Line.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.Line.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.Line.%i.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.CallingFeatures." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.CallingFeatures.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.Codec.X_ADB_CodecFeatures." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.X_ADB_CodecFeatures.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.Codec.List.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i4.VoiceProfile.%i3.Line.%i2.Codec.List.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i4.VoiceProfile.%i3.Line.%i2.Codec.List.%i">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.SIP." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.SIP.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.SIP.EventSubscribe.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i4.VoiceProfile.%i3.Line.%i2.SIP.EventSubscribe.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i4.VoiceProfile.%i3.Line.%i2.SIP.EventSubscribe.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i4.VoiceProfile.%i3.Line.%i2.SIP.EventSubscribe.%i.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.Session.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.Session.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.Session.%i">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.Line.{i}.VoiceProcessing." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.Line.%i1.VoiceProcessing.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.NumberingPlan." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.NumberingPlan.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.NumberingPlan.PrefixInfo.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.NumberingPlan.PrefixInfo.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.NumberingPlan.PrefixInfo.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.NumberingPlan.PrefixInfo.%i.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.RTP." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.RTP.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.RTP.RTCP." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.RTP.RTCP.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.SIP." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.SIP.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.SIP.EventSubscribe.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.EventSubscribe.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.EventSubscribe.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.EventSubscribe.%i.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.SIP.ResponseMap.{i}." aliasOnAdd="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.ResponseMap.%i" aliasOnDel="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.ResponseMap.%i" aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i3.VoiceProfile.%i2.SIP.ResponseMap.%i.%n">
+    </object>
+    <object name="Services.VoiceService.{i}.VoiceProfile.{i}.ServiceProviderInfo." aliasOnSet="InternetGatewayDevice.Services.VoiceService.%i2.VoiceProfile.%i1.ServiceProviderInfo.%n">
+    </object>
+</datamodel>

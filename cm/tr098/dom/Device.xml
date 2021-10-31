@@ -1,3 +1,272 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="." access="readOnly" minEntries="1" maxEntries="1"><parameter name="DeviceSummary" access="readOnly" forcedInform="true" store="no"><syntax><string><size minLength="0" maxLength="1024" /></string></syntax></parameter><parameter name="LANDeviceNumberOfEntries" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="WANDeviceNumberOfEntries" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="UserNumberOfEntries" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="DeviceInfo." access="readOnly" minEntries="1" maxEntries="1" aliasOnSet="Device.DeviceInfo.%n" aliasOnGet="Device.DeviceInfo.%n"><parameter name="AdditionalHardwareVersion" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter><parameter name="AdditionalSoftwareVersion" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter><parameter name="Description" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="HardwareVersion" access="readOnly" forcedInform="true"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Manufacturer" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="ManufacturerOUI" access="readOnly"><syntax><string><size minLength="0" maxLength="6" /></string></syntax></parameter><parameter name="ModelName" access="readOnly" activeNotify="canDeny"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="ProvisioningCode" access="readWrite" activeNotify="forceEnabled" forcedInform="true"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="SerialNumber" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="SoftwareVersion" access="readOnly" activeNotify="forceEnabled" forcedInform="true"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="X_ADB_ProfileType" access="readWrite"><syntax><string><enumerationRef targetParam="X_ADB_AvailableProfileType" /></string><default value="Default" /></syntax></parameter><parameter name="X_ADB_AvailableProfileType" access="readOnly"><syntax><list minItems="1" maxItems="5" /><string /><default value="Default" /></syntax></parameter><parameter name="SpecVersion" access="readOnly" forcedInform="true"><syntax><string><size minLength="0" maxLength="16" /></string><default value="1.0" /></syntax></parameter><parameter name="DeviceLog" access="readOnly" activeNotify="canDeny" get="TR098_DeviceInfo.sh"><syntax><string><size minLength="0" maxLength="32768" /></string></syntax></parameter><parameter name="UpTime" access="readOnly" activeNotify="canDeny" get="TR098_DeviceInfo.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="VendorConfigFileNumberOfEntries" access="readOnly"><syntax><unsignedInt /></syntax></parameter><parameter name="ProductClass" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="FirstUseDate" access="readOnly" activeNotify="canDeny"><syntax><dateTime /></syntax></parameter></object><object name="DeviceInfo.VendorConfigFile.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="VendorConfigFileNumberOfEntries" aliasOnAdd="Device.DeviceInfo.VendorConfigFile.%i" aliasOnDel="Device.DeviceInfo.VendorConfigFile.%i" aliasOnSet="Device.DeviceInfo.VendorConfigFile.%i.%n" aliasOnGet="Device.DeviceInfo.VendorConfigFile.%i.%n"><parameter name="Name" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Version" access="readOnly"><syntax><string><size minLength="0" maxLength="16" /></string></syntax></parameter><parameter name="Date" access="readOnly"><syntax><dateTime /></syntax></parameter><parameter name="Description" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter></object><object name="Time." access="readOnly" minEntries="1" maxEntries="1" aliasOnSet="Device.Time.%n" aliasOnGet="Device.Time.%n"><parameter name="CurrentLocalTime" access="readOnly" activeNotify="canDeny" get="system.sh"><syntax><dateTime /></syntax></parameter><parameter name="DaylightSavingsEnd" access="readWrite" get="TR098_TIMuse.sh"><syntax><dateTime /></syntax></parameter><parameter name="DaylightSavingsStart" access="readWrite" get="TR098_TIMuse.sh"><syntax><dateTime /></syntax></parameter><parameter name="DaylightSavingsUsed" access="readWrite" get="TR098_TIMuse.sh"><syntax><boolean /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /></syntax></parameter><parameter name="LocalTimeZone" access="readWrite"><syntax><string><size minLength="0" maxLength="6" /></string></syntax></parameter><parameter name="LocalTimeZoneName" access="readWrite" aliasOnSet="Device.Time.LocalTimeZone" aliasOnGet="Device.Time.LocalTimeZone"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="NTPServer1" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="NTPServer2" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="NTPServer3" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="NTPServer4" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="NTPServer5" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Status" access="readOnly" activeNotify="canDeny" localNotify="forceEnabled"><syntax><string><enumeration value="Disabled" /><enumeration value="Unsynchronized" /><enumeration value="Synchronized" /><enumeration value="Error_FailedToSynchronize" /><enumeration value="Error" /></string></syntax></parameter></object></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="DeviceSummary" access="readOnly" forcedInform="true" store="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="1024" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="LANDeviceNumberOfEntries" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="WANDeviceNumberOfEntries" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="UserNumberOfEntries" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DeviceInfo." access="readOnly" minEntries="1" maxEntries="1" aliasOnSet="Device.DeviceInfo.%n" aliasOnGet="Device.DeviceInfo.%n">
+		<parameter name="AdditionalHardwareVersion" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="AdditionalSoftwareVersion" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Description" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="HardwareVersion" access="readOnly" forcedInform="true">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Manufacturer" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ManufacturerOUI" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="6" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ModelName" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ProvisioningCode" access="readWrite" activeNotify="forceEnabled" forcedInform="true">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SerialNumber" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SoftwareVersion" access="readOnly" activeNotify="forceEnabled" forcedInform="true">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ProfileType" access="readWrite">
+			<syntax>
+				<string>
+					<enumerationRef targetParam="X_ADB_AvailableProfileType" />
+				</string>
+				<default value="Default" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AvailableProfileType" access="readOnly">
+			<syntax>
+				<list minItems="1" maxItems="5" />
+				<string />
+				<default value="Default" />
+			</syntax>
+		</parameter>
+		<parameter name="SpecVersion" access="readOnly" forcedInform="true">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="16" />
+				</string>
+				<default value="1.0" />
+			</syntax>
+		</parameter>
+		<parameter name="DeviceLog" access="readOnly" activeNotify="canDeny" get="TR098_DeviceInfo.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="32768" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="UpTime" access="readOnly" activeNotify="canDeny" get="TR098_DeviceInfo.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="VendorConfigFileNumberOfEntries" access="readOnly">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ProductClass" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="FirstUseDate" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DeviceInfo.VendorConfigFile.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="VendorConfigFileNumberOfEntries" aliasOnAdd="Device.DeviceInfo.VendorConfigFile.%i" aliasOnDel="Device.DeviceInfo.VendorConfigFile.%i" aliasOnSet="Device.DeviceInfo.VendorConfigFile.%i.%n" aliasOnGet="Device.DeviceInfo.VendorConfigFile.%i.%n">
+		<parameter name="Name" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Version" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="16" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Date" access="readOnly">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="Description" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Time." access="readOnly" minEntries="1" maxEntries="1" aliasOnSet="Device.Time.%n" aliasOnGet="Device.Time.%n">
+		<parameter name="CurrentLocalTime" access="readOnly" activeNotify="canDeny" get="system.sh">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="DaylightSavingsEnd" access="readWrite" get="TR098_TIMuse.sh">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="DaylightSavingsStart" access="readWrite" get="TR098_TIMuse.sh">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="DaylightSavingsUsed" access="readWrite" get="TR098_TIMuse.sh">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="LocalTimeZone" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="6" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="LocalTimeZoneName" access="readWrite" aliasOnSet="Device.Time.LocalTimeZone" aliasOnGet="Device.Time.LocalTimeZone">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="NTPServer1" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="NTPServer2" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="NTPServer3" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="NTPServer4" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="NTPServer5" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" activeNotify="canDeny" localNotify="forceEnabled">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Unsynchronized" />
+					<enumeration value="Synchronized" />
+					<enumeration value="Error_FailedToSynchronize" />
+					<enumeration value="Error" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

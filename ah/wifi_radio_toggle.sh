@@ -8,8 +8,8 @@ LOCK_NAME="$AH_NAME"
 . /etc/ah/helper_radio_toogle.sh
 case "$obj" in
 Device.WiFi)
-radio_main_toggle
-cmclient SAVE
-;;
+	radio_main_toggle
+	cmclient SAVE
+	;;
 esac
 exit 0

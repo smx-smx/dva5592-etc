@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="NATService" version="2.0"><object name="NAT."><parameter name="X_ADB_ServiceNumberOfEntries" excludeUser="CWMP" /></object><object name="NAT.X_ADB_Service.{i}." excludeUser="CWMP" /><object name="NAT.PortMapping.{i}."><parameter name="X_ADB_Service" excludeUser="CWMP" /></object></datamodel>
+<datamodel name="NATService" version="2.0">
+	<object name="NAT.">
+		<parameter name="X_ADB_ServiceNumberOfEntries" excludeUser="CWMP" />
+	</object>
+	<object name="NAT.X_ADB_Service.{i}." excludeUser="CWMP" />
+	<object name="NAT.PortMapping.{i}.">
+		<parameter name="X_ADB_Service" excludeUser="CWMP" />
+	</object>
+</datamodel>

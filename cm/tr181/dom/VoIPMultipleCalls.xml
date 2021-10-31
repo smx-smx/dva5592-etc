@@ -1,3 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="VoIP" version="2.0"><object name="Services.VoiceService.{i}.X_ADB_MultipleCalls" access="readOnly" minEntries="1" maxEntries="1"><parameter name="CallTransferOnHookEnable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="AutoResumeCallHoldTimeout" access="readWrite"><syntax><unsignedInt><units value="milliseconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="AutoResumeCallWaitingTimeout" access="readWrite"><syntax><unsignedInt><units value="milliseconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="DoubleFlashSwapSecondaryCall" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="AutoResumeHoldOnFail" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="SwapCallAfterHangupEnable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="FlashForAllServicesEnable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter></object></datamodel>
+<datamodel name="VoIP" version="2.0">
+	<object name="Services.VoiceService.{i}.X_ADB_MultipleCalls" access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="CallTransferOnHookEnable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="AutoResumeCallHoldTimeout" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="AutoResumeCallWaitingTimeout" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="DoubleFlashSwapSecondaryCall" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="AutoResumeHoldOnFail" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="SwapCallAfterHangupEnable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="FlashForAllServicesEnable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

@@ -31,7 +31,8 @@ if [ "$ACTION" = ifup ]; then
 
 			[ -n "$tunnelid" ] && [ -n "$username" ] && [ -n "$password" ] && {
 				[ "${#password}" == 32 -a -z "${password//[a-f0-9]/}" ] || {
-					password="$(echo -n "$password" | md5sum)"; password="${password%% *}"
+					password="$(echo -n "$password" | md5sum)"
+					password="${password%% *}"
 				}
 				uci_set_state network "$cfg" ipaddr "$wanip"
 
@@ -50,7 +51,7 @@ if [ "$ACTION" = ifup ]; then
 							sleep 1
 						}
 					done
-				)&
+				) &
 			}
 		}
 	}

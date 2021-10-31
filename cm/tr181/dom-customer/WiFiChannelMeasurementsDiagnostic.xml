@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="WiFi" version="2.0"><object name="WiFi."><parameter name="X_ADB_WiFiChannelMeasurementsDiagnosticsNumberOfEntries" excludeUser="CWMP" /></object><object name="WiFi.X_ADB_WiFiChannelMeasurementsDiagnostics.{i}." excludeUser="CWMP" /><object name="WiFi.X_ADB_WiFiChannelMeasurementsDiagnostics.{i}.Channel.{i}." excludeUser="CWMP" /></datamodel>
+<datamodel name="WiFi" version="2.0">
+	<object name="WiFi.">
+		<parameter name="X_ADB_WiFiChannelMeasurementsDiagnosticsNumberOfEntries" excludeUser="CWMP" />
+	</object>
+	<object name="WiFi.X_ADB_WiFiChannelMeasurementsDiagnostics.{i}." excludeUser="CWMP" />
+	<object name="WiFi.X_ADB_WiFiChannelMeasurementsDiagnostics.{i}.Channel.{i}." excludeUser="CWMP" />
+</datamodel>

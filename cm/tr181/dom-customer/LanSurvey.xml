@@ -1,3 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="LANSurvey" version="2.0"><object name="X_ADB_LocalAreaNetworkSurvey." excludeUser="CWMP" /><object name="X_ADB_LocalAreaNetworkSurvey.LocalAreaNetwork." excludeUser="CWMP" /><object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}." excludeUser="CWMP" /><object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.InterfaceInfo." excludeUser="CWMP" /><object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.NetworkInfo." excludeUser="CWMP" /><object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.DeviceInfo." excludeUser="CWMP" /><object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices." excludeUser="CWMP" /><object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices.Shares.{i}." excludeUser="CWMP" /><object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices.UPnPDevices.{i}." excludeUser="CWMP" /><object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices.UPnPDevices.{i}.UPnPServices.{i}." excludeUser="CWMP" /><object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices.DNSSDServices.{i}." excludeUser="CWMP" /><object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices.DNSSDServices.{i}.TXT.{i}." excludeUser="CWMP" /></datamodel>
+<datamodel name="LANSurvey" version="2.0">
+	<object name="X_ADB_LocalAreaNetworkSurvey." excludeUser="CWMP" />
+	<object name="X_ADB_LocalAreaNetworkSurvey.LocalAreaNetwork." excludeUser="CWMP" />
+	<object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.InterfaceInfo." excludeUser="CWMP" />
+	<object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.NetworkInfo." excludeUser="CWMP" />
+	<object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.DeviceInfo." excludeUser="CWMP" />
+	<object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices." excludeUser="CWMP" />
+	<object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices.Shares.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices.UPnPDevices.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices.UPnPDevices.{i}.UPnPServices.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices.DNSSDServices.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_LocalAreaNetworkSurvey.Device.{i}.ExportedServices.DNSSDServices.{i}.TXT.{i}." excludeUser="CWMP" />
+</datamodel>

@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="PPP" version="2.0"><object name="PPP.Interface.{i}." del="TR098_ADD_PPP.sh"><parameter name="X_ADB_TR098Reference" access="readWrite"><syntax><string><size minLength="0" maxLength="1024" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_ActiveLowerLayer" set="TR098_ADD_PPP.sh" /><parameter name="Username" aliasOnSet="%(%p.X_ADB_TR098Reference).Username" /><parameter name="Password" aliasOnSet="%(%p.X_ADB_TR098Reference).Password" /><parameter name="ConnectionTrigger" aliasOnSet="%(%p.X_ADB_TR098Reference).ConnectionTrigger" /><parameter name="ConnectionStatus" aliasOnSet="%(%p.X_ADB_TR098Reference).ConnectionStatus" /></object></datamodel>
+<datamodel name="PPP" version="2.0">
+	<object name="PPP.Interface.{i}." del="TR098_ADD_PPP.sh">
+		<parameter name="X_ADB_TR098Reference" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="1024" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ActiveLowerLayer" set="TR098_ADD_PPP.sh" />
+		<parameter name="Username" aliasOnSet="%(%p.X_ADB_TR098Reference).Username" />
+		<parameter name="Password" aliasOnSet="%(%p.X_ADB_TR098Reference).Password" />
+		<parameter name="ConnectionTrigger" aliasOnSet="%(%p.X_ADB_TR098Reference).ConnectionTrigger" />
+		<parameter name="ConnectionStatus" aliasOnSet="%(%p.X_ADB_TR098Reference).ConnectionStatus" />
+	</object>
+</datamodel>

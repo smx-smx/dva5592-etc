@@ -1,3 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="X_ADB_ParentalControl.RestrictedHosts." excludeUser="CWMP" /><object name="X_ADB_ParentalControl.RestrictedHosts.Host.{i}." excludeUser="CWMP" /><object name="X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.{i}." excludeUser="CWMP" /><object name="X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.{i}.TimeOfDay.{i}." excludeUser="CWMP" /><object name="X_ADB_ParentalControl.Policy.{i}." excludeUser="CWMP" /></datamodel>
+<datamodel name="Services" version="2.0">
+	<object name="X_ADB_ParentalControl.RestrictedHosts." excludeUser="CWMP" />
+	<object name="X_ADB_ParentalControl.RestrictedHosts.Host.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_ParentalControl.RestrictedHosts.TimeOfDayProfile.{i}.TimeOfDay.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_ParentalControl.Policy.{i}." excludeUser="CWMP" />
+</datamodel>

@@ -1,3 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="PPP" version="2.0"><object name="PPP." access="readOnly" minEntries="1" maxEntries="1"><parameter name="SupportedNCPs" access="readOnly"><syntax><list /><string><enumeration value="ATCP" /><enumeration value="IPCP" /><enumeration value="IPXCP" /><enumeration value="NBFCP" /><enumeration value="IPv6CP" /></string><default value="IPCP,IPv6CP" /></syntax></parameter></object><object name="PPP.Interface.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceNumberOfEntries" enableParameter="Enable"><parameter name="IPv6CPEnable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter></object><object name="PPP.Interface.{i}.IPv6CP." access="readOnly" minEntries="1" maxEntries="1" set="IPIf.sh"><parameter name="LocalInterfaceIdentifier" access="readOnly" store="no"><syntax /></parameter><parameter name="RemoteInterfaceIdentifier" access="readOnly" store="no"><syntax /></parameter></object></datamodel>
+<datamodel name="PPP" version="2.0">
+	<object name="PPP." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="SupportedNCPs" access="readOnly">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="ATCP" />
+					<enumeration value="IPCP" />
+					<enumeration value="IPXCP" />
+					<enumeration value="NBFCP" />
+					<enumeration value="IPv6CP" />
+				</string>
+				<default value="IPCP,IPv6CP" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="PPP.Interface.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceNumberOfEntries" enableParameter="Enable">
+		<parameter name="IPv6CPEnable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="PPP.Interface.{i}.IPv6CP." access="readOnly" minEntries="1" maxEntries="1" set="IPIf.sh">
+		<parameter name="LocalInterfaceIdentifier" access="readOnly" store="no">
+			<syntax />
+		</parameter>
+		<parameter name="RemoteInterfaceIdentifier" access="readOnly" store="no">
+			<syntax />
+		</parameter>
+	</object>
+</datamodel>

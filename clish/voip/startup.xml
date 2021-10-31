@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CLISH_MODULE>
- 	<!--=======================================================-->
+	<!--=======================================================-->
 	<OVERVIEW>
 CONTEXT SENSITIVE HELP
 [?] - Display context sensitive help. This is either a list of possible
@@ -38,9 +38,9 @@ ESCAPE SEQUENCES
 !!  - Subsitute the the last command line.
 !N  - Substitute the Nth command line (absolute as per 'history' command)
 !-N - Substitute the command line entered N lines before (relative)
-    </OVERVIEW>
- 	<!--=======================================================-->
-    <PLUGIN name="cmplugin" file="/usr/lib/cmplugin.so"/>
+	</OVERVIEW>
+	<!--=======================================================-->
+	<PLUGIN name="cmplugin" file="/usr/lib/cmplugin.so"/>
 	<STARTUP view="voip-view">
 		<DETAIL>
 ********************************************
@@ -48,8 +48,8 @@ ESCAPE SEQUENCES
 *                                          *
 *      WARNING: Authorised Access Only     *
 ********************************************
-        </DETAIL>
-	<ACTION>echo "Welcome to voip cli"</ACTION>
+		</DETAIL>
+		<ACTION>echo "Welcome to voip cli"</ACTION>
 	</STARTUP>
- 	<!--=======================================================-->
+	<!--=======================================================-->
 </CLISH_MODULE>

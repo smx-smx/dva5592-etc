@@ -1,3 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="Services.StorageService.{i}.LogicalVolume.{i}."><parameter name="X_ADB_MountPoint" excludeUser="CWMP" /></object><object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}."><parameter name="X_ADB_SambaRefresh" excludeUser="CWMP" /></object><object name="Services.StorageService.{i}.NetworkServer."><parameter name="X_ADB_SMBInterfaces" excludeUser="CWMP" /><parameter name="X_ADB_SambaRefresh" excludeUser="CWMP" /></object><object name="IPsec.Filter.{i}.X_ADB_RoadWarrior." excludeUser="CWMP" /><object name="X_ADB_VPN.Server.PPTP.{i}." excludeUser="CWMP" /><object name="X_ADB_VPN.Server.L2TP.{i}." excludeUser="CWMP" /></datamodel>
+<datamodel name="Services" version="2.0">
+	<object name="Services.StorageService.{i}.LogicalVolume.{i}.">
+		<parameter name="X_ADB_MountPoint" excludeUser="CWMP" />
+	</object>
+	<object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}.">
+		<parameter name="X_ADB_SambaRefresh" excludeUser="CWMP" />
+	</object>
+	<object name="Services.StorageService.{i}.NetworkServer.">
+		<parameter name="X_ADB_SMBInterfaces" excludeUser="CWMP" />
+		<parameter name="X_ADB_SambaRefresh" excludeUser="CWMP" />
+	</object>
+	<object name="IPsec.Filter.{i}.X_ADB_RoadWarrior." excludeUser="CWMP" />
+	<object name="X_ADB_VPN.Server.PPTP.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_VPN.Server.L2TP.{i}." excludeUser="CWMP" />
+</datamodel>

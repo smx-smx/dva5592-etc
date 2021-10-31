@@ -1,3 +1,226 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DHCP" version="2.2"><object name="DHCPv6." access="readOnly" minEntries="1" maxEntries="1"><parameter name="ClientNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="DHCPv6.Client.{i}." access="readWrite" numEntriesParameter="ClientNumberOfEntries" enableParameter="Enable" minEntries="0" maxEntries="unbounded" set="DHCPv6Client.sh" del="DHCPv6Client.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size maxLength="256" /><pathRef refType="strong" targetParent=".IP.Interface." targetType="row" /></string><default value="" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="X_ADB_EnableRFC7083Compatibility" access="readwrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="DUID" access="readOnly"><syntax><hexBinary><size maxLength="130" /></hexBinary></syntax></parameter><parameter name="RequestAddresses" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="RequestPrefixes" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="RapidCommit" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Renew" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_ForceRelease" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="SuggestedT1" access="readWrite"><syntax><int><range minInclusive="-1" /><units value="seconds" /></int><default value="-1" /></syntax></parameter><parameter name="SuggestedT2" access="readWrite"><syntax><int><range minInclusive="-1" /><units value="seconds" /></int><default value="-1" /></syntax></parameter><parameter name="SupportedOptions" access="readOnly"><syntax><list /><unsignedInt /><default value="21,22,23,24,27,28,29,30,31,64,82,83,242,243" /></syntax></parameter><parameter name="RequestedOptions" access="readWrite"><syntax><list /><unsignedInt /></syntax></parameter><parameter name="ServerNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="SentOptionNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="ReceivedOptionNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="X_ADB_AutoMode" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter></object><object name="DHCPv6.Client.{i}.Server.{i}." access="readOnly" numEntriesParameter="ServerNumberOfEntries" minEntries="0" maxEntries="unbounded" store="no"><parameter name="SourceAddress" access="readOnly"><syntax><dataType ref="IPv6Address" /></syntax></parameter><parameter name="DUID" access="readOnly"><syntax><hexBinary><size maxLength="130" /></hexBinary></syntax></parameter><parameter name="InformationRefreshTime" access="readOnly"><syntax><dateTime /></syntax></parameter></object><object name="DHCPv6.Client.{i}.SentOption.{i}." access="readWrite" numEntriesParameter="SentOptionNumberOfEntries" enableParameter="Enable" minEntries="0" maxEntries="unbounded" set="DHCPv6Client.sh" add="DHCPv6Client.sh" del="DHCPv6Client.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Tag" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" /></unsignedInt></syntax></parameter><parameter name="Value" access="readWrite"><syntax><hexBinary><size minLength="0" maxLength="65535" /></hexBinary><default value="" /></syntax></parameter><parameter name="X_ADB_Type" access="readWrite"><syntax><string><enumeration value="Hex" /><enumeration value="Boolean" /><enumeration value="Empty" /><enumeration value="String" /><enumeration value="IPv6Address" /><enumeration value="IPv6AddressList" /></string><default value="Hex" /></syntax></parameter></object><object name="DHCPv6.Client.{i}.ReceivedOption.{i}." access="readOnly" numEntriesParameter="ReceivedOptionNumberOfEntries" minEntries="0" maxEntries="unbounded" store="no"><parameter name="Tag" access="readOnly"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" /></unsignedInt></syntax></parameter><parameter name="Value" access="readOnly"><syntax><hexBinary><size minLength="0" maxLength="65535" /></hexBinary></syntax></parameter><parameter name="Server" access="readOnly"><syntax><string><pathRef refType="strong" targetParent="#.Server." targetType="row" /></string></syntax></parameter></object></datamodel>
+<datamodel name="DHCP" version="2.2">
+	<object name="DHCPv6." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="ClientNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv6.Client.{i}." access="readWrite" numEntriesParameter="ClientNumberOfEntries" enableParameter="Enable" minEntries="0" maxEntries="unbounded" set="DHCPv6Client.sh" del="DHCPv6Client.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<size maxLength="256" />
+					<pathRef refType="strong" targetParent=".IP.Interface." targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error_Misconfigured" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_EnableRFC7083Compatibility" access="readwrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="DUID" access="readOnly">
+			<syntax>
+				<hexBinary>
+					<size maxLength="130" />
+				</hexBinary>
+			</syntax>
+		</parameter>
+		<parameter name="RequestAddresses" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="RequestPrefixes" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="RapidCommit" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Renew" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ForceRelease" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="SuggestedT1" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" />
+					<units value="seconds" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="SuggestedT2" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" />
+					<units value="seconds" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="SupportedOptions" access="readOnly">
+			<syntax>
+				<list />
+				<unsignedInt />
+				<default value="21,22,23,24,27,28,29,30,31,64,82,83,242,243" />
+			</syntax>
+		</parameter>
+		<parameter name="RequestedOptions" access="readWrite">
+			<syntax>
+				<list />
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ServerNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="SentOptionNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ReceivedOptionNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AutoMode" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv6.Client.{i}.Server.{i}." access="readOnly" numEntriesParameter="ServerNumberOfEntries" minEntries="0" maxEntries="unbounded" store="no">
+		<parameter name="SourceAddress" access="readOnly">
+			<syntax>
+				<dataType ref="IPv6Address" />
+			</syntax>
+		</parameter>
+		<parameter name="DUID" access="readOnly">
+			<syntax>
+				<hexBinary>
+					<size maxLength="130" />
+				</hexBinary>
+			</syntax>
+		</parameter>
+		<parameter name="InformationRefreshTime" access="readOnly">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv6.Client.{i}.SentOption.{i}." access="readWrite" numEntriesParameter="SentOptionNumberOfEntries" enableParameter="Enable" minEntries="0" maxEntries="unbounded" set="DHCPv6Client.sh" add="DHCPv6Client.sh" del="DHCPv6Client.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Tag" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Value" access="readWrite">
+			<syntax>
+				<hexBinary>
+					<size minLength="0" maxLength="65535" />
+				</hexBinary>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Type" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Hex" />
+					<enumeration value="Boolean" />
+					<enumeration value="Empty" />
+					<enumeration value="String" />
+					<enumeration value="IPv6Address" />
+					<enumeration value="IPv6AddressList" />
+				</string>
+				<default value="Hex" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv6.Client.{i}.ReceivedOption.{i}." access="readOnly" numEntriesParameter="ReceivedOptionNumberOfEntries" minEntries="0" maxEntries="unbounded" store="no">
+		<parameter name="Tag" access="readOnly">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Value" access="readOnly">
+			<syntax>
+				<hexBinary>
+					<size minLength="0" maxLength="65535" />
+				</hexBinary>
+			</syntax>
+		</parameter>
+		<parameter name="Server" access="readOnly">
+			<syntax>
+				<string>
+					<pathRef refType="strong" targetParent="#.Server." targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

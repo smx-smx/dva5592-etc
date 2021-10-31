@@ -9,19 +9,19 @@
 	<parameter name="X_ADB_LanInterface">
 		<value>Device.IP.Interface.1</value>
 	</parameter>
-        <parameter name="X_ADB_FriendlyName">
+	<parameter name="X_ADB_FriendlyName">
 		<value>D-Link router</value>
 	</parameter>
-        <parameter name="X_ADB_ModelName">
+	<parameter name="X_ADB_ModelName">
 		<value>D-Link router</value>
 	</parameter>
-        <parameter name="X_ADB_ModelDescription">
+	<parameter name="X_ADB_ModelDescription">
 		<value>DVA-5592/W</value>
 	</parameter>
-        <parameter name="X_ADB_ManufacturerURL">
+	<parameter name="X_ADB_ManufacturerURL">
 		<value>www.dlink.com</value>
 	</parameter>
-        <parameter name="X_ADB_ModelURL">
+	<parameter name="X_ADB_ModelURL">
 		<value>www.dlink.com</value>
 	</parameter>
 </object>

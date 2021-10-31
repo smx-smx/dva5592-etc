@@ -1,3 +1,579 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DHCP" version="2.2"><object name="DHCPv4.Relay." access="readOnly" minEntries="1" maxEntries="1" set="DHCPv4Server.sh" add="DHCPv4Server.sh" del="DHCPv4Server.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="ForwardingNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter></object><object name="DHCPv4.Relay.Forwarding.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ForwardingNumberOfEntries" enableParameter="Enable" set="DHCPv4Server.sh" add="DHCPv4Server.sh" del="DHCPv4Server.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Chaddr" access="readWrite"><syntax><dataType ref="MACAddress" /><default value="" /></syntax></parameter><parameter name="ChaddrExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="ChaddrMask" access="readWrite"><syntax><dataType ref="MACAddress" /><default value="" /></syntax></parameter><parameter name="ClientID" access="readWrite"><syntax><default value="" /></syntax></parameter><parameter name="ClientIDExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="DHCPServerIPAddress" access="readWrite"><syntax /></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="LocallyServed" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Order" access="readWrite"><syntax><unsignedInt><range minInclusive="1" step="1" /></unsignedInt></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="UserClassID" access="readWrite"><syntax><default value="" /></syntax></parameter><parameter name="UserClassIDExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="VendorClassID" access="readWrite"><syntax><string><size minLength="0" maxLength="255" /></string><default value="" /></syntax></parameter><parameter name="VendorClassIDExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="VendorClassIDMode" access="readWrite"><syntax><string><enumeration value="Exact" /><enumeration value="Prefix" /><enumeration value="Suffix" /><enumeration value="Substring" /></string><default value="Exact" /></syntax></parameter><parameter name="X_ADB_UpstreamInterface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter></object><object name="DHCPv4.Server." access="readOnly" minEntries="1" maxEntries="1" set="DHCPv4Server.sh" add="DHCPv4Server.sh" del="DHCPv4Server.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="PoolNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="DHCPv4.Server.Pool.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="PoolNumberOfEntries" enableParameter="Enable" set="DHCPv4Server.sh" del="DHCPv4Server.sh" add="DHCPv4Server.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Chaddr" access="readWrite"><syntax><dataType ref="MACAddress" /><default value="" /></syntax></parameter><parameter name="ChaddrExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="ChaddrMask" access="readWrite"><syntax><dataType ref="MACAddress" /><default value="" /></syntax></parameter><parameter name="ClientID" access="readWrite"><syntax><default value="" /></syntax></parameter><parameter name="ClientIDExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="DNSServers" access="readWrite"><syntax><list maxItems="4" /><dataType ref="IPv4Address" /></syntax></parameter><parameter name="DomainName" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="IPRouters" access="readWrite"><syntax><list maxItems="4" /><dataType ref="IPv4Address" /></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="LeaseTime" access="readWrite"><syntax><int><range minInclusive="-1" step="1" /><units value="seconds" /></int><default value="86400" /></syntax></parameter><parameter name="MaxAddress" access="readWrite"><syntax><dataType ref="IPv4Address" /></syntax></parameter><parameter name="MinAddress" access="readWrite"><syntax><dataType ref="IPv4Address" /></syntax></parameter><parameter name="OptionNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="Order" access="readWrite"><syntax><unsignedInt><range minInclusive="1" step="1" /></unsignedInt></syntax></parameter><parameter name="ReservedAddresses" access="readWrite"><syntax><list maxItems="32" /><dataType ref="IPv4Address" /><default value="" /></syntax></parameter><parameter name="X_ADB_UseStaticAddressAsFilter" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="StaticAddressNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="SubnetMask" access="readWrite"><syntax><dataType ref="IPv4Address" /></syntax></parameter><parameter name="UserClassID" access="readWrite"><syntax><default value="" /></syntax></parameter><parameter name="UserClassIDExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="VendorClassID" access="readWrite"><syntax><string><size minLength="0" maxLength="255" /></string><default value="" /></syntax></parameter><parameter name="VendorClassIDExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="VendorClassIDMode" access="readWrite"><syntax><string><enumeration value="Exact" /><enumeration value="Prefix" /><enumeration value="Suffix" /><enumeration value="Substring" /></string><default value="Exact" /></syntax></parameter><parameter name="X_ADB_AddressProbe" access="readWrite"><syntax><string><enumeration value="None" /><enumeration value="ARP Cache" /><enumeration value="ARP Request" /></string><default value="ARP Request" /></syntax></parameter><parameter name="X_ADB_AddressProbeDelay" access="readWrite"><syntax><int><range minInclusive="0" step="1" /><units value="milliseconds" /></int><default value="1000" /></syntax></parameter><parameter name="X_ADB_AutoConfDisable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="ClientNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="DHCPv4.Server.Pool.{i}.Option.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="OptionNumberOfEntries" enableParameter="Enable" set="DHCPv4Server.sh" add="DHCPv4Server.sh" del="DHCPv4Server.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Tag" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="254" step="1" /></unsignedInt></syntax></parameter><parameter name="Value" access="readWrite"><syntax><default value="" /></syntax></parameter><parameter name="X_ADB_OnRequest" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_Type" access="readWrite"><syntax><string><enumeration value="Hex" /><enumeration value="Empty" /><enumeration value="String" /><enumeration value="Boolean" /><enumeration value="IPAddress" /><enumeration value="IPAddressList" /><enumeration value="U8" /><enumeration value="U16" /><enumeration value="U32" /><enumeration value="S8" /><enumeration value="S16" /><enumeration value="S32" /></string><default value="Hex" /></syntax></parameter><parameter name="X_ADB_SubOptionNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="DHCPv4.Server.Pool.{i}.Option.{i}.X_ADB_SubOption.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="X_ADB_SubOptionNumberOfEntries" enableParameter="Enable"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Tag" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="254" step="1" /></unsignedInt></syntax></parameter><parameter name="Value" access="readWrite"><syntax><default value="" /></syntax></parameter><parameter name="Reference" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /><pathRef refType="strong" targetType="parameter" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_Type" access="readWrite"><syntax><string><enumeration value="Hex" /><enumeration value="String" /></string><default value="String" /></syntax></parameter></object><object name="DHCPv4.Server.Pool.{i}.StaticAddress.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="StaticAddressNumberOfEntries" enableParameter="Enable" set="DHCPv4Server.sh" add="DHCPv4Server.sh" del="DHCPv4Server.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Chaddr" access="readWrite"><syntax><dataType ref="MACAddress" /><default value="" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Yiaddr" access="readWrite"><syntax><dataType ref="IPv4Address" /><default value="" /></syntax></parameter></object><object name="DHCPv4.Server.Pool.{i}.Client.{i}." access="readOnly" numEntriesParameter="ClientNumberOfEntries" minEntries="0" maxEntries="unbounded"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Chaddr" access="readOnly"><syntax><dataType ref="MACAddress" /></syntax></parameter><parameter name="Active" access="readOnly"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="IPv4AddressNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="OptionNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="DHCPv4.Server.Pool.{i}.Client.{i}.IPv4Address.{i}." access="readOnly" numEntriesParameter="IPv4AddressNumberOfEntries" minEntries="0" maxEntries="unbounded"><parameter name="IPAddress" access="readOnly"><syntax><dataType ref="IPv4Address" /><default value="" /></syntax></parameter><parameter name="LeaseTimeRemaining" access="readOnly"><syntax><dateTime /></syntax></parameter><parameter name="X_ADB_LeaseTimeRemaining" access="readOnly" activeNotify="canDeny" set="LeaseTime.sh" get="LeaseTime.sh"><syntax><int><range minInclusive="-1" step="1" /><units value="seconds" /></int></syntax></parameter></object><object name="DHCPv4.Server.Pool.{i}.Client.{i}.Option.{i}." access="readOnly" numEntriesParameter="OptionNumberOfEntries" minEntries="0" maxEntries="unbounded"><parameter name="Tag" access="readOnly"><syntax><unsignedInt><range minInclusive="0" maxInclusive="255" /></unsignedInt></syntax></parameter><parameter name="Value" access="readOnly"><syntax><default value="" /></syntax></parameter><parameter name="X_ADB_Type" access="readOnly"><syntax><string><enumeration value="Hex" /><enumeration value="Empty" /><enumeration value="String" /><enumeration value="Boolean" /><enumeration value="IPAddress" /><enumeration value="IPAddressList" /><enumeration value="U8" /><enumeration value="U16" /><enumeration value="U32" /><enumeration value="S8" /><enumeration value="S16" /><enumeration value="S32" /><enumeration value="Undefined" /></string><default value="Undefined" /></syntax></parameter></object></datamodel>
+<datamodel name="DHCP" version="2.2">
+	<object name="DHCPv4.Relay." access="readOnly" minEntries="1" maxEntries="1" set="DHCPv4Server.sh" add="DHCPv4Server.sh" del="DHCPv4Server.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="ForwardingNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv4.Relay.Forwarding.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ForwardingNumberOfEntries" enableParameter="Enable" set="DHCPv4Server.sh" add="DHCPv4Server.sh" del="DHCPv4Server.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Chaddr" access="readWrite">
+			<syntax>
+				<dataType ref="MACAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ChaddrExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="ChaddrMask" access="readWrite">
+			<syntax>
+				<dataType ref="MACAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ClientID" access="readWrite">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ClientIDExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="DHCPServerIPAddress" access="readWrite">
+			<syntax />
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="LocallyServed" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Order" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error_Misconfigured" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="UserClassID" access="readWrite">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="UserClassIDExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="VendorClassID" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="255" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="VendorClassIDExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="VendorClassIDMode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Exact" />
+					<enumeration value="Prefix" />
+					<enumeration value="Suffix" />
+					<enumeration value="Substring" />
+				</string>
+				<default value="Exact" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_UpstreamInterface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv4.Server." access="readOnly" minEntries="1" maxEntries="1" set="DHCPv4Server.sh" add="DHCPv4Server.sh" del="DHCPv4Server.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="PoolNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv4.Server.Pool.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="PoolNumberOfEntries" enableParameter="Enable" set="DHCPv4Server.sh" del="DHCPv4Server.sh" add="DHCPv4Server.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Chaddr" access="readWrite">
+			<syntax>
+				<dataType ref="MACAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ChaddrExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="ChaddrMask" access="readWrite">
+			<syntax>
+				<dataType ref="MACAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ClientID" access="readWrite">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ClientIDExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="DNSServers" access="readWrite">
+			<syntax>
+				<list maxItems="4" />
+				<dataType ref="IPv4Address" />
+			</syntax>
+		</parameter>
+		<parameter name="DomainName" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="IPRouters" access="readWrite">
+			<syntax>
+				<list maxItems="4" />
+				<dataType ref="IPv4Address" />
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="LeaseTime" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" step="1" />
+					<units value="seconds" />
+				</int>
+				<default value="86400" />
+			</syntax>
+		</parameter>
+		<parameter name="MaxAddress" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+			</syntax>
+		</parameter>
+		<parameter name="MinAddress" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+			</syntax>
+		</parameter>
+		<parameter name="OptionNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Order" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="ReservedAddresses" access="readWrite">
+			<syntax>
+				<list maxItems="32" />
+				<dataType ref="IPv4Address" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_UseStaticAddressAsFilter" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="StaticAddressNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error_Misconfigured" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="SubnetMask" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+			</syntax>
+		</parameter>
+		<parameter name="UserClassID" access="readWrite">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="UserClassIDExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="VendorClassID" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="255" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="VendorClassIDExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="VendorClassIDMode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Exact" />
+					<enumeration value="Prefix" />
+					<enumeration value="Suffix" />
+					<enumeration value="Substring" />
+				</string>
+				<default value="Exact" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AddressProbe" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="ARP Cache" />
+					<enumeration value="ARP Request" />
+				</string>
+				<default value="ARP Request" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AddressProbeDelay" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="0" step="1" />
+					<units value="milliseconds" />
+				</int>
+				<default value="1000" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AutoConfDisable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="ClientNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv4.Server.Pool.{i}.Option.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="OptionNumberOfEntries" enableParameter="Enable" set="DHCPv4Server.sh" add="DHCPv4Server.sh" del="DHCPv4Server.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Tag" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="254" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Value" access="readWrite">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_OnRequest" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Type" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Hex" />
+					<enumeration value="Empty" />
+					<enumeration value="String" />
+					<enumeration value="Boolean" />
+					<enumeration value="IPAddress" />
+					<enumeration value="IPAddressList" />
+					<enumeration value="U8" />
+					<enumeration value="U16" />
+					<enumeration value="U32" />
+					<enumeration value="S8" />
+					<enumeration value="S16" />
+					<enumeration value="S32" />
+				</string>
+				<default value="Hex" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SubOptionNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv4.Server.Pool.{i}.Option.{i}.X_ADB_SubOption.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="X_ADB_SubOptionNumberOfEntries" enableParameter="Enable">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Tag" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="254" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Value" access="readWrite">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Reference" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef refType="strong" targetType="parameter" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Type" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Hex" />
+					<enumeration value="String" />
+				</string>
+				<default value="String" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv4.Server.Pool.{i}.StaticAddress.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="StaticAddressNumberOfEntries" enableParameter="Enable" set="DHCPv4Server.sh" add="DHCPv4Server.sh" del="DHCPv4Server.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Chaddr" access="readWrite">
+			<syntax>
+				<dataType ref="MACAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Yiaddr" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+				<default value="" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv4.Server.Pool.{i}.Client.{i}." access="readOnly" numEntriesParameter="ClientNumberOfEntries" minEntries="0" maxEntries="unbounded">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Chaddr" access="readOnly">
+			<syntax>
+				<dataType ref="MACAddress" />
+			</syntax>
+		</parameter>
+		<parameter name="Active" access="readOnly">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="IPv4AddressNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="OptionNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv4.Server.Pool.{i}.Client.{i}.IPv4Address.{i}." access="readOnly" numEntriesParameter="IPv4AddressNumberOfEntries" minEntries="0" maxEntries="unbounded">
+		<parameter name="IPAddress" access="readOnly">
+			<syntax>
+				<dataType ref="IPv4Address" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="LeaseTimeRemaining" access="readOnly">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LeaseTimeRemaining" access="readOnly" activeNotify="canDeny" set="LeaseTime.sh" get="LeaseTime.sh">
+			<syntax>
+				<int>
+					<range minInclusive="-1" step="1" />
+					<units value="seconds" />
+				</int>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DHCPv4.Server.Pool.{i}.Client.{i}.Option.{i}." access="readOnly" numEntriesParameter="OptionNumberOfEntries" minEntries="0" maxEntries="unbounded">
+		<parameter name="Tag" access="readOnly">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="255" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Value" access="readOnly">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Type" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Hex" />
+					<enumeration value="Empty" />
+					<enumeration value="String" />
+					<enumeration value="Boolean" />
+					<enumeration value="IPAddress" />
+					<enumeration value="IPAddressList" />
+					<enumeration value="U8" />
+					<enumeration value="U16" />
+					<enumeration value="U32" />
+					<enumeration value="S8" />
+					<enumeration value="S16" />
+					<enumeration value="S32" />
+					<enumeration value="Undefined" />
+				</string>
+				<default value="Undefined" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

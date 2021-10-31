@@ -106,34 +106,34 @@ IPSec-Server
 "
 xmlheader='<?xml version="1.0" encoding="UTF-8"?>'
 while [ -n "$1" ]; do
-case "$1" in
--d )
-shift
-outdir="$1"
-shift
-;;
---outdir=* )
-outdir="${1##=*}"
-shift
-;;
-* )
-echo "Ignoring option $1."
-shift
-;;
-esac
+	case "$1" in
+	-d)
+		shift
+		outdir="$1"
+		shift
+		;;
+	--outdir=*)
+		outdir="${1##=*}"
+		shift
+		;;
+	*)
+		echo "Ignoring option $1."
+		shift
+		;;
+	esac
 done
 for module in ${modules}; do
-ofile="${outdir}/factory_${module}.xml"
-echo "Generating $ofile"
-rm -rf ${ofile}
-echo "${xmlheader}" > ${ofile}
-eval dms="\$${module}_dm"
-for dm in $dms; do
-echo -n "	Exporting... datamodel $dm..."
-tmpfile=`mktemp`
-cmclient EXPORTDM $dm $tmpfile > /dev/null
-cat $tmpfile | grep -v "${xmlheader}" | grep -Ev "^$" >> ${ofile}
-rm $tmpfile
-echo " done."
-done
+	ofile="${outdir}/factory_${module}.xml"
+	echo "Generating $ofile"
+	rm -rf ${ofile}
+	echo "${xmlheader}" >${ofile}
+	eval dms="\$${module}_dm"
+	for dm in $dms; do
+		echo -n "	Exporting... datamodel $dm..."
+		tmpfile=$(mktemp)
+		cmclient EXPORTDM $dm $tmpfile >/dev/null
+		cat $tmpfile | grep -v "${xmlheader}" | grep -Ev "^$" >>${ofile}
+		rm $tmpfile
+		echo " done."
+	done
 done

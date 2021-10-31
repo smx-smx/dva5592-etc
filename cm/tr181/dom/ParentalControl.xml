@@ -1,3 +1,286 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="X_ADB_ParentalControl." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="ParentalControl.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="UrlFilterRefresh" access="readWrite"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="AdminPIN" access="readWrite"><syntax><string><size minLength="4" /><pattern value="[0-9]+" /></string><default value="0000" /></syntax></parameter><parameter name="Mode" access="readWrite"><syntax><string><enumeration value="Low" /><enumeration value="Medium" /><enumeration value="High" /><enumeration value="Advanced" /></string><default value="Low" /></syntax></parameter><parameter name="DefaultPolicy" access="readWrite"><syntax><string><pathRef targetParent="Policy." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="CurrentProvider" access="readWrite"><syntax><string><pathRef targetParent="ServiceProvider." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="UrlCacheHousekeepingPeriod" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="7" step="1" /><units value="days" /></unsignedInt><default value="1" /></syntax></parameter><parameter name="PolicyOverrideHousekeepingPeriod" access="readWrite"><syntax><unsignedInt><range minInclusive="15" maxInclusive="1440" step="1" /><units value="minutes" /></unsignedInt><default value="30" /></syntax></parameter><parameter name="PolicyNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="PolicyDeviceAssociationNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="UrlFilterNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="ServiceProviderNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="ShowLinkOnLogin" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="AddURLinList" access="readWrite" store="no"><syntax><boolean /><default value="false" /></syntax></parameter></object><object name="X_ADB_ParentalControl.ServiceProvider.{i}." access="readWrite" minEntries="1" maxEntries="unbounded" numEntriesParameter="ServiceProviderNumberOfEntries"><parameter name="Name" access="readWrite"><syntax><string><enumeration value="BluePrintData" /><enumeration value="SurfRight" /></string></syntax></parameter><parameter name="Username" access="readWrite"><syntax><string><size minLength="1" maxLength="50" /></string></syntax></parameter><parameter name="Password" access="readWrite"><syntax><string><size minLength="0" maxLength="50" /></string></syntax></parameter><parameter name="QueryType" access="readWrite"><syntax><string><enumeration value="Strict" /><enumeration value="Like" /><enumeration value="Recursive" /></string><default value="Recursive" /></syntax></parameter><parameter name="Url" access="readWrite"><syntax><string /></syntax></parameter><parameter name="ContentCategoryNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="X_ADB_ParentalControl.ServiceProvider.{i}.ContentCategory.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ContentCategoryNumberOfEntries"><parameter name="Name" access="readWrite"><syntax><string><enumeration value="Pornography" /><enumeration value="Sexual" /><enumeration value="Enterteinment" /><enumeration value="Business" /><enumeration value="Computers" /><enumeration value="Society" /><enumeration value="Drugs" /><enumeration value="Education" /><enumeration value="Games" /><enumeration value="Crime" /><enumeration value="Medical" /><enumeration value="News" /><enumeration value="Hobbies" /><enumeration value="Shopping" /><enumeration value="SocialNetworking" /><enumeration value="WebBasedEmail" /><enumeration value="Sports" /><enumeration value="Travel" /><enumeration value="Violence" /><enumeration value="ObsceneLanguage" /><enumeration value="AnonymousProxies" /><enumeration value="SearchEngines" /><enumeration value="Miscellaneous" /><enumeration value="Unclassified" /></string></syntax></parameter><parameter name="ProviderIdentifiers" access="readWrite"><syntax><list /><string /></syntax></parameter></object><object name="X_ADB_ParentalControl.UrlFilter.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="UrlFilterNumberOfEntries" set="ParentalControl.sh"><parameter name="Url" access="readWrite"><syntax><string><size minLength="0" maxLength="1024" /></string></syntax></parameter></object><object name="X_ADB_ParentalControl.PolicyDeviceAssociation.{i}." access="readWrite" minEntries="1" maxEntries="50" numEntriesParameter="PolicyDeviceAssociationNumberOfEntries" set="ParentalControl.sh"><parameter name="MacAddress" access="readWrite"><syntax><string><size minLength="17" maxLength="17" /><pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" /></string></syntax></parameter><parameter name="PreAssignedPolicy" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent="#.Policy." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="AllowPolicyOverride" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="CurrentPolicy" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent="#.Policy." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="PolicyOverrideTimestamp" access="readOnly"><syntax><dateTime /><default value="0001-01-01T00:00:00Z" /></syntax></parameter></object><object name="X_ADB_ParentalControl.Policy.{i}." access="readWrite" minEntries="1" maxEntries="unbounded" numEntriesParameter="PolicyNumberOfEntries" set="ParentalControl.sh" del="ParentalControl.sh"><parameter name="PolicyID" access="readWrite"><syntax><string><size minLength="3" maxLength="15" /></string></syntax></parameter><parameter name="PolicyPIN" access="readWrite"><syntax><string><size minLength="4" maxLength="4" /><pattern value="[0-9]+" /></string></syntax></parameter><parameter name="ActionOnUrlLookupFail" access="readWrite"><syntax><string><enumeration value="Allowed" /><enumeration value="Blocked" /></string><default value="Blocked" /></syntax></parameter><parameter name="AllowedCategories" access="readWrite"><syntax><list /><string /></syntax></parameter><parameter name="BlockedCategories" access="readWrite"><syntax><list /><string /></syntax></parameter><parameter name="AllowedUrls" access="readWrite"><syntax><list /><unsignedInt /></syntax></parameter><parameter name="BlockedUrls" access="readWrite"><syntax><list /><unsignedInt /></syntax></parameter></object></datamodel>
+<datamodel name="Services" version="2.0">
+	<object name="X_ADB_ParentalControl." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="ParentalControl.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="UrlFilterRefresh" access="readWrite">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="AdminPIN" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="4" />
+					<pattern value="[0-9]+" />
+				</string>
+				<default value="0000" />
+			</syntax>
+		</parameter>
+		<parameter name="Mode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Low" />
+					<enumeration value="Medium" />
+					<enumeration value="High" />
+					<enumeration value="Advanced" />
+				</string>
+				<default value="Low" />
+			</syntax>
+		</parameter>
+		<parameter name="DefaultPolicy" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent="Policy." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="CurrentProvider" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent="ServiceProvider." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="UrlCacheHousekeepingPeriod" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="7" step="1" />
+					<units value="days" />
+				</unsignedInt>
+				<default value="1" />
+			</syntax>
+		</parameter>
+		<parameter name="PolicyOverrideHousekeepingPeriod" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="15" maxInclusive="1440" step="1" />
+					<units value="minutes" />
+				</unsignedInt>
+				<default value="30" />
+			</syntax>
+		</parameter>
+		<parameter name="PolicyNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="PolicyDeviceAssociationNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="UrlFilterNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ServiceProviderNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ShowLinkOnLogin" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="AddURLinList" access="readWrite" store="no">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_ParentalControl.ServiceProvider.{i}." access="readWrite" minEntries="1" maxEntries="unbounded" numEntriesParameter="ServiceProviderNumberOfEntries">
+		<parameter name="Name" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="BluePrintData" />
+					<enumeration value="SurfRight" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Username" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="1" maxLength="50" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Password" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="50" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="QueryType" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Strict" />
+					<enumeration value="Like" />
+					<enumeration value="Recursive" />
+				</string>
+				<default value="Recursive" />
+			</syntax>
+		</parameter>
+		<parameter name="Url" access="readWrite">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="ContentCategoryNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_ParentalControl.ServiceProvider.{i}.ContentCategory.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ContentCategoryNumberOfEntries">
+		<parameter name="Name" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Pornography" />
+					<enumeration value="Sexual" />
+					<enumeration value="Enterteinment" />
+					<enumeration value="Business" />
+					<enumeration value="Computers" />
+					<enumeration value="Society" />
+					<enumeration value="Drugs" />
+					<enumeration value="Education" />
+					<enumeration value="Games" />
+					<enumeration value="Crime" />
+					<enumeration value="Medical" />
+					<enumeration value="News" />
+					<enumeration value="Hobbies" />
+					<enumeration value="Shopping" />
+					<enumeration value="SocialNetworking" />
+					<enumeration value="WebBasedEmail" />
+					<enumeration value="Sports" />
+					<enumeration value="Travel" />
+					<enumeration value="Violence" />
+					<enumeration value="ObsceneLanguage" />
+					<enumeration value="AnonymousProxies" />
+					<enumeration value="SearchEngines" />
+					<enumeration value="Miscellaneous" />
+					<enumeration value="Unclassified" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ProviderIdentifiers" access="readWrite">
+			<syntax>
+				<list />
+				<string />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_ParentalControl.UrlFilter.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="UrlFilterNumberOfEntries" set="ParentalControl.sh">
+		<parameter name="Url" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="1024" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_ParentalControl.PolicyDeviceAssociation.{i}." access="readWrite" minEntries="1" maxEntries="50" numEntriesParameter="PolicyDeviceAssociationNumberOfEntries" set="ParentalControl.sh">
+		<parameter name="MacAddress" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="17" maxLength="17" />
+					<pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="PreAssignedPolicy" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent="#.Policy." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="AllowPolicyOverride" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="CurrentPolicy" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent="#.Policy." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="PolicyOverrideTimestamp" access="readOnly">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00Z" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_ParentalControl.Policy.{i}." access="readWrite" minEntries="1" maxEntries="unbounded" numEntriesParameter="PolicyNumberOfEntries" set="ParentalControl.sh" del="ParentalControl.sh">
+		<parameter name="PolicyID" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="3" maxLength="15" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="PolicyPIN" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="4" maxLength="4" />
+					<pattern value="[0-9]+" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ActionOnUrlLookupFail" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Allowed" />
+					<enumeration value="Blocked" />
+				</string>
+				<default value="Blocked" />
+			</syntax>
+		</parameter>
+		<parameter name="AllowedCategories" access="readWrite">
+			<syntax>
+				<list />
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="BlockedCategories" access="readWrite">
+			<syntax>
+				<list />
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="AllowedUrls" access="readWrite">
+			<syntax>
+				<list />
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="BlockedUrls" access="readWrite">
+			<syntax>
+				<list />
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

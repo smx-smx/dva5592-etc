@@ -1,3 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="X_DLink" version="2.0"><object name="X_DLINK_ActiveWANDevice." access="readWrite" minEntries="1" maxEntries="1" enableParameter="Enable" set="X_DLink_ActiveWANDevice.sh"><parameter name="DataConnectionInterface" access="readOnly" get="X_DLink_ActiveWANDevice.sh"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="ATMEncapsulation" access="readOnly" get="X_DLink_ActiveWANDevice.sh"><syntax><string><enumeration value="LLC" /><enumeration value="VCMUX" /></string></syntax></parameter><parameter name="LinkType" access="readOnly" get="X_DLink_ActiveWANDevice.sh"><syntax><string><enumeration value="EoA" /><enumeration value="IPoA" /><enumeration value="PPPoA" /><enumeration value="PPPoE" /><enumeration value="CIP" /><enumeration value="Unconfigured" /></string><default value="Unconfigured" /></syntax></parameter><parameter name="WANAccessType" access="readOnly" get="X_DLink_ActiveWANDevice.sh"><syntax><string><enumeration value="DSL" /><enumeration value="Ethernet" /><enumeration value="POTS" /></string></syntax></parameter><parameter name="ConnectionStatus" access="readOnly" get="X_DLink_ActiveWANDevice.sh"><syntax><string><enumeration value="Unconfigured" /><enumeration value="Connecting" /><enumeration value="Authenticating" /><enumeration value="Connected" /><enumeration value="PendingDisconnect" /><enumeration value="Disconnecting" /><enumeration value="Disconnected" /></string></syntax></parameter><parameter name="ConnectionTrigger" access="readOnly" get="X_DLink_ActiveWANDevice.sh"><syntax><string><enumeration value="OnDemand" /><enumeration value="X_ADB_OnClient" /><enumeration value="AlwaysOn" /><enumeration value="Manual" /></string><default value="OnDemand" /></syntax></parameter><parameter name="ConnectionType" access="readOnly" get="X_DLink_ActiveWANDevice.sh"><syntax><string><enumeration value="Unconfigured" /><enumeration value="IP_Routed" /><enumeration value="DHCP_Spoofed" /><enumeration value="PPPoE_Bridged" /><enumeration value="PPPoE_Relay" /><enumeration value="PPTP_Relay" /><enumeration value="L2TP_Relay" /></string><default value="Unconfigured" /></syntax></parameter><parameter name="DNSServers" access="readOnly" get="X_DLink_ActiveWANDevice.sh"><syntax><list><size minLength="0" maxLength="64" /></list><string><size minLength="0" maxLength="45" /></string></syntax></parameter><parameter name="Enable" access="readWrite" get="X_DLink_ActiveWANDevice.sh"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="ExternalIPAddress" access="readOnly" get="X_DLink_ActiveWANDevice.sh"><syntax><string><size minLength="0" maxLength="45" /></string></syntax></parameter><parameter name="LastConnectionError" access="readOnly" get="X_DLink_ActiveWANDevice.sh"><syntax><string /><default value="ERROR_NONE" /></syntax></parameter><parameter name="Password" access="readWrite" get="X_DLink_ActiveWANDevice.sh"><syntax hidden="true"><string /><default value="" /></syntax></parameter><parameter name="Uptime" access="readOnly" get="X_DLink_ActiveWANDevice.sh"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="Username" access="readWrite" get="X_DLink_ActiveWANDevice.sh"><syntax><string /><default value="" /></syntax></parameter></object></datamodel>
+<datamodel name="X_DLink" version="2.0">
+	<object name="X_DLINK_ActiveWANDevice." access="readWrite" minEntries="1" maxEntries="1" enableParameter="Enable" set="X_DLink_ActiveWANDevice.sh">
+		<parameter name="DataConnectionInterface" access="readOnly" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ATMEncapsulation" access="readOnly" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<string>
+					<enumeration value="LLC" />
+					<enumeration value="VCMUX" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="LinkType" access="readOnly" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<string>
+					<enumeration value="EoA" />
+					<enumeration value="IPoA" />
+					<enumeration value="PPPoA" />
+					<enumeration value="PPPoE" />
+					<enumeration value="CIP" />
+					<enumeration value="Unconfigured" />
+				</string>
+				<default value="Unconfigured" />
+			</syntax>
+		</parameter>
+		<parameter name="WANAccessType" access="readOnly" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<string>
+					<enumeration value="DSL" />
+					<enumeration value="Ethernet" />
+					<enumeration value="POTS" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ConnectionStatus" access="readOnly" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<string>
+					<enumeration value="Unconfigured" />
+					<enumeration value="Connecting" />
+					<enumeration value="Authenticating" />
+					<enumeration value="Connected" />
+					<enumeration value="PendingDisconnect" />
+					<enumeration value="Disconnecting" />
+					<enumeration value="Disconnected" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ConnectionTrigger" access="readOnly" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<string>
+					<enumeration value="OnDemand" />
+					<enumeration value="X_ADB_OnClient" />
+					<enumeration value="AlwaysOn" />
+					<enumeration value="Manual" />
+				</string>
+				<default value="OnDemand" />
+			</syntax>
+		</parameter>
+		<parameter name="ConnectionType" access="readOnly" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<string>
+					<enumeration value="Unconfigured" />
+					<enumeration value="IP_Routed" />
+					<enumeration value="DHCP_Spoofed" />
+					<enumeration value="PPPoE_Bridged" />
+					<enumeration value="PPPoE_Relay" />
+					<enumeration value="PPTP_Relay" />
+					<enumeration value="L2TP_Relay" />
+				</string>
+				<default value="Unconfigured" />
+			</syntax>
+		</parameter>
+		<parameter name="DNSServers" access="readOnly" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="64" />
+				</list>
+				<string>
+					<size minLength="0" maxLength="45" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="ExternalIPAddress" access="readOnly" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="45" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="LastConnectionError" access="readOnly" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<string />
+				<default value="ERROR_NONE" />
+			</syntax>
+		</parameter>
+		<parameter name="Password" access="readWrite" get="X_DLink_ActiveWANDevice.sh">
+			<syntax hidden="true">
+				<string />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Uptime" access="readOnly" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Username" access="readWrite" get="X_DLink_ActiveWANDevice.sh">
+			<syntax>
+				<string />
+				<default value="" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

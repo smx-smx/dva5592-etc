@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="Services.X_ADB_PrinterService." excludeUser="CWMP" /><object name="Services.X_ADB_PrinterService.PrinterDevice.{i}." excludeUser="CWMP" /><object name="Services.X_ADB_PrinterService.PrinterDevice.{i}.PrintJob.{i}." excludeUser="CWMP" /><object name="Services.X_ADB_PrinterService.Servers." excludeUser="CWMP" /><object name="Services.X_ADB_PrinterService.Servers.IPP." excludeUser="CWMP" /><object name="Services.X_ADB_PrinterService.Servers.SMB." excludeUser="CWMP" /><object name="Services.X_ADB_PrinterService.Servers.RAW." excludeUser="CWMP" /></datamodel>
+<datamodel name="Services" version="2.0">
+	<object name="Services.X_ADB_PrinterService." excludeUser="CWMP" />
+	<object name="Services.X_ADB_PrinterService.PrinterDevice.{i}." excludeUser="CWMP" />
+	<object name="Services.X_ADB_PrinterService.PrinterDevice.{i}.PrintJob.{i}." excludeUser="CWMP" />
+	<object name="Services.X_ADB_PrinterService.Servers." excludeUser="CWMP" />
+	<object name="Services.X_ADB_PrinterService.Servers.IPP." excludeUser="CWMP" />
+	<object name="Services.X_ADB_PrinterService.Servers.SMB." excludeUser="CWMP" />
+	<object name="Services.X_ADB_PrinterService.Servers.RAW." excludeUser="CWMP" />
+</datamodel>

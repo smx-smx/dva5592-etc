@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="VendorConfig" version="2.0"><object name="DeviceInfo.VendorConfigFile.{i}." aliasOnAdd="InternetGatewayDevice.DeviceInfo.VendorConfigFile.%i" aliasOnDel="InternetGatewayDevice.DeviceInfo.VendorConfigFile.%i" aliasOnSet="InternetGatewayDevice.DeviceInfo.VendorConfigFile.%i.%n">
-    </object></datamodel>
+<datamodel name="VendorConfig" version="2.0">
+    <object name="DeviceInfo.VendorConfigFile.{i}." aliasOnAdd="InternetGatewayDevice.DeviceInfo.VendorConfigFile.%i" aliasOnDel="InternetGatewayDevice.DeviceInfo.VendorConfigFile.%i" aliasOnSet="InternetGatewayDevice.DeviceInfo.VendorConfigFile.%i.%n">
+    </object>
+</datamodel>

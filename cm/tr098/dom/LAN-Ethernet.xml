@@ -1,3 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Ethernet" version="2.0"><object name="LANDevice.{i}.LANEthernetInterfaceConfig.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LANEthernetInterfaceNumberOfEntries" aliasOnGet="%(%p.X_ADB_TR181Name).%n" add="TR098_LANEthInterfaceConfig.sh" del="TR098_LANEthInterfaceConfig.sh"><parameter name="X_ADB_TR181Name" excludeUser="CWMP" access="readWrite"><syntax><default value="Device.Ethernet.Interface.{i}" /><string><size minLength="0" maxLength="1024" /></string></syntax></parameter><parameter name="DuplexMode" access="readWrite" aliasOnSet="%(%p.X_ADB_TR181Name).%n"><syntax><string><enumeration value="Half" /><enumeration value="Full" /><enumeration value="Auto" /></string></syntax></parameter><parameter name="Enable" access="readWrite" aliasOnSet="%(%p.X_ADB_TR181Name).%n"><syntax><boolean /></syntax></parameter><parameter name="MACAddress" access="readOnly" key="yes"><syntax><string><size minLength="0" maxLength="17" /><pattern value="" /><pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" /></string></syntax></parameter><parameter name="MaxBitRate" access="readWrite" get="TR098_LANEthInterfaceConfig.sh" set="TR098_LANEthInterfaceConfig.sh"><syntax><string><enumeration value="10" /><enumeration value="100" /><enumeration value="1000" /><enumeration value="10000" /><enumeration value="Auto" /></string></syntax></parameter><parameter name="Name" access="readOnly"><syntax><string><size minLength="0" maxLength="16" /></string></syntax></parameter><parameter name="Status" access="readOnly" get="TR098_LANEthInterfaceConfig.sh"><syntax><string><enumeration value="Up" /><enumeration value="NoLink" /><enumeration value="Error" /><enumeration value="Disabled" /></string></syntax></parameter></object><object name="LANDevice.{i}.LANEthernetInterfaceConfig.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1"><parameter name="BroadcastPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="BroadcastPacketsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="BytesReceived" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="BytesSent" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="DiscardPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="DiscardPacketsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="MulticastPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="MulticastPacketsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="PacketsReceived" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="PacketsSent" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="UnicastPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="UnicastPacketsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="UnknownProtoPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter></object></datamodel>
+<datamodel name="Ethernet" version="2.0">
+	<object name="LANDevice.{i}.LANEthernetInterfaceConfig.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LANEthernetInterfaceNumberOfEntries" aliasOnGet="%(%p.X_ADB_TR181Name).%n" add="TR098_LANEthInterfaceConfig.sh" del="TR098_LANEthInterfaceConfig.sh">
+		<parameter name="X_ADB_TR181Name" excludeUser="CWMP" access="readWrite">
+			<syntax>
+				<default value="Device.Ethernet.Interface.{i}" />
+				<string>
+					<size minLength="0" maxLength="1024" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="DuplexMode" access="readWrite" aliasOnSet="%(%p.X_ADB_TR181Name).%n">
+			<syntax>
+				<string>
+					<enumeration value="Half" />
+					<enumeration value="Full" />
+					<enumeration value="Auto" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite" aliasOnSet="%(%p.X_ADB_TR181Name).%n">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="MACAddress" access="readOnly" key="yes">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="17" />
+					<pattern value="" />
+					<pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="MaxBitRate" access="readWrite" get="TR098_LANEthInterfaceConfig.sh" set="TR098_LANEthInterfaceConfig.sh">
+			<syntax>
+				<string>
+					<enumeration value="10" />
+					<enumeration value="100" />
+					<enumeration value="1000" />
+					<enumeration value="10000" />
+					<enumeration value="Auto" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="16" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" get="TR098_LANEthInterfaceConfig.sh">
+			<syntax>
+				<string>
+					<enumeration value="Up" />
+					<enumeration value="NoLink" />
+					<enumeration value="Error" />
+					<enumeration value="Disabled" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="LANDevice.{i}.LANEthernetInterfaceConfig.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="BroadcastPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="BroadcastPacketsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="BytesReceived" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="BytesSent" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="DiscardPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="DiscardPacketsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="MulticastPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="MulticastPacketsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="PacketsReceived" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="PacketsSent" access="readOnly" activeNotify="canDeny" get="EthernetIf.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="UnicastPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="UnicastPacketsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="UnknownProtoPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

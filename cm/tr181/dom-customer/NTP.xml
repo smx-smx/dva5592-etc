@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="Time."><parameter name="X_ADB_TR098Reference" excludeUser="CWMP" /><parameter name="X_ADB_Permissive" excludeUser="CWMP" /><parameter name="X_ADB_MinPoll" excludeUser="CWMP" /><parameter name="X_ADB_MaxPoll" excludeUser="CWMP" /><parameter name="X_ADB_DriftTime" excludeUser="CWMP" /><parameter name="X_ADB_EnablePPPNTPServerDiscovery" excludeUser="CWMP" /></object><object name="Time.X_ADB_AvailableTimeZone.Location.{i}." excludeUser="CWMP" /></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="Time.">
+		<parameter name="X_ADB_TR098Reference" excludeUser="CWMP" />
+		<parameter name="X_ADB_Permissive" excludeUser="CWMP" />
+		<parameter name="X_ADB_MinPoll" excludeUser="CWMP" />
+		<parameter name="X_ADB_MaxPoll" excludeUser="CWMP" />
+		<parameter name="X_ADB_DriftTime" excludeUser="CWMP" />
+		<parameter name="X_ADB_EnablePPPNTPServerDiscovery" excludeUser="CWMP" />
+	</object>
+	<object name="Time.X_ADB_AvailableTimeZone.Location.{i}." excludeUser="CWMP" />
+</datamodel>

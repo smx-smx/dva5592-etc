@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="IP" version="2.0"><object name="IP.Diagnostics."><parameter name="X_ADB_IPPingNumberOfEntries" excludeUser="CWMP" /></object><object name="IP.Diagnostics.X_ADB_IPPing.{i}." excludeUser="CWMP" /><object name="IP.Diagnostics.DownloadDiagnostics."><parameter name="X_ADB_TrafficPriority" excludeUser="CWMP" /><parameter name="X_ADB_TestRate" excludeUser="CWMP" /><parameter name="X_ADB_TotalRate" excludeUser="CWMP" /></object><object name="IP.Diagnostics.UploadDiagnostics."><parameter name="X_ADB_TrafficPriority" excludeUser="CWMP" /><parameter name="X_ADB_TestRate" excludeUser="CWMP" /><parameter name="X_ADB_TotalRate" excludeUser="CWMP" /></object></datamodel>
+<datamodel name="IP" version="2.0">
+	<object name="IP.Diagnostics.">
+		<parameter name="X_ADB_IPPingNumberOfEntries" excludeUser="CWMP" />
+	</object>
+	<object name="IP.Diagnostics.X_ADB_IPPing.{i}." excludeUser="CWMP" />
+	<object name="IP.Diagnostics.DownloadDiagnostics.">
+		<parameter name="X_ADB_TrafficPriority" excludeUser="CWMP" />
+		<parameter name="X_ADB_TestRate" excludeUser="CWMP" />
+		<parameter name="X_ADB_TotalRate" excludeUser="CWMP" />
+	</object>
+	<object name="IP.Diagnostics.UploadDiagnostics.">
+		<parameter name="X_ADB_TrafficPriority" excludeUser="CWMP" />
+		<parameter name="X_ADB_TestRate" excludeUser="CWMP" />
+		<parameter name="X_ADB_TotalRate" excludeUser="CWMP" />
+	</object>
+</datamodel>

@@ -21,7 +21,7 @@ if [ "$ACTION" = ifup ]; then
 
 		[ -n "$wanip" ] && {
 			uci_set_state network "$cfg" ipaddr "$wanip"
-			( ifup "$cfg" )&
+			(ifup "$cfg") &
 		}
 	}
 

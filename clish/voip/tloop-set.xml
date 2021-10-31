@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CLISH_MODULE>
-  <PTYPE name="TLOOP_LOG_SET"    method="integer" pattern="0..255" help="Tloop log setting 0..255
+  <PTYPE name="TLOOP_LOG_SET" method="integer" pattern="0..255" help="Tloop log setting 0..255
   0 -> All log disabled
   1 -> Layer 1 log enabled
   2 -> Layer 2 log enabled

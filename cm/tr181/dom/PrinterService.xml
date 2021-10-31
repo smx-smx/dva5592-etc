@@ -1,3 +1,267 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="Services.X_ADB_PrinterService." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="LogicalVolume-Samba.sh,Cups.sh,Printer-Raw.sh" add="LogicalVolume-Samba.sh,Cups.sh,Printer-Raw.sh" del="LogicalVolume-Samba.sh,Cups.sh,Printer-Raw.sh"><parameter name="PrinterDeviceNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="SpoolEnabled" access="readWrite" set="Spooling.sh"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="SpoolPartition" access="readWrite" set="Spooling.sh"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".Services.StorageService.{i}.LogicalVolume." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="Status" access="readOnly" get="Cups.sh" store="no"><syntax><string><enumeration value="Enabled" /><enumeration value="NoPrinters" /><enumeration value="Disabled" /><enumeration value="Error" /></string></syntax></parameter><parameter name="Interfaces" access="readWrite"><syntax><list /><string><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="AutoshareEnable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter></object><object name="Services.X_ADB_PrinterService.PrinterDevice.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="PrinterDeviceNumberOfEntries" enableParameter="Enable" set="LogicalVolume-Samba.sh,Printer.sh,PrinterDevice-Raw.sh" add="LogicalVolume-Samba.sh,Printer.sh,PrinterDevice-Raw.sh" del="LogicalVolume-Samba.sh,Printer.sh,PrinterDevice-Raw.sh"><parameter name="DeviceName" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="SerialNumber" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Name" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="DeviceURI" access="readOnly"><syntax><string><size minLength="0" maxLength="128" /></string></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Online" /><enumeration value="Offline" /><enumeration value="Error" /></string></syntax></parameter><parameter name="ConnectionType" access="readOnly"><syntax><string><enumeration value="USB 1.1" /><enumeration value="USB 2.0" /></string></syntax></parameter><parameter name="Vendor" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Model" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Description" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Location" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="RawPortNumber" access="readOnly"><syntax><unsignedInt><range minInclusive="1" maxInclusive="65535" step="1" /></unsignedInt></syntax></parameter><parameter name="PrintJobNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="Services.X_ADB_PrinterService.PrinterDevice.{i}.PrintJob.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="PrintJobNumberOfEntries"><parameter name="JobId" access="readOnly"><syntax><unsignedInt /></syntax></parameter><parameter name="Name" access="readOnly"><syntax><string /></syntax></parameter><parameter name="Size" access="readOnly"><syntax><unsignedInt /></syntax></parameter><parameter name="Submitted" access="readOnly"><syntax><dateTime /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Queued" /><enumeration value="Spooling" /><enumeration value="Printing" /><enumeration value="Canceled" /><enumeration value="Error" /></string></syntax></parameter><parameter name="Cancel" access="readWrite" set="Printer-Job-Delete.sh"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Protocol" access="readOnly"><syntax><string><enumeration value="SMB" /><enumeration value="CUPS" /></string></syntax></parameter></object><object name="Services.X_ADB_PrinterService.Servers." access="readOnly" minEntries="1" maxEntries="1" /><object name="Services.X_ADB_PrinterService.Servers.IPP." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="Cups.sh" add="Cups.sh" del="Cups.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" get="PrintServers-Status.sh" store="no"><syntax><string><enumeration value="Enabled" /><enumeration value="Disabled" /><enumeration value="Error" /></string></syntax></parameter><parameter name="Port" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="65535" step="1" /></unsignedInt><default value="631" /></syntax></parameter></object><object name="Services.X_ADB_PrinterService.Servers.SMB." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable"><parameter name="Enable" access="readWrite" set="LogicalVolume-Samba.sh"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" get="PrintServers-Status.sh" store="no"><syntax><string><enumeration value="Enabled" /><enumeration value="Disabled" /><enumeration value="Error" /></string></syntax></parameter></object><object name="Services.X_ADB_PrinterService.Servers.RAW." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="Printer-Raw.sh" add="Printer-Raw.sh" del="Printer-Raw.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Enabled" /><enumeration value="Disabled" /><enumeration value="Error" /></string></syntax></parameter><parameter name="PortBase" access="readWrite"><syntax><unsignedInt><range minInclusive="9100" maxInclusive="9109" step="1" /></unsignedInt><default value="9100" /></syntax></parameter></object></datamodel>
+<datamodel name="Services" version="2.0">
+	<object name="Services.X_ADB_PrinterService." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="LogicalVolume-Samba.sh,Cups.sh,Printer-Raw.sh" add="LogicalVolume-Samba.sh,Cups.sh,Printer-Raw.sh" del="LogicalVolume-Samba.sh,Cups.sh,Printer-Raw.sh">
+		<parameter name="PrinterDeviceNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="SpoolEnabled" access="readWrite" set="Spooling.sh">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="SpoolPartition" access="readWrite" set="Spooling.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".Services.StorageService.{i}.LogicalVolume." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" get="Cups.sh" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Enabled" />
+					<enumeration value="NoPrinters" />
+					<enumeration value="Disabled" />
+					<enumeration value="Error" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Interfaces" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="AutoshareEnable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Services.X_ADB_PrinterService.PrinterDevice.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="PrinterDeviceNumberOfEntries" enableParameter="Enable" set="LogicalVolume-Samba.sh,Printer.sh,PrinterDevice-Raw.sh" add="LogicalVolume-Samba.sh,Printer.sh,PrinterDevice-Raw.sh" del="LogicalVolume-Samba.sh,Printer.sh,PrinterDevice-Raw.sh">
+		<parameter name="DeviceName" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SerialNumber" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="DeviceURI" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="128" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Online" />
+					<enumeration value="Offline" />
+					<enumeration value="Error" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ConnectionType" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="USB 1.1" />
+					<enumeration value="USB 2.0" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Vendor" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Model" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Description" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Location" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="RawPortNumber" access="readOnly">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="65535" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="PrintJobNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Services.X_ADB_PrinterService.PrinterDevice.{i}.PrintJob.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="PrintJobNumberOfEntries">
+		<parameter name="JobId" access="readOnly">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readOnly">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="Size" access="readOnly">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="Submitted" access="readOnly">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Queued" />
+					<enumeration value="Spooling" />
+					<enumeration value="Printing" />
+					<enumeration value="Canceled" />
+					<enumeration value="Error" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Cancel" access="readWrite" set="Printer-Job-Delete.sh">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Protocol" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="SMB" />
+					<enumeration value="CUPS" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Services.X_ADB_PrinterService.Servers." access="readOnly" minEntries="1" maxEntries="1" />
+	<object name="Services.X_ADB_PrinterService.Servers.IPP." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="Cups.sh" add="Cups.sh" del="Cups.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" get="PrintServers-Status.sh" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Enabled" />
+					<enumeration value="Disabled" />
+					<enumeration value="Error" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Port" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="631" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Services.X_ADB_PrinterService.Servers.SMB." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable">
+		<parameter name="Enable" access="readWrite" set="LogicalVolume-Samba.sh">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" get="PrintServers-Status.sh" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Enabled" />
+					<enumeration value="Disabled" />
+					<enumeration value="Error" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Services.X_ADB_PrinterService.Servers.RAW." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="Printer-Raw.sh" add="Printer-Raw.sh" del="Printer-Raw.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Enabled" />
+					<enumeration value="Disabled" />
+					<enumeration value="Error" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="PortBase" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="9100" maxInclusive="9109" step="1" />
+				</unsignedInt>
+				<default value="9100" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

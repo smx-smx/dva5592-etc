@@ -1,3 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Modem" version="2.0"><object name="USB.Interface.{i}."><parameter name="Enable" set="MobileModem.sh" /></object><object name="PPP.Interface.{i}."><parameter name="Name" set="MobileModem.sh" /><parameter name="ConnectionStatus" set="MobileModem.sh" /></object><object name="Ethernet.Link.{i}."><parameter name="Status" set="MobileModem.sh" /></object></datamodel>
+<datamodel name="Modem" version="2.0">
+	<object name="USB.Interface.{i}.">
+		<parameter name="Enable" set="MobileModem.sh" />
+	</object>
+	<object name="PPP.Interface.{i}.">
+		<parameter name="Name" set="MobileModem.sh" />
+		<parameter name="ConnectionStatus" set="MobileModem.sh" />
+	</object>
+	<object name="Ethernet.Link.{i}.">
+		<parameter name="Status" set="MobileModem.sh" />
+	</object>
+</datamodel>

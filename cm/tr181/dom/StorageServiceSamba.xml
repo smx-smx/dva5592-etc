@@ -1,35 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="Services.StorageService.{i}."><parameter name="Enable" set="LogicalVolume-Samba.sh">
-        </parameter></object><object name="Services.StorageService.{i}.LogicalVolume.{i}."><parameter name="Enable" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="X_ADB_MountPoint" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="Status" set="LogicalVolume-Samba.sh">
-        </parameter></object><object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}." set="LogicalVolume-Samba.sh" del="LogicalVolume-Samba.sh"><parameter name="X_ADB_SambaRefresh" access="readWrite" store="no"><syntax hidden="yes"><boolean /><default value="false" /></syntax></parameter></object><object name="Services.StorageService.{i}.NetInfo." set="LogicalVolume-Samba.sh" /><object name="Services.StorageService.{i}.NetworkServer." set="LogicalVolume-Samba.sh"><parameter name="SMBEnable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_SMBInterfaces" access="readWrite"><syntax><list /><string><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_SambaRefresh" access="readWrite" store="no"><syntax hidden="yes"><boolean /><default value="false" /></syntax></parameter></object><object name="Services.StorageService.{i}.UserAccount.{i}."><parameter name="Enable" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="Username" set="LogicalVolume-Samba.sh">
-        </parameter></object><object name="Services.StorageService.{i}.UserGroup.{i}."><parameter name="Enable" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="GroupName" set="LogicalVolume-Samba.sh">
-        </parameter></object><object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}.UserAccess.{i}."><parameter name="Enable" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="Permissions" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="UserReference" set="LogicalVolume-Samba.sh">
-        </parameter></object><object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}.GroupAccess.{i}."><parameter name="Enable" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="GroupReference" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="Permissions" set="LogicalVolume-Samba.sh">
-        </parameter></object><object name="IP.Interface.{i}."><parameter name="Status" set="LogicalVolume-Samba.sh">
-        </parameter></object><object name="IP.Interface.{i}.IPv4Address.{i}." del="LogicalVolume-Samba.sh"><parameter name="Enable" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="IPAddress" set="LogicalVolume-Samba.sh">
-        </parameter></object><object name="IPsec.Filter.{i}." del="LogicalVolume-Samba.sh"><parameter name="Enable" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="ProcessingChoice" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="DestIP" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="DestMask" set="LogicalVolume-Samba.sh">
-        </parameter></object><object name="IPsec.Filter.{i}.X_ADB_RoadWarrior."><parameter name="Enable" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="Address" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="PoolSize" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="SubnetMask" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="Type" set="LogicalVolume-Samba.sh">
-        </parameter></object><object name="X_ADB_VPN.Server.PPTP.{i}." del="LogicalVolume-Samba.sh"><parameter name="Enable" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="MinAddress" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="MaxAddress" set="LogicalVolume-Samba.sh">
-        </parameter></object><object name="X_ADB_VPN.Server.L2TP.{i}." del="LogicalVolume-Samba.sh"><parameter name="Enable" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="MinAddress" set="LogicalVolume-Samba.sh">
-        </parameter><parameter name="MaxAddress" set="LogicalVolume-Samba.sh">
-        </parameter></object></datamodel>
+<datamodel name="Services" version="2.0">
+        <object name="Services.StorageService.{i}.">
+                <parameter name="Enable" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+        <object name="Services.StorageService.{i}.LogicalVolume.{i}.">
+                <parameter name="Enable" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="X_ADB_MountPoint" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="Status" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+        <object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}." set="LogicalVolume-Samba.sh" del="LogicalVolume-Samba.sh">
+                <parameter name="X_ADB_SambaRefresh" access="readWrite" store="no">
+                        <syntax hidden="yes">
+                                <boolean />
+                                <default value="false" />
+                        </syntax>
+                </parameter>
+        </object>
+        <object name="Services.StorageService.{i}.NetInfo." set="LogicalVolume-Samba.sh" />
+        <object name="Services.StorageService.{i}.NetworkServer." set="LogicalVolume-Samba.sh">
+                <parameter name="SMBEnable" access="readWrite">
+                        <syntax>
+                                <boolean />
+                                <default value="false" />
+                        </syntax>
+                </parameter>
+                <parameter name="X_ADB_SMBInterfaces" access="readWrite">
+                        <syntax>
+                                <list />
+                                <string>
+                                        <pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+                                </string>
+                                <default value="" />
+                        </syntax>
+                </parameter>
+                <parameter name="X_ADB_SambaRefresh" access="readWrite" store="no">
+                        <syntax hidden="yes">
+                                <boolean />
+                                <default value="false" />
+                        </syntax>
+                </parameter>
+        </object>
+        <object name="Services.StorageService.{i}.UserAccount.{i}.">
+                <parameter name="Enable" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="Username" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+        <object name="Services.StorageService.{i}.UserGroup.{i}.">
+                <parameter name="Enable" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="GroupName" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+        <object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}.UserAccess.{i}.">
+                <parameter name="Enable" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="Permissions" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="UserReference" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+        <object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}.GroupAccess.{i}.">
+                <parameter name="Enable" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="GroupReference" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="Permissions" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+        <object name="IP.Interface.{i}.">
+                <parameter name="Status" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+        <object name="IP.Interface.{i}.IPv4Address.{i}." del="LogicalVolume-Samba.sh">
+                <parameter name="Enable" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="IPAddress" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+        <object name="IPsec.Filter.{i}." del="LogicalVolume-Samba.sh">
+                <parameter name="Enable" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="ProcessingChoice" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="DestIP" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="DestMask" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+        <object name="IPsec.Filter.{i}.X_ADB_RoadWarrior.">
+                <parameter name="Enable" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="Address" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="PoolSize" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="SubnetMask" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="Type" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+        <object name="X_ADB_VPN.Server.PPTP.{i}." del="LogicalVolume-Samba.sh">
+                <parameter name="Enable" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="MinAddress" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="MaxAddress" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+        <object name="X_ADB_VPN.Server.L2TP.{i}." del="LogicalVolume-Samba.sh">
+                <parameter name="Enable" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="MinAddress" set="LogicalVolume-Samba.sh">
+                </parameter>
+                <parameter name="MaxAddress" set="LogicalVolume-Samba.sh">
+                </parameter>
+        </object>
+</datamodel>

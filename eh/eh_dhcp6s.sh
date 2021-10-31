@@ -12,7 +12,7 @@ AH_NAME="DHCPv6sEvHandler"
 #
 # per-object serialization
 #
-. /etc/ah/helper_serialize.sh && help_serialize "$AH_NAME" > /dev/null
+. /etc/ah/helper_serialize.sh && help_serialize "$AH_NAME" >/dev/null
 
 #
 # Remove duplication of this address assigned to other clients
@@ -48,7 +48,7 @@ client_deldup() {
 				updated=1
 			done
 
-			[ ${updated} -eq 1 ] && \
+			[ ${updated} -eq 1 ] &&
 				/etc/ah/DHCPv6Server.sh clientchange "${pool}"
 		fi
 	done
@@ -107,9 +107,6 @@ prefix_addset() {
 	eval $1='$_setm'
 }
 
-
-
-
 ###########################################
 #OP=CREATE
 #CLIENT_DUID=0001000118c37b6efc7516cf7729
@@ -138,8 +135,8 @@ handle_create_or_update() {
 	#  4.3) add or update IPv6Address or IPv6Prefix item
 
 	local op_type="$1" pool_no=${POOL_NAME} pool_obj="" name="" intf="" \
-	      saddress="" client_obj="" client_objs="" duid="" obj="" setm="" \
-	      _uptime updated=0
+		saddress="" client_obj="" client_objs="" duid="" obj="" setm="" \
+		_uptime updated=0
 
 	# find the Pool object [DHCPv6.Server.Pool.{i}] by POOL_NAME
 	cmclient -v pool_obj GETO "Device.DHCPv6.Server.Pool.${pool_no}"
@@ -176,14 +173,14 @@ handle_create_or_update() {
 		# If the client has been found, we update its DUID, if different.
 		for client_obj in ${client_objs}; do
 			cmclient -v duid GETV "${client_obj}.X_ADB_ClientDUID"
-			[ "$duid" != "${CLIENT_DUID}" ] && \
+			[ "$duid" != "${CLIENT_DUID}" ] &&
 				setm="${setm}${setm:+	}${client_obj}.X_ADB_ClientDUID=${CLIENT_DUID}"
 		done
 	fi
 
 	if [ ${#client_objs} -ne 0 -a ${#IA_ENTRIES} -ne 0 ]; then
 		# split IA_ENTRIES into address, preferred and valid lifetime
-		IFS=. read _uptime _ < /proc/uptime
+		IFS=. read _uptime _ </proc/uptime
 		setm="${setm:+$setm	}${client_objs}.X_ADB_RecordedTime=$_uptime"
 		for ia_entry in ${IA_ENTRIES}; do
 			set -f
@@ -234,7 +231,6 @@ handle_create_or_update() {
 	[ ${updated} -eq 1 ] && /etc/ah/DHCPv6Server.sh clientchange "${pool_obj}"
 }
 
-
 ############################################
 #OP=RELEASE
 #CLIENT_DUID=0001000118c37b6efc7516cf7729
@@ -253,7 +249,7 @@ handle_release() {
 	#  3.3) remove the item
 
 	local pool_no=${POOL_NAME} pool_obj="" intf="" name="" saddress="" \
-	      client_objs="" num_addr="" num_prefix=""
+		client_objs="" num_addr="" num_prefix=""
 
 	# find the Pool object [DHCPv6.Server.Pool.{i}] by POOL_NAME
 	cmclient -v pool_obj GETO "Device.DHCPv6.Server.Pool.${pool_no}"
@@ -290,8 +286,8 @@ handle_release() {
 				cmclient -v num_prefix GETV ${client_obj}.IPv6PrefixNumberOfEntries
 				if [ $num_addr -eq 0 -a $num_prefix -eq 0 ]; then
 					echo "no more addresses or prefixes: " \
-					     "removing client ${client_obj}" \
-					     > /dev/console
+						"removing client ${client_obj}" \
+						>/dev/console
 					cmclient DEL ${client_obj}
 				fi
 			done
@@ -301,7 +297,6 @@ handle_release() {
 		/etc/ah/DHCPv6Server.sh clientchange "${pool_obj}"
 	fi
 }
-
 
 option_update() {
 	local cli_obj="$1" opt_tag="$2" opt_val="$3" opt_objs="" setm=""
@@ -325,7 +320,6 @@ option_update() {
 		[ ${#setm} -ne 0 ] && cmclient SETM "$setm"
 	fi
 }
-
 
 #############################################################################
 #OP=INFORMATION
@@ -376,7 +370,6 @@ handle_info() {
 		done
 	done
 }
-
 
 #
 # adds and updates "Device.Hosts.Host" entries
@@ -463,7 +456,7 @@ host_entry_delete() {
 	done
 }
 
-save_duid () {
+save_duid() {
 	cmclient SET "Device.DHCPv6.Server.X_ADB_DUID" "$1" >/dev/null
 }
 
@@ -486,7 +479,7 @@ UPDATE)
 	handle_create_or_update "update"
 	;;
 
-RELEASE|EXPIRE)
+RELEASE | EXPIRE)
 	. /etc/ah/helper_ifname.sh
 	handle_release
 	if [ "IA_NA" = ${IA_TYPE} ]; then
@@ -508,5 +501,4 @@ SAVE)
 	help_cm_save 'now' 'weak'
 	;;
 esac
-exit 0;
-
+exit 0

@@ -1,3 +1,280 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="IPv6" version="2.0"><object name="IP." access="readOnly" minEntries="1" maxEntries="1" set="IP_IPv6.sh"><parameter name="IPv6Capable" access="readOnly"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="IPv6Enable" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="IPv6Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="ULAPrefix" access="readWrite"><syntax /></parameter><parameter name="X_ADB_ULASubnet" access="readWrite"><syntax><string><size minLength="0" maxLength="4" /><pattern value="" /><pattern value="([0-9A-Fa-f]){4}" /></string></syntax></parameter><parameter name="X_ADB_6to4Enable" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="X_ADB_6to4AddressSource" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface.{i}.IPv4Address." refType="strong" targetType="row" /></string></syntax></parameter></object><object name="IP.Interface.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceNumberOfEntries" enableParameter="Enable"><parameter name="ULAEnable" access="readWrite" set="IP_IPv6.sh"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="IPv6AddressNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="IPv6Enable" access="readWrite" set="IP_IPv6.sh"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="IPv6PrefixNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="X_ADB_SLAACEnable" access="readWrite" set="IP_IPv6.sh"><syntax><boolean /><default value="true" /></syntax></parameter></object><object name="IP.Interface.{i}.IPv6Address.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="IPv6AddressNumberOfEntries" enableParameter="Enable" set="IPIfIPv6.sh" del="IPIfIPv6.sh,ServicesReconf.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Anycast" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="IPAddress" access="readWrite"><syntax><default value="" /></syntax></parameter><parameter name="IPAddressStatus" access="readOnly" store="no"><syntax><string><enumeration value="Preferred" /><enumeration value="Deprecated" /><enumeration value="Invalid" /><enumeration value="Inaccessible" /><enumeration value="Unknown" /><enumeration value="Tentative" /><enumeration value="Duplicate" /><enumeration value="Optimistic" /></string><default value="Invalid" /></syntax></parameter><parameter name="Origin" access="readOnly"><syntax><string><enumeration value="AutoConfigured" /><enumeration value="DHCPv6" /><enumeration value="WellKnown" /><enumeration value="Static" /></string><default value="Static" /></syntax></parameter><parameter name="PreferredLifetime" access="readWrite"><syntax><dateTime /><default value="9999-12-31T23:59:59Z" /></syntax></parameter><parameter name="Prefix" access="readWrite"><syntax><string><pathRef targetParent="#.IPv6Prefix." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="Status" access="readOnly" store="no" set="ServicesReconf.sh"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="ValidLifetime" access="readWrite"><syntax><dateTime /><default value="9999-12-31T23:59:59Z" /></syntax></parameter></object><object name="IP.Interface.{i}.IPv6Prefix.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="IPv6PrefixNumberOfEntries" enableParameter="Enable" set="IPIfIPv6.sh" del="IPIfIPv6.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Autonomous" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="OnLink" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Origin" access="readOnly"><syntax><string><enumeration value="AutoConfigured" /><enumeration value="PrefixDelegation" /><enumeration value="RouterAdvertisement" /><enumeration value="WellKnown" /><enumeration value="Static" /><enumeration value="Child" /></string><default value="Static" /></syntax></parameter><parameter name="PreferredLifetime" access="readWrite"><syntax><dateTime /><default value="9999-12-31T23:59:59Z" /></syntax></parameter><parameter name="Prefix" access="readWrite"><syntax><default value="" /></syntax></parameter><parameter name="X_ADB_Preferred" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="PrefixStatus" access="readOnly" store="no"><syntax><string><enumeration value="Preferred" /><enumeration value="Deprecated" /><enumeration value="Invalid" /><enumeration value="Inaccessible" /><enumeration value="Unknown" /></string><default value="Invalid" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="ValidLifetime" access="readWrite"><syntax><dateTime /><default value="9999-12-31T23:59:59Z" /></syntax></parameter><parameter name="X_ADB_Valid" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="ChildPrefixBits" access="readWrite" supported="no"><syntax><default value="" /></syntax></parameter><parameter name="ParentPrefix" access="readWrite" supported="no"><syntax><string><pathRef targetParent=".IP.Interface.{i}.IPv6Prefix." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="StaticType" access="readWrite"><syntax><string><enumeration value="Static" /><enumeration value="Inapplicable" /><enumeration value="PrefixDelegation" /><enumeration value="Child" /></string><default value="Static" /></syntax></parameter></object></datamodel>
+<datamodel name="IPv6" version="2.0">
+	<object name="IP." access="readOnly" minEntries="1" maxEntries="1" set="IP_IPv6.sh">
+		<parameter name="IPv6Capable" access="readOnly">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="IPv6Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="IPv6Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="ULAPrefix" access="readWrite">
+			<syntax />
+		</parameter>
+		<parameter name="X_ADB_ULASubnet" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="4" />
+					<pattern value="" />
+					<pattern value="([0-9A-Fa-f]){4}" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_6to4Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_6to4AddressSource" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface.{i}.IPv4Address." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IP.Interface.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceNumberOfEntries" enableParameter="Enable">
+		<parameter name="ULAEnable" access="readWrite" set="IP_IPv6.sh">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="IPv6AddressNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="IPv6Enable" access="readWrite" set="IP_IPv6.sh">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="IPv6PrefixNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SLAACEnable" access="readWrite" set="IP_IPv6.sh">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IP.Interface.{i}.IPv6Address.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="IPv6AddressNumberOfEntries" enableParameter="Enable" set="IPIfIPv6.sh" del="IPIfIPv6.sh,ServicesReconf.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Anycast" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="IPAddress" access="readWrite">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="IPAddressStatus" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Preferred" />
+					<enumeration value="Deprecated" />
+					<enumeration value="Invalid" />
+					<enumeration value="Inaccessible" />
+					<enumeration value="Unknown" />
+					<enumeration value="Tentative" />
+					<enumeration value="Duplicate" />
+					<enumeration value="Optimistic" />
+				</string>
+				<default value="Invalid" />
+			</syntax>
+		</parameter>
+		<parameter name="Origin" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="AutoConfigured" />
+					<enumeration value="DHCPv6" />
+					<enumeration value="WellKnown" />
+					<enumeration value="Static" />
+				</string>
+				<default value="Static" />
+			</syntax>
+		</parameter>
+		<parameter name="PreferredLifetime" access="readWrite">
+			<syntax>
+				<dateTime />
+				<default value="9999-12-31T23:59:59Z" />
+			</syntax>
+		</parameter>
+		<parameter name="Prefix" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent="#.IPv6Prefix." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no" set="ServicesReconf.sh">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error_Misconfigured" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="ValidLifetime" access="readWrite">
+			<syntax>
+				<dateTime />
+				<default value="9999-12-31T23:59:59Z" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IP.Interface.{i}.IPv6Prefix.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="IPv6PrefixNumberOfEntries" enableParameter="Enable" set="IPIfIPv6.sh" del="IPIfIPv6.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Autonomous" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="OnLink" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Origin" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="AutoConfigured" />
+					<enumeration value="PrefixDelegation" />
+					<enumeration value="RouterAdvertisement" />
+					<enumeration value="WellKnown" />
+					<enumeration value="Static" />
+					<enumeration value="Child" />
+				</string>
+				<default value="Static" />
+			</syntax>
+		</parameter>
+		<parameter name="PreferredLifetime" access="readWrite">
+			<syntax>
+				<dateTime />
+				<default value="9999-12-31T23:59:59Z" />
+			</syntax>
+		</parameter>
+		<parameter name="Prefix" access="readWrite">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Preferred" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="PrefixStatus" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Preferred" />
+					<enumeration value="Deprecated" />
+					<enumeration value="Invalid" />
+					<enumeration value="Inaccessible" />
+					<enumeration value="Unknown" />
+				</string>
+				<default value="Invalid" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="ValidLifetime" access="readWrite">
+			<syntax>
+				<dateTime />
+				<default value="9999-12-31T23:59:59Z" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Valid" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ChildPrefixBits" access="readWrite" supported="no">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ParentPrefix" access="readWrite" supported="no">
+			<syntax>
+				<string>
+					<pathRef targetParent=".IP.Interface.{i}.IPv6Prefix." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="StaticType" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Static" />
+					<enumeration value="Inapplicable" />
+					<enumeration value="PrefixDelegation" />
+					<enumeration value="Child" />
+				</string>
+				<default value="Static" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

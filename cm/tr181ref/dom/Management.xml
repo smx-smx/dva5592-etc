@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Management" version="2.0"><object name="ManagementServer." aliasOnSet="InternetGatewayDevice.ManagementServer.%n"><parameter name="X_ADB_EnableTR098" access="readWrite" localNotify="forceEnabled"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="X_ADB_EnableTR181" access="readWrite" localNotify="forceEnabled"><syntax><boolean /><default value="true" /></syntax></parameter></object><object name="ManagementServer.ManageableDevice.{i}." aliasOnAdd="InternetGatewayDevice.ManagementServer.ManageableDevice.%i" aliasOnDel="InternetGatewayDevice.ManagementServer.ManageableDevice.%i" aliasOnSet="InternetGatewayDevice.ManagementServer.ManageableDevice.%i.%n">
-    </object><object name="UserInterface.RemoteAccess.X_ADB_ACLRule.{i}." aliasOnAdd="InternetGatewayDevice.UserInterface.RemoteAccess.X_ADB_ACLRule.%i" aliasOnDel="InternetGatewayDevice.UserInterface.RemoteAccess.X_ADB_ACLRule.%i">
-    </object><object name="Users.User.{i}." aliasOnAdd="InternetGatewayDevice.User.%i" aliasOnDel="InternetGatewayDevice.User.%i" aliasOnSet="InternetGatewayDevice.User.%i.%n">
-    </object></datamodel>
+<datamodel name="Management" version="2.0">
+    <object name="ManagementServer." aliasOnSet="InternetGatewayDevice.ManagementServer.%n">
+        <parameter name="X_ADB_EnableTR098" access="readWrite" localNotify="forceEnabled">
+            <syntax>
+                <boolean />
+                <default value="true" />
+            </syntax>
+        </parameter>
+        <parameter name="X_ADB_EnableTR181" access="readWrite" localNotify="forceEnabled">
+            <syntax>
+                <boolean />
+                <default value="true" />
+            </syntax>
+        </parameter>
+    </object>
+    <object name="ManagementServer.ManageableDevice.{i}." aliasOnAdd="InternetGatewayDevice.ManagementServer.ManageableDevice.%i" aliasOnDel="InternetGatewayDevice.ManagementServer.ManageableDevice.%i" aliasOnSet="InternetGatewayDevice.ManagementServer.ManageableDevice.%i.%n">
+    </object>
+    <object name="UserInterface.RemoteAccess.X_ADB_ACLRule.{i}." aliasOnAdd="InternetGatewayDevice.UserInterface.RemoteAccess.X_ADB_ACLRule.%i" aliasOnDel="InternetGatewayDevice.UserInterface.RemoteAccess.X_ADB_ACLRule.%i">
+    </object>
+    <object name="Users.User.{i}." aliasOnAdd="InternetGatewayDevice.User.%i" aliasOnDel="InternetGatewayDevice.User.%i" aliasOnSet="InternetGatewayDevice.User.%i.%n">
+    </object>
+</datamodel>

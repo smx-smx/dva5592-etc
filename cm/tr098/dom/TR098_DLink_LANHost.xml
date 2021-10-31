@@ -1,3 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DHCP" version="2.0"><object name="LANDevice.{i}.Hosts.Host.{i}."><parameter name="Active" get="TR098_LANDeviceHostActive.sh" /></object></datamodel>
+<datamodel name="DHCP" version="2.0">
+	<object name="LANDevice.{i}.Hosts.Host.{i}.">
+		<parameter name="Active" get="TR098_LANDeviceHostActive.sh" />
+	</object>
+</datamodel>

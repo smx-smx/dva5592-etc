@@ -1,3 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="IP" version="2.0"><object name="X_ADB_DMZ."><parameter name="Enable" aliasOnSet="InternetGatewayDevice.X_ADB_DMZ.%n" /><parameter name="Hairpinning" aliasOnSet="InternetGatewayDevice.X_ADB_DMZ.%n" /><parameter name="Interface" set="TR098_Notify.sh" /><parameter name="IPAddress" aliasOnSet="InternetGatewayDevice.X_ADB_DMZ.%n" /><parameter name="InternalClient" aliasOnSet="InternetGatewayDevice.X_ADB_DMZ.%n" /></object></datamodel>
+<datamodel name="IP" version="2.0">
+	<object name="X_ADB_DMZ.">
+		<parameter name="Enable" aliasOnSet="InternetGatewayDevice.X_ADB_DMZ.%n" />
+		<parameter name="Hairpinning" aliasOnSet="InternetGatewayDevice.X_ADB_DMZ.%n" />
+		<parameter name="Interface" set="TR098_Notify.sh" />
+		<parameter name="IPAddress" aliasOnSet="InternetGatewayDevice.X_ADB_DMZ.%n" />
+		<parameter name="InternalClient" aliasOnSet="InternetGatewayDevice.X_ADB_DMZ.%n" />
+	</object>
+</datamodel>

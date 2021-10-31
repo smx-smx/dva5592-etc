@@ -1,3 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="X_DLink" version="2.0"><object name="X_DLINK_BandSteering." access="readOnly" minEntries="1" maxEntries="1"><parameter name="Enable" access="readWrite" aliasOnGet="Device.WiFi.X_ADB_BandSteering.Enable" aliasOnSet="Device.WiFi.X_ADB_BandSteering.Enable"><syntax><boolean /></syntax></parameter><parameter name="Status" access="readOnly" store="no" aliasOnGet="Device.WiFi.X_ADB_BandSteering.Status"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error_RadioOff" /><enumeration value="Error" /></string></syntax></parameter></object><object name="LANDevice.{i}.WLANConfiguration.{i}.AssociatedDevice.{i}."><parameter name="X_DLINK_Steerable" access="readOnly" get="X_DLink_BandSteering.sh"><syntax><string /></syntax></parameter></object></datamodel>
+<datamodel name="X_DLink" version="2.0">
+	<object name="X_DLINK_BandSteering." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="Enable" access="readWrite" aliasOnGet="Device.WiFi.X_ADB_BandSteering.Enable" aliasOnSet="Device.WiFi.X_ADB_BandSteering.Enable">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no" aliasOnGet="Device.WiFi.X_ADB_BandSteering.Status">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error_Misconfigured" />
+					<enumeration value="Error_RadioOff" />
+					<enumeration value="Error" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="LANDevice.{i}.WLANConfiguration.{i}.AssociatedDevice.{i}.">
+		<parameter name="X_DLINK_Steerable" access="readOnly" get="X_DLink_BandSteering.sh">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

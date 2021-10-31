@@ -1,3 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DSL" version="2.0"><object name="DSL.Channel.{i}."><parameter name="X_ADB_TR098Reference" excludeUser="CWMP" /><parameter name="X_ADB_PreviousLinkEncapsulationUsed" excludeUser="CWMP" /></object><object name="DSL.Line.{i}."><parameter name="X_ADB_TR098Reference" excludeUser="CWMP" /><parameter name="X_ADB_TargetSNR" excludeUser="CWMP" /><parameter name="X_ADB_Reset" excludeUser="CWMP" /><parameter name="X_ADB_PhyReconf" excludeUser="CWMP" /><parameter name="X_ADB_LastChange" excludeUser="CWMP" /><parameter name="X_ADB_AllowedStandards" excludeUser="CWMP" /><parameter name="X_ADB_XTURModelShort" excludeUser="CWMP" /><parameter name="X_ADB_SRA" excludeUser="CWMP" /><parameter name="X_ADB_G992DTF" excludeUser="CWMP" /><parameter name="X_ADB_V43" excludeUser="CWMP" /><parameter name="X_ADB_EnableATTNDRframingConstrains" excludeUser="CWMP" /><parameter name="X_ADB_NoG994AVdslToggle" excludeUser="CWMP" /><parameter name="X_ADB_AlignAfterPeriodics" excludeUser="CWMP" /><parameter name="X_ADB_DynamicV43handling" excludeUser="CWMP" /><parameter name="X_ADB_BitSwap" excludeUser="CWMP" /><parameter name="X_ADB_PhyR" excludeUser="CWMP" /><parameter name="X_ADB_GINP" excludeUser="CWMP" /><parameter name="X_ADB_MonitorTone" excludeUser="CWMP" /><parameter name="X_ADB_ToggleJ43B43" excludeUser="CWMP" /><parameter name="X_ADB_Annex" excludeUser="CWMP" /><parameter name="X_ADB_Label" excludeUser="CWMP" /></object></datamodel>
+<datamodel name="DSL" version="2.0">
+	<object name="DSL.Channel.{i}.">
+		<parameter name="X_ADB_TR098Reference" excludeUser="CWMP" />
+		<parameter name="X_ADB_PreviousLinkEncapsulationUsed" excludeUser="CWMP" />
+	</object>
+	<object name="DSL.Line.{i}.">
+		<parameter name="X_ADB_TR098Reference" excludeUser="CWMP" />
+		<parameter name="X_ADB_TargetSNR" excludeUser="CWMP" />
+		<parameter name="X_ADB_Reset" excludeUser="CWMP" />
+		<parameter name="X_ADB_PhyReconf" excludeUser="CWMP" />
+		<parameter name="X_ADB_LastChange" excludeUser="CWMP" />
+		<parameter name="X_ADB_AllowedStandards" excludeUser="CWMP" />
+		<parameter name="X_ADB_XTURModelShort" excludeUser="CWMP" />
+		<parameter name="X_ADB_SRA" excludeUser="CWMP" />
+		<parameter name="X_ADB_G992DTF" excludeUser="CWMP" />
+		<parameter name="X_ADB_V43" excludeUser="CWMP" />
+		<parameter name="X_ADB_EnableATTNDRframingConstrains" excludeUser="CWMP" />
+		<parameter name="X_ADB_NoG994AVdslToggle" excludeUser="CWMP" />
+		<parameter name="X_ADB_AlignAfterPeriodics" excludeUser="CWMP" />
+		<parameter name="X_ADB_DynamicV43handling" excludeUser="CWMP" />
+		<parameter name="X_ADB_BitSwap" excludeUser="CWMP" />
+		<parameter name="X_ADB_PhyR" excludeUser="CWMP" />
+		<parameter name="X_ADB_GINP" excludeUser="CWMP" />
+		<parameter name="X_ADB_MonitorTone" excludeUser="CWMP" />
+		<parameter name="X_ADB_ToggleJ43B43" excludeUser="CWMP" />
+		<parameter name="X_ADB_Annex" excludeUser="CWMP" />
+		<parameter name="X_ADB_Label" excludeUser="CWMP" />
+	</object>
+</datamodel>

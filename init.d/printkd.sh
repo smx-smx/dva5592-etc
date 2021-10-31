@@ -9,9 +9,9 @@ start() {
 	printf '[\033[1;34m*\033[m] \033[36m%s\033[m\n' "Starting Printk Dump" >/dev/console
 	while read -r major; do
 		case "$major" in
-			*printk_dump_dev) break
+		*printk_dump_dev) break ;;
 		esac
-	done < /proc/devices
+	done </proc/devices
 
 	set -- $major
 	major=$1

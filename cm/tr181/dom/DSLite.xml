@@ -1,3 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="IPv6" version="2.0"><object name="DSLite." access="readOnly" minEntries="1" maxEntries="1" supported="no"><parameter name="Enable" access="readWrite" supported="no"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="InterfaceSettingNumberOfEntries" access="readOnly" supported="no" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="DSLite.InterfaceSetting.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceSettingNumberOfEntries" supported="no"><parameter name="Alias" access="readWrite" key="yes" supported="no"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite" supported="no"><syntax><boolean /></syntax></parameter><parameter name="EndpointAddress" access="readWrite" supported="no"><syntax /></parameter><parameter name="EndpointAssignmentPrecedence" access="readWrite" supported="no"><syntax><string><enumeration value="DHCPv6" /><enumeration value="Static" /></string></syntax></parameter><parameter name="EndpointName" access="readWrite" supported="no"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="Origin" access="readOnly" supported="no"><syntax><string><enumeration value="DHCPv6" /><enumeration value="Static" /></string></syntax></parameter><parameter name="Status" access="readOnly" supported="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error" /></string></syntax></parameter><parameter name="TunnelInterface" access="readOnly" supported="no"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="TunneledInterface" access="readOnly" supported="no"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string></syntax></parameter></object></datamodel>
+<datamodel name="IPv6" version="2.0">
+	<object name="DSLite." access="readOnly" minEntries="1" maxEntries="1" supported="no">
+		<parameter name="Enable" access="readWrite" supported="no">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="InterfaceSettingNumberOfEntries" access="readOnly" supported="no" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSLite.InterfaceSetting.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceSettingNumberOfEntries" supported="no">
+		<parameter name="Alias" access="readWrite" key="yes" supported="no">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite" supported="no">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="EndpointAddress" access="readWrite" supported="no">
+			<syntax />
+		</parameter>
+		<parameter name="EndpointAssignmentPrecedence" access="readWrite" supported="no">
+			<syntax>
+				<string>
+					<enumeration value="DHCPv6" />
+					<enumeration value="Static" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="EndpointName" access="readWrite" supported="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Origin" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<enumeration value="DHCPv6" />
+					<enumeration value="Static" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="TunnelInterface" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="TunneledInterface" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

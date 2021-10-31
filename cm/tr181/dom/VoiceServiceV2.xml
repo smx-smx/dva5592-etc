@@ -1,9 +1,578 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="Services.VoiceService.{i}.POTS." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh"><parameter name="FXONumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="FXSNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="Region" access="readWrite" set="VoIPServiceV2.sh"><syntax><string><size maxLength="2" /></string></syntax></parameter><parameter name="X_ADB_MWI" access="readWrite" set="VoIPServiceV2.sh"><syntax><boolean /><default value="true" /></syntax></parameter></object><object name="Services.VoiceService.{i}.POTS.FXS.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" set="VoIPServiceV2.sh" numEntriesParameter="FXSNumberOfEntries"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="Name" access="readOnly"><syntax><string><size maxLength="64" /></string></syntax></parameter><parameter name="ToneEventProfile" access="readWrite"><syntax><string><size maxLength="256" /><pathRef refType="strong" targetParent=".Services.VoiceService.{i}.Tone.EventProfile." targetType="row" /></string></syntax></parameter><parameter name="FaxPassThrough" access="readWrite" supported="no"><syntax><string><enumeration value="Disable">
-               </enumeration><enumeration value="Auto">
-               </enumeration><enumeration value="Force">
-               </enumeration></string><default value="Auto" /></syntax></parameter><parameter name="ModemPassThrough" access="readWrite" supported="no"><syntax><string><enumeration value="Disable">
-               </enumeration><enumeration value="Auto">
-               </enumeration><enumeration value="Force">
-               </enumeration></string><default value="Auto" /></syntax></parameter></object><object name="Services.VoiceService.{i}.POTS.FXS.{i}.VoiceProcessing." access="readOnly" minEntries="1" maxEntries="1" supported="no"><parameter name="TransmitGain" access="readWrite" supported="no"><syntax><int><units value="0.1 dB" /></int><default value="0" /></syntax></parameter><parameter name="ReceiveGain" access="readWrite" supported="no"><syntax><int><units value="0.1 dB" /></int><default value="0" /></syntax></parameter></object><object name="Services.VoiceService.{i}.POTS.FXS.{i}.X_ADB_Endpoint." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh"><parameter name="MinHookFlash" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="MaxHookFlash" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="PlsDlInterdigitTime" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="PlsDlMinMakeTime" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="PlsDlMaxMakeTime" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="PlsDlMinBreakTime" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="PlsDlMaxBreakTime" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="CallWtgDelay" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="MinConnect" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="MinDisconnect" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter></object><object name="Services.VoiceService.{i}.POTS.X_ADB_CallerID." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh"><parameter name="CIDMode" access="readOnly"><syntax><string><enumeration value="onhook_ring" /><enumeration value="onhook_LRCARIR" /><enumeration value="onhook_DTAS" /><enumeration value="onhook_RPAS" /><enumeration value="onhook_LRAS" /><enumeration value="offhook" /></string></syntax></parameter><parameter name="CIDCallWaitingEnable" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="CIDFskAfterRing" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="CIDFskAfterDTAS" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="CIDFskAfterRPAS" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="CIDRingAfterFSK" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="CIDDTASAfterLR" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="CIDSigProtocol" access="readWrite"><syntax><string><enumeration value="FSK" /><enumeration value="DTMF" /></string></syntax></parameter></object><object name="Services.VoiceService.{i}.POTS.X_ADB_CallerID.FSK." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh"><parameter name="amplitude" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="markFrequency" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="spaceFrequency" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="startNumSeizes" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="startNumMarks" access="readWrite"><syntax><unsignedInt /></syntax></parameter></object><object name="Services.VoiceService.{i}.POTS.X_ADB_CallerID.DTMF." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh"><parameter name="dbLevel" access="readWrite"><syntax><range minInclusive="0" maxInclusive="65534" step="1" /><unsignedInt /></syntax></parameter><parameter name="pulseTime" access="readWrite"><syntax><unsignedInt /><range minInclusive="0" maxInclusive="65534" step="1" /><units value="ms" /></syntax></parameter><parameter name="startCode" access="readWrite"><syntax><string><size minLength="0" maxLength="10" /><enumeration value="DTMFERROR" /><enumeration value="DTMF0" /><enumeration value="DTMF1" /><enumeration value="DTMF2" /><enumeration value="DTMF3" /><enumeration value="DTMF4" /><enumeration value="DTMF5" /><enumeration value="DTMF6" /><enumeration value="DTMF7" /><enumeration value="DTMF8" /><enumeration value="DTMF9" /><enumeration value="DTMFSTR" /><enumeration value="DTMFPND" /><enumeration value="DTMFA" /><enumeration value="DTMFB" /><enumeration value="DTMFC" /><enumeration value="DTMFD" /></string></syntax></parameter><parameter name="endCode" access="readWrite"><syntax><string><size minLength="0" maxLength="10" /><enumeration value="DTMFERROR" /><enumeration value="DTMF0" /><enumeration value="DTMF1" /><enumeration value="DTMF2" /><enumeration value="DTMF3" /><enumeration value="DTMF4" /><enumeration value="DTMF5" /><enumeration value="DTMF6" /><enumeration value="DTMF7" /><enumeration value="DTMF8" /><enumeration value="DTMF9" /><enumeration value="DTMFSTR" /><enumeration value="DTMFPND" /><enumeration value="DTMFA" /><enumeration value="DTMFB" /><enumeration value="DTMFC" /><enumeration value="DTMFD" /></string></syntax></parameter><parameter name="privateCode" access="readWrite"><syntax><list minItems="0" maxItems="16" /><string><size minLength="0" maxLength="256" /><enumeration value="DTMFERROR" /><enumeration value="DTMF0" /><enumeration value="DTMF1" /><enumeration value="DTMF2" /><enumeration value="DTMF3" /><enumeration value="DTMF4" /><enumeration value="DTMF5" /><enumeration value="DTMF6" /><enumeration value="DTMF7" /><enumeration value="DTMF8" /><enumeration value="DTMF9" /><enumeration value="DTMFSTR" /><enumeration value="DTMFPND" /><enumeration value="DTMFA" /><enumeration value="DTMFB" /><enumeration value="DTMFC" /><enumeration value="DTMFD" /></string><default value="DTMFERROR" /></syntax></parameter><parameter name="unavailCode" access="readWrite"><syntax><list minItems="0" maxItems="16" /><string><size minLength="0" maxLength="256" /><enumeration value="DTMFERROR" /><enumeration value="DTMF0" /><enumeration value="DTMF1" /><enumeration value="DTMF2" /><enumeration value="DTMF3" /><enumeration value="DTMF4" /><enumeration value="DTMF5" /><enumeration value="DTMF6" /><enumeration value="DTMF7" /><enumeration value="DTMF8" /><enumeration value="DTMF9" /><enumeration value="DTMFSTR" /><enumeration value="DTMFPND" /><enumeration value="DTMFA" /><enumeration value="DTMFB" /><enumeration value="DTMFC" /><enumeration value="DTMFD" /></string><default value="DTMFERROR" /></syntax></parameter><parameter name="errorCode" access="readWrite"><syntax><list minItems="0" maxItems="16" /><string><size minLength="0" maxLength="256" /><enumeration value="DTMFERROR" /><enumeration value="DTMF0" /><enumeration value="DTMF1" /><enumeration value="DTMF2" /><enumeration value="DTMF3" /><enumeration value="DTMF4" /><enumeration value="DTMF5" /><enumeration value="DTMF6" /><enumeration value="DTMF7" /><enumeration value="DTMF8" /><enumeration value="DTMF9" /><enumeration value="DTMFSTR" /><enumeration value="DTMFPND" /><enumeration value="DTMFA" /><enumeration value="DTMFB" /><enumeration value="DTMFC" /><enumeration value="DTMFD" /></string><default value="DTMFERROR" /></syntax></parameter><parameter name="redirectingCode" access="readWrite"><syntax><string><size minLength="0" maxLength="10" /><enumeration value="DTMFERROR" /><enumeration value="DTMF0" /><enumeration value="DTMF1" /><enumeration value="DTMF2" /><enumeration value="DTMF3" /><enumeration value="DTMF4" /><enumeration value="DTMF5" /><enumeration value="DTMF6" /><enumeration value="DTMF7" /><enumeration value="DTMF8" /><enumeration value="DTMF9" /><enumeration value="DTMFSTR" /><enumeration value="DTMFPND" /><enumeration value="DTMFA" /><enumeration value="DTMFB" /><enumeration value="DTMFC" /><enumeration value="DTMFD" /></string></syntax></parameter><parameter name="informationCode" access="readWrite"><syntax><string><size minLength="0" maxLength="10" /><enumeration value="DTMFERROR" /><enumeration value="DTMF0" /><enumeration value="DTMF1" /><enumeration value="DTMF2" /><enumeration value="DTMF3" /><enumeration value="DTMF4" /><enumeration value="DTMF5" /><enumeration value="DTMF6" /><enumeration value="DTMF7" /><enumeration value="DTMF8" /><enumeration value="DTMF9" /><enumeration value="DTMFSTR" /><enumeration value="DTMFPND" /><enumeration value="DTMFA" /><enumeration value="DTMFB" /><enumeration value="DTMFC" /><enumeration value="DTMFD" /></string></syntax></parameter><parameter name="DTMFpauseTimeout" access="readWrite"><syntax><unsignedInt /><range minInclusive="0" maxInclusive="65534" step="1" /><units value="ms" /></syntax></parameter><parameter name="DTMFsessionTimeout" access="readWrite"><syntax><unsignedInt /><range minInclusive="0" maxInclusive="65534" step="1" /><units value="ms" /></syntax></parameter><parameter name="ringAfterClidTimeout" access="readWrite"><syntax><unsignedInt /><range minInclusive="0" maxInclusive="65534" step="1" /><units value="ms" /></syntax></parameter></object><object name="Services.VoiceService.{i}.POTS.X_ADB_VMWI." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh"><parameter name="VMWIMsgFormat" access="readWrite"><syntax><string><enumeration value="SDMF" /><enumeration value="MDMF" /></string></syntax></parameter><parameter name="VMWIMode" access="readWrite"><syntax><string><enumeration value="OSI" /><enumeration value="DTAS" /><enumeration value="RPAS" /><enumeration value="LRAS" /></string></syntax></parameter><parameter name="VMWISigProtocol" access="readWrite"><syntax><string><enumeration value="FSK" /><enumeration value="DTMF" /></string></syntax></parameter><parameter name="VMWIFskAfterDTAS" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="VMWIFskAfterRPAS" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter><parameter name="VMWIDTASAfterLR" access="readWrite"><syntax><unsignedInt /><units value="ms" /></syntax></parameter></object><object name="Services.VoiceService.{i}.POTS.Ringer.X_ADB_RingSignal." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh"><parameter name="PowerRingFrequency" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="RingWaveform" access="readWrite"><syntax><string><enumeration value="sine" /><enumeration value="trapezoid" /></string></syntax></parameter><parameter name="HighVoltageRingSupport" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="RingVoltage" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="RingDCOffset" access="readWrite"><syntax><unsignedInt /></syntax></parameter></object><object name="Services.VoiceService.{i}.X_ADB_GenericEndpoint." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh"><parameter name="FaxDetection" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="PteDetectAdmin" access="readWrite"><syntax><string><enumeration value="n_america" /><enumeration value="general" /><enumeration value="japan" /><enumeration value="europe" /><enumeration value="australia" /><enumeration value="brazil" /></string><default value="europe" /></syntax></parameter><parameter name="PteMinDetectPower" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="PveEgressVolume" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="DtmfDbLevel" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="DtmfPulseTime" access="readWrite"><syntax><unsignedInt /></syntax></parameter><parameter name="Rfc2833ToneLevel" access="readWrite"><syntax><unsignedInt /></syntax></parameter></object></datamodel>
+<datamodel name="Device" version="2.0">
+    <object name="Services.VoiceService.{i}.POTS." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh">
+        <parameter name="FXONumberOfEntries" access="readOnly" store="no">
+            <syntax>
+                <unsignedInt />
+                <default value="0" />
+            </syntax>
+        </parameter>
+        <parameter name="FXSNumberOfEntries" access="readOnly" store="no">
+            <syntax>
+                <unsignedInt />
+                <default value="0" />
+            </syntax>
+        </parameter>
+        <parameter name="Region" access="readWrite" set="VoIPServiceV2.sh">
+            <syntax>
+                <string>
+                    <size maxLength="2" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="X_ADB_MWI" access="readWrite" set="VoIPServiceV2.sh">
+            <syntax>
+                <boolean />
+                <default value="true" />
+            </syntax>
+        </parameter>
+    </object>
+    <object name="Services.VoiceService.{i}.POTS.FXS.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" set="VoIPServiceV2.sh" numEntriesParameter="FXSNumberOfEntries">
+        <parameter name="Enable" access="readWrite">
+            <syntax>
+                <boolean />
+                <default value="true" />
+            </syntax>
+        </parameter>
+        <parameter name="Name" access="readOnly">
+            <syntax>
+                <string>
+                    <size maxLength="64" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="ToneEventProfile" access="readWrite">
+            <syntax>
+                <string>
+                    <size maxLength="256" />
+                    <pathRef refType="strong" targetParent=".Services.VoiceService.{i}.Tone.EventProfile." targetType="row" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="FaxPassThrough" access="readWrite" supported="no">
+            <syntax>
+                <string>
+                    <enumeration value="Disable">
+                    </enumeration>
+                    <enumeration value="Auto">
+                    </enumeration>
+                    <enumeration value="Force">
+                    </enumeration>
+                </string>
+                <default value="Auto" />
+            </syntax>
+        </parameter>
+        <parameter name="ModemPassThrough" access="readWrite" supported="no">
+            <syntax>
+                <string>
+                    <enumeration value="Disable">
+                    </enumeration>
+                    <enumeration value="Auto">
+                    </enumeration>
+                    <enumeration value="Force">
+                    </enumeration>
+                </string>
+                <default value="Auto" />
+            </syntax>
+        </parameter>
+    </object>
+    <object name="Services.VoiceService.{i}.POTS.FXS.{i}.VoiceProcessing." access="readOnly" minEntries="1" maxEntries="1" supported="no">
+        <parameter name="TransmitGain" access="readWrite" supported="no">
+            <syntax>
+                <int>
+                    <units value="0.1 dB" />
+                </int>
+                <default value="0" />
+            </syntax>
+        </parameter>
+        <parameter name="ReceiveGain" access="readWrite" supported="no">
+            <syntax>
+                <int>
+                    <units value="0.1 dB" />
+                </int>
+                <default value="0" />
+            </syntax>
+        </parameter>
+    </object>
+    <object name="Services.VoiceService.{i}.POTS.FXS.{i}.X_ADB_Endpoint." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh">
+        <parameter name="MinHookFlash" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="MaxHookFlash" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="PlsDlInterdigitTime" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="PlsDlMinMakeTime" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="PlsDlMaxMakeTime" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="PlsDlMinBreakTime" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="PlsDlMaxBreakTime" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="CallWtgDelay" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="MinConnect" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="MinDisconnect" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+    </object>
+    <object name="Services.VoiceService.{i}.POTS.X_ADB_CallerID." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh">
+        <parameter name="CIDMode" access="readOnly">
+            <syntax>
+                <string>
+                    <enumeration value="onhook_ring" />
+                    <enumeration value="onhook_LRCARIR" />
+                    <enumeration value="onhook_DTAS" />
+                    <enumeration value="onhook_RPAS" />
+                    <enumeration value="onhook_LRAS" />
+                    <enumeration value="offhook" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="CIDCallWaitingEnable" access="readWrite">
+            <syntax>
+                <boolean />
+                <default value="true" />
+            </syntax>
+        </parameter>
+        <parameter name="CIDFskAfterRing" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="CIDFskAfterDTAS" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="CIDFskAfterRPAS" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="CIDRingAfterFSK" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="CIDDTASAfterLR" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="CIDSigProtocol" access="readWrite">
+            <syntax>
+                <string>
+                    <enumeration value="FSK" />
+                    <enumeration value="DTMF" />
+                </string>
+            </syntax>
+        </parameter>
+    </object>
+    <object name="Services.VoiceService.{i}.POTS.X_ADB_CallerID.FSK." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh">
+        <parameter name="amplitude" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+        <parameter name="markFrequency" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+        <parameter name="spaceFrequency" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+        <parameter name="startNumSeizes" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+        <parameter name="startNumMarks" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+    </object>
+    <object name="Services.VoiceService.{i}.POTS.X_ADB_CallerID.DTMF." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh">
+        <parameter name="dbLevel" access="readWrite">
+            <syntax>
+                <range minInclusive="0" maxInclusive="65534" step="1" />
+                <unsignedInt />
+            </syntax>
+        </parameter>
+        <parameter name="pulseTime" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <range minInclusive="0" maxInclusive="65534" step="1" />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="startCode" access="readWrite">
+            <syntax>
+                <string>
+                    <size minLength="0" maxLength="10" />
+                    <enumeration value="DTMFERROR" />
+                    <enumeration value="DTMF0" />
+                    <enumeration value="DTMF1" />
+                    <enumeration value="DTMF2" />
+                    <enumeration value="DTMF3" />
+                    <enumeration value="DTMF4" />
+                    <enumeration value="DTMF5" />
+                    <enumeration value="DTMF6" />
+                    <enumeration value="DTMF7" />
+                    <enumeration value="DTMF8" />
+                    <enumeration value="DTMF9" />
+                    <enumeration value="DTMFSTR" />
+                    <enumeration value="DTMFPND" />
+                    <enumeration value="DTMFA" />
+                    <enumeration value="DTMFB" />
+                    <enumeration value="DTMFC" />
+                    <enumeration value="DTMFD" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="endCode" access="readWrite">
+            <syntax>
+                <string>
+                    <size minLength="0" maxLength="10" />
+                    <enumeration value="DTMFERROR" />
+                    <enumeration value="DTMF0" />
+                    <enumeration value="DTMF1" />
+                    <enumeration value="DTMF2" />
+                    <enumeration value="DTMF3" />
+                    <enumeration value="DTMF4" />
+                    <enumeration value="DTMF5" />
+                    <enumeration value="DTMF6" />
+                    <enumeration value="DTMF7" />
+                    <enumeration value="DTMF8" />
+                    <enumeration value="DTMF9" />
+                    <enumeration value="DTMFSTR" />
+                    <enumeration value="DTMFPND" />
+                    <enumeration value="DTMFA" />
+                    <enumeration value="DTMFB" />
+                    <enumeration value="DTMFC" />
+                    <enumeration value="DTMFD" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="privateCode" access="readWrite">
+            <syntax>
+                <list minItems="0" maxItems="16" />
+                <string>
+                    <size minLength="0" maxLength="256" />
+                    <enumeration value="DTMFERROR" />
+                    <enumeration value="DTMF0" />
+                    <enumeration value="DTMF1" />
+                    <enumeration value="DTMF2" />
+                    <enumeration value="DTMF3" />
+                    <enumeration value="DTMF4" />
+                    <enumeration value="DTMF5" />
+                    <enumeration value="DTMF6" />
+                    <enumeration value="DTMF7" />
+                    <enumeration value="DTMF8" />
+                    <enumeration value="DTMF9" />
+                    <enumeration value="DTMFSTR" />
+                    <enumeration value="DTMFPND" />
+                    <enumeration value="DTMFA" />
+                    <enumeration value="DTMFB" />
+                    <enumeration value="DTMFC" />
+                    <enumeration value="DTMFD" />
+                </string>
+                <default value="DTMFERROR" />
+            </syntax>
+        </parameter>
+        <parameter name="unavailCode" access="readWrite">
+            <syntax>
+                <list minItems="0" maxItems="16" />
+                <string>
+                    <size minLength="0" maxLength="256" />
+                    <enumeration value="DTMFERROR" />
+                    <enumeration value="DTMF0" />
+                    <enumeration value="DTMF1" />
+                    <enumeration value="DTMF2" />
+                    <enumeration value="DTMF3" />
+                    <enumeration value="DTMF4" />
+                    <enumeration value="DTMF5" />
+                    <enumeration value="DTMF6" />
+                    <enumeration value="DTMF7" />
+                    <enumeration value="DTMF8" />
+                    <enumeration value="DTMF9" />
+                    <enumeration value="DTMFSTR" />
+                    <enumeration value="DTMFPND" />
+                    <enumeration value="DTMFA" />
+                    <enumeration value="DTMFB" />
+                    <enumeration value="DTMFC" />
+                    <enumeration value="DTMFD" />
+                </string>
+                <default value="DTMFERROR" />
+            </syntax>
+        </parameter>
+        <parameter name="errorCode" access="readWrite">
+            <syntax>
+                <list minItems="0" maxItems="16" />
+                <string>
+                    <size minLength="0" maxLength="256" />
+                    <enumeration value="DTMFERROR" />
+                    <enumeration value="DTMF0" />
+                    <enumeration value="DTMF1" />
+                    <enumeration value="DTMF2" />
+                    <enumeration value="DTMF3" />
+                    <enumeration value="DTMF4" />
+                    <enumeration value="DTMF5" />
+                    <enumeration value="DTMF6" />
+                    <enumeration value="DTMF7" />
+                    <enumeration value="DTMF8" />
+                    <enumeration value="DTMF9" />
+                    <enumeration value="DTMFSTR" />
+                    <enumeration value="DTMFPND" />
+                    <enumeration value="DTMFA" />
+                    <enumeration value="DTMFB" />
+                    <enumeration value="DTMFC" />
+                    <enumeration value="DTMFD" />
+                </string>
+                <default value="DTMFERROR" />
+            </syntax>
+        </parameter>
+        <parameter name="redirectingCode" access="readWrite">
+            <syntax>
+                <string>
+                    <size minLength="0" maxLength="10" />
+                    <enumeration value="DTMFERROR" />
+                    <enumeration value="DTMF0" />
+                    <enumeration value="DTMF1" />
+                    <enumeration value="DTMF2" />
+                    <enumeration value="DTMF3" />
+                    <enumeration value="DTMF4" />
+                    <enumeration value="DTMF5" />
+                    <enumeration value="DTMF6" />
+                    <enumeration value="DTMF7" />
+                    <enumeration value="DTMF8" />
+                    <enumeration value="DTMF9" />
+                    <enumeration value="DTMFSTR" />
+                    <enumeration value="DTMFPND" />
+                    <enumeration value="DTMFA" />
+                    <enumeration value="DTMFB" />
+                    <enumeration value="DTMFC" />
+                    <enumeration value="DTMFD" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="informationCode" access="readWrite">
+            <syntax>
+                <string>
+                    <size minLength="0" maxLength="10" />
+                    <enumeration value="DTMFERROR" />
+                    <enumeration value="DTMF0" />
+                    <enumeration value="DTMF1" />
+                    <enumeration value="DTMF2" />
+                    <enumeration value="DTMF3" />
+                    <enumeration value="DTMF4" />
+                    <enumeration value="DTMF5" />
+                    <enumeration value="DTMF6" />
+                    <enumeration value="DTMF7" />
+                    <enumeration value="DTMF8" />
+                    <enumeration value="DTMF9" />
+                    <enumeration value="DTMFSTR" />
+                    <enumeration value="DTMFPND" />
+                    <enumeration value="DTMFA" />
+                    <enumeration value="DTMFB" />
+                    <enumeration value="DTMFC" />
+                    <enumeration value="DTMFD" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="DTMFpauseTimeout" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <range minInclusive="0" maxInclusive="65534" step="1" />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="DTMFsessionTimeout" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <range minInclusive="0" maxInclusive="65534" step="1" />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="ringAfterClidTimeout" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <range minInclusive="0" maxInclusive="65534" step="1" />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+    </object>
+    <object name="Services.VoiceService.{i}.POTS.X_ADB_VMWI." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh">
+        <parameter name="VMWIMsgFormat" access="readWrite">
+            <syntax>
+                <string>
+                    <enumeration value="SDMF" />
+                    <enumeration value="MDMF" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="VMWIMode" access="readWrite">
+            <syntax>
+                <string>
+                    <enumeration value="OSI" />
+                    <enumeration value="DTAS" />
+                    <enumeration value="RPAS" />
+                    <enumeration value="LRAS" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="VMWISigProtocol" access="readWrite">
+            <syntax>
+                <string>
+                    <enumeration value="FSK" />
+                    <enumeration value="DTMF" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="VMWIFskAfterDTAS" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="VMWIFskAfterRPAS" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+        <parameter name="VMWIDTASAfterLR" access="readWrite">
+            <syntax>
+                <unsignedInt />
+                <units value="ms" />
+            </syntax>
+        </parameter>
+    </object>
+    <object name="Services.VoiceService.{i}.POTS.Ringer.X_ADB_RingSignal." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh">
+        <parameter name="PowerRingFrequency" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+        <parameter name="RingWaveform" access="readWrite">
+            <syntax>
+                <string>
+                    <enumeration value="sine" />
+                    <enumeration value="trapezoid" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="HighVoltageRingSupport" access="readWrite">
+            <syntax>
+                <boolean />
+                <default value="false" />
+            </syntax>
+        </parameter>
+        <parameter name="RingVoltage" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+        <parameter name="RingDCOffset" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+    </object>
+    <object name="Services.VoiceService.{i}.X_ADB_GenericEndpoint." access="readOnly" minEntries="1" maxEntries="1" set="VoIPServiceV2.sh">
+        <parameter name="FaxDetection" access="readWrite">
+            <syntax>
+                <boolean />
+                <default value="true" />
+            </syntax>
+        </parameter>
+        <parameter name="PteDetectAdmin" access="readWrite">
+            <syntax>
+                <string>
+                    <enumeration value="n_america" />
+                    <enumeration value="general" />
+                    <enumeration value="japan" />
+                    <enumeration value="europe" />
+                    <enumeration value="australia" />
+                    <enumeration value="brazil" />
+                </string>
+                <default value="europe" />
+            </syntax>
+        </parameter>
+        <parameter name="PteMinDetectPower" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+        <parameter name="PveEgressVolume" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+        <parameter name="DtmfDbLevel" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+        <parameter name="DtmfPulseTime" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+        <parameter name="Rfc2833ToneLevel" access="readWrite">
+            <syntax>
+                <unsignedInt />
+            </syntax>
+        </parameter>
+    </object>
+</datamodel>

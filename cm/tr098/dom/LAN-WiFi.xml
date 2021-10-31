@@ -1,3 +1,668 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="WiFi" version="2.0"><object name="LANDevice.{i}.WLANConfiguration.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LANWLANConfigurationNumberOfEntries" add="TR098_WLANConfiguration.sh" del="TR098_WLANConfiguration.sh" set="TR098_WLANConfiguration.sh"><parameter name="X_ADB_TR181Name" excludeUser="CWMP" access="readOnly"><syntax><string><pathRef targetParent="Device.WiFi.Radio." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="X_ADB_TR181_SSID" excludeUser="CWMP" access="readOnly"><syntax><string><pathRef targetParent="Device.WiFi.SSID." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="X_ADB_TR181_AP" excludeUser="CWMP" access="readOnly"><syntax><string><pathRef targetParent="Device.WiFi.AccessPoint." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="AutoChannelEnable" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n"><syntax><boolean /></syntax></parameter><parameter name="AutoRateFallBackEnabled" access="readWrite" supported="no"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="BasicAuthenticationMode" access="readWrite" aliasOnGet="%s(None)" store="no"><syntax><string><enumeration value="None" /><enumeration value="SharedAuthentication" /></string><default value="None" /></syntax></parameter><parameter name="BasicDataTransmitRates" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).X_ADB_BasicDataTransmitRates"><syntax><list><size minLength="0" maxLength="256" /></list><string /></syntax></parameter><parameter name="BasicEncryptionModes" access="readWrite"><syntax><string><enumeration value="None" /><enumeration value="WEPEncryption" /></string><default value="None" /></syntax></parameter><parameter name="BeaconType" access="readWrite" get="TR098_WLANConfiguration.sh"><syntax><string><enumeration value="None" /><enumeration value="Basic" /><enumeration value="WPA" /><enumeration value="11i" /><enumeration value="WPAand11i" /></string><default value="None" /></syntax></parameter><parameter name="BeaconAdvertisementEnabled" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).Enable"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="AuthenticationServiceMode" access="readWrite"><syntax><string><enumeration value="None" /></string><default value="None" /></syntax></parameter><parameter name="PeerBSSID" access="readWrite" supported="no"><syntax><string /></syntax></parameter><parameter name="BSSID" access="readOnly" key="yes" aliasOnGet="%(%p.X_ADB_TR181_SSID).%n"><syntax><string /></syntax></parameter><parameter name="Channel" access="readWrite" get="TR098_WLANConfiguration.sh"><syntax><unsignedInt><range minInclusive="0" maxInclusive="255" step="1" /></unsignedInt></syntax></parameter><parameter name="ChannelsInUse" access="readOnly" get="TR098_WLANConfiguration.sh"><syntax><list><size minLength="0" maxLength="1024" /></list><string /></syntax></parameter><parameter name="Enable" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_SSID).%n"><syntax><boolean /></syntax></parameter><parameter name="KeyPassphrase" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).Security.%n"><syntax hidden="true" mangled="true"><string><size minLength="0" maxLength="63" /></string></syntax></parameter><parameter name="LocationDescription" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).X_ADB_LocationDescription"><syntax><string><size minLength="0" maxLength="4096" /></string><default value="" /></syntax></parameter><parameter name="MACAddressControlEnabled" access="readWrite" get="TR098_WLANConfiguration.sh"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="MaxBitRate" access="readWrite" get="TR098_WLANConfiguration.sh"><syntax><string><size minLength="0" maxLength="4" /></string></syntax></parameter><parameter name="Name" access="readOnly" aliasOnGet="%(%p.X_ADB_TR181_SSID).%n"><syntax><string><size minLength="0" maxLength="16" /></string></syntax></parameter><parameter name="OperationalDataTransmitRates" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).X_ADB_OperationalDataTransmitRates"><syntax><list><size minLength="0" maxLength="256" /></list><string /></syntax></parameter><parameter name="PossibleChannels" access="readOnly" get="TR098_WLANConfiguration.sh"><syntax><list><size minLength="0" maxLength="1024" /></list><string /></syntax></parameter><parameter name="PossibleDataTransmitRates" access="readOnly"><syntax><list><size minLength="0" maxLength="256" /></list><string /></syntax></parameter><parameter name="RadioEnabled" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).Enable"><syntax><boolean /></syntax></parameter><parameter name="RegulatoryDomain" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n"><syntax><string><size minLength="3" maxLength="3" /><pattern value="[A-Z][A-Z][ OI]" /></string></syntax></parameter><parameter name="Standard" access="readOnly" get="TR098_WLANConfiguration.sh"><syntax><string><enumeration value="a" /><enumeration value="b" /><enumeration value="g" /><enumeration value="g-only" /><enumeration value="n" /></string></syntax></parameter><parameter name="SSID" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_SSID).%n" aliasOnSet="%(%p.X_ADB_TR181_SSID).%n"><syntax><string><size minLength="0" maxLength="32" /></string></syntax></parameter><parameter name="SSIDAdvertisementEnabled" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).%n"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="Status" access="readOnly"><syntax><string><enumeration value="Up" /><enumeration value="Error" /><enumeration value="Disabled" /></string><default value="Disabled" /></syntax></parameter><parameter name="DeviceOperationMode" access="readWrite"><syntax><string><enumeration value="InfrastructureAccessPoint" /></string><default value="InfrastructureAccessPoint" /></syntax></parameter><parameter name="DistanceFromRoot" access="readOnly"><syntax><unsignedInt /><default value="1" /></syntax></parameter><parameter name="TotalAssociations" access="readOnly" activeNotify="canDeny" aliasOnGet="%(%p.X_ADB_TR181_AP).AssociatedDeviceNumberOfEntries"><syntax><unsignedInt /></syntax></parameter><parameter name="TotalBytesReceived" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="TotalBytesSent" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="TotalPacketsReceived" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="TotalPacketsSent" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="TransmitPower" access="readWrite" get="TR098_WLANConfiguration.sh"><syntax><unsignedInt><range minInclusive="0" maxInclusive="100" step="1" /></unsignedInt></syntax></parameter><parameter name="TransmitPowerSupported" access="readOnly" get="TR098_WLANConfiguration.sh"><syntax><list><size minLength="0" maxLength="64" /></list><unsignedInt><range minInclusive="0" maxInclusive="100" step="1" /></unsignedInt></syntax></parameter><parameter name="WEPEncryptionLevel" access="readOnly" get="TR098_WLANConfiguration.sh"><syntax><list><size minLength="0" maxLength="64" /></list><string><enumeration value="Disabled" /><enumeration value="40-bit" /><enumeration value="104-bit" /></string><default value="Disabled" /></syntax></parameter><parameter name="WEPKeyIndex" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="4" step="1" /></unsignedInt><default value="1" /></syntax></parameter><parameter name="WPAAuthenticationMode" access="readWrite"><syntax><string><enumeration value="PSKAuthentication" /></string><default value="PSKAuthentication" /></syntax></parameter><parameter name="WPAEncryptionModes" access="readWrite"><syntax><string><enumeration value="TKIPEncryption" /><enumeration value="AESEncryption" /><enumeration value="TKIPandAESEncryption" /></string><default value="TKIPEncryption" /></syntax></parameter><parameter name="IEEE11iAuthenticationMode" access="readWrite"><syntax><string><enumeration value="PSKAuthentication" /></string><default value="PSKAuthentication" /></syntax></parameter><parameter name="IEEE11iEncryptionModes" access="readWrite"><syntax><string><enumeration value="TKIPEncryption" /><enumeration value="AESEncryption" /><enumeration value="TKIPandAESEncryption" /></string><default value="AESEncryption" /></syntax></parameter><parameter name="InsecureOOBAccessEnabled" access="readOnly"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="UAPSDSupported" access="readOnly" aliasOnGet="%(%p.X_ADB_TR181_AP).UAPSDCapability"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="UAPSDEnable" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).UAPSDEnable"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="WMMSupported" access="readOnly" aliasOnGet="%(%p.X_ADB_TR181_AP).WMMCapability"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="WMMEnable" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).WMMEnable"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="X_ADB_WMMGlobalEnable" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="X_ADB_WMMGlobalNoAck" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_STBC_Rx" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_STBC_Tx" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_AMPDU" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="X_ADB_InterferenceSwitchCount" access="readOnly" aliasOnSet="%(%p.X_ADB_TR181Name).X_ADB_InterferenceSwitchCount" aliasOnGet="%(%p.X_ADB_TR181Name).X_ADB_InterferenceSwitchCount"><syntax><unsignedInt><range minInclusive="0" maxInclusive="10" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_LockoutPeriod" access="readWrite" aliasOnSet="%(%p.X_ADB_TR181Name).X_ADB_LockoutPeriod" aliasOnGet="%(%p.X_ADB_TR181Name).X_ADB_LockoutPeriod"><syntax><unsignedInt><range minInclusive="60" maxInclusive="86400" step="1" /><units value="seconds" /></unsignedInt></syntax></parameter></object><object name="LANDevice.{i}.WLANConfiguration.{i}.AssociatedDevice.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" store="no"><parameter name="X_ADB_TR181Name" excludeUser="CWMP" access="readOnly"><syntax><string /><default value="Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}" /></syntax></parameter><parameter name="AssociatedDeviceAuthenticationState" access="readOnly" activeNotify="canDeny" aliasOnGet="%(%p.X_ADB_TR181Name).AuthenticationState"><syntax><boolean /></syntax></parameter><parameter name="AssociatedDeviceIPAddress" access="readOnly" activeNotify="canDeny" aliasOnGet="Device.Hosts.Host.[PhysAddress=%(%(%p.X_ADB_TR181Name).MACAddress)].IPAddress"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="AssociatedDeviceMACAddress" access="readOnly" activeNotify="canDeny" key="yes" aliasOnGet="%(%p.X_ADB_TR181Name).MACAddress"><syntax><string><size minLength="0" maxLength="17" /><pattern value="" /><pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" /></string></syntax></parameter></object><object name="LANDevice.{i}.WLANConfiguration.{i}.PreSharedKey.{i}." access="readOnly" minEntries="10" maxEntries="10" set="TR098_WLANConfiguration.sh"><parameter name="KeyPassphrase" access="readWrite" aliasOnGet="%(%p1.X_ADB_TR181_AP).Security.KeyPassphrase"><syntax hidden="true" mangled="true"><string><size minLength="0" maxLength="63" /><pattern value="[ -~]{0,}" /></string></syntax></parameter><parameter name="PreSharedKey" access="readWrite" aliasOnGet="%(%p1.X_ADB_TR181_AP).Security.PreSharedKey"><syntax hidden="true" mangled="true"><string><pattern value="[0-9a-fA-F]{64}" /><pattern value="" /></string></syntax></parameter><parameter name="AssociatedDeviceMACAddress" access="readWrite"><syntax><string><dataType ref="MACAddress" /></string></syntax></parameter></object><object name="LANDevice.{i}.WLANConfiguration.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1"><parameter name="BroadcastPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="BroadcastPacketsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="DiscardPacketsReceived" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="DiscardPacketsSent" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="MulticastPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="MulticastPacketsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="UnicastPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="UnicastPacketsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="UnknownProtoPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter></object><object name="LANDevice.{i}.WLANConfiguration.{i}.WEPKey.{i}." access="readOnly" minEntries="4" maxEntries="4"><parameter name="WEPKey" access="readWrite" aliasOnGet="%(%p1.X_ADB_TR181_AP).Security.WEPKey" set="TR098_WLANConfiguration.sh"><syntax hidden="true" mangled="true"><string><pattern value="[0-9a-fA-F]{10}" /><pattern value="[0-9a-fA-F]{26}" /></string></syntax></parameter></object><object name="LANDevice.{i}.WLANConfiguration.{i}.WPS." access="readOnly" minEntries="1" maxEntries="1"><parameter name="ConfigMethodsEnabled" access="readWrite" get="TR098_WLANConfiguration.sh" set="TR098_WLANConfiguration.sh"><syntax><list /><string /><default value="PushButton" /></syntax></parameter><parameter name="ConfigMethodsSupported" access="readOnly" get="TR098_WLANConfiguration.sh" set="TR098_WLANConfiguration.sh"><syntax><list /><string><enumeration value="USBFlashDrive" /><enumeration value="Ethernet" /><enumeration value="Label" /><enumeration value="Display" /><enumeration value="ExternalNFCToken" /><enumeration value="IntegratedNFCToken" /><enumeration value="NFCInterface" /><enumeration value="PushButton" /><enumeration value="Keypad" /></string><default value="PushButton" /></syntax></parameter><parameter name="ConfigurationState" access="readOnly" aliasOnGet="%(%p1.X_ADB_TR181_AP).WPS.X_ADB_ConfigurationState"><syntax><string><enumeration value="Not configured" /><enumeration value="Configured" /></string></syntax></parameter><parameter name="DeviceName" access="readOnly" aliasOnGet="Device.DeviceInfo.ModelName" store="no"><syntax><string><size minLength="0" maxLength="32" /></string></syntax></parameter><parameter name="DevicePassword" access="readWrite"><syntax hidden="true"><unsignedInt /></syntax></parameter><parameter name="Enable" access="readWrite" aliasOnGet="%(%p1.X_ADB_TR181_AP).WPS.%n" aliasOnSet="%(%p1.X_ADB_TR181_AP).WPS.%n"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="LastConfigurationError" access="readOnly" aliasOnGet="%s(NoError)" store="no"><syntax><string><enumeration value="NoError" /><enumeration value="DecryptionCRCFailure" /><enumeration value="SignalTooWeak" /><enumeration value="CouldntConnectToRegistrar" /><enumeration value="RogueActivitySuspected" /><enumeration value="DeviceBusy" /><enumeration value="SetupLocked" /><enumeration value="MessageTimeout" /><enumeration value="RegistrationSessionTimeout" /><enumeration value="DevicePasswordAuthFailure" /></string></syntax></parameter><parameter name="RegistrarEstablished" access="readOnly" aliasOnGet="%s(false)" store="no"><syntax><boolean /></syntax></parameter><parameter name="RegistrarNumberOfEntries" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="SetupLock" access="readWrite" aliasOnGet="%(%p1.X_ADB_TR181_AP).WPS.X_ADB_SetupLock" aliasOnSet="%(%p1.X_ADB_TR181_AP).WPS.X_ADB_SetupLock"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="SetupLockedState" access="readOnly" get="TR098_WPS.sh"><syntax><string><enumeration value="Unlocked" /><enumeration value="LockedByLocalManagement" /><enumeration value="LockedByRemoteManagement" /><enumeration value="PINRetryLimitReached" /></string><default value="Unlocked" /></syntax></parameter><parameter name="UUID" access="readOnly"><syntax><string><size minLength="0" maxLength="36" /><pattern value="[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}" /></string></syntax></parameter><parameter name="Version" access="readOnly"><syntax><unsignedInt /><default value="2" /></syntax></parameter></object><object name="LANDevice.{i}.WLANConfiguration.{i}.WPS.Registrar.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="RegistrarNumberOfEntries"><parameter name="DeviceName" access="readOnly"><syntax><string><size minLength="0" maxLength="32" /></string></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /></syntax></parameter><parameter name="UUID" access="readOnly" key="yes"><syntax><string><size minLength="0" maxLength="36" /><pattern value="[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}" /></string></syntax></parameter></object></datamodel>
+<datamodel name="WiFi" version="2.0">
+	<object name="LANDevice.{i}.WLANConfiguration.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LANWLANConfigurationNumberOfEntries" add="TR098_WLANConfiguration.sh" del="TR098_WLANConfiguration.sh" set="TR098_WLANConfiguration.sh">
+		<parameter name="X_ADB_TR181Name" excludeUser="CWMP" access="readOnly">
+			<syntax>
+				<string>
+					<pathRef targetParent="Device.WiFi.Radio." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TR181_SSID" excludeUser="CWMP" access="readOnly">
+			<syntax>
+				<string>
+					<pathRef targetParent="Device.WiFi.SSID." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TR181_AP" excludeUser="CWMP" access="readOnly">
+			<syntax>
+				<string>
+					<pathRef targetParent="Device.WiFi.AccessPoint." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="AutoChannelEnable" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="AutoRateFallBackEnabled" access="readWrite" supported="no">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="BasicAuthenticationMode" access="readWrite" aliasOnGet="%s(None)" store="no">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="SharedAuthentication" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="BasicDataTransmitRates" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).X_ADB_BasicDataTransmitRates">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="256" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="BasicEncryptionModes" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="WEPEncryption" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="BeaconType" access="readWrite" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Basic" />
+					<enumeration value="WPA" />
+					<enumeration value="11i" />
+					<enumeration value="WPAand11i" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="BeaconAdvertisementEnabled" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).Enable">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="AuthenticationServiceMode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="PeerBSSID" access="readWrite" supported="no">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="BSSID" access="readOnly" key="yes" aliasOnGet="%(%p.X_ADB_TR181_SSID).%n">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="Channel" access="readWrite" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="255" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="ChannelsInUse" access="readOnly" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="1024" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_SSID).%n">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="KeyPassphrase" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).Security.%n">
+			<syntax hidden="true" mangled="true">
+				<string>
+					<size minLength="0" maxLength="63" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="LocationDescription" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).X_ADB_LocationDescription">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="4096" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="MACAddressControlEnabled" access="readWrite" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="MaxBitRate" access="readWrite" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="4" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readOnly" aliasOnGet="%(%p.X_ADB_TR181_SSID).%n">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="16" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="OperationalDataTransmitRates" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).X_ADB_OperationalDataTransmitRates">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="256" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="PossibleChannels" access="readOnly" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="1024" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="PossibleDataTransmitRates" access="readOnly">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="256" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="RadioEnabled" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).Enable">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="RegulatoryDomain" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n">
+			<syntax>
+				<string>
+					<size minLength="3" maxLength="3" />
+					<pattern value="[A-Z][A-Z][ OI]" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Standard" access="readOnly" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<string>
+					<enumeration value="a" />
+					<enumeration value="b" />
+					<enumeration value="g" />
+					<enumeration value="g-only" />
+					<enumeration value="n" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SSID" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_SSID).%n" aliasOnSet="%(%p.X_ADB_TR181_SSID).%n">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="32" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SSIDAdvertisementEnabled" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).%n">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Up" />
+					<enumeration value="Error" />
+					<enumeration value="Disabled" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="DeviceOperationMode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="InfrastructureAccessPoint" />
+				</string>
+				<default value="InfrastructureAccessPoint" />
+			</syntax>
+		</parameter>
+		<parameter name="DistanceFromRoot" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="1" />
+			</syntax>
+		</parameter>
+		<parameter name="TotalAssociations" access="readOnly" activeNotify="canDeny" aliasOnGet="%(%p.X_ADB_TR181_AP).AssociatedDeviceNumberOfEntries">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="TotalBytesReceived" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="TotalBytesSent" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="TotalPacketsReceived" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="TotalPacketsSent" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="TransmitPower" access="readWrite" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="100" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="TransmitPowerSupported" access="readOnly" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="64" />
+				</list>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="100" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="WEPEncryptionLevel" access="readOnly" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="64" />
+				</list>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="40-bit" />
+					<enumeration value="104-bit" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="WEPKeyIndex" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="4" step="1" />
+				</unsignedInt>
+				<default value="1" />
+			</syntax>
+		</parameter>
+		<parameter name="WPAAuthenticationMode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="PSKAuthentication" />
+				</string>
+				<default value="PSKAuthentication" />
+			</syntax>
+		</parameter>
+		<parameter name="WPAEncryptionModes" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="TKIPEncryption" />
+					<enumeration value="AESEncryption" />
+					<enumeration value="TKIPandAESEncryption" />
+				</string>
+				<default value="TKIPEncryption" />
+			</syntax>
+		</parameter>
+		<parameter name="IEEE11iAuthenticationMode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="PSKAuthentication" />
+				</string>
+				<default value="PSKAuthentication" />
+			</syntax>
+		</parameter>
+		<parameter name="IEEE11iEncryptionModes" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="TKIPEncryption" />
+					<enumeration value="AESEncryption" />
+					<enumeration value="TKIPandAESEncryption" />
+				</string>
+				<default value="AESEncryption" />
+			</syntax>
+		</parameter>
+		<parameter name="InsecureOOBAccessEnabled" access="readOnly">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="UAPSDSupported" access="readOnly" aliasOnGet="%(%p.X_ADB_TR181_AP).UAPSDCapability">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="UAPSDEnable" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).UAPSDEnable">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="WMMSupported" access="readOnly" aliasOnGet="%(%p.X_ADB_TR181_AP).WMMCapability">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="WMMEnable" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181_AP).WMMEnable">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_WMMGlobalEnable" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_WMMGlobalNoAck" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_STBC_Rx" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_STBC_Tx" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AMPDU" access="readWrite" aliasOnGet="%(%p.X_ADB_TR181Name).%n">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_InterferenceSwitchCount" access="readOnly" aliasOnSet="%(%p.X_ADB_TR181Name).X_ADB_InterferenceSwitchCount" aliasOnGet="%(%p.X_ADB_TR181Name).X_ADB_InterferenceSwitchCount">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="10" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LockoutPeriod" access="readWrite" aliasOnSet="%(%p.X_ADB_TR181Name).X_ADB_LockoutPeriod" aliasOnGet="%(%p.X_ADB_TR181Name).X_ADB_LockoutPeriod">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="60" maxInclusive="86400" step="1" />
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="LANDevice.{i}.WLANConfiguration.{i}.AssociatedDevice.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" store="no">
+		<parameter name="X_ADB_TR181Name" excludeUser="CWMP" access="readOnly">
+			<syntax>
+				<string />
+				<default value="Device.WiFi.AccessPoint.{i}.AssociatedDevice.{i}" />
+			</syntax>
+		</parameter>
+		<parameter name="AssociatedDeviceAuthenticationState" access="readOnly" activeNotify="canDeny" aliasOnGet="%(%p.X_ADB_TR181Name).AuthenticationState">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="AssociatedDeviceIPAddress" access="readOnly" activeNotify="canDeny" aliasOnGet="Device.Hosts.Host.[PhysAddress=%(%(%p.X_ADB_TR181Name).MACAddress)].IPAddress">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="AssociatedDeviceMACAddress" access="readOnly" activeNotify="canDeny" key="yes" aliasOnGet="%(%p.X_ADB_TR181Name).MACAddress">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="17" />
+					<pattern value="" />
+					<pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="LANDevice.{i}.WLANConfiguration.{i}.PreSharedKey.{i}." access="readOnly" minEntries="10" maxEntries="10" set="TR098_WLANConfiguration.sh">
+		<parameter name="KeyPassphrase" access="readWrite" aliasOnGet="%(%p1.X_ADB_TR181_AP).Security.KeyPassphrase">
+			<syntax hidden="true" mangled="true">
+				<string>
+					<size minLength="0" maxLength="63" />
+					<pattern value="[ -~]{0,}" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="PreSharedKey" access="readWrite" aliasOnGet="%(%p1.X_ADB_TR181_AP).Security.PreSharedKey">
+			<syntax hidden="true" mangled="true">
+				<string>
+					<pattern value="[0-9a-fA-F]{64}" />
+					<pattern value="" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="AssociatedDeviceMACAddress" access="readWrite">
+			<syntax>
+				<string>
+					<dataType ref="MACAddress" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="LANDevice.{i}.WLANConfiguration.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="BroadcastPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="BroadcastPacketsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="DiscardPacketsReceived" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="DiscardPacketsSent" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="TR098_WLANConfiguration.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="MulticastPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="MulticastPacketsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="UnicastPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="UnicastPacketsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="UnknownProtoPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="LANDevice.{i}.WLANConfiguration.{i}.WEPKey.{i}." access="readOnly" minEntries="4" maxEntries="4">
+		<parameter name="WEPKey" access="readWrite" aliasOnGet="%(%p1.X_ADB_TR181_AP).Security.WEPKey" set="TR098_WLANConfiguration.sh">
+			<syntax hidden="true" mangled="true">
+				<string>
+					<pattern value="[0-9a-fA-F]{10}" />
+					<pattern value="[0-9a-fA-F]{26}" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="LANDevice.{i}.WLANConfiguration.{i}.WPS." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="ConfigMethodsEnabled" access="readWrite" get="TR098_WLANConfiguration.sh" set="TR098_WLANConfiguration.sh">
+			<syntax>
+				<list />
+				<string />
+				<default value="PushButton" />
+			</syntax>
+		</parameter>
+		<parameter name="ConfigMethodsSupported" access="readOnly" get="TR098_WLANConfiguration.sh" set="TR098_WLANConfiguration.sh">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="USBFlashDrive" />
+					<enumeration value="Ethernet" />
+					<enumeration value="Label" />
+					<enumeration value="Display" />
+					<enumeration value="ExternalNFCToken" />
+					<enumeration value="IntegratedNFCToken" />
+					<enumeration value="NFCInterface" />
+					<enumeration value="PushButton" />
+					<enumeration value="Keypad" />
+				</string>
+				<default value="PushButton" />
+			</syntax>
+		</parameter>
+		<parameter name="ConfigurationState" access="readOnly" aliasOnGet="%(%p1.X_ADB_TR181_AP).WPS.X_ADB_ConfigurationState">
+			<syntax>
+				<string>
+					<enumeration value="Not configured" />
+					<enumeration value="Configured" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="DeviceName" access="readOnly" aliasOnGet="Device.DeviceInfo.ModelName" store="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="32" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="DevicePassword" access="readWrite">
+			<syntax hidden="true">
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite" aliasOnGet="%(%p1.X_ADB_TR181_AP).WPS.%n" aliasOnSet="%(%p1.X_ADB_TR181_AP).WPS.%n">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="LastConfigurationError" access="readOnly" aliasOnGet="%s(NoError)" store="no">
+			<syntax>
+				<string>
+					<enumeration value="NoError" />
+					<enumeration value="DecryptionCRCFailure" />
+					<enumeration value="SignalTooWeak" />
+					<enumeration value="CouldntConnectToRegistrar" />
+					<enumeration value="RogueActivitySuspected" />
+					<enumeration value="DeviceBusy" />
+					<enumeration value="SetupLocked" />
+					<enumeration value="MessageTimeout" />
+					<enumeration value="RegistrationSessionTimeout" />
+					<enumeration value="DevicePasswordAuthFailure" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="RegistrarEstablished" access="readOnly" aliasOnGet="%s(false)" store="no">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="RegistrarNumberOfEntries" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="SetupLock" access="readWrite" aliasOnGet="%(%p1.X_ADB_TR181_AP).WPS.X_ADB_SetupLock" aliasOnSet="%(%p1.X_ADB_TR181_AP).WPS.X_ADB_SetupLock">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="SetupLockedState" access="readOnly" get="TR098_WPS.sh">
+			<syntax>
+				<string>
+					<enumeration value="Unlocked" />
+					<enumeration value="LockedByLocalManagement" />
+					<enumeration value="LockedByRemoteManagement" />
+					<enumeration value="PINRetryLimitReached" />
+				</string>
+				<default value="Unlocked" />
+			</syntax>
+		</parameter>
+		<parameter name="UUID" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="36" />
+					<pattern value="[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Version" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="2" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="LANDevice.{i}.WLANConfiguration.{i}.WPS.Registrar.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="RegistrarNumberOfEntries">
+		<parameter name="DeviceName" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="32" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="UUID" access="readOnly" key="yes">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="36" />
+					<pattern value="[0-9A-Fa-f]{8}-([0-9A-Fa-f]{4}-){3}[0-9A-Fa-f]{12}" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

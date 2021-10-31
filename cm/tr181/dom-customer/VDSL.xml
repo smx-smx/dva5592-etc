@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DSL" version="2.0"><object name="DSL.Line.{i}."><parameter name="X_ADB_DynamicD" excludeUser="CWMP" /><parameter name="X_ADB_DynamicF" excludeUser="CWMP" /></object></datamodel>
+<datamodel name="DSL" version="2.0">
+	<object name="DSL.Line.{i}.">
+		<parameter name="X_ADB_DynamicD" excludeUser="CWMP" />
+		<parameter name="X_ADB_DynamicF" excludeUser="CWMP" />
+	</object>
+</datamodel>

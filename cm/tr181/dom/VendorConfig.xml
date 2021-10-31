@@ -1,3 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="VendorConfig" version="2.0"><object name="DeviceInfo.VendorConfigFile.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="VendorConfigFileNumberOfEntries"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Name" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Version" access="readOnly"><syntax><string><size minLength="0" maxLength="16" /></string></syntax></parameter><parameter name="Date" access="readOnly"><syntax><dateTime /></syntax></parameter><parameter name="Description" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="UseForBackupRestore" access="readOnly"><syntax><boolean /><default value="true" /></syntax></parameter></object></datamodel>
+<datamodel name="VendorConfig" version="2.0">
+	<object name="DeviceInfo.VendorConfigFile.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="VendorConfigFileNumberOfEntries">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Version" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="16" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Date" access="readOnly">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="Description" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="UseForBackupRestore" access="readOnly">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

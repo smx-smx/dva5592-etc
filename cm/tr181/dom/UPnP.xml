@@ -1,3 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="UPnP." access="readOnly" minEntries="1" maxEntries="1" /><object name="UPnP.Device." access="readOnly" minEntries="0" maxEntries="1" enableParameter="Enable" set="UPnP.sh" add="UPnP.sh" del="UPnP.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="UPnPIGD" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="UPnPMediaServer" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="X_ADB_ExternalInterface" access="readWrite"><syntax><string><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_CurrentIface" access="readWrite" store="no"><syntax><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_Port" access="readWrite" store="no"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_AutoExternalInterface" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_NotifyInterval" access="readWrite"><syntax><unsignedInt /><default value="30" /></syntax></parameter><parameter name="X_ADB_LanInterface" access="readWrite"><syntax><list /><string><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_FriendlyName" access="readOnly"><syntax><string><size minLength="0" maxLength="128" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_ModelName" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_ModelDescription" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_ManufacturerURL" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_ModelURL" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /></string><default value="" /></syntax></parameter></object><object name="UPnP.Device.Capabilities." access="readOnly" minEntries="1" maxEntries="1"><parameter name="UPnPArchitecture" access="readOnly"><syntax><unsignedInt /><default value="1" /></syntax></parameter><parameter name="UPnPArchitectureMinorVer" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="UPnPBasicDevice" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="UPnPIGD" access="readOnly"><syntax><unsignedInt /><default value="1" /></syntax></parameter><parameter name="UPnPMediaRenderer" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="UPnPMediaServer" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="UPnPQoSDevice" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="UPnPQoSPolicyHolder" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="UPnPWLANAccessPoint" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object></datamodel>
+<datamodel name="Services" version="2.0">
+	<object name="UPnP." access="readOnly" minEntries="1" maxEntries="1" />
+	<object name="UPnP.Device." access="readOnly" minEntries="0" maxEntries="1" enableParameter="Enable" set="UPnP.sh" add="UPnP.sh" del="UPnP.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="UPnPIGD" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="UPnPMediaServer" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ExternalInterface" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_CurrentIface" access="readWrite" store="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Port" access="readWrite" store="no">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AutoExternalInterface" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_NotifyInterval" access="readWrite">
+			<syntax>
+				<unsignedInt />
+				<default value="30" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LanInterface" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_FriendlyName" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="128" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ModelName" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ModelDescription" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ManufacturerURL" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ModelURL" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="UPnP.Device.Capabilities." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="UPnPArchitecture" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="1" />
+			</syntax>
+		</parameter>
+		<parameter name="UPnPArchitectureMinorVer" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="UPnPBasicDevice" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="UPnPIGD" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="1" />
+			</syntax>
+		</parameter>
+		<parameter name="UPnPMediaRenderer" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="UPnPMediaServer" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="UPnPQoSDevice" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="UPnPQoSPolicyHolder" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="UPnPWLANAccessPoint" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

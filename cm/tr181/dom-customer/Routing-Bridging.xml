@@ -1,3 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Routing-Bridging" version="2.0"><object name="Bridging.X_ADB_HWSwitch." excludeUser="CWMP" /><object name="Bridging.Bridge.{i}."><parameter name="X_ADB_TR098Reference" excludeUser="CWMP" /><parameter name="X_ADB_AllowLANRouting" excludeUser="CWMP" /><parameter name="X_ADB_MaxMTUSize" excludeUser="CWMP" /><parameter name="X_ADB_AutoMTU" excludeUser="CWMP" /><parameter name="X_ADB_CurrentMTUSize" excludeUser="CWMP" /><parameter name="X_ADB_STP" excludeUser="CWMP" /><parameter name="X_ADB_MulticastIsolation" excludeUser="CWMP" /><parameter name="X_ADB_Permissions" excludeUser="CWMP" /></object><object name="Bridging.Bridge.{i}.Port.{i}."><parameter name="X_ADB_TR098Reference" excludeUser="CWMP" /><parameter name="X_ADB_LastChange" excludeUser="CWMP" /><parameter name="X_ADB_FakePort" excludeUser="CWMP" /></object><object name="Bridging.Bridge.{i}.Port.{i}.Stats."><parameter name="X_ADB_Reset" excludeUser="CWMP" /></object><object name="Bridging.Bridge.{i}.VLAN.{i}."><parameter name="X_ADB_TR098Reference" excludeUser="CWMP" /></object><object name="Bridging.Filter.{i}."><parameter name="X_ADB_Timeout" excludeUser="CWMP" /></object><object name="Routing.Router.{i}."><parameter name="X_ADB_CheckConnectivity" excludeUser="CWMP" /></object><object name="Routing.Router.{i}.IPv4Forwarding.{i}."><parameter name="X_ADB_TR098Reference" excludeUser="CWMP" /><parameter name="X_ADB_AutoGateway" excludeUser="CWMP" /><parameter name="X_ADB_Permissions" excludeUser="CWMP" /><parameter name="X_ADB_MTU" excludeUser="CWMP" /></object></datamodel>
+<datamodel name="Routing-Bridging" version="2.0">
+	<object name="Bridging.X_ADB_HWSwitch." excludeUser="CWMP" />
+	<object name="Bridging.Bridge.{i}.">
+		<parameter name="X_ADB_TR098Reference" excludeUser="CWMP" />
+		<parameter name="X_ADB_AllowLANRouting" excludeUser="CWMP" />
+		<parameter name="X_ADB_MaxMTUSize" excludeUser="CWMP" />
+		<parameter name="X_ADB_AutoMTU" excludeUser="CWMP" />
+		<parameter name="X_ADB_CurrentMTUSize" excludeUser="CWMP" />
+		<parameter name="X_ADB_STP" excludeUser="CWMP" />
+		<parameter name="X_ADB_MulticastIsolation" excludeUser="CWMP" />
+		<parameter name="X_ADB_Permissions" excludeUser="CWMP" />
+	</object>
+	<object name="Bridging.Bridge.{i}.Port.{i}.">
+		<parameter name="X_ADB_TR098Reference" excludeUser="CWMP" />
+		<parameter name="X_ADB_LastChange" excludeUser="CWMP" />
+		<parameter name="X_ADB_FakePort" excludeUser="CWMP" />
+	</object>
+	<object name="Bridging.Bridge.{i}.Port.{i}.Stats.">
+		<parameter name="X_ADB_Reset" excludeUser="CWMP" />
+	</object>
+	<object name="Bridging.Bridge.{i}.VLAN.{i}.">
+		<parameter name="X_ADB_TR098Reference" excludeUser="CWMP" />
+	</object>
+	<object name="Bridging.Filter.{i}.">
+		<parameter name="X_ADB_Timeout" excludeUser="CWMP" />
+	</object>
+	<object name="Routing.Router.{i}.">
+		<parameter name="X_ADB_CheckConnectivity" excludeUser="CWMP" />
+	</object>
+	<object name="Routing.Router.{i}.IPv4Forwarding.{i}.">
+		<parameter name="X_ADB_TR098Reference" excludeUser="CWMP" />
+		<parameter name="X_ADB_AutoGateway" excludeUser="CWMP" />
+		<parameter name="X_ADB_Permissions" excludeUser="CWMP" />
+		<parameter name="X_ADB_MTU" excludeUser="CWMP" />
+	</object>
+</datamodel>

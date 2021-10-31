@@ -1,3 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="USB" version="2.0"><object name="LANDevice.{i}.LANUSBInterfaceConfig.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LANUSBInterfaceNumberOfEntries"><parameter name="X_ADB_TR181Name" excludeUser="CWMP" access="readWrite"><syntax><default value="USB.Interface.{i}" /><string><size minLength="0" maxLength="1024" /></string></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /></syntax></parameter><parameter name="MACAddress" access="readOnly" key="yes"><syntax><string><size minLength="0" maxLength="17" /><pattern value="" /><pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" /></string></syntax></parameter><parameter name="MACAddressControlEnabled" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Name" access="readOnly"><syntax><string><size minLength="0" maxLength="16" /></string></syntax></parameter><parameter name="Power" access="readOnly"><syntax><string><enumeration value="Self" /><enumeration value="Bus" /><enumeration value="Unknown" /></string></syntax></parameter><parameter name="Rate" access="readOnly"><syntax><string><enumeration value="Low" /><enumeration value="Full" /><enumeration value="High" /></string></syntax></parameter><parameter name="Standard" access="readOnly"><syntax><string><size minLength="0" maxLength="6" /></string></syntax></parameter><parameter name="Status" access="readOnly"><syntax><string><enumeration value="Up" /><enumeration value="NoLink" /><enumeration value="Error" /><enumeration value="Disabled" /></string></syntax></parameter><parameter name="Type" access="readOnly"><syntax><string><enumeration value="Host" /><enumeration value="Hub" /><enumeration value="Device" /></string></syntax></parameter></object><object name="LANDevice.{i}.LANUSBInterfaceConfig.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1"><parameter name="BroadcastPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="BroadcastPacketsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="BytesReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="BytesSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="CellsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="CellsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="DiscardPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="DiscardPacketsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="MulticastPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="MulticastPacketsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="UnicastPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="UnicastPacketsSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="UnknownProtoPacketsReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter></object></datamodel>
+<datamodel name="USB" version="2.0">
+	<object name="LANDevice.{i}.LANUSBInterfaceConfig.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LANUSBInterfaceNumberOfEntries">
+		<parameter name="X_ADB_TR181Name" excludeUser="CWMP" access="readWrite">
+			<syntax>
+				<default value="USB.Interface.{i}" />
+				<string>
+					<size minLength="0" maxLength="1024" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="MACAddress" access="readOnly" key="yes">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="17" />
+					<pattern value="" />
+					<pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="MACAddressControlEnabled" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="16" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Power" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Self" />
+					<enumeration value="Bus" />
+					<enumeration value="Unknown" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Rate" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Low" />
+					<enumeration value="Full" />
+					<enumeration value="High" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Standard" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="6" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Up" />
+					<enumeration value="NoLink" />
+					<enumeration value="Error" />
+					<enumeration value="Disabled" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Type" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Host" />
+					<enumeration value="Hub" />
+					<enumeration value="Device" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="LANDevice.{i}.LANUSBInterfaceConfig.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="BroadcastPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="BroadcastPacketsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="BytesReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="BytesSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="CellsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="CellsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="DiscardPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="DiscardPacketsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="MulticastPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="MulticastPacketsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="UnicastPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="UnicastPacketsSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="UnknownProtoPacketsReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

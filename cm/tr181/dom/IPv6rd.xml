@@ -1,3 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="IPv6" version="2.0"><object name="IPv6rd." access="readOnly" minEntries="1" maxEntries="1" set="IPv6rd.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="InterfaceSettingNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="IPv6rd.InterfaceSetting.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceSettingNumberOfEntries" set="IPv6rd.sh" del="IPv6rd.sh"><parameter name="AddressSource" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface.{i}.IPv4Address." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="AllTrafficToBorderRelay" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="BorderRelayIPv4Addresses" access="readWrite"><syntax><list maxItems="4" /><dataType ref="IPv4Address" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="IPv4MaskLength" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="32" step="1" /><units value="bits" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="SPIPv6Prefix" access="readWrite"><syntax><dataType ref="IPv6Prefix" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="TunnelInterface" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="TunneledInterface" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string></syntax></parameter></object><object name="IPv6rd.InterfaceSetting.{i}.X_ADB_Stats." access="readOnly" minEntries="1" maxEntries="1"><parameter name="X_ADB_Reset" access="readWrite" set="IPv6rd.sh"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="BytesSent" access="readOnly" get="IPv6rd.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="BytesReceived" access="readOnly" get="IPv6rd.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="PacketsSent" access="readOnly" get="IPv6rd.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="PacketsReceived" access="readOnly" get="IPv6rd.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="ErrorsReceived" access="readOnly" get="IPv6rd.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="DiscardPacketsReceived" access="readOnly" get="IPv6rd.sh"><syntax><unsignedInt /></syntax></parameter></object></datamodel>
+<datamodel name="IPv6" version="2.0">
+	<object name="IPv6rd." access="readOnly" minEntries="1" maxEntries="1" set="IPv6rd.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="InterfaceSettingNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPv6rd.InterfaceSetting.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceSettingNumberOfEntries" set="IPv6rd.sh" del="IPv6rd.sh">
+		<parameter name="AddressSource" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface.{i}.IPv4Address." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="AllTrafficToBorderRelay" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="BorderRelayIPv4Addresses" access="readWrite">
+			<syntax>
+				<list maxItems="4" />
+				<dataType ref="IPv4Address" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="IPv4MaskLength" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="32" step="1" />
+					<units value="bits" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="SPIPv6Prefix" access="readWrite">
+			<syntax>
+				<dataType ref="IPv6Prefix" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="TunnelInterface" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="TunneledInterface" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IPv6rd.InterfaceSetting.{i}.X_ADB_Stats." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="X_ADB_Reset" access="readWrite" set="IPv6rd.sh">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="BytesSent" access="readOnly" get="IPv6rd.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="BytesReceived" access="readOnly" get="IPv6rd.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="PacketsSent" access="readOnly" get="IPv6rd.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="PacketsReceived" access="readOnly" get="IPv6rd.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsReceived" access="readOnly" get="IPv6rd.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="DiscardPacketsReceived" access="readOnly" get="IPv6rd.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

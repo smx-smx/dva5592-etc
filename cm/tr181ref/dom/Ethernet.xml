@@ -1,3 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Ethernet" version="2.0"><object name="Ethernet.Interface.{i}."><parameter name="X_ADB_TR098Reference" access="readWrite"><syntax><string><pathRef targetParent="InternetGatewayDevice.LANDevice.{i}.LANEthernetInterfaceConfig." refType="strong" targetType="row" /><pathRef targetParent="InternetGatewayDevice.LANInterfaces.LANEthernetInterfaceConfig." refType="strong" targetType="row" /><pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANEthernetInterfaceConfig." refType="strong" targetType="object" /></string><default value="" /></syntax></parameter><parameter name="Upstream" set="TR098_ADD_EthernetIf.sh" /></object><object name="Ethernet.Link.{i}." del="TR098_ADD_EthLink.sh"><parameter name="X_ADB_TR098Reference" access="readWrite"><syntax><string><pathRef targetParent="InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement." refType="strong" targetType="object" /><pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANDSLLinkConfig." refType="strong" targetType="object" /><pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPTMLinkConfig." refType="strong" targetType="object" /><pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANEthernetLinkConfig." refType="strong" targetType="object" /></string><default value="" /></syntax></parameter><parameter name="LowerLayers" set="TR098_ADD_EthLink.sh" /></object><object name="Ethernet.VLANTermination.{i}."><parameter name="X_ADB_TR098Reference" access="readWrite"><syntax><string><pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANDSLLinkConfig." refType="strong" targetType="object" /><pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPTMLinkConfig." refType="strong" targetType="object" /><pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANEthernetLinkConfig." refType="strong" targetType="object" /></string><default value="" /></syntax></parameter></object></datamodel>
+<datamodel name="Ethernet" version="2.0">
+	<object name="Ethernet.Interface.{i}.">
+		<parameter name="X_ADB_TR098Reference" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent="InternetGatewayDevice.LANDevice.{i}.LANEthernetInterfaceConfig." refType="strong" targetType="row" />
+					<pathRef targetParent="InternetGatewayDevice.LANInterfaces.LANEthernetInterfaceConfig." refType="strong" targetType="row" />
+					<pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANEthernetInterfaceConfig." refType="strong" targetType="object" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Upstream" set="TR098_ADD_EthernetIf.sh" />
+	</object>
+	<object name="Ethernet.Link.{i}." del="TR098_ADD_EthLink.sh">
+		<parameter name="X_ADB_TR098Reference" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent="InternetGatewayDevice.LANDevice.{i}.LANHostConfigManagement." refType="strong" targetType="object" />
+					<pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANDSLLinkConfig." refType="strong" targetType="object" />
+					<pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPTMLinkConfig." refType="strong" targetType="object" />
+					<pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANEthernetLinkConfig." refType="strong" targetType="object" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="LowerLayers" set="TR098_ADD_EthLink.sh" />
+	</object>
+	<object name="Ethernet.VLANTermination.{i}.">
+		<parameter name="X_ADB_TR098Reference" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANDSLLinkConfig." refType="strong" targetType="object" />
+					<pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANPTMLinkConfig." refType="strong" targetType="object" />
+					<pathRef targetParent="InternetGatewayDevice.WANDevice.{i}.WANConnectionDevice.{i}.WANEthernetLinkConfig." refType="strong" targetType="object" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

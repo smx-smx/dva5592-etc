@@ -1,3 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DSL" version="2.0"><object name="WANDevice.{i}.WANDSLDiagnostics." access="readOnly" minEntries="1" maxEntries="1" supported="no"><parameter name="HLINGds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="HLINGus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="HLOGGds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="HLOGGus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="QLNGds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="QLNGus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="SNRGds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="SNRGus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter></object></datamodel>
+<datamodel name="DSL" version="2.0">
+	<object name="WANDevice.{i}.WANDSLDiagnostics." access="readOnly" minEntries="1" maxEntries="1" supported="no">
+		<parameter name="HLINGds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="HLINGus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="HLOGGds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="HLOGGus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="QLNGds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="QLNGus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="SNRGds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="SNRGus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

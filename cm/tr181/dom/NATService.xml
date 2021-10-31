@@ -1,3 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="NATService" version="2.0"><object name="NAT." access="readOnly" minEntries="1" maxEntries="1"><parameter name="X_ADB_ServiceNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="NAT.X_ADB_Service.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="X_ADB_ServiceNumberOfEntries" set="NATService.sh" del="NATService.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="AdditionalExternalPort" access="readWrite"><syntax><list /><string><pattern value="(TCP|UDP|TCP/UDP):[0-9]{1,5}" /><pattern value="(TCP|UDP|TCP/UDP):[0-9]{1,5}-[0-9]{1,5}" /></string><default value="" /></syntax></parameter><parameter name="Description" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string><default value="" /></syntax></parameter><parameter name="ExternalPort" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" step="1" /></unsignedInt></syntax></parameter><parameter name="ExternalPortEndRange" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="Protocol" access="readWrite"><syntax><string><enumeration value="TCP" /><enumeration value="UDP" /><enumeration value="TCP/UDP" /><enumeration value="ICMP" /></string></syntax></parameter><parameter name="Origin" access="readOnly"><syntax><string><enumeration value="System" /><enumeration value="User" /></string><default value="System" /></syntax></parameter><parameter name="Type" access="readOnly"><syntax><string><enumeration value="Application" /><enumeration value="Game" /><enumeration value="GameConsole" /><enumeration value="GameSimulation" /><enumeration value="InstantMessenger" /><enumeration value="PeerToPeer" /><enumeration value="Service" /><enumeration value="ServiceDNS" /><enumeration value="ServiceFTP" /><enumeration value="ServiceManagement" /><enumeration value="ServiceMail" /><enumeration value="ServiceNews" /><enumeration value="ServiceWeb" /></string><default value="Service" /></syntax></parameter></object><object name="NAT.PortMapping.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="PortMappingNumberOfEntries" enableParameter="Enable"><parameter name="X_ADB_Service" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".NAT.X_ADB_Service." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter></object></datamodel>
+<datamodel name="NATService" version="2.0">
+	<object name="NAT." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="X_ADB_ServiceNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="NAT.X_ADB_Service.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="X_ADB_ServiceNumberOfEntries" set="NATService.sh" del="NATService.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="AdditionalExternalPort" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<pattern value="(TCP|UDP|TCP/UDP):[0-9]{1,5}" />
+					<pattern value="(TCP|UDP|TCP/UDP):[0-9]{1,5}-[0-9]{1,5}" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Description" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ExternalPort" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="ExternalPortEndRange" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Protocol" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="TCP" />
+					<enumeration value="UDP" />
+					<enumeration value="TCP/UDP" />
+					<enumeration value="ICMP" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Origin" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="System" />
+					<enumeration value="User" />
+				</string>
+				<default value="System" />
+			</syntax>
+		</parameter>
+		<parameter name="Type" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Application" />
+					<enumeration value="Game" />
+					<enumeration value="GameConsole" />
+					<enumeration value="GameSimulation" />
+					<enumeration value="InstantMessenger" />
+					<enumeration value="PeerToPeer" />
+					<enumeration value="Service" />
+					<enumeration value="ServiceDNS" />
+					<enumeration value="ServiceFTP" />
+					<enumeration value="ServiceManagement" />
+					<enumeration value="ServiceMail" />
+					<enumeration value="ServiceNews" />
+					<enumeration value="ServiceWeb" />
+				</string>
+				<default value="Service" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="NAT.PortMapping.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="PortMappingNumberOfEntries" enableParameter="Enable">
+		<parameter name="X_ADB_Service" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".NAT.X_ADB_Service." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

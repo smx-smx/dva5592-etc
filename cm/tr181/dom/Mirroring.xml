@@ -1,3 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Mirroring" version="2.0"><object name="X_ADB_Mirroring." access="readOnly" minEntries="1" maxEntries="1"><parameter name="MirrorNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="X_ADB_Mirroring.Mirror.{i}." minEntries="0" maxEntries="unbounded" numEntriesParameter="MirrorNumberOfEntries" access="readWrite" set="Mirroring.sh" del="Mirroring.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="MonitorInterface" access="readWrite"><syntax><string><pathRef targetParent=".ATM.Link." refType="strong" targetType="row" /><pathRef targetParent=".PTM.Link." refType="strong" targetType="row" /><pathRef targetParent=".Ethernet.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="MirrorInterface" access="readWrite"><syntax><string><pathRef targetParent=".Ethernet.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="Direction" access="readWrite"><syntax><string><enumeration value="Inbound" /><enumeration value="Outbound" /><enumeration value="Bidirectional" /></string><default value="Bidirectional" /></syntax></parameter></object></datamodel>
+<datamodel name="Mirroring" version="2.0">
+	<object name="X_ADB_Mirroring." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="MirrorNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="X_ADB_Mirroring.Mirror.{i}." minEntries="0" maxEntries="unbounded" numEntriesParameter="MirrorNumberOfEntries" access="readWrite" set="Mirroring.sh" del="Mirroring.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="MonitorInterface" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent=".ATM.Link." refType="strong" targetType="row" />
+					<pathRef targetParent=".PTM.Link." refType="strong" targetType="row" />
+					<pathRef targetParent=".Ethernet.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="MirrorInterface" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent=".Ethernet.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Direction" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Inbound" />
+					<enumeration value="Outbound" />
+					<enumeration value="Bidirectional" />
+				</string>
+				<default value="Bidirectional" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

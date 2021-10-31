@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="X_ADB_MobileModem" version="2.0"><object name="X_ADB_MobileModem." excludeUser="CWMP" /><object name="X_ADB_MobileModem.Interface.{i}." excludeUser="CWMP" /><object name="X_ADB_MobileModem.Interface.{i}.Modem." excludeUser="CWMP" /><object name="X_ADB_MobileModem.SIMCard.{i}." excludeUser="CWMP" /><object name="X_ADB_MobileModem.SIMCard.{i}.Stats." excludeUser="CWMP" /><object name="X_ADB_MobileModem.Operator.{i}." excludeUser="CWMP" /><object name="X_ADB_MobileModem.Operator.{i}.APN.{i}." excludeUser="CWMP" /><object name="X_ADB_MobileModem.Model.{i}." excludeUser="CWMP" /></datamodel>
+<datamodel name="X_ADB_MobileModem" version="2.0">
+	<object name="X_ADB_MobileModem." excludeUser="CWMP" />
+	<object name="X_ADB_MobileModem.Interface.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_MobileModem.Interface.{i}.Modem." excludeUser="CWMP" />
+	<object name="X_ADB_MobileModem.SIMCard.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_MobileModem.SIMCard.{i}.Stats." excludeUser="CWMP" />
+	<object name="X_ADB_MobileModem.Operator.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_MobileModem.Operator.{i}.APN.{i}." excludeUser="CWMP" />
+	<object name="X_ADB_MobileModem.Model.{i}." excludeUser="CWMP" />
+</datamodel>

@@ -1,3 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="IPv6" version="2.0"><object name="RouterAdvertisement." access="readOnly" minEntries="1" maxEntries="1" set="RouterAdv.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="InterfaceSettingNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="RouterAdvertisement.InterfaceSetting.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceSettingNumberOfEntries" enableParameter="Enable" set="RouterAdv.sh" del="RouterAdv.sh"><parameter name="AdvCurHopLimit" access="readWrite"><syntax><unsignedInt><range maxInclusive="255" step="1" /></unsignedInt><default value="64" /></syntax></parameter><parameter name="AdvDefaultLifetime" access="readWrite"><syntax><unsignedInt><range maxInclusive="65535" step="1" /><units value="seconds" /></unsignedInt><default value="1800" /></syntax></parameter><parameter name="AdvLinkMTU" access="readWrite"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="AdvManagedFlag" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="AdvMobileAgentFlag" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="AdvNDProxyFlag" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="AdvOtherConfigFlag" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="AdvPreferredRouterFlag" access="readWrite"><syntax><string><enumeration value="High" /><enumeration value="Medium" /><enumeration value="Low" /></string><default value="Medium" /></syntax></parameter><parameter name="AdvReachableTime" access="readWrite"><syntax><unsignedInt><range maxInclusive="3600000" step="1" /><units value="milliseconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="AdvRetransTimer" access="readWrite"><syntax><unsignedInt><units value="milliseconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="ManualPrefixes" access="readWrite"><syntax><list maxItems="8" /><string><pathRef targetParent=".IP.Interface.{i}.IPv6Prefix." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="MaxRtrAdvInterval" access="readWrite"><syntax><unsignedInt><range minInclusive="4" maxInclusive="1800" step="1" /><units value="seconds" /></unsignedInt><default value="600" /></syntax></parameter><parameter name="MinRtrAdvInterval" access="readWrite"><syntax><unsignedInt><range minInclusive="3" maxInclusive="1350" step="1" /><units value="seconds" /></unsignedInt><default value="200" /></syntax></parameter><parameter name="OptionNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="Prefixes" access="readOnly" get="RouterAdv.sh" store="no"><syntax><list maxItems="8" /><string><pathRef targetParent=".IP.Interface.{i}.IPv6Prefix." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter></object><object name="RouterAdvertisement.InterfaceSetting.{i}.Option.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="OptionNumberOfEntries" enableParameter="Enable" set="RouterAdv.sh" del="RouterAdv.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="Tag" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="65535" step="1" /></unsignedInt></syntax></parameter><parameter name="Value" access="readWrite"><syntax><string><size minLength="0" maxLength="65535" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_Type" access="readWrite"><syntax><string><enumeration value="Hex" /><enumeration value="String" /><enumeration value="IPv6Address" /><enumeration value="IPv6AddressList" /></string><default value="Hex" /></syntax></parameter><parameter name="X_ADB_OptionLifetime" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="65535" step="1" /><units value="seconds" /></int><default value="-1" /></syntax></parameter><parameter name="X_ADB_OptionPreference" access="readWrite"><syntax><string><enumeration value="High" /><enumeration value="Medium" /><enumeration value="Low" /></string><default value="Medium" /></syntax></parameter><parameter name="X_ADB_OptionFlush" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter></object></datamodel>
+<datamodel name="IPv6" version="2.0">
+	<object name="RouterAdvertisement." access="readOnly" minEntries="1" maxEntries="1" set="RouterAdv.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="InterfaceSettingNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="RouterAdvertisement.InterfaceSetting.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceSettingNumberOfEntries" enableParameter="Enable" set="RouterAdv.sh" del="RouterAdv.sh">
+		<parameter name="AdvCurHopLimit" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range maxInclusive="255" step="1" />
+				</unsignedInt>
+				<default value="64" />
+			</syntax>
+		</parameter>
+		<parameter name="AdvDefaultLifetime" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range maxInclusive="65535" step="1" />
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="1800" />
+			</syntax>
+		</parameter>
+		<parameter name="AdvLinkMTU" access="readWrite">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="AdvManagedFlag" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="AdvMobileAgentFlag" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="AdvNDProxyFlag" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="AdvOtherConfigFlag" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="AdvPreferredRouterFlag" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="High" />
+					<enumeration value="Medium" />
+					<enumeration value="Low" />
+				</string>
+				<default value="Medium" />
+			</syntax>
+		</parameter>
+		<parameter name="AdvReachableTime" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range maxInclusive="3600000" step="1" />
+					<units value="milliseconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="AdvRetransTimer" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="ManualPrefixes" access="readWrite">
+			<syntax>
+				<list maxItems="8" />
+				<string>
+					<pathRef targetParent=".IP.Interface.{i}.IPv6Prefix." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="MaxRtrAdvInterval" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="4" maxInclusive="1800" step="1" />
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="600" />
+			</syntax>
+		</parameter>
+		<parameter name="MinRtrAdvInterval" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="3" maxInclusive="1350" step="1" />
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="200" />
+			</syntax>
+		</parameter>
+		<parameter name="OptionNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Prefixes" access="readOnly" get="RouterAdv.sh" store="no">
+			<syntax>
+				<list maxItems="8" />
+				<string>
+					<pathRef targetParent=".IP.Interface.{i}.IPv6Prefix." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error_Misconfigured" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="RouterAdvertisement.InterfaceSetting.{i}.Option.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="OptionNumberOfEntries" enableParameter="Enable" set="RouterAdv.sh" del="RouterAdv.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="Tag" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="65535" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Value" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="65535" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Type" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Hex" />
+					<enumeration value="String" />
+					<enumeration value="IPv6Address" />
+					<enumeration value="IPv6AddressList" />
+				</string>
+				<default value="Hex" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_OptionLifetime" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="65535" step="1" />
+					<units value="seconds" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_OptionPreference" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="High" />
+					<enumeration value="Medium" />
+					<enumeration value="Low" />
+				</string>
+				<default value="Medium" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_OptionFlush" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

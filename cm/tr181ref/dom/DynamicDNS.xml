@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DynamicDNS" version="2.0"><object name="Services.X_ADB_DynamicDNS.Client.{i}." aliasOnAdd="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Client.%i" aliasOnDel="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Client.%i" aliasOnSet="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Client.%i.%n">
-    </object><object name="Services.X_ADB_DynamicDNS.Provider.{i}." aliasOnAdd="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Provider.%i" aliasOnDel="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Provider.%i" aliasOnSet="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Provider.%i.%n">
-    </object></datamodel>
+<datamodel name="DynamicDNS" version="2.0">
+    <object name="Services.X_ADB_DynamicDNS.Client.{i}." aliasOnAdd="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Client.%i" aliasOnDel="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Client.%i" aliasOnSet="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Client.%i.%n">
+    </object>
+    <object name="Services.X_ADB_DynamicDNS.Provider.{i}." aliasOnAdd="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Provider.%i" aliasOnDel="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Provider.%i" aliasOnSet="InternetGatewayDevice.Services.X_DLINK_DynamicDNS.Provider.%i.%n">
+    </object>
+</datamodel>

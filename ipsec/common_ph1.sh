@@ -6,9 +6,9 @@ l2tp_config() {
 	local ev_msg="$1" spd_action
 
 	case "$ev_msg" in
-		"phase1_up")	spd_action="spdadd"	;;
-		"phase1_down")	spd_action="spddelete"	;;
-		*) return ;;
+	"phase1_up") spd_action="spdadd" ;;
+	"phase1_down") spd_action="spddelete" ;;
+	*) return ;;
 	esac
 
 	helper_l2tp_policy "$LOCAL_ADDR" "$REMOTE_ADDR" "$spd_action"

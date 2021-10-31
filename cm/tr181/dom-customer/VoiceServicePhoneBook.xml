@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="Services.VoiceService.{i}.Capabilities."><parameter name="X_ADB_MaxPhoneBookCount" excludeUser="CWMP" /></object><object name="Services.VoiceService.{i}."><parameter name="X_ADB_PhoneBookNumberOfEntries" excludeUser="CWMP" /></object><object name="Services.VoiceService.{i}.X_ADB_PhoneBook.{i}." excludeUser="CWMP" /><object name="Services.VoiceService.{i}.X_ADB_PhoneBook.{i}.PhoneNumbers.{i}." excludeUser="CWMP" /></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="Services.VoiceService.{i}.Capabilities.">
+		<parameter name="X_ADB_MaxPhoneBookCount" excludeUser="CWMP" />
+	</object>
+	<object name="Services.VoiceService.{i}.">
+		<parameter name="X_ADB_PhoneBookNumberOfEntries" excludeUser="CWMP" />
+	</object>
+	<object name="Services.VoiceService.{i}.X_ADB_PhoneBook.{i}." excludeUser="CWMP" />
+	<object name="Services.VoiceService.{i}.X_ADB_PhoneBook.{i}.PhoneNumbers.{i}." excludeUser="CWMP" />
+</datamodel>

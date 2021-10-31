@@ -18,7 +18,10 @@ if [ "$ACTION" = "add" ]; then
 
 		if [ "$proto" = "pppoa" ] && [ "$up" != 1 ] && [ "$auto" = 1 ]; then
 			found=1
-			( sleep 1; ifup "$ifc" ) &
+			(
+				sleep 1
+				ifup "$ifc"
+			) &
 		fi
 	done
 

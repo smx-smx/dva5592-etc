@@ -1,3 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="Time." access="readOnly" minEntries="1" maxEntries="1" set="NTP.sh"><parameter name="CurrentLocalTime" access="readOnly" activeNotify="canDeny" get="system.sh" store="no"><syntax><dateTime /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /></syntax></parameter><parameter name="LocalTimeZone" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="NTPServer1" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="NTPServer2" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="NTPServer3" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="NTPServer4" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="NTPServer5" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Status" access="readOnly" activeNotify="canDeny" localNotify="forceEnabled" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Unsynchronized" /><enumeration value="Synchronized" /><enumeration value="Error_FailedToSynchronize" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="X_ADB_Permissive" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_MinPoll" access="readWrite"><syntax><unsignedInt><range minInclusive="4" maxInclusive="17" step="1" /></unsignedInt><default value="6" /></syntax></parameter><parameter name="X_ADB_MaxPoll" access="readWrite"><syntax><unsignedInt><range minInclusive="4" maxInclusive="17" step="1" /></unsignedInt><default value="10" /></syntax></parameter><parameter name="X_ADB_DriftTime" access="readWrite" aliasOnGet="%s(false)" store="no"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_EnablePPPNTPServerDiscovery" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter></object><object name="Time.X_ADB_AvailableTimeZone." excludeUser="Assurance,CWMP" access="readOnly" minEntries="1" maxEntries="1"><parameter name="LocationNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="LocalLocation" access="readWrite"><syntax><string><pathRef refType="strong" targetType="row" /></string><default value="" /></syntax></parameter></object><object name="Time.X_ADB_AvailableTimeZone.Location.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LocationNumberOfEntries"><parameter name="Area" access="readOnly"><syntax><string /></syntax></parameter><parameter name="City" access="readOnly"><syntax><string /></syntax></parameter><parameter name="TzString" access="readOnly"><syntax><string /></syntax></parameter><parameter name="Offset" access="readWrite"><syntax><string /></syntax></parameter></object></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="Time." access="readOnly" minEntries="1" maxEntries="1" set="NTP.sh">
+		<parameter name="CurrentLocalTime" access="readOnly" activeNotify="canDeny" get="system.sh" store="no">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="LocalTimeZone" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="NTPServer1" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="NTPServer2" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="NTPServer3" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="NTPServer4" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="NTPServer5" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" activeNotify="canDeny" localNotify="forceEnabled" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Unsynchronized" />
+					<enumeration value="Synchronized" />
+					<enumeration value="Error_FailedToSynchronize" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Permissive" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_MinPoll" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="4" maxInclusive="17" step="1" />
+				</unsignedInt>
+				<default value="6" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_MaxPoll" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="4" maxInclusive="17" step="1" />
+				</unsignedInt>
+				<default value="10" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_DriftTime" access="readWrite" aliasOnGet="%s(false)" store="no">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_EnablePPPNTPServerDiscovery" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Time.X_ADB_AvailableTimeZone." excludeUser="Assurance,CWMP" access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="LocationNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="LocalLocation" access="readWrite">
+			<syntax>
+				<string>
+					<pathRef refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Time.X_ADB_AvailableTimeZone.Location.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LocationNumberOfEntries">
+		<parameter name="Area" access="readOnly">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="City" access="readOnly">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="TzString" access="readOnly">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="Offset" access="readWrite">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

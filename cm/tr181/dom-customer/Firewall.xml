@@ -1,3 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Firewall" version="2.0"><object name="Firewall."><parameter name="X_ADB_AvailableConfigLevels" excludeUser="CWMP" /><parameter name="X_ADB_FlushCache" excludeUser="CWMP" /></object><object name="Firewall.Level.{i}."><parameter name="X_ADB_AllowLocalServices" excludeUser="CWMP" /><parameter name="X_ADB_Permissions" excludeUser="CWMP" /></object><object name="Firewall.Chain.{i}."><parameter name="X_ADB_Permissions" excludeUser="CWMP" /></object><object name="Firewall.Chain.{i}.Rule.{i}"><parameter name="X_ADB_TCPFlagsSet" excludeUser="CWMP" /><parameter name="X_ADB_TCPFlagsUnset" excludeUser="CWMP" /><parameter name="X_ADB_AddressingMatch" excludeUser="CWMP" /><parameter name="X_ADB_AddressingNoMatch" excludeUser="CWMP" /><parameter name="X_ADB_ConnectionStatus" excludeUser="CWMP" /><parameter name="X_ADB_Permissions" excludeUser="CWMP" /><parameter name="X_ADB_ForwardingPolicy" excludeUser="CWMP" /><parameter name="X_ADB_RuleType" excludeUser="CWMP" /><parameter name="X_ADB_ProtocolMode" excludeUser="CWMP" /><parameter name="X_ADB_ProtocolSourcePortMode" excludeUser="CWMP" /><parameter name="X_ADB_ProtocolDestPortMode" excludeUser="CWMP" /><parameter name="X_ADB_EndpointFiltering" excludeUser="CWMP" /><parameter name="X_ADB_RedirectEnable" excludeUser="CWMP" /><parameter name="X_ADB_SourceIPRangeMin" excludeUser="CWMP" /><parameter name="X_ADB_SourceIPRangeMax" excludeUser="CWMP" /><parameter name="X_ADB_DestIPRangeMin" excludeUser="CWMP" /><parameter name="X_ADB_DestIPRangeMax" excludeUser="CWMP" /><parameter name="X_ADB_MACAddress" excludeUser="CWMP" /><parameter name="X_ADB_MACMask" excludeUser="CWMP" /><parameter name="X_ADB_HostName" excludeUser="CWMP" /><parameter name="X_ADB_Service" excludeUser="CWMP" /><parameter name="X_ADB_Type" excludeUser="CWMP" /></object></datamodel>
+<datamodel name="Firewall" version="2.0">
+	<object name="Firewall.">
+		<parameter name="X_ADB_AvailableConfigLevels" excludeUser="CWMP" />
+		<parameter name="X_ADB_FlushCache" excludeUser="CWMP" />
+	</object>
+	<object name="Firewall.Level.{i}.">
+		<parameter name="X_ADB_AllowLocalServices" excludeUser="CWMP" />
+		<parameter name="X_ADB_Permissions" excludeUser="CWMP" />
+	</object>
+	<object name="Firewall.Chain.{i}.">
+		<parameter name="X_ADB_Permissions" excludeUser="CWMP" />
+	</object>
+	<object name="Firewall.Chain.{i}.Rule.{i}">
+		<parameter name="X_ADB_TCPFlagsSet" excludeUser="CWMP" />
+		<parameter name="X_ADB_TCPFlagsUnset" excludeUser="CWMP" />
+		<parameter name="X_ADB_AddressingMatch" excludeUser="CWMP" />
+		<parameter name="X_ADB_AddressingNoMatch" excludeUser="CWMP" />
+		<parameter name="X_ADB_ConnectionStatus" excludeUser="CWMP" />
+		<parameter name="X_ADB_Permissions" excludeUser="CWMP" />
+		<parameter name="X_ADB_ForwardingPolicy" excludeUser="CWMP" />
+		<parameter name="X_ADB_RuleType" excludeUser="CWMP" />
+		<parameter name="X_ADB_ProtocolMode" excludeUser="CWMP" />
+		<parameter name="X_ADB_ProtocolSourcePortMode" excludeUser="CWMP" />
+		<parameter name="X_ADB_ProtocolDestPortMode" excludeUser="CWMP" />
+		<parameter name="X_ADB_EndpointFiltering" excludeUser="CWMP" />
+		<parameter name="X_ADB_RedirectEnable" excludeUser="CWMP" />
+		<parameter name="X_ADB_SourceIPRangeMin" excludeUser="CWMP" />
+		<parameter name="X_ADB_SourceIPRangeMax" excludeUser="CWMP" />
+		<parameter name="X_ADB_DestIPRangeMin" excludeUser="CWMP" />
+		<parameter name="X_ADB_DestIPRangeMax" excludeUser="CWMP" />
+		<parameter name="X_ADB_MACAddress" excludeUser="CWMP" />
+		<parameter name="X_ADB_MACMask" excludeUser="CWMP" />
+		<parameter name="X_ADB_HostName" excludeUser="CWMP" />
+		<parameter name="X_ADB_Service" excludeUser="CWMP" />
+		<parameter name="X_ADB_Type" excludeUser="CWMP" />
+	</object>
+</datamodel>

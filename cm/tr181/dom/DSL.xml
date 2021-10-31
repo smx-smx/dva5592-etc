@@ -1,3 +1,1273 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="DSL" version="2.0"><object name="DSL." access="readOnly" minEntries="1" maxEntries="1"><parameter name="ChannelNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="LineNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="DSL.Channel.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ChannelNumberOfEntries" set="DslChannel.sh" add="InstanceNamer.sh"><parameter name="LowerLayers" access="readWrite"><syntax><list><size minLength="0" maxLength="1024" /></list><string><pathRef refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="DownstreamCurrRate" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no"><syntax><unsignedInt><units value="Kbps" /></unsignedInt></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /></syntax></parameter><parameter name="LastChange" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="LinkEncapsulationSupported" access="readOnly"><syntax><list /><string><enumeration value="G.992.3_Annex_K_ATM" /><enumeration value="G.992.3_Annex_K_PTM" /><enumeration value="G.993.2_Annex_K_ATM" /><enumeration value="G.993.2_Annex_K_PTM" /><enumeration value="G.994.1" /></string><default value="G.992.3_Annex_K_ATM,G.993.2_Annex_K_PTM" /></syntax></parameter><parameter name="LinkEncapsulationUsed" access="readOnly"><syntax><string><enumeration value="G.992.3_Annex_K_ATM" /><enumeration value="G.992.3_Annex_K_PTM" /><enumeration value="G.993.2_Annex_K_ATM" /><enumeration value="G.993.2_Annex_K_PTM" /></string></syntax></parameter><parameter name="X_ADB_PreviousLinkEncapsulationUsed" access="readOnly"><syntax><string><enumeration value="G.992.3_Annex_K_ATM" /><enumeration value="G.992.3_Annex_K_PTM" /><enumeration value="G.993.2_Annex_K_ATM" /><enumeration value="G.993.2_Annex_K_PTM" /><enumeration value="" /></string></syntax></parameter><parameter name="Name" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Status" access="readOnly" set="ATMLink.sh,PTMLink.sh" store="no"><syntax><string><enumeration value="Up" /><enumeration value="Down" /><enumeration value="Unknown" /><enumeration value="Dormant" /><enumeration value="NotPresent" /><enumeration value="LowerLayerDown" /><enumeration value="Error" /></string><default value="LowerLayerDown" /></syntax></parameter><parameter name="UpstreamCurrRate" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no"><syntax><unsignedInt><units value="Kbps" /></unsignedInt></syntax></parameter><parameter name="LPATH" access="readOnly" activeNotify="canDeny" cwmpget="DslChannel.sh" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="INTLVDEPTH" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="INTLVBLOCK" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no"><syntax><int /><default value="-1" /></syntax></parameter><parameter name="ActualInterleavingDelay" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no"><syntax><unsignedInt /><units value="milliseconds" /></syntax></parameter><parameter name="ACTINP" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no"><syntax><int /><default value="-1" /></syntax></parameter><parameter name="INPREPORT" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="NFEC" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no"><syntax><int /><default value="-1" /></syntax></parameter><parameter name="RFEC" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no"><syntax><int /><default value="-1" /></syntax></parameter><parameter name="LSYMB" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no"><syntax><int /><default value="-1" /></syntax></parameter></object><object name="DSL.Channel.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="PacketsReceived" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedLong /></syntax></parameter><parameter name="PacketsSent" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedLong /></syntax></parameter><parameter name="BytesReceived" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedLong /></syntax></parameter><parameter name="BytesSent" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedLong /></syntax></parameter><parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="TotalStart" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="QuarterHourStart" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="CurrentDayStart" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="ShowtimeStart" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="LastShowtimeStart" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter></object><object name="DSL.Channel.{i}.Stats.Total." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="XTURFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTURCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTURHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter></object><object name="DSL.Channel.{i}.Stats.QuarterHour." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="XTURFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTURCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTURHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter></object><object name="DSL.Channel.{i}.Stats.CurrentDay." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="XTURFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTURCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTURHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter></object><object name="DSL.Channel.{i}.Stats.Showtime." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="XTURFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTURCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTURHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter></object><object name="DSL.Channel.{i}.Stats.Showtime.X_ADB_AdvancedStats." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="ES_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="ES_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="SES_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="SES_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="UAS_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="UAS_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="LOS_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="LOS_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="LOF_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="LOF_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="LOM_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="LOM_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /></syntax></parameter></object><object name="DSL.Channel.{i}.Stats.LastShowtime." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="XTURFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /><default value="4294967295" /></syntax></parameter><parameter name="XTUCFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /><default value="4294967295" /></syntax></parameter><parameter name="XTURCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /><default value="4294967295" /></syntax></parameter><parameter name="XTUCCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh"><syntax><unsignedInt /><default value="4294967295" /></syntax></parameter><parameter name="XTURHECErrors" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /><default value="4294967295" /></syntax></parameter><parameter name="XTUCHECErrors" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /><default value="4294967295" /></syntax></parameter></object><object name="DSL.Line.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LineNumberOfEntries" set="DslLine.sh" add="InstanceNamer.sh"><parameter name="X_ADB_TargetSNR" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="500" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="LowerLayers" access="readWrite"><syntax><list><size minLength="0" maxLength="1024" /></list><string><pathRef refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="DownstreamAttenuation" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><int><units value="0.1dB" /></int></syntax></parameter><parameter name="DownstreamMaxBitRate" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><unsignedInt><units value="Kbps" /></unsignedInt></syntax></parameter><parameter name="DownstreamNoiseMargin" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><int><units value="0.1dB" /></int></syntax></parameter><parameter name="SNRMpbus" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><list><size minLength="0" maxLength="24" /></list><string /></syntax></parameter><parameter name="SNRMpbds" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><list><size minLength="0" maxLength="24" /></list><string /></syntax></parameter><parameter name="DownstreamPower" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><int><units value="0.1dBmV" /></int></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /></syntax></parameter><parameter name="LastChange" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_Reset" access="readOnly" store="no" aliasOnGet="%s(false)"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_PhyReconf" access="readOnly" store="no" aliasOnGet="%s(false)"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_LastChange" access="readOnly" store="no"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="Name" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="StandardsSupported" access="readOnly"><syntax><list /><string><enumeration value="G.992.1_Annex_A" /><enumeration value="G.992.1_Annex_B" /><enumeration value="G.992.1_Annex_C" /><enumeration value="T1.413" /><enumeration value="T1.413i2" /><enumeration value="ETSI_101_388" /><enumeration value="G.992.2" /><enumeration value="G.992.3_Annex_A" /><enumeration value="G.992.3_Annex_B" /><enumeration value="G.992.3_Annex_C" /><enumeration value="G.992.3_Annex_I" /><enumeration value="G.992.3_Annex_J" /><enumeration value="G.992.3_Annex_L" /><enumeration value="G.992.3_Annex_M" /><enumeration value="G.992.4" /><enumeration value="G.992.5_Annex_A" /><enumeration value="G.992.5_Annex_B" /><enumeration value="G.992.5_Annex_C" /><enumeration value="G.992.5_Annex_I" /><enumeration value="G.992.5_Annex_J" /><enumeration value="G.992.5_Annex_M" /><enumeration value="G.993.1" /><enumeration value="G.993.1_Annex_A" /><enumeration value="G.993.2_Annex_A" /><enumeration value="G.993.2_Annex_B" /><enumeration value="G.993.2_Annex_C" /><enumeration value="G.9701" /></string></syntax></parameter><parameter name="StandardUsed" access="readOnly" store="no"><syntax><string><enumerationRef targetParam="StandardsSupported" /></string></syntax></parameter><parameter name="X_ADB_AllowedStandards" access="readWrite"><syntax><list /><string><enumeration value="G.992.1_Annex_A" /><enumeration value="G.992.1_Annex_B" /><enumeration value="G.992.1_Annex_C" /><enumeration value="T1.413" /><enumeration value="T1.413i2" /><enumeration value="ETSI_101_388" /><enumeration value="G.992.2" /><enumeration value="G.992.3_Annex_A" /><enumeration value="G.992.3_Annex_B" /><enumeration value="G.992.3_Annex_C" /><enumeration value="G.992.3_Annex_I" /><enumeration value="G.992.3_Annex_J" /><enumeration value="G.992.3_Annex_L" /><enumeration value="G.992.3_Annex_M" /><enumeration value="G.992.4" /><enumeration value="G.992.5_Annex_A" /><enumeration value="G.992.5_Annex_B" /><enumeration value="G.992.5_Annex_C" /><enumeration value="G.992.5_Annex_I" /><enumeration value="G.992.5_Annex_J" /><enumeration value="G.992.5_Annex_M" /><enumeration value="G.993.1" /><enumeration value="G.993.1_Annex_A" /><enumeration value="G.993.2_Annex_A" /><enumeration value="G.993.2_Annex_B" /><enumeration value="G.993.2_Annex_C" /><enumeration value="G.9701" /><enumeration value="Auto" /></string><default value="Auto" /></syntax></parameter><parameter name="Status" access="readOnly" store="no" set="Led.sh,InterfaceMonitor.sh,DslChannel.sh,QoSQueue.sh"><syntax><string><enumeration value="Up" /><enumeration value="Down" /><enumeration value="Unknown" /><enumeration value="Dormant" /><enumeration value="NotPresent" /><enumeration value="LowerLayerDown" /><enumeration value="Error" /></string><default value="Down" /></syntax></parameter><parameter name="LineNumber" access="readOnly"><syntax><int /></syntax></parameter><parameter name="Upstream" access="readOnly" set="IPUpstream.sh"><syntax><boolean /></syntax></parameter><parameter name="UpstreamAttenuation" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><int><units value="0.1dB" /></int></syntax></parameter><parameter name="UpstreamMaxBitRate" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><unsignedInt><units value="Kbps" /></unsignedInt></syntax></parameter><parameter name="UpstreamNoiseMargin" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><int><units value="0.1dB" /></int></syntax></parameter><parameter name="UpstreamPower" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><int><units value="0.1dBmV" /></int></syntax></parameter><parameter name="XTUCCountry" access="readOnly"><syntax><string><size minLength="0" maxLength="4" /></string><default value="0000" /></syntax></parameter><parameter name="XTUCVendor" access="readOnly"><syntax><string><size minLength="0" maxLength="8" /></string><default value="00000000" /></syntax></parameter><parameter name="XTURCountry" access="readOnly"><syntax><string><size minLength="0" maxLength="4" /></string><default value="0000" /></syntax></parameter><parameter name="XTURVendor" access="readOnly"><syntax><string><size minLength="0" maxLength="8" /></string><default value="00000000" /></syntax></parameter><parameter name="FirmwareVersion" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="INMCCds" access="readOnly" supported="no"><syntax><unsignedInt><range minInclusive="0" maxInclusive="64" step="1" /></unsignedInt></syntax></parameter><parameter name="INMIATOds" access="readOnly" supported="no"><syntax><unsignedInt><range minInclusive="3" maxInclusive="511" step="1" /></unsignedInt></syntax></parameter><parameter name="INMIATSds" access="readOnly" supported="no"><syntax><unsignedInt><range minInclusive="0" maxInclusive="7" step="1" /></unsignedInt></syntax></parameter><parameter name="INMINPEQMODEds" access="readOnly" supported="no"><syntax><unsignedInt><range minInclusive="0" maxInclusive="3" step="1" /></unsignedInt></syntax></parameter><parameter name="LIMITMASK" access="readOnly" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="LastStateTransmittedDownstream" access="readOnly" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="LastStateTransmittedUpstream" access="readOnly" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="LineEncoding" access="readOnly" supported="no"><syntax><string><enumeration value="DMT" /><enumeration value="CAP" /><enumeration value="2B1Q" /><enumeration value="43BT" /><enumeration value="PAM" /><enumeration value="QAM" /></string></syntax></parameter><parameter name="LinkStatus" access="readOnly" store="no" set="Led.sh"><syntax><string><enumeration value="Up" /><enumeration value="Initializing" /><enumeration value="EstablishingLink" /><enumeration value="NoSignal" /><enumeration value="Disabled" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="MREFPSDds" access="readOnly" supported="no"><syntax><string /><default value="" /></syntax></parameter><parameter name="MREFPSDus" access="readOnly" supported="no"><syntax><string /><default value="" /></syntax></parameter><parameter name="PowerManagementState" access="readOnly" get="DslLine.sh" store="no"><syntax><string><enumeration value="L0" /><enumeration value="L1" /><enumeration value="L2" /><enumeration value="L3" /><enumeration value="L4" /></string></syntax></parameter><parameter name="SuccessFailureCause" access="readOnly" supported="no"><syntax><unsignedInt><range minInclusive="0" maxInclusive="5" step="1" /></unsignedInt></syntax></parameter><parameter name="US0MASK" access="readOnly" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="VirtualNoisePSDds" access="readOnly" supported="no"><syntax><base64 /></syntax></parameter><parameter name="VirtualNoisePSDus" access="readOnly" supported="no"><syntax><base64 /></syntax></parameter><parameter name="XTUCANSIRev" access="readOnly" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="XTUCANSIStd" access="readOnly" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="XTURANSIRev" access="readOnly" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="XTURANSIStd" access="readOnly" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="X_ADB_XTURModelShort" access="readOnly"><syntax><string><size minLength="0" maxLength="2" /></string><default value="68" /></syntax></parameter><parameter name="TRELLISds" access="readOnly"><syntax><int /></syntax></parameter><parameter name="TRELLISus" access="readOnly"><syntax><int /></syntax></parameter><parameter name="X_ADB_SRA" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="1" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_SOS" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="1" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="X_ADB_G992DTF" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="1" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_V43" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="1" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="X_ADB_EnableATTNDRframingConstrains" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="1" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="X_ADB_NoG994AVdslToggle" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="1" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="X_ADB_AlignAfterPeriodics" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="1" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="X_ADB_DynamicV43handling" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="1" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="X_ADB_EnableROC" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="1" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="X_ADB_BitSwap" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="1" step="1" /></unsignedInt></syntax></parameter><parameter name="X_ADB_PhyR" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="3" step="1" /></unsignedInt></syntax></parameter><parameter name="X_ADB_GINP" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="3" step="1" /></unsignedInt></syntax></parameter><parameter name="X_ADB_MonitorTone" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="1" step="1" /></unsignedInt></syntax></parameter><parameter name="X_ADB_ToggleJ43B43" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="1" step="1" /></unsignedInt></syntax></parameter><parameter name="X_ADB_Annex"><syntax><string><enumeration value="A" /><enumeration value="B" /></string><default value="A" /></syntax></parameter><parameter name="X_ADB_Label" access="readOnly"><syntax><string><size maxLength="16" /></string></syntax></parameter></object><object name="DSL.Line.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="PacketsReceived" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedLong><units value="fps" /></unsignedLong></syntax></parameter><parameter name="PacketsSent" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedLong><units value="fps" /></unsignedLong></syntax></parameter><parameter name="BytesReceived" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedLong><units value="bps" /></unsignedLong></syntax></parameter><parameter name="BytesSent" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedLong><units value="bps" /></unsignedLong></syntax></parameter><parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt><units value="fps" /></unsignedInt></syntax></parameter><parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt><units value="fps" /></unsignedInt></syntax></parameter><parameter name="TotalStart" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="QuarterHourStart" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="CurrentDayStart" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="ShowtimeStart" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="LastShowtimeStart" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter></object><object name="DSL.Line.{i}.Stats.Total." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="ErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="SeverelyErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt /></syntax></parameter></object><object name="DSL.Line.{i}.Stats.QuarterHour." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="ErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="SeverelyErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt /></syntax></parameter></object><object name="DSL.Line.{i}.Stats.CurrentDay." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="ErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="SeverelyErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt /></syntax></parameter></object><object name="DSL.Line.{i}.Stats.Showtime." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="ErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt /><default value="4294967295" /></syntax></parameter><parameter name="SeverelyErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt /><default value="4294967295" /></syntax></parameter></object><object name="DSL.Line.{i}.Stats.LastShowtime." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="ErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt /><default value="4294967295" /></syntax></parameter><parameter name="SeverelyErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh"><syntax><unsignedInt /><default value="4294967295" /></syntax></parameter></object><object name="DSL.Line.{i}.TestParams." access="readOnly" minEntries="1" maxEntries="1" supported="no"><parameter name="HLOGMTds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="HLOGMTus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="HLOGpsds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><list><size minLength="0" maxLength="2559" /></list><string /></syntax></parameter><parameter name="HLOGpsus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><list><size minLength="0" maxLength="2559" /></list><string /></syntax></parameter><parameter name="LATNds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><list><size minLength="0" maxLength="24" /></list><string /></syntax></parameter><parameter name="LATNus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><list><size minLength="0" maxLength="24" /></list><string /></syntax></parameter><parameter name="QLNMTds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="QLNMTus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="QLNpsds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><list><size minLength="0" maxLength="2047" /></list><int /></syntax></parameter><parameter name="QLNpsus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><list><size minLength="0" maxLength="2047" /></list><string /></syntax></parameter><parameter name="SATNds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><list><size minLength="0" maxLength="24" /></list><string /></syntax></parameter><parameter name="SATNus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><list><size minLength="0" maxLength="24" /></list><string /></syntax></parameter><parameter name="SNRMTds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="SNRMTus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="SNRpsds" access="readOnly" activeNotify="canDeny" supported="no"><syntax><list><size minLength="0" maxLength="2047" /></list><int /></syntax></parameter><parameter name="SNRpsus" access="readOnly" activeNotify="canDeny" supported="no"><syntax><list><size minLength="0" maxLength="2047" /></list><string /></syntax></parameter></object></datamodel>
+<datamodel name="DSL" version="2.0">
+	<object name="DSL." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="ChannelNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="LineNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Channel.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ChannelNumberOfEntries" set="DslChannel.sh" add="InstanceNamer.sh">
+		<parameter name="LowerLayers" access="readWrite">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="1024" />
+				</list>
+				<string>
+					<pathRef refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="DownstreamCurrRate" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="Kbps" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="LastChange" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="LinkEncapsulationSupported" access="readOnly">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="G.992.3_Annex_K_ATM" />
+					<enumeration value="G.992.3_Annex_K_PTM" />
+					<enumeration value="G.993.2_Annex_K_ATM" />
+					<enumeration value="G.993.2_Annex_K_PTM" />
+					<enumeration value="G.994.1" />
+				</string>
+				<default value="G.992.3_Annex_K_ATM,G.993.2_Annex_K_PTM" />
+			</syntax>
+		</parameter>
+		<parameter name="LinkEncapsulationUsed" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="G.992.3_Annex_K_ATM" />
+					<enumeration value="G.992.3_Annex_K_PTM" />
+					<enumeration value="G.993.2_Annex_K_ATM" />
+					<enumeration value="G.993.2_Annex_K_PTM" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_PreviousLinkEncapsulationUsed" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="G.992.3_Annex_K_ATM" />
+					<enumeration value="G.992.3_Annex_K_PTM" />
+					<enumeration value="G.993.2_Annex_K_ATM" />
+					<enumeration value="G.993.2_Annex_K_PTM" />
+					<enumeration value="" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" set="ATMLink.sh,PTMLink.sh" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Up" />
+					<enumeration value="Down" />
+					<enumeration value="Unknown" />
+					<enumeration value="Dormant" />
+					<enumeration value="NotPresent" />
+					<enumeration value="LowerLayerDown" />
+					<enumeration value="Error" />
+				</string>
+				<default value="LowerLayerDown" />
+			</syntax>
+		</parameter>
+		<parameter name="UpstreamCurrRate" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="Kbps" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="LPATH" access="readOnly" activeNotify="canDeny" cwmpget="DslChannel.sh" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="INTLVDEPTH" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="INTLVBLOCK" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no">
+			<syntax>
+				<int />
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="ActualInterleavingDelay" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no">
+			<syntax>
+				<unsignedInt />
+				<units value="milliseconds" />
+			</syntax>
+		</parameter>
+		<parameter name="ACTINP" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no">
+			<syntax>
+				<int />
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="INPREPORT" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="NFEC" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no">
+			<syntax>
+				<int />
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="RFEC" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no">
+			<syntax>
+				<int />
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="LSYMB" access="readOnly" activeNotify="canDeny" get="DslChannel.sh" store="no">
+			<syntax>
+				<int />
+				<default value="-1" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Channel.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="PacketsReceived" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="PacketsSent" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="BytesReceived" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="BytesSent" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="TotalStart" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="QuarterHourStart" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="CurrentDayStart" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="ShowtimeStart" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="LastShowtimeStart" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Channel.{i}.Stats.Total." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="XTURFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTURCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTURHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Channel.{i}.Stats.QuarterHour." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="XTURFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTURCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTURHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Channel.{i}.Stats.CurrentDay." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="XTURFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTURCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTURHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Channel.{i}.Stats.Showtime." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="XTURFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTURCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTURHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCHECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Channel.{i}.Stats.Showtime.X_ADB_AdvancedStats." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="ES_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ES_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="SES_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="SES_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="UAS_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="UAS_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="LOS_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="LOS_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="LOF_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="LOF_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="LOM_U" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="LOM_D" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Channel.{i}.Stats.LastShowtime." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="XTURFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="4294967295" />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCFECErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="4294967295" />
+			</syntax>
+		</parameter>
+		<parameter name="XTURCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="4294967295" />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCCRCErrors" access="readOnly" activeNotify="canDeny" get="DslChannel.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="4294967295" />
+			</syntax>
+		</parameter>
+		<parameter name="XTURHECErrors" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+				<default value="4294967295" />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCHECErrors" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+				<default value="4294967295" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Line.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="LineNumberOfEntries" set="DslLine.sh" add="InstanceNamer.sh">
+		<parameter name="X_ADB_TargetSNR" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="500" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="LowerLayers" access="readWrite">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="1024" />
+				</list>
+				<string>
+					<pathRef refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="DownstreamAttenuation" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<int>
+					<units value="0.1dB" />
+				</int>
+			</syntax>
+		</parameter>
+		<parameter name="DownstreamMaxBitRate" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="Kbps" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="DownstreamNoiseMargin" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<int>
+					<units value="0.1dB" />
+				</int>
+			</syntax>
+		</parameter>
+		<parameter name="SNRMpbus" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="24" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="SNRMpbds" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="24" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="DownstreamPower" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<int>
+					<units value="0.1dBmV" />
+				</int>
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="LastChange" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Reset" access="readOnly" store="no" aliasOnGet="%s(false)">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_PhyReconf" access="readOnly" store="no" aliasOnGet="%s(false)">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LastChange" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="StandardsSupported" access="readOnly">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="G.992.1_Annex_A" />
+					<enumeration value="G.992.1_Annex_B" />
+					<enumeration value="G.992.1_Annex_C" />
+					<enumeration value="T1.413" />
+					<enumeration value="T1.413i2" />
+					<enumeration value="ETSI_101_388" />
+					<enumeration value="G.992.2" />
+					<enumeration value="G.992.3_Annex_A" />
+					<enumeration value="G.992.3_Annex_B" />
+					<enumeration value="G.992.3_Annex_C" />
+					<enumeration value="G.992.3_Annex_I" />
+					<enumeration value="G.992.3_Annex_J" />
+					<enumeration value="G.992.3_Annex_L" />
+					<enumeration value="G.992.3_Annex_M" />
+					<enumeration value="G.992.4" />
+					<enumeration value="G.992.5_Annex_A" />
+					<enumeration value="G.992.5_Annex_B" />
+					<enumeration value="G.992.5_Annex_C" />
+					<enumeration value="G.992.5_Annex_I" />
+					<enumeration value="G.992.5_Annex_J" />
+					<enumeration value="G.992.5_Annex_M" />
+					<enumeration value="G.993.1" />
+					<enumeration value="G.993.1_Annex_A" />
+					<enumeration value="G.993.2_Annex_A" />
+					<enumeration value="G.993.2_Annex_B" />
+					<enumeration value="G.993.2_Annex_C" />
+					<enumeration value="G.9701" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="StandardUsed" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumerationRef targetParam="StandardsSupported" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AllowedStandards" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="G.992.1_Annex_A" />
+					<enumeration value="G.992.1_Annex_B" />
+					<enumeration value="G.992.1_Annex_C" />
+					<enumeration value="T1.413" />
+					<enumeration value="T1.413i2" />
+					<enumeration value="ETSI_101_388" />
+					<enumeration value="G.992.2" />
+					<enumeration value="G.992.3_Annex_A" />
+					<enumeration value="G.992.3_Annex_B" />
+					<enumeration value="G.992.3_Annex_C" />
+					<enumeration value="G.992.3_Annex_I" />
+					<enumeration value="G.992.3_Annex_J" />
+					<enumeration value="G.992.3_Annex_L" />
+					<enumeration value="G.992.3_Annex_M" />
+					<enumeration value="G.992.4" />
+					<enumeration value="G.992.5_Annex_A" />
+					<enumeration value="G.992.5_Annex_B" />
+					<enumeration value="G.992.5_Annex_C" />
+					<enumeration value="G.992.5_Annex_I" />
+					<enumeration value="G.992.5_Annex_J" />
+					<enumeration value="G.992.5_Annex_M" />
+					<enumeration value="G.993.1" />
+					<enumeration value="G.993.1_Annex_A" />
+					<enumeration value="G.993.2_Annex_A" />
+					<enumeration value="G.993.2_Annex_B" />
+					<enumeration value="G.993.2_Annex_C" />
+					<enumeration value="G.9701" />
+					<enumeration value="Auto" />
+				</string>
+				<default value="Auto" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no" set="Led.sh,InterfaceMonitor.sh,DslChannel.sh,QoSQueue.sh">
+			<syntax>
+				<string>
+					<enumeration value="Up" />
+					<enumeration value="Down" />
+					<enumeration value="Unknown" />
+					<enumeration value="Dormant" />
+					<enumeration value="NotPresent" />
+					<enumeration value="LowerLayerDown" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Down" />
+			</syntax>
+		</parameter>
+		<parameter name="LineNumber" access="readOnly">
+			<syntax>
+				<int />
+			</syntax>
+		</parameter>
+		<parameter name="Upstream" access="readOnly" set="IPUpstream.sh">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+		<parameter name="UpstreamAttenuation" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<int>
+					<units value="0.1dB" />
+				</int>
+			</syntax>
+		</parameter>
+		<parameter name="UpstreamMaxBitRate" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="Kbps" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="UpstreamNoiseMargin" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<int>
+					<units value="0.1dB" />
+				</int>
+			</syntax>
+		</parameter>
+		<parameter name="UpstreamPower" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<int>
+					<units value="0.1dBmV" />
+				</int>
+			</syntax>
+		</parameter>
+		<parameter name="XTUCCountry" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="4" />
+				</string>
+				<default value="0000" />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCVendor" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="8" />
+				</string>
+				<default value="00000000" />
+			</syntax>
+		</parameter>
+		<parameter name="XTURCountry" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="4" />
+				</string>
+				<default value="0000" />
+			</syntax>
+		</parameter>
+		<parameter name="XTURVendor" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="8" />
+				</string>
+				<default value="00000000" />
+			</syntax>
+		</parameter>
+		<parameter name="FirmwareVersion" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="INMCCds" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="64" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="INMIATOds" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="3" maxInclusive="511" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="INMIATSds" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="7" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="INMINPEQMODEds" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="3" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="LIMITMASK" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="LastStateTransmittedDownstream" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="LastStateTransmittedUpstream" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="LineEncoding" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<enumeration value="DMT" />
+					<enumeration value="CAP" />
+					<enumeration value="2B1Q" />
+					<enumeration value="43BT" />
+					<enumeration value="PAM" />
+					<enumeration value="QAM" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="LinkStatus" access="readOnly" store="no" set="Led.sh">
+			<syntax>
+				<string>
+					<enumeration value="Up" />
+					<enumeration value="Initializing" />
+					<enumeration value="EstablishingLink" />
+					<enumeration value="NoSignal" />
+					<enumeration value="Disabled" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="MREFPSDds" access="readOnly" supported="no">
+			<syntax>
+				<string />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="MREFPSDus" access="readOnly" supported="no">
+			<syntax>
+				<string />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="PowerManagementState" access="readOnly" get="DslLine.sh" store="no">
+			<syntax>
+				<string>
+					<enumeration value="L0" />
+					<enumeration value="L1" />
+					<enumeration value="L2" />
+					<enumeration value="L3" />
+					<enumeration value="L4" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SuccessFailureCause" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="5" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="US0MASK" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="VirtualNoisePSDds" access="readOnly" supported="no">
+			<syntax>
+				<base64 />
+			</syntax>
+		</parameter>
+		<parameter name="VirtualNoisePSDus" access="readOnly" supported="no">
+			<syntax>
+				<base64 />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCANSIRev" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTUCANSIStd" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTURANSIRev" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="XTURANSIStd" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_XTURModelShort" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="2" />
+				</string>
+				<default value="68" />
+			</syntax>
+		</parameter>
+		<parameter name="TRELLISds" access="readOnly">
+			<syntax>
+				<int />
+			</syntax>
+		</parameter>
+		<parameter name="TRELLISus" access="readOnly">
+			<syntax>
+				<int />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SRA" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="1" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SOS" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="1" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_G992DTF" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="1" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_V43" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="1" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_EnableATTNDRframingConstrains" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="1" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_NoG994AVdslToggle" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="1" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AlignAfterPeriodics" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="1" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_DynamicV43handling" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="1" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_EnableROC" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="1" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_BitSwap" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="1" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_PhyR" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="3" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_GINP" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="3" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_MonitorTone" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="1" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ToggleJ43B43" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="1" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Annex">
+			<syntax>
+				<string>
+					<enumeration value="A" />
+					<enumeration value="B" />
+				</string>
+				<default value="A" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Label" access="readOnly">
+			<syntax>
+				<string>
+					<size maxLength="16" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Line.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="PacketsReceived" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedLong>
+					<units value="fps" />
+				</unsignedLong>
+			</syntax>
+		</parameter>
+		<parameter name="PacketsSent" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedLong>
+					<units value="fps" />
+				</unsignedLong>
+			</syntax>
+		</parameter>
+		<parameter name="BytesReceived" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedLong>
+					<units value="bps" />
+				</unsignedLong>
+			</syntax>
+		</parameter>
+		<parameter name="BytesSent" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedLong>
+					<units value="bps" />
+				</unsignedLong>
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="fps" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="fps" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="TotalStart" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="QuarterHourStart" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="CurrentDayStart" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="ShowtimeStart" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="LastShowtimeStart" access="readOnly" activeNotify="canDeny" get="DslLine.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Line.{i}.Stats.Total." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="ErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="SeverelyErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Line.{i}.Stats.QuarterHour." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="ErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="SeverelyErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Line.{i}.Stats.CurrentDay." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="ErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="SeverelyErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Line.{i}.Stats.Showtime." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="ErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="4294967295" />
+			</syntax>
+		</parameter>
+		<parameter name="SeverelyErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="4294967295" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Line.{i}.Stats.LastShowtime." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="ErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="4294967295" />
+			</syntax>
+		</parameter>
+		<parameter name="SeverelyErroredSecs" access="readOnly" activeNotify="canDeny" get="DslLine.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="4294967295" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Line.{i}.TestParams." access="readOnly" minEntries="1" maxEntries="1" supported="no">
+		<parameter name="HLOGMTds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="HLOGMTus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="HLOGpsds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="2559" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="HLOGpsus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="2559" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="LATNds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="24" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="LATNus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="24" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="QLNMTds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="QLNMTus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="QLNpsds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="2047" />
+				</list>
+				<int />
+			</syntax>
+		</parameter>
+		<parameter name="QLNpsus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="2047" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="SATNds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="24" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="SATNus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="24" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="SNRMTds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="SNRMTus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="SNRpsds" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="2047" />
+				</list>
+				<int />
+			</syntax>
+		</parameter>
+		<parameter name="SNRpsus" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="2047" />
+				</list>
+				<string />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

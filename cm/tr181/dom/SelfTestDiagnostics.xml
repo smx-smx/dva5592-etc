@@ -1,3 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="SelfTestDiagnostics." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled"><syntax><string><enumeration value="None" /><enumeration value="Requested" /><enumeration value="Complete" /><enumeration value="Error_Internal" /><enumeration value="Error_Other" /></string><default value="None" /></syntax></parameter><parameter name="Results" access="readOnly"><syntax><string><size minLength="0" maxLength="1024" /></string></syntax></parameter></object></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="SelfTestDiagnostics." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Requested" />
+					<enumeration value="Complete" />
+					<enumeration value="Error_Internal" />
+					<enumeration value="Error_Other" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="Results" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="1024" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

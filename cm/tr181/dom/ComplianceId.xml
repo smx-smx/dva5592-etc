@@ -1,3 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="DeviceInfo."><parameter name="X_ADB_HWComplianceId" access="readOnly" store="no"><syntax><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_SWComplianceId" access="readOnly" store="no"><syntax><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter></object></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="DeviceInfo.">
+		<parameter name="X_ADB_HWComplianceId" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SWComplianceId" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

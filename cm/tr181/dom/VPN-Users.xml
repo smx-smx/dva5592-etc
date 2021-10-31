@@ -1,4 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="X_ADB_VPN." access="readOnly" minEntries="1" maxEntries="1">
-    </object><object name="X_ADB_VPN.Users." access="readOnly" minEntries="1" maxEntries="1"><parameter name="UserNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="X_ADB_VPN.Users.User.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="UserNumberOfEntries" set="L2TPServer.sh,PPTPServer.sh" del="L2TPServer.sh,PPTPServer.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Username" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Password" access="readWrite"><syntax hidden="true"><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Host" access="readWrite" supported="no"><syntax><string><size minLength="0" maxLength="64" /></string><default value="all" /></syntax></parameter></object></datamodel>
+<datamodel name="Services" version="2.0">
+    <object name="X_ADB_VPN." access="readOnly" minEntries="1" maxEntries="1">
+    </object>
+    <object name="X_ADB_VPN.Users." access="readOnly" minEntries="1" maxEntries="1">
+        <parameter name="UserNumberOfEntries" access="readOnly" store="no">
+            <syntax>
+                <unsignedInt />
+                <default value="0" />
+            </syntax>
+        </parameter>
+    </object>
+    <object name="X_ADB_VPN.Users.User.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="UserNumberOfEntries" set="L2TPServer.sh,PPTPServer.sh" del="L2TPServer.sh,PPTPServer.sh">
+        <parameter name="Alias" access="readWrite" key="yes">
+            <syntax>
+                <dataType ref="Alias" />
+            </syntax>
+        </parameter>
+        <parameter name="Enable" access="readWrite">
+            <syntax>
+                <boolean />
+                <default value="false" />
+            </syntax>
+        </parameter>
+        <parameter name="Username" access="readWrite">
+            <syntax>
+                <string>
+                    <size minLength="0" maxLength="64" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="Password" access="readWrite">
+            <syntax hidden="true">
+                <string>
+                    <size minLength="0" maxLength="64" />
+                </string>
+            </syntax>
+        </parameter>
+        <parameter name="Host" access="readWrite" supported="no">
+            <syntax>
+                <string>
+                    <size minLength="0" maxLength="64" />
+                </string>
+                <default value="all" />
+            </syntax>
+        </parameter>
+    </object>
+</datamodel>

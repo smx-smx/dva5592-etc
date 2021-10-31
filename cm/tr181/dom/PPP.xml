@@ -1,3 +1,446 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="PPP" version="2.0"><object name="PPP." access="readOnly" minEntries="1" maxEntries="1"><parameter name="InterfaceNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="PPP.Interface.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceNumberOfEntries" enableParameter="Enable" set="PPPIf.sh" add="InstanceNamer.sh" del="PPPIf.sh,InterfaceRefDel.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="X_ADB_CurrentAuthenticationProtocol" access="readOnly"><syntax><string><enumeration value="PAP" /><enumeration value="CHAP" /><enumeration value="MS-CHAP" /><enumeration value="MS-CHAPv2" /></string></syntax></parameter><parameter name="ConnectionTrigger" access="readWrite"><syntax><string><enumeration value="OnDemand" /><enumeration value="AlwaysOn" /><enumeration value="Manual" /><enumeration value="X_ADB_OnClient" /></string><default value="AlwaysOn" /></syntax></parameter><parameter name="AuthenticationProtocol" access="readWrite"><syntax><list /><string><enumeration value="Auto" exclusive="true" /><enumeration value="PAP" /><enumeration value="CHAP" /><enumeration value="MS-CHAP" /><enumeration value="MS-CHAPv2" /></string></syntax></parameter><parameter name="X_ADB_UserEnable" access="readWrite" excludeUser="Assurance,CWMP"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="LastChange" access="readOnly" activeNotify="canDeny" get="PPPIf.sh" store="no"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_LastChange" access="readOnly" store="no"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="LowerLayers" access="readWrite"><syntax><list><size minLength="0" maxLength="1024" /></list><string><pathRef refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="Name" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="X_ADB_Name" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="Password" access="readWrite"><syntax mangled="true" hidden="true"><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Reset" access="readWrite" aliasOnGet="%s(false)"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Up" /><enumeration value="Down" /><enumeration value="Unknown" /><enumeration value="Dormant" /><enumeration value="NotPresent" /><enumeration value="LowerLayerDown" /><enumeration value="Error" /></string><default value="LowerLayerDown" /></syntax></parameter><parameter name="Username" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="LCPEcho" access="readOnly"><syntax><unsignedInt /><default value="120" /></syntax></parameter><parameter name="LCPEchoRetry" access="readOnly"><syntax><unsignedInt /><default value="4" /></syntax></parameter><parameter name="X_ADB_CHAPInterval" access="readOnly"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="MaxMRUSize" access="readWrite"><syntax><unsignedInt><range minInclusive="64" maxInclusive="65535" step="1" /></unsignedInt><default value="1500" /></syntax></parameter><parameter name="CurrentMRUSize" access="readOnly" get="PPPIf.sh" store="no"><syntax><unsignedInt><range minInclusive="64" maxInclusive="65535" step="1" /></unsignedInt></syntax></parameter><parameter name="IdleDisconnectTime" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="AutoDisconnectTime" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="CompressionProtocol" access="readWrite"><syntax><string><enumeration value="None" /><enumeration value="Van Jacobson" /></string></syntax></parameter><parameter name="X_ADB_PayloadCompressionProtocol" access="readWrite"><syntax><string><enumeration value="Deflate" /><enumeration value="BSD" /></string></syntax></parameter><parameter name="X_ADB_PayloadCompressionProtocolMaxCodeSize" access="readWrite"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="ConnectionStatus" access="readOnly" store="no" set="Led.sh,IPIf.sh,QoSQueue.sh"><syntax><string><enumeration value="Unconfigured" /><enumeration value="Connecting" /><enumeration value="Authenticating" /><enumeration value="Connected" /><enumeration value="PendingDisconnect" /><enumeration value="Disconnecting" /><enumeration value="Disconnected" /></string><default value="Unconfigured" /></syntax></parameter><parameter name="LastConnectionError" access="readOnly" get="PPPIf.sh" store="no" set="Led.sh"><syntax><string><size minLength="0" maxLength="64" /></string><default value="ERROR_NONE" /></syntax></parameter><parameter name="EncryptionProtocol" access="readOnly"><syntax><string><enumeration value="None" /><enumeration value="MPPE" /></string></syntax></parameter><parameter name="X_ADB_EncryptionProtocol" access="readWrite"><syntax><list minItems="1" maxItems="4" /><string><enumeration value="None" exclusive="true" /><enumeration value="MPPE-40bit" /><enumeration value="MPPE-56bit" /><enumeration value="MPPE-128bit" /><enumeration value="MPPE-Stateless" /></string><default value="None" /></syntax></parameter><parameter name="IPCPEnable" access="readWrite" supported="no"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="X_ADB_Reconnect" access="readWrite" aliasOnGet="%s(false)" store="no"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_RequestMask" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_Disconnect" access="readWrite" aliasOnGet="%s(false)" store="no"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_IgnoreIdleTimeOut" active="readWrite" store="no"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter></object><object name="PPP.Interface.{i}.PPPoE." access="readOnly" minEntries="1" maxEntries="1" set="PPPIf.sh" del="PPPIf.sh"><parameter name="ACName" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="ServiceName" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="SessionID" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="X_ADB_DeviceName" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="X_ADB_LocalMACAddress" access="readOnly"><syntax><string><size minLength="0" maxLength="17" /><pattern value="" /><pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" /></string></syntax></parameter><parameter name="X_ADB_RemoteMACAddress" access="readOnly"><syntax><string><size minLength="0" maxLength="17" /><pattern value="" /><pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" /></string></syntax></parameter></object><object name="PPP.Interface.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="BroadcastPacketsReceived" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedLong /></syntax></parameter><parameter name="BroadcastPacketsSent" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedLong /></syntax></parameter><parameter name="BytesReceived" access="readOnly" activeNotify="canDeny" get="PPPIf.sh"><syntax><unsignedLong /></syntax></parameter><parameter name="BytesSent" access="readOnly" activeNotify="canDeny" get="PPPIf.sh"><syntax><unsignedLong /></syntax></parameter><parameter name="DiscardPacketsReceived" access="readOnly" activeNotify="canDeny" get="PPPIf.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="DiscardPacketsSent" access="readOnly" activeNotify="canDeny" get="PPPIf.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="PPPIf.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="PPPIf.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="MulticastPacketsReceived" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedLong /></syntax></parameter><parameter name="MulticastPacketsSent" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedLong /></syntax></parameter><parameter name="PacketsReceived" access="readOnly" activeNotify="canDeny" get="PPPIf.sh"><syntax><unsignedLong /></syntax></parameter><parameter name="PacketsSent" access="readOnly" activeNotify="canDeny" get="PPPIf.sh"><syntax><unsignedLong /></syntax></parameter><parameter name="UnicastPacketsReceived" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedLong /></syntax></parameter><parameter name="UnicastPacketsSent" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedLong /></syntax></parameter><parameter name="UnknownProtoPacketsReceived" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="X_ADB_Reset" access="readWrite" store="no" set="PPPIf.sh" aliasOnGet="%s(false)"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter></object><object name="PPP.Interface.{i}.IPCP." access="readOnly" minEntries="1" maxEntries="1" set="PPPIf.sh" del="PPPIf.sh"><parameter name="DNSServers" access="readOnly" store="no" set="DNSUpdate.sh"><syntax><list maxItems="2" /><default value="" /></syntax></parameter><parameter name="LocalIPAddress" access="readOnly" store="no" set="Led.sh"><syntax><default value="" /></syntax></parameter><parameter name="PassthroughDHCPPool" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".DHCPv4.Server.Pool." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="PassthroughEnable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="RemoteIPAddress" access="readOnly" store="no"><syntax><default value="" /></syntax></parameter></object></datamodel>
+<datamodel name="PPP" version="2.0">
+	<object name="PPP." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="InterfaceNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="PPP.Interface.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceNumberOfEntries" enableParameter="Enable" set="PPPIf.sh" add="InstanceNamer.sh" del="PPPIf.sh,InterfaceRefDel.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_CurrentAuthenticationProtocol" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="PAP" />
+					<enumeration value="CHAP" />
+					<enumeration value="MS-CHAP" />
+					<enumeration value="MS-CHAPv2" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ConnectionTrigger" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="OnDemand" />
+					<enumeration value="AlwaysOn" />
+					<enumeration value="Manual" />
+					<enumeration value="X_ADB_OnClient" />
+				</string>
+				<default value="AlwaysOn" />
+			</syntax>
+		</parameter>
+		<parameter name="AuthenticationProtocol" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="Auto" exclusive="true" />
+					<enumeration value="PAP" />
+					<enumeration value="CHAP" />
+					<enumeration value="MS-CHAP" />
+					<enumeration value="MS-CHAPv2" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_UserEnable" access="readWrite" excludeUser="Assurance,CWMP">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="LastChange" access="readOnly" activeNotify="canDeny" get="PPPIf.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LastChange" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="LowerLayers" access="readWrite">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="1024" />
+				</list>
+				<string>
+					<pathRef refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Name" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Password" access="readWrite">
+			<syntax mangled="true" hidden="true">
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Reset" access="readWrite" aliasOnGet="%s(false)">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Up" />
+					<enumeration value="Down" />
+					<enumeration value="Unknown" />
+					<enumeration value="Dormant" />
+					<enumeration value="NotPresent" />
+					<enumeration value="LowerLayerDown" />
+					<enumeration value="Error" />
+				</string>
+				<default value="LowerLayerDown" />
+			</syntax>
+		</parameter>
+		<parameter name="Username" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="LCPEcho" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="120" />
+			</syntax>
+		</parameter>
+		<parameter name="LCPEchoRetry" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="4" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_CHAPInterval" access="readOnly">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="MaxMRUSize" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="64" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="1500" />
+			</syntax>
+		</parameter>
+		<parameter name="CurrentMRUSize" access="readOnly" get="PPPIf.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="64" maxInclusive="65535" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="IdleDisconnectTime" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="AutoDisconnectTime" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="CompressionProtocol" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Van Jacobson" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_PayloadCompressionProtocol" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Deflate" />
+					<enumeration value="BSD" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_PayloadCompressionProtocolMaxCodeSize" access="readWrite">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ConnectionStatus" access="readOnly" store="no" set="Led.sh,IPIf.sh,QoSQueue.sh">
+			<syntax>
+				<string>
+					<enumeration value="Unconfigured" />
+					<enumeration value="Connecting" />
+					<enumeration value="Authenticating" />
+					<enumeration value="Connected" />
+					<enumeration value="PendingDisconnect" />
+					<enumeration value="Disconnecting" />
+					<enumeration value="Disconnected" />
+				</string>
+				<default value="Unconfigured" />
+			</syntax>
+		</parameter>
+		<parameter name="LastConnectionError" access="readOnly" get="PPPIf.sh" store="no" set="Led.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="ERROR_NONE" />
+			</syntax>
+		</parameter>
+		<parameter name="EncryptionProtocol" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="MPPE" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_EncryptionProtocol" access="readWrite">
+			<syntax>
+				<list minItems="1" maxItems="4" />
+				<string>
+					<enumeration value="None" exclusive="true" />
+					<enumeration value="MPPE-40bit" />
+					<enumeration value="MPPE-56bit" />
+					<enumeration value="MPPE-128bit" />
+					<enumeration value="MPPE-Stateless" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="IPCPEnable" access="readWrite" supported="no">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Reconnect" access="readWrite" aliasOnGet="%s(false)" store="no">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_RequestMask" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Disconnect" access="readWrite" aliasOnGet="%s(false)" store="no">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_IgnoreIdleTimeOut" active="readWrite" store="no">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="PPP.Interface.{i}.PPPoE." access="readOnly" minEntries="1" maxEntries="1" set="PPPIf.sh" del="PPPIf.sh">
+		<parameter name="ACName" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ServiceName" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SessionID" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_DeviceName" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LocalMACAddress" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="17" />
+					<pattern value="" />
+					<pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_RemoteMACAddress" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="17" />
+					<pattern value="" />
+					<pattern value="([0-9A-Fa-f][0-9A-Fa-f]:){5}([0-9A-Fa-f][0-9A-Fa-f])" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="PPP.Interface.{i}.Stats." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="BroadcastPacketsReceived" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="BroadcastPacketsSent" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="BytesReceived" access="readOnly" activeNotify="canDeny" get="PPPIf.sh">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="BytesSent" access="readOnly" activeNotify="canDeny" get="PPPIf.sh">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="DiscardPacketsReceived" access="readOnly" activeNotify="canDeny" get="PPPIf.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="DiscardPacketsSent" access="readOnly" activeNotify="canDeny" get="PPPIf.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="PPPIf.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="PPPIf.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="MulticastPacketsReceived" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="MulticastPacketsSent" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="PacketsReceived" access="readOnly" activeNotify="canDeny" get="PPPIf.sh">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="PacketsSent" access="readOnly" activeNotify="canDeny" get="PPPIf.sh">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="UnicastPacketsReceived" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="UnicastPacketsSent" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedLong />
+			</syntax>
+		</parameter>
+		<parameter name="UnknownProtoPacketsReceived" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Reset" access="readWrite" store="no" set="PPPIf.sh" aliasOnGet="%s(false)">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="PPP.Interface.{i}.IPCP." access="readOnly" minEntries="1" maxEntries="1" set="PPPIf.sh" del="PPPIf.sh">
+		<parameter name="DNSServers" access="readOnly" store="no" set="DNSUpdate.sh">
+			<syntax>
+				<list maxItems="2" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="LocalIPAddress" access="readOnly" store="no" set="Led.sh">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="PassthroughDHCPPool" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".DHCPv4.Server.Pool." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="PassthroughEnable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="RemoteIPAddress" access="readOnly" store="no">
+			<syntax>
+				<default value="" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

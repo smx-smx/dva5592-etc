@@ -1,3 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="PowerManagement" version="2.0"><object name="DeviceInfo.X_ADB_PowerManagement." access="readWrite" minEntries="1" maxEntries="1" set="PowerMng.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="CpuSpeed" access="readWrite"><syntax><string><enumeration value="0" /><enumeration value="1" /><enumeration value="2" /><enumeration value="4" /><enumeration value="8" /><enumeration value="256" /></string><default value="0" /></syntax></parameter><parameter name="CpuR4kWait" access="readWrite"><syntax><string><enumeration value="off" /><enumeration value="on" /></string><default value="off" /></syntax></parameter><parameter name="DRamSelfRefresh" access="readWrite"><syntax><string><enumeration value="off" /><enumeration value="on" /></string><default value="off" /></syntax></parameter><parameter name="GlobalEEEEnable" access="readWrite"><syntax><string><enumeration value="off" /><enumeration value="on" /></string><default value="on" /></syntax></parameter><parameter name="APDEnable" access="readWrite"><syntax><string><enumeration value="off" /><enumeration value="on" /></string><default value="on" /></syntax></parameter><parameter name="AdaptiveVoltageScaling" access="readWrite"><syntax><string><enumeration value="on" /><enumeration value="off" /><enumeration value="stopped" /><enumeration value="deep" /></string><default value="off" /></syntax></parameter><parameter name="PciExpressPolicy" access="readWrite"><syntax><string><enumeration value="default" /><enumeration value="performance" /><enumeration value="powersave" /><enumeration value="l0s_powersave" /><enumeration value="l1_powersave" /></string><default value="default" /></syntax></parameter></object></datamodel>
+<datamodel name="PowerManagement" version="2.0">
+	<object name="DeviceInfo.X_ADB_PowerManagement." access="readWrite" minEntries="1" maxEntries="1" set="PowerMng.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="CpuSpeed" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="0" />
+					<enumeration value="1" />
+					<enumeration value="2" />
+					<enumeration value="4" />
+					<enumeration value="8" />
+					<enumeration value="256" />
+				</string>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="CpuR4kWait" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="off" />
+					<enumeration value="on" />
+				</string>
+				<default value="off" />
+			</syntax>
+		</parameter>
+		<parameter name="DRamSelfRefresh" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="off" />
+					<enumeration value="on" />
+				</string>
+				<default value="off" />
+			</syntax>
+		</parameter>
+		<parameter name="GlobalEEEEnable" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="off" />
+					<enumeration value="on" />
+				</string>
+				<default value="on" />
+			</syntax>
+		</parameter>
+		<parameter name="APDEnable" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="off" />
+					<enumeration value="on" />
+				</string>
+				<default value="on" />
+			</syntax>
+		</parameter>
+		<parameter name="AdaptiveVoltageScaling" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="on" />
+					<enumeration value="off" />
+					<enumeration value="stopped" />
+					<enumeration value="deep" />
+				</string>
+				<default value="off" />
+			</syntax>
+		</parameter>
+		<parameter name="PciExpressPolicy" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="default" />
+					<enumeration value="performance" />
+					<enumeration value="powersave" />
+					<enumeration value="l0s_powersave" />
+					<enumeration value="l1_powersave" />
+				</string>
+				<default value="default" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

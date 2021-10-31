@@ -1,3 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="Services.StorageService.{i}.Capabilities."><parameter name="SupportedFileSystemTypes" access="readOnly"><syntax><list /><string><enumeration value="FAT16" /><enumeration value="FAT32" /><enumeration value="NTFS" /><enumeration value="HFS" /><enumeration value="HFS+" /><enumeration value="HSFJ" /><enumeration value="ext2" /><enumeration value="ext3" /><enumeration value="ext4" /><enumeration value="XFS" /><enumeration value="REISER" /></string><default value="ext2,ext3,FAT16,FAT32,NTFS,HFS,HFS+" /></syntax></parameter></object><object name="Services.StorageService.{i}.LogicalVolume.{i}."><parameter name="FileSystem" access="readOnly"><syntax><string><enumeration value="FAT16" /><enumeration value="FAT32" /><enumeration value="NTFS" /><enumeration value="HFS" /><enumeration value="HFS+" /><enumeration value="HSFJ" /><enumeration value="ext2" /><enumeration value="ext3" /><enumeration value="ext4" /><enumeration value="XFS" /><enumeration value="REISER" /></string></syntax></parameter><parameter name="X_ADB_Writable" excludeUser="CWMP" /><parameter name="X_ADB_Create" excludeUser="CWMP" /><parameter name="X_ADB_DeleteFolders" excludeUser="CWMP" /><parameter name="X_ADB_Format" excludeUser="CWMP" /><parameter name="X_ADB_MountPoint" excludeUser="CWMP" /><parameter name="X_ADB_PartitionLabel" excludeUser="CWMP" /><parameter name="X_ADB_QUOTAEnabled" excludeUser="CWMP" /><parameter name="X_ADB_QUOTANumberOfEntries" excludeUser="CWMP" /><parameter name="X_ADB_StartSector" excludeUser="CWMP" /><parameter name="X_ADB_SizeSectors" excludeUser="CWMP" /></object><object name="Services.StorageService.{i}.LogicalVolume.{i}.X_ADB_QUOTA.{i}." excludeUser="CWMP" /><object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}."><parameter name="X_ADB_ShareName" excludeUser="CWMP" /><parameter name="X_ADB_Permission" excludeUser="CWMP" /><parameter name="X_ADB_AllowGuestAccess" excludeUser="CWMP" /></object><object name="Services.StorageService.{i}.NetworkServer."><parameter name="X_ADB_AutoshareEnable" excludeUser="CWMP" /><parameter name="X_ADB_AutoshareName" excludeUser="CWMP" /><parameter name="X_ADB_AutosharePermission" excludeUser="CWMP" /><parameter name="X_ADB_AutoshareUser" excludeUser="CWMP" /><parameter name="X_ADB_AutoshareLegacyNaming" excludeUser="CWMP" /><parameter name="X_ADB_AutoshareStatus" excludeUser="CWMP" /></object><object name="Services.StorageService.{i}.PhysicalMedium.{i}."><parameter name="X_ADB_DeviceName" excludeUser="CWMP" /><parameter name="X_ADB_UsageCount" excludeUser="CWMP" /><parameter name="X_ADB_UnsafeRemoval" excludeUser="CWMP" /></object><object name="Services.StorageService.{i}.UserAccount.{i}."><parameter name="X_ADB_Refresh" excludeUser="CWMP" /></object></datamodel>
+<datamodel name="Services" version="2.0">
+	<object name="Services.StorageService.{i}.Capabilities.">
+		<parameter name="SupportedFileSystemTypes" access="readOnly">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="FAT16" />
+					<enumeration value="FAT32" />
+					<enumeration value="NTFS" />
+					<enumeration value="HFS" />
+					<enumeration value="HFS+" />
+					<enumeration value="HSFJ" />
+					<enumeration value="ext2" />
+					<enumeration value="ext3" />
+					<enumeration value="ext4" />
+					<enumeration value="XFS" />
+					<enumeration value="REISER" />
+				</string>
+				<default value="ext2,ext3,FAT16,FAT32,NTFS,HFS,HFS+" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Services.StorageService.{i}.LogicalVolume.{i}.">
+		<parameter name="FileSystem" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="FAT16" />
+					<enumeration value="FAT32" />
+					<enumeration value="NTFS" />
+					<enumeration value="HFS" />
+					<enumeration value="HFS+" />
+					<enumeration value="HSFJ" />
+					<enumeration value="ext2" />
+					<enumeration value="ext3" />
+					<enumeration value="ext4" />
+					<enumeration value="XFS" />
+					<enumeration value="REISER" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Writable" excludeUser="CWMP" />
+		<parameter name="X_ADB_Create" excludeUser="CWMP" />
+		<parameter name="X_ADB_DeleteFolders" excludeUser="CWMP" />
+		<parameter name="X_ADB_Format" excludeUser="CWMP" />
+		<parameter name="X_ADB_MountPoint" excludeUser="CWMP" />
+		<parameter name="X_ADB_PartitionLabel" excludeUser="CWMP" />
+		<parameter name="X_ADB_QUOTAEnabled" excludeUser="CWMP" />
+		<parameter name="X_ADB_QUOTANumberOfEntries" excludeUser="CWMP" />
+		<parameter name="X_ADB_StartSector" excludeUser="CWMP" />
+		<parameter name="X_ADB_SizeSectors" excludeUser="CWMP" />
+	</object>
+	<object name="Services.StorageService.{i}.LogicalVolume.{i}.X_ADB_QUOTA.{i}." excludeUser="CWMP" />
+	<object name="Services.StorageService.{i}.LogicalVolume.{i}.Folder.{i}.">
+		<parameter name="X_ADB_ShareName" excludeUser="CWMP" />
+		<parameter name="X_ADB_Permission" excludeUser="CWMP" />
+		<parameter name="X_ADB_AllowGuestAccess" excludeUser="CWMP" />
+	</object>
+	<object name="Services.StorageService.{i}.NetworkServer.">
+		<parameter name="X_ADB_AutoshareEnable" excludeUser="CWMP" />
+		<parameter name="X_ADB_AutoshareName" excludeUser="CWMP" />
+		<parameter name="X_ADB_AutosharePermission" excludeUser="CWMP" />
+		<parameter name="X_ADB_AutoshareUser" excludeUser="CWMP" />
+		<parameter name="X_ADB_AutoshareLegacyNaming" excludeUser="CWMP" />
+		<parameter name="X_ADB_AutoshareStatus" excludeUser="CWMP" />
+	</object>
+	<object name="Services.StorageService.{i}.PhysicalMedium.{i}.">
+		<parameter name="X_ADB_DeviceName" excludeUser="CWMP" />
+		<parameter name="X_ADB_UsageCount" excludeUser="CWMP" />
+		<parameter name="X_ADB_UnsafeRemoval" excludeUser="CWMP" />
+	</object>
+	<object name="Services.StorageService.{i}.UserAccount.{i}.">
+		<parameter name="X_ADB_Refresh" excludeUser="CWMP" />
+	</object>
+</datamodel>

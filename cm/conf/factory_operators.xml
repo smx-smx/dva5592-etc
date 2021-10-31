@@ -7578,321 +7578,321 @@
     </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.175">
-	<parameter name="Name">
-		<value>AS EMT</value>
-	</parameter>
-	<parameter name="ShortName">
-		<value>EMT</value>
-	</parameter>
-	<parameter name="Description">
-		<value>EMT</value>
-	</parameter>
-	<parameter name="PLMN">
-		<value>24801</value>
-	</parameter>
-	<parameter name="CreditBalanceUSSD">
-		<value></value>
-	</parameter>
-	<parameter name="LocalCurrency">
-		<value></value>
-	</parameter>
+    <parameter name="Name">
+        <value>AS EMT</value>
+    </parameter>
+    <parameter name="ShortName">
+        <value>EMT</value>
+    </parameter>
+    <parameter name="Description">
+        <value>EMT</value>
+    </parameter>
+    <parameter name="PLMN">
+        <value>24801</value>
+    </parameter>
+    <parameter name="CreditBalanceUSSD">
+        <value></value>
+    </parameter>
+    <parameter name="LocalCurrency">
+        <value></value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.175.APN.1">
-	<parameter name="Name">
-		<value>internet</value>
-	</parameter>
-	<parameter name="URL">
-		<value>internet.emt.ee</value>
-	</parameter>
-	<parameter name="Dial">
-		<value>*99#</value>
-	</parameter>
-	<parameter name="Password">
-		<value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
-	</parameter>
+    <parameter name="Name">
+        <value>internet</value>
+    </parameter>
+    <parameter name="URL">
+        <value>internet.emt.ee</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
+    <parameter name="Password">
+        <value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.176">
-	<parameter name="Name">
-		<value>Elisa Eesti AS</value>
-	</parameter>
-	<parameter name="ShortName">
-		<value>Elisa Eesti</value>
-	</parameter>
-	<parameter name="PLMN">
-		<value>24802</value>
-	</parameter>
-	<parameter name="CreditBalanceUSSD">
-		<value></value>
-	</parameter>
-	<parameter name="LocalCurrency">
-		<value></value>
-	</parameter>
+    <parameter name="Name">
+        <value>Elisa Eesti AS</value>
+    </parameter>
+    <parameter name="ShortName">
+        <value>Elisa Eesti</value>
+    </parameter>
+    <parameter name="PLMN">
+        <value>24802</value>
+    </parameter>
+    <parameter name="CreditBalanceUSSD">
+        <value></value>
+    </parameter>
+    <parameter name="LocalCurrency">
+        <value></value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.176.APN.1">
-	<parameter name="Name">
-		<value>internet</value>
-	</parameter>
-	<parameter name="URL">
-		<value>internet</value>
-	</parameter>
-	<parameter name="Dial">
-		<value>*99#</value>
-	</parameter>
-	<parameter name="Password">
-		<value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
-	</parameter>
+    <parameter name="Name">
+        <value>internet</value>
+    </parameter>
+    <parameter name="URL">
+        <value>internet</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
+    <parameter name="Password">
+        <value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.177">
-	<parameter name="Name">
-		<value>Tele2 Eesti AS</value>
-	</parameter>
-	<parameter name="ShortName">
-		<value>Tele2 Eesti</value>
-	</parameter>
-	<parameter name="PLMN">
-		<value>24803</value>
-	</parameter>
-	<parameter name="CreditBalanceUSSD">
-		<value></value>
-	</parameter>
-	<parameter name="LocalCurrency">
-		<value></value>
-	</parameter>
+    <parameter name="Name">
+        <value>Tele2 Eesti AS</value>
+    </parameter>
+    <parameter name="ShortName">
+        <value>Tele2 Eesti</value>
+    </parameter>
+    <parameter name="PLMN">
+        <value>24803</value>
+    </parameter>
+    <parameter name="CreditBalanceUSSD">
+        <value></value>
+    </parameter>
+    <parameter name="LocalCurrency">
+        <value></value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.177.APN.1">
-	<parameter name="Name">
-		<value>internet tele2</value>
-	</parameter>
-	<parameter name="URL">
-		<value>internet.tele2.ee</value>
-	</parameter>
-	<parameter name="Dial">
-		<value>*99#</value>
-	</parameter>
-	<parameter name="Password">
-		<value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
-	</parameter>
+    <parameter name="Name">
+        <value>internet tele2</value>
+    </parameter>
+    <parameter name="URL">
+        <value>internet.tele2.ee</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
+    <parameter name="Password">
+        <value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.177.APN.2">
-	<parameter name="Name">
-		<value>mobile internet</value>
-	</parameter>
-	<parameter name="URL">
-		<value>mobileinternet.tele2.ee</value>
-	</parameter>
-	<parameter name="Dial">
-		<value>*99#</value>
-	</parameter>
-	<parameter name="Password">
-		<value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
-	</parameter>
+    <parameter name="Name">
+        <value>mobile internet</value>
+    </parameter>
+    <parameter name="URL">
+        <value>mobileinternet.tele2.ee</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
+    <parameter name="Password">
+        <value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.177.APN.3">
-	<parameter name="Name">
-		<value>internet tele2 anonim</value>
-	</parameter>
-	<parameter name="URL">
-		<value>internet.tele2.ee</value>
-	</parameter>
-	<parameter name="Dial">
-		<value>*99#</value>
-	</parameter>
-	<parameter name="Password">
-		<value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
-	</parameter>
+    <parameter name="Name">
+        <value>internet tele2 anonim</value>
+    </parameter>
+    <parameter name="URL">
+        <value>internet.tele2.ee</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
+    <parameter name="Password">
+        <value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.178">
-	<parameter name="Name">
-		<value>Orange Telecom Israel</value>
-	</parameter>
-	<parameter name="ShortName">
-		<value>Orange IL</value>
-	</parameter>
-	<parameter name="PLMN">
-		<value>42501</value>
-	</parameter>
-	<parameter name="CreditBalanceUSSD">
-		<value></value>
-	</parameter>
-	<parameter name="LocalCurrency">
-		<value></value>
-	</parameter>
+    <parameter name="Name">
+        <value>Orange Telecom Israel</value>
+    </parameter>
+    <parameter name="ShortName">
+        <value>Orange IL</value>
+    </parameter>
+    <parameter name="PLMN">
+        <value>42501</value>
+    </parameter>
+    <parameter name="CreditBalanceUSSD">
+        <value></value>
+    </parameter>
+    <parameter name="LocalCurrency">
+        <value></value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.178.APN.1">
-	<parameter name="Name">
-		<value>Orange 3G</value>
-	</parameter>
-	<parameter name="URL">
-		<value>uinternet</value>
-	</parameter>
-	<parameter name="Dial">
-		<value>*99#</value>
-	</parameter>
-	<parameter name="Username">
-		<value>orange</value>
-	</parameter>
-	<parameter name="Password">
-		<value>408617d10133aa75960967f43905ef116a847e6a</value>
-	</parameter>
+    <parameter name="Name">
+        <value>Orange 3G</value>
+    </parameter>
+    <parameter name="URL">
+        <value>uinternet</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
+    <parameter name="Username">
+        <value>orange</value>
+    </parameter>
+    <parameter name="Password">
+        <value>408617d10133aa75960967f43905ef116a847e6a</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.179">
-	<parameter name="Name">
-		<value>Cellcom Israel Ltd</value>
-	</parameter>
-	<parameter name="ShortName">
-		<value>Cellcom </value>
-	</parameter>
-	<parameter name="PLMN">
-		<value>42502</value>
-	</parameter>
-	<parameter name="CreditBalanceUSSD">
-		<value></value>
-	</parameter>
-	<parameter name="LocalCurrency">
-		<value></value>
-	</parameter>
+    <parameter name="Name">
+        <value>Cellcom Israel Ltd</value>
+    </parameter>
+    <parameter name="ShortName">
+        <value>Cellcom </value>
+    </parameter>
+    <parameter name="PLMN">
+        <value>42502</value>
+    </parameter>
+    <parameter name="CreditBalanceUSSD">
+        <value></value>
+    </parameter>
+    <parameter name="LocalCurrency">
+        <value></value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.179.APN.1">
-	<parameter name="Name">
-		<value>Cellcom 3G</value>
-	</parameter>
-	<parameter name="URL">
-		<value>internetg</value>
-	</parameter>
-	<parameter name="Dial">
-		<value>*99#</value>
-	</parameter>
-	<parameter name="Password">
-		<value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
-	</parameter>
+    <parameter name="Name">
+        <value>Cellcom 3G</value>
+    </parameter>
+    <parameter name="URL">
+        <value>internetg</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
+    <parameter name="Password">
+        <value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.179.APN.2">
-	<parameter name="Name">
-		<value>Cellcom 3G APN2</value>
-	</parameter>
-	<parameter name="URL">
-		<value>sphone</value>
-	</parameter>
-	<parameter name="Dial">
-		<value>*99#</value>
-	</parameter>
-	<parameter name="Password">
-		<value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
-	</parameter>
+    <parameter name="Name">
+        <value>Cellcom 3G APN2</value>
+    </parameter>
+    <parameter name="URL">
+        <value>sphone</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
+    <parameter name="Password">
+        <value>40803c9db0cff93f52b521d7420e43f6eda2784f</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.180">
-	<parameter name="Name">
-		<value>Pelephone Israel</value>
-	</parameter>
-	<parameter name="ShortName">
-		<value>Pelephone</value>
-	</parameter>
-	<parameter name="PLMN">
-		<value>42503</value>
-	</parameter>
-	<parameter name="CreditBalanceUSSD">
-		<value></value>
-	</parameter>
-	<parameter name="LocalCurrency">
-		<value></value>
-	</parameter>
+    <parameter name="Name">
+        <value>Pelephone Israel</value>
+    </parameter>
+    <parameter name="ShortName">
+        <value>Pelephone</value>
+    </parameter>
+    <parameter name="PLMN">
+        <value>42503</value>
+    </parameter>
+    <parameter name="CreditBalanceUSSD">
+        <value></value>
+    </parameter>
+    <parameter name="LocalCurrency">
+        <value></value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.180.APN.1">
-	<parameter name="Name">
-		<value>Pelephone 3G</value>
-	</parameter>
-	<parameter name="URL">
-		<value>internet.pelephone.net.il</value>
-	</parameter>
-	<parameter name="Dial">
-		<value>*99#</value>
-	</parameter>
-	<parameter name="Username">
-		<value>pcl@3g</value>
-	</parameter>
-	<parameter name="Password">
-		<value>80430bb6159aa6c8ce81e6ea0102a4cac3c2afd9</value>
-	</parameter>
+    <parameter name="Name">
+        <value>Pelephone 3G</value>
+    </parameter>
+    <parameter name="URL">
+        <value>internet.pelephone.net.il</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
+    <parameter name="Username">
+        <value>pcl@3g</value>
+    </parameter>
+    <parameter name="Password">
+        <value>80430bb6159aa6c8ce81e6ea0102a4cac3c2afd9</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.181">
-        <parameter name="Name">
-                <value>British Telecom Italia</value>
-        </parameter>
-        <parameter name="ShortName">
-                <value>BT-Italia</value>
-        </parameter>
-        <parameter name="PLMN">
-                <value>42000</value>
-        </parameter>
-        <parameter name="CreditBalanceUSSD">
-                <value></value>
-        </parameter>
-        <parameter name="LocalCurrency">
-                <value></value>
-        </parameter>
+    <parameter name="Name">
+        <value>British Telecom Italia</value>
+    </parameter>
+    <parameter name="ShortName">
+        <value>BT-Italia</value>
+    </parameter>
+    <parameter name="PLMN">
+        <value>42000</value>
+    </parameter>
+    <parameter name="CreditBalanceUSSD">
+        <value></value>
+    </parameter>
+    <parameter name="LocalCurrency">
+        <value></value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.181.APN.1">
-        <parameter name="Name">
-                <value>bt</value>
-        </parameter>
-        <parameter name="URL">
-                <value>vpn.btitalia.it</value>
-        </parameter>
-        <parameter name="Dial">
-                <value>*99#</value>
-        </parameter>
-        <parameter name="Username">
-                <value>bckumts.btitalia.it</value>
-        </parameter>
+    <parameter name="Name">
+        <value>bt</value>
+    </parameter>
+    <parameter name="URL">
+        <value>vpn.btitalia.it</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
+    <parameter name="Username">
+        <value>bckumts.btitalia.it</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.182">
-        <parameter name="Name">
-                <value>TEST Operator</value>
-        </parameter>
-        <parameter name="ShortName">
-                <value>TEST</value>
-        </parameter>
-        <parameter name="PLMN">
-                <value>00101</value>
-        </parameter>
+    <parameter name="Name">
+        <value>TEST Operator</value>
+    </parameter>
+    <parameter name="ShortName">
+        <value>TEST</value>
+    </parameter>
+    <parameter name="PLMN">
+        <value>00101</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.182.APN.1">
-        <parameter name="Name">
-                <value>test</value>
-        </parameter>
-        <parameter name="URL">
-                <value>test1.com</value>
-        </parameter>
-        <parameter name="Dial">
-                <value>*99#</value>
-        </parameter>
+    <parameter name="Name">
+        <value>test</value>
+    </parameter>
+    <parameter name="URL">
+        <value>test1.com</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.183">
-	<parameter name="Name">
-		<value>Tiscali</value>
-	</parameter>
-	<parameter name="ShortName">
-		<value>Tiscali</value>
-	</parameter>
-	<parameter name="PLMN">
-		<value>22201</value>
-	</parameter>
+    <parameter name="Name">
+        <value>Tiscali</value>
+    </parameter>
+    <parameter name="ShortName">
+        <value>Tiscali</value>
+    </parameter>
+    <parameter name="PLMN">
+        <value>22201</value>
+    </parameter>
 </object>
 <object name="Device.X_ADB_MobileModem.Operator.183.APN.1">
-	<parameter name="Name">
-		<value>tiscali mobile</value>
-	</parameter>
-	<parameter name="URL">
-		<value>tiscalimobileinternet</value>
-	</parameter>
-	<parameter name="Dial">
-		<value>*99#</value>
-	</parameter>
-	<parameter name="Username">
-		<value>user</value>
-	</parameter>
-	<parameter name="Password">
-		<value>000408aa1588b4b7917427508dcae729ce7799d1</value>
-	</parameter>
+    <parameter name="Name">
+        <value>tiscali mobile</value>
+    </parameter>
+    <parameter name="URL">
+        <value>tiscalimobileinternet</value>
+    </parameter>
+    <parameter name="Dial">
+        <value>*99#</value>
+    </parameter>
+    <parameter name="Username">
+        <value>user</value>
+    </parameter>
+    <parameter name="Password">
+        <value>000408aa1588b4b7917427508dcae729ce7799d1</value>
+    </parameter>
 </object>
 

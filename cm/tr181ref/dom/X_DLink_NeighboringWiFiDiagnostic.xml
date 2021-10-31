@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="X_DLink" version="2.0"><object name="WiFi.NeighboringWiFiDiagnostic." aliasOnAdd="InternetGatewayDevice.X_DLINK_NeighboringWiFiDiagnostic." aliasOnDel="InternetGatewayDevice.X_DLINK_NeighboringWiFiDiagnostic.">
-    </object><object name="WiFi.NeighboringWiFiDiagnostic.Result.{i}." aliasOnAdd="InternetGatewayDevice.X_DLINK_NeighboringWiFiDiagnostic.Result.%i" aliasOnDel="InternetGatewayDevice.X_DLINK_NeighboringWiFiDiagnostic.Result.%i">
-    </object></datamodel>
+<datamodel name="X_DLink" version="2.0">
+    <object name="WiFi.NeighboringWiFiDiagnostic." aliasOnAdd="InternetGatewayDevice.X_DLINK_NeighboringWiFiDiagnostic." aliasOnDel="InternetGatewayDevice.X_DLINK_NeighboringWiFiDiagnostic.">
+    </object>
+    <object name="WiFi.NeighboringWiFiDiagnostic.Result.{i}." aliasOnAdd="InternetGatewayDevice.X_DLINK_NeighboringWiFiDiagnostic.Result.%i" aliasOnDel="InternetGatewayDevice.X_DLINK_NeighboringWiFiDiagnostic.Result.%i">
+    </object>
+</datamodel>

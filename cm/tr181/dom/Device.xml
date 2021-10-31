@@ -1,3 +1,592 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Device" version="2.0"><object name="." access="readOnly" minEntries="1" maxEntries="1"><parameter name="DeviceSummary" access="readOnly" forcedInform="true" store="no"><syntax><string /></syntax></parameter></object><object name="DeviceInfo." access="readOnly" minEntries="1" maxEntries="1"><parameter name="AdditionalHardwareVersion" access="readOnly"><syntax><list><size maxLength="64" /></list><string /><default value="" /></syntax></parameter><parameter name="AdditionalSoftwareVersion" access="readOnly" store="no"><syntax><list><size maxLength="64" /></list><string /><default value="" /></syntax></parameter><parameter name="Description" access="readOnly" activeNotify="canDeny"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="FirstUseDate" access="readOnly" activeNotify="canDeny"><syntax><dateTime /><default value="0001-01-01T00:00:00Z" /></syntax></parameter><parameter name="HardwareVersion" access="readOnly" forcedInform="true"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Manufacturer" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="ManufacturerOUI" access="readOnly"><syntax><string><size minLength="6" maxLength="6" /><pattern value="[0-9A-F]{6}" /></string></syntax></parameter><parameter name="ModelName" access="readOnly" activeNotify="canDeny"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="ProductClass" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="ProvisioningCode" access="readWrite" activeNotify="forceEnabled" forcedInform="true"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="SerialNumber" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="X_ADB_ProfileType" access="readWrite" set="ConfChangeProfile.sh"><syntax><string><enumerationRef targetParam="X_ADB_AvailableProfileType" /></string><default value="Default" /></syntax></parameter><parameter name="X_ADB_AvailableProfileType" access="readOnly"><syntax><list minItems="1" maxItems="5" /><string /><default value="Default" /></syntax></parameter><parameter name="SoftwareVersion" access="readOnly" activeNotify="forceEnabled" forcedInform="true" store="no"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="X_ADB_PlatformSoftwareVersion" access="readOnly" store="no"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="X_ADB_SoftwareDistribution" access="readOnly" store="no"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="UpTime" access="readOnly" activeNotify="canDeny" get="system.sh" store="no"><syntax><unsignedInt><units value="seconds" /></unsignedInt></syntax></parameter><parameter name="VendorConfigFileNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="VendorLogFileNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="X_ADB_UpgradeFilename" access="readOnly"><syntax><string><pattern value="[^/]*" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_UpgradeInProgress" access="readOnly" set="Led.sh" store="no"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_ResetInProgress" access="readOnly" set="Led.sh" store="no"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_BootDone" access="readOnly" set="Led.sh,bootAlignment.sh" store="no"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_LastConfSaved" access="readOnly"><syntax><dateTime /></syntax></parameter></object><object name="DeviceInfo.VendorLogFile.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="VendorLogFileNumberOfEntries"><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Name" access="readOnly"><syntax><string><size maxLength="64" /></string></syntax></parameter><parameter name="MaximumSize" access="readOnly"><syntax><unsignedInt><units value="bytes" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="Persistent" access="readOnly"><syntax><boolean /><default value="false" /></syntax></parameter></object><object name="DeviceInfo.MemoryStatus." access="readOnly" minEntries="1" maxEntries="1"><parameter name="Free" access="readOnly" activeNotify="canDeny" get="MemoryStatus.sh" store="no"><syntax><unsignedInt><units value="kilobytes" /></unsignedInt></syntax></parameter><parameter name="Total" access="readOnly" get="MemoryStatus.sh" store="no"><syntax><unsignedInt><units value="kilobytes" /></unsignedInt></syntax></parameter><parameter name="X_ADB_SwapFree" access="readOnly" activeNotify="canDeny" get="MemoryStatus.sh" store="no"><syntax><unsignedInt><units value="kilobytes" /></unsignedInt></syntax></parameter><parameter name="X_ADB_SwapTotal" access="readOnly" get="MemoryStatus.sh" store="no"><syntax><unsignedInt><units value="kilobytes" /></unsignedInt></syntax></parameter></object><object name="DeviceInfo.ProcessStatus." access="readOnly" minEntries="1" maxEntries="1" store="no"><parameter name="CPUUsage" access="readOnly" activeNotify="canDeny" get="ProcessStatus.sh"><syntax><unsignedInt><range maxInclusive="100" step="1" /><units value="percent" /></unsignedInt></syntax></parameter><parameter name="X_ADB_CPUIOWait" access="readOnly" activeNotify="canDeny" get="ProcessStatus.sh"><syntax><unsignedInt><range maxInclusive="100" step="1" /><units value="percent" /></unsignedInt></syntax></parameter><parameter name="X_ADB_LoadAvg1" access="readOnly" get="ProcessStatus.sh"><syntax><string /></syntax></parameter><parameter name="X_ADB_LoadAvg5" access="readOnly" get="ProcessStatus.sh"><syntax><string /></syntax></parameter><parameter name="X_ADB_LoadAvg15" access="readOnly" get="ProcessStatus.sh"><syntax><string /></syntax></parameter><parameter name="X_ADB_ProcessCount" access="readOnly" get="ProcessStatus.sh"><syntax><unsignedInt /></syntax></parameter><parameter name="ProcessNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="DeviceInfo.ProcessStatus.Process.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ProcessNumberOfEntries" store="no" supported="no"><parameter name="CPUTime" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt><units value="milliseconds" /></unsignedInt></syntax></parameter><parameter name="Command" access="readOnly" supported="no"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="PID" access="readOnly" key="yes" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="Priority" access="readOnly" supported="no"><syntax><unsignedInt><range maxInclusive="99" step="1" /></unsignedInt></syntax></parameter><parameter name="Size" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt><units value="kilobytes" /></unsignedInt></syntax></parameter><parameter name="State" access="readOnly" activeNotify="canDeny" supported="no"><syntax><string><enumeration value="Running" /><enumeration value="Sleeping" /><enumeration value="Stopped" /><enumeration value="Idle" /><enumeration value="Uninterruptible" /><enumeration value="Zombie" /></string></syntax></parameter></object><object name="DeviceInfo.NetworkProperties." access="readOnly" minEntries="1" maxEntries="1"><parameter name="MaxTCPWindowSize" access="readOnly" activeNotify="canDeny" supported="no"><syntax><unsignedInt /></syntax></parameter><parameter name="TCPImplementation" access="readOnly" supported="no"><syntax><string /></syntax></parameter></object><object name="GatewayInfo." access="readOnly" minEntries="1" maxEntries="1" supported="no"><parameter name="ManufacturerOUI" access="readOnly" supported="no"><syntax><string><size minLength="0" maxLength="6" /><pattern value="" /><pattern value="[0-9A-F]{6}" /></string></syntax></parameter><parameter name="ProductClass" access="readOnly" supported="no"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="SerialNumber" access="readOnly" store="no" supported="no"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter></object><object name="Hosts." access="readOnly" minEntries="1" maxEntries="1" export="0"><parameter name="HostNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="X_ADB_HostNameNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="X_ADB_ScanHosts" access="readWrite" store="no" set="ScanHosts.sh"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_MaxHostCount"><syntax><int><range minInclusive="-1" /></int><default value="50" /></syntax></parameter><parameter name="X_ADB_HostRetainPeriod"><syntax><int><range minInclusive="-1" /><units value="minutes" /></int><default value="-1" /></syntax></parameter></object><object name="Hosts.Host.{i}." minEntries="0" maxEntries="unbounded" numEntriesParameter="HostNumberOfEntries" access="readOnly" set="Hosts.sh,HostsPmUpdate.sh" del="Hosts.sh" add="Hosts.sh"><parameter name="Active" aliasOnSet="%(%p.DHCPClient).Active,%(%p.AssociatedDevice).Active" set="HostsConflict.sh" access="readOnly"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="AddressSource" access="readOnly"><syntax><string><enumeration value="DHCP" /><enumeration value="Static" /><enumeration value="AutoIP" /><enumeration value="None" /><enumeration value="X_ADB_StaticName" /><enumeration value="X_ADB_CPEName" /></string><default value="Static" /></syntax></parameter><parameter name="AssociatedDevice" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="DHCPClient" access="readOnly"><syntax><list maxItems="2" /><string><pathRef refType="strong" targetParent=".DHCPv6.Server.Pool.{i}.Client." targetType="row" /><pathRef refType="strong" targetParent=".DHCPv4.Server.Pool.{i}.Client." targetType="row" /></string></syntax></parameter><parameter name="HostName" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="IPAddress" access="readOnly"><syntax><string><size minLength="0" maxLength="45" /></string></syntax></parameter><parameter name="Layer1Interface" access="readOnly" set="DMZ.sh"><syntax><string><size minLength="0" maxLength="256" /><pathRef refType="strong" targetType="row" /></string></syntax></parameter><parameter name="Layer3Interface" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="PhysAddress" access="readOnly"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="X_ADB_Domain" access="readWrite"><syntax><string><size minLength="0" maxLength="253" /></string></syntax></parameter><parameter name="X_ADB_LastUp" access="readOnly"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="IPv4AddressNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="IPv6AddressNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="Hosts.Host.{i}.IPv4Address.{i}." access="readOnly" numEntriesParameter="IPv4AddressNumberOfEntries" minEntries="0" maxEntries="unbounded"><parameter name="IPAddress" access="readOnly" set="HostsConflict.sh"><syntax><string><size minLength="0" maxLength="15" /></string></syntax></parameter></object><object name="Hosts.Host.{i}.IPv6Address.{i}." access="readOnly" numEntriesParameter="IPv6AddressNumberOfEntries" minEntries="0" maxEntries="unbounded"><parameter name="IPAddress" access="readOnly" set="HostsConflict.sh"><syntax><string><size minLength="0" maxLength="45" /></string></syntax></parameter></object><object name="Hosts.X_ADB_HostName.{i}." access="readWrite" numEntriesParameter="X_ADB_HostNameNumberOfEntries" minEntries="0" maxEntries="unbounded" set="Hosts.sh" del="Hosts.sh"><parameter name="AddressSource"><syntax><string><enumeration value="X_ADB_StaticName" /><enumeration value="X_ADB_CPEName" /></string><default value="X_ADB_StaticName" /></syntax></parameter><parameter name="X_ADB_Domain" access="readWrite"><syntax><string><size minLength="0" maxLength="253" /></string></syntax></parameter><parameter name="HostName" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string></syntax></parameter><parameter name="Alias" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="IPAddress" access="readWrite"><syntax><dataType ref="IPAddress" /></syntax></parameter><parameter name="IPv4AddressNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="IPv6AddressNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="X_ADB_Permissions" access="readWrite"><syntax><dataType ref="UserPermission" /><default value="333" /></syntax></parameter></object><object name="Hosts.X_ADB_HostName.{i}.IPv4Address.{i}." numEntriesParameter="IPv4AddressNumberOfEntries" minEntries="0" maxEntries="unbounded"><parameter name="IPAddress" access="readWrite"><syntax><dataType ref="IPv4Address" /></syntax></parameter></object><object name="Hosts.X_ADB_HostName.{i}.IPv6Address.{i}." numEntriesParameter="IPv6AddressNumberOfEntries" minEntries="0" maxEntries="unbounded"><parameter name="IPAddress" access="readWrite"><syntax><dataType ref="IPv6Address" /></syntax></parameter></object></datamodel>
+<datamodel name="Device" version="2.0">
+	<object name="." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="DeviceSummary" access="readOnly" forcedInform="true" store="no">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DeviceInfo." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="AdditionalHardwareVersion" access="readOnly">
+			<syntax>
+				<list>
+					<size maxLength="64" />
+				</list>
+				<string />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="AdditionalSoftwareVersion" access="readOnly" store="no">
+			<syntax>
+				<list>
+					<size maxLength="64" />
+				</list>
+				<string />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Description" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="FirstUseDate" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00Z" />
+			</syntax>
+		</parameter>
+		<parameter name="HardwareVersion" access="readOnly" forcedInform="true">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Manufacturer" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ManufacturerOUI" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="6" maxLength="6" />
+					<pattern value="[0-9A-F]{6}" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ModelName" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ProductClass" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ProvisioningCode" access="readWrite" activeNotify="forceEnabled" forcedInform="true">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SerialNumber" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ProfileType" access="readWrite" set="ConfChangeProfile.sh">
+			<syntax>
+				<string>
+					<enumerationRef targetParam="X_ADB_AvailableProfileType" />
+				</string>
+				<default value="Default" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AvailableProfileType" access="readOnly">
+			<syntax>
+				<list minItems="1" maxItems="5" />
+				<string />
+				<default value="Default" />
+			</syntax>
+		</parameter>
+		<parameter name="SoftwareVersion" access="readOnly" activeNotify="forceEnabled" forcedInform="true" store="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_PlatformSoftwareVersion" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SoftwareDistribution" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="UpTime" access="readOnly" activeNotify="canDeny" get="system.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="VendorConfigFileNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="VendorLogFileNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_UpgradeFilename" access="readOnly">
+			<syntax>
+				<string>
+					<pattern value="[^/]*" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_UpgradeInProgress" access="readOnly" set="Led.sh" store="no">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ResetInProgress" access="readOnly" set="Led.sh" store="no">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_BootDone" access="readOnly" set="Led.sh,bootAlignment.sh" store="no">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LastConfSaved" access="readOnly">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DeviceInfo.VendorLogFile.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="VendorLogFileNumberOfEntries">
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readOnly">
+			<syntax>
+				<string>
+					<size maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="MaximumSize" access="readOnly">
+			<syntax>
+				<unsignedInt>
+					<units value="bytes" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Persistent" access="readOnly">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DeviceInfo.MemoryStatus." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="Free" access="readOnly" activeNotify="canDeny" get="MemoryStatus.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="kilobytes" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Total" access="readOnly" get="MemoryStatus.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="kilobytes" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SwapFree" access="readOnly" activeNotify="canDeny" get="MemoryStatus.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="kilobytes" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SwapTotal" access="readOnly" get="MemoryStatus.sh" store="no">
+			<syntax>
+				<unsignedInt>
+					<units value="kilobytes" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DeviceInfo.ProcessStatus." access="readOnly" minEntries="1" maxEntries="1" store="no">
+		<parameter name="CPUUsage" access="readOnly" activeNotify="canDeny" get="ProcessStatus.sh">
+			<syntax>
+				<unsignedInt>
+					<range maxInclusive="100" step="1" />
+					<units value="percent" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_CPUIOWait" access="readOnly" activeNotify="canDeny" get="ProcessStatus.sh">
+			<syntax>
+				<unsignedInt>
+					<range maxInclusive="100" step="1" />
+					<units value="percent" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LoadAvg1" access="readOnly" get="ProcessStatus.sh">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LoadAvg5" access="readOnly" get="ProcessStatus.sh">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LoadAvg15" access="readOnly" get="ProcessStatus.sh">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ProcessCount" access="readOnly" get="ProcessStatus.sh">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ProcessNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DeviceInfo.ProcessStatus.Process.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="ProcessNumberOfEntries" store="no" supported="no">
+		<parameter name="CPUTime" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Command" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="PID" access="readOnly" key="yes" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="Priority" access="readOnly" supported="no">
+			<syntax>
+				<unsignedInt>
+					<range maxInclusive="99" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Size" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt>
+					<units value="kilobytes" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="State" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<string>
+					<enumeration value="Running" />
+					<enumeration value="Sleeping" />
+					<enumeration value="Stopped" />
+					<enumeration value="Idle" />
+					<enumeration value="Uninterruptible" />
+					<enumeration value="Zombie" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DeviceInfo.NetworkProperties." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="MaxTCPWindowSize" access="readOnly" activeNotify="canDeny" supported="no">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="TCPImplementation" access="readOnly" supported="no">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="GatewayInfo." access="readOnly" minEntries="1" maxEntries="1" supported="no">
+		<parameter name="ManufacturerOUI" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="6" />
+					<pattern value="" />
+					<pattern value="[0-9A-F]{6}" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ProductClass" access="readOnly" supported="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SerialNumber" access="readOnly" store="no" supported="no">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Hosts." access="readOnly" minEntries="1" maxEntries="1" export="0">
+		<parameter name="HostNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_HostNameNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ScanHosts" access="readWrite" store="no" set="ScanHosts.sh">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_MaxHostCount">
+			<syntax>
+				<int>
+					<range minInclusive="-1" />
+				</int>
+				<default value="50" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_HostRetainPeriod">
+			<syntax>
+				<int>
+					<range minInclusive="-1" />
+					<units value="minutes" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Hosts.Host.{i}." minEntries="0" maxEntries="unbounded" numEntriesParameter="HostNumberOfEntries" access="readOnly" set="Hosts.sh,HostsPmUpdate.sh" del="Hosts.sh" add="Hosts.sh">
+		<parameter name="Active" aliasOnSet="%(%p.DHCPClient).Active,%(%p.AssociatedDevice).Active" set="HostsConflict.sh" access="readOnly">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="AddressSource" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="DHCP" />
+					<enumeration value="Static" />
+					<enumeration value="AutoIP" />
+					<enumeration value="None" />
+					<enumeration value="X_ADB_StaticName" />
+					<enumeration value="X_ADB_CPEName" />
+				</string>
+				<default value="Static" />
+			</syntax>
+		</parameter>
+		<parameter name="AssociatedDevice" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="DHCPClient" access="readOnly">
+			<syntax>
+				<list maxItems="2" />
+				<string>
+					<pathRef refType="strong" targetParent=".DHCPv6.Server.Pool.{i}.Client." targetType="row" />
+					<pathRef refType="strong" targetParent=".DHCPv4.Server.Pool.{i}.Client." targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="HostName" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="IPAddress" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="45" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Layer1Interface" access="readOnly" set="DMZ.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Layer3Interface" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="PhysAddress" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Domain" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="253" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_LastUp" access="readOnly">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="IPv4AddressNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="IPv6AddressNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Hosts.Host.{i}.IPv4Address.{i}." access="readOnly" numEntriesParameter="IPv4AddressNumberOfEntries" minEntries="0" maxEntries="unbounded">
+		<parameter name="IPAddress" access="readOnly" set="HostsConflict.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="15" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Hosts.Host.{i}.IPv6Address.{i}." access="readOnly" numEntriesParameter="IPv6AddressNumberOfEntries" minEntries="0" maxEntries="unbounded">
+		<parameter name="IPAddress" access="readOnly" set="HostsConflict.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="45" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Hosts.X_ADB_HostName.{i}." access="readWrite" numEntriesParameter="X_ADB_HostNameNumberOfEntries" minEntries="0" maxEntries="unbounded" set="Hosts.sh" del="Hosts.sh">
+		<parameter name="AddressSource">
+			<syntax>
+				<string>
+					<enumeration value="X_ADB_StaticName" />
+					<enumeration value="X_ADB_CPEName" />
+				</string>
+				<default value="X_ADB_StaticName" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Domain" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="253" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="HostName" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="IPAddress" access="readWrite">
+			<syntax>
+				<dataType ref="IPAddress" />
+			</syntax>
+		</parameter>
+		<parameter name="IPv4AddressNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="IPv6AddressNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Permissions" access="readWrite">
+			<syntax>
+				<dataType ref="UserPermission" />
+				<default value="333" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Hosts.X_ADB_HostName.{i}.IPv4Address.{i}." numEntriesParameter="IPv4AddressNumberOfEntries" minEntries="0" maxEntries="unbounded">
+		<parameter name="IPAddress" access="readWrite">
+			<syntax>
+				<dataType ref="IPv4Address" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Hosts.X_ADB_HostName.{i}.IPv6Address.{i}." numEntriesParameter="IPv6AddressNumberOfEntries" minEntries="0" maxEntries="unbounded">
+		<parameter name="IPAddress" access="readWrite">
+			<syntax>
+				<dataType ref="IPv6Address" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

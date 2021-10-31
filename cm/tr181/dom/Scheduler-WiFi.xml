@@ -1,3 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="WiFi" version="2.0"><object name="WiFi.Radio.{i}." set="scheduler.sh"><parameter name="X_ADB_TimeSchedulerEnable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_TimeScheduler" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".X_ADB_Time.Scheduler.Profile." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_ServiceActivated" access="readWrite"><syntax><boolean /></syntax></parameter></object></datamodel>
+<datamodel name="WiFi" version="2.0">
+	<object name="WiFi.Radio.{i}." set="scheduler.sh">
+		<parameter name="X_ADB_TimeSchedulerEnable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TimeScheduler" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".X_ADB_Time.Scheduler.Profile." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ServiceActivated" access="readWrite">
+			<syntax>
+				<boolean />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

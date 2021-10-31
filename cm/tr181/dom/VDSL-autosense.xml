@@ -1,3 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<datamodel name="DSL" version="2.0"><object name="DSL.Line.{i}.X_ADB_AnnexAutosense." access="readOnly" minEntries="1" maxEntries="1" set="Autosense.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Timeout" access="readWrite"><syntax><usignedInt /><default value="120" /></syntax></parameter><parameter name="Fallback" access="readWrite"><syntax><string><enumeration value="A" /><enumeration value="B" /><enumeration value="Switch" /></string><default value="A" /></syntax></parameter><parameter name="ADSLFallback" access="readWrite"><syntax><string><enumeration value="A" /><enumeration value="B" /></string><default value="A" /></syntax></parameter></object><object name="DSL.Line.{i}.X_ADB_AnnexAutosense.AnnexConfiguration.{i}." access="readOnly" minEntries="0" maxEntries="unbounded"><parameter name="Annex" access="readWrite"><syntax><string><enumeration value="A" /><enumeration value="B" /></string><default value="A" /></syntax></parameter><parameter name="AccessTecnology" access="readWrite"><syntax><string><enumeration value="Both" /><enumeration value="ADSL" /><enumeration value="VDSL" /></string><default value="Both" /></syntax></parameter></object><object name="DSL.Line.{i}.X_ADB_AnnexAutosense.AnnexConfiguration.{i}.Parameter.{i}." access="readOnly" minEntries="0" maxEntries="unbounded"><parameter name="Path" access="readWrite"><syntax><string /></syntax></parameter><parameter name="Value" access="readWrite"><syntax><string /></syntax></parameter></object></datamodel>
+<datamodel name="DSL" version="2.0">
+	<object name="DSL.Line.{i}.X_ADB_AnnexAutosense." access="readOnly" minEntries="1" maxEntries="1" set="Autosense.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Timeout" access="readWrite">
+			<syntax>
+				<usignedInt />
+				<default value="120" />
+			</syntax>
+		</parameter>
+		<parameter name="Fallback" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="A" />
+					<enumeration value="B" />
+					<enumeration value="Switch" />
+				</string>
+				<default value="A" />
+			</syntax>
+		</parameter>
+		<parameter name="ADSLFallback" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="A" />
+					<enumeration value="B" />
+				</string>
+				<default value="A" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Line.{i}.X_ADB_AnnexAutosense.AnnexConfiguration.{i}." access="readOnly" minEntries="0" maxEntries="unbounded">
+		<parameter name="Annex" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="A" />
+					<enumeration value="B" />
+				</string>
+				<default value="A" />
+			</syntax>
+		</parameter>
+		<parameter name="AccessTecnology" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Both" />
+					<enumeration value="ADSL" />
+					<enumeration value="VDSL" />
+				</string>
+				<default value="Both" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="DSL.Line.{i}.X_ADB_AnnexAutosense.AnnexConfiguration.{i}.Parameter.{i}." access="readOnly" minEntries="0" maxEntries="unbounded">
+		<parameter name="Path" access="readWrite">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="Value" access="readWrite">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

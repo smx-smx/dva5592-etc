@@ -1,3 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Services" version="2.0"><object name="Services.X_ADB_PPPoEProxy." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="PPPoEProxy.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="Reset" access="readWrite" aliasOnGet="%s(false)"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="InboundInterface" access="readWrite"><syntax><list /><string><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /><pathRef targetParent=".WiFi.SSID." refType="strong" targetType="row" /><pathRef targetParent=".Ethernet.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="OutboundInterface" access="readWrite"><syntax><list /><string><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /><pathRef targetParent=".ATM.Link." refType="strong" targetType="row" /><pathRef targetParent=".PTM.Link." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="ClientNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="Services.X_ADB_PPPoEProxy.Client.{i}." minEntries="0" maxEntries="unbounded" numEntriesParameter="ClientNumberOfEntries" access="readOnly" store="no"><parameter name="ClientSessionId" access="readOnly"><syntax><unsignedInt /></syntax></parameter><parameter name="ClientPhysAddress" access="readOnly"><syntax><dataType ref="MACAddress" /></syntax></parameter><parameter name="ClientInterface" access="readOnly"><syntax><string><pathRef targetParent=".Ethernet.Interface." refType="strong" targetType="row" /><pathRef targetParent=".Bridging.Bridge.{i}.Port." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="ServerInterface" access="readOnly"><syntax><string><pathRef targetParent=".Ethernet.Interface." refType="strong" targetType="row" /><pathRef targetParent=".Ethernet.VLANTermination." refType="strong" targetType="row" /><pathRef targetParent=".ATM.Link." refType="strong" targetType="row" /><pathRef targetParent=".PTM.Link." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="ServerSessionId" access="readOnly"><syntax><unsignedInt /></syntax></parameter><parameter name="ServerPhysAddress" access="readOnly"><syntax><dataType ref="MACAddress" /></syntax></parameter></object><object name="Services.X_ADB_PPPoEProxy.Stats." minEntries="1" maxEntries="1" access="readOnly" store="no"><parameter name="PacketsSent" access="readOnly" activeNotify="canDeny" get="PPPoEProxy.sh"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="PacketsReceived" access="readOnly" activeNotify="canDeny" get="PPPoEProxy.sh"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="PPPoEProxy.sh"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="PPPoEProxy.sh"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="Reset" access="readWrite" set="PPPoEProxy.sh" aliasOnGet="%s(false)" store="no"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter></object></datamodel>
+<datamodel name="Services" version="2.0">
+	<object name="Services.X_ADB_PPPoEProxy." access="readOnly" minEntries="1" maxEntries="1" enableParameter="Enable" set="PPPoEProxy.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="Reset" access="readWrite" aliasOnGet="%s(false)">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="InboundInterface" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+					<pathRef targetParent=".WiFi.SSID." refType="strong" targetType="row" />
+					<pathRef targetParent=".Ethernet.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="OutboundInterface" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+					<pathRef targetParent=".ATM.Link." refType="strong" targetType="row" />
+					<pathRef targetParent=".PTM.Link." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ClientNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Services.X_ADB_PPPoEProxy.Client.{i}." minEntries="0" maxEntries="unbounded" numEntriesParameter="ClientNumberOfEntries" access="readOnly" store="no">
+		<parameter name="ClientSessionId" access="readOnly">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ClientPhysAddress" access="readOnly">
+			<syntax>
+				<dataType ref="MACAddress" />
+			</syntax>
+		</parameter>
+		<parameter name="ClientInterface" access="readOnly">
+			<syntax>
+				<string>
+					<pathRef targetParent=".Ethernet.Interface." refType="strong" targetType="row" />
+					<pathRef targetParent=".Bridging.Bridge.{i}.Port." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ServerInterface" access="readOnly">
+			<syntax>
+				<string>
+					<pathRef targetParent=".Ethernet.Interface." refType="strong" targetType="row" />
+					<pathRef targetParent=".Ethernet.VLANTermination." refType="strong" targetType="row" />
+					<pathRef targetParent=".ATM.Link." refType="strong" targetType="row" />
+					<pathRef targetParent=".PTM.Link." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="ServerSessionId" access="readOnly">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="ServerPhysAddress" access="readOnly">
+			<syntax>
+				<dataType ref="MACAddress" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Services.X_ADB_PPPoEProxy.Stats." minEntries="1" maxEntries="1" access="readOnly" store="no">
+		<parameter name="PacketsSent" access="readOnly" activeNotify="canDeny" get="PPPoEProxy.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="PacketsReceived" access="readOnly" activeNotify="canDeny" get="PPPoEProxy.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsSent" access="readOnly" activeNotify="canDeny" get="PPPoEProxy.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ErrorsReceived" access="readOnly" activeNotify="canDeny" get="PPPoEProxy.sh">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Reset" access="readWrite" set="PPPoEProxy.sh" aliasOnGet="%s(false)" store="no">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

@@ -1,3 +1,668 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="IP" version="2.0"><object name="IP.Diagnostics." access="readOnly" minEntries="1" maxEntries="1"><parameter name="X_ADB_IPPingNumberOfEntries" access="readOnly" activeNotify="canDeny" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="IP.Diagnostics.IPPing." access="readOnly" minEntries="1" maxEntries="1" set="IPPing.sh" store="no"><parameter name="AverageResponseTime" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt><units value="milliseconds" /></unsignedInt></syntax></parameter><parameter name="DSCP" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="63" step="1" /></unsignedInt></syntax></parameter><parameter name="DataBlockSize" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="65535" step="1" /></unsignedInt><default value="64" /></syntax></parameter><parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled"><syntax><string><enumeration value="None" /><enumeration value="Requested" /><enumeration value="Complete" /><enumeration value="Error_CannotResolveHostName" /><enumeration value="Error_Internal" /><enumeration value="Error_Other" /></string><default value="None" /></syntax></parameter><parameter name="FailureCount" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="Host" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="MaximumResponseTime" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt><units value="milliseconds" /></unsignedInt></syntax></parameter><parameter name="MinimumResponseTime" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt><units value="milliseconds" /></unsignedInt></syntax></parameter><parameter name="NumberOfRepetitions" access="readWrite"><syntax><unsignedInt><range minInclusive="1" step="1" /></unsignedInt><default value="3" /></syntax></parameter><parameter name="SuccessCount" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="Timeout" access="readWrite"><syntax><unsignedInt><range minInclusive="1" step="1" /><units value="milliseconds" /></unsignedInt><default value="5000" /></syntax></parameter></object><object name="IP.Diagnostics.X_ADB_IPPing.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" set="IPPing.sh" numEntriesParameter="X_ADB_IPPingNumberOfEntries"><parameter name="AverageResponseTime" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt><units value="milliseconds" /></unsignedInt></syntax></parameter><parameter name="DSCP" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="63" step="1" /></unsignedInt></syntax></parameter><parameter name="DataBlockSize" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="65535" step="1" /></unsignedInt><default value="64" /></syntax></parameter><parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled"><syntax><string><enumeration value="None" /><enumeration value="Requested" /><enumeration value="Complete" /><enumeration value="Error_CannotResolveHostName" /><enumeration value="Error_Internal" /><enumeration value="Error_Other" /></string></syntax></parameter><parameter name="FailureCount" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="Host" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="HostReference" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef refType="strong" targetType="parameter" /></string></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="MaximumResponseTime" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt><units value="milliseconds" /></unsignedInt></syntax></parameter><parameter name="MinimumResponseTime" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt><units value="milliseconds" /></unsignedInt></syntax></parameter><parameter name="NumberOfRepetitions" access="readWrite"><syntax><unsignedInt><range minInclusive="1" step="1" /></unsignedInt><default value="3" /></syntax></parameter><parameter name="SuccessCount" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="Timeout" access="readWrite"><syntax><unsignedInt><range minInclusive="1" step="1" /><units value="milliseconds" /></unsignedInt><default value="5000" /></syntax></parameter></object><object name="IP.Diagnostics.TraceRoute." access="readOnly" minEntries="1" maxEntries="1" store="no" set="Traceroute.sh"><parameter name="DSCP" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="63" step="1" /></unsignedInt></syntax></parameter><parameter name="DataBlockSize" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="65535" step="1" /></unsignedInt><default value="38" /></syntax></parameter><parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled"><syntax><string><enumeration value="None" /><enumeration value="Requested" /><enumeration value="Complete" /><enumeration value="Error_CannotResolveHostName" /><enumeration value="Error_MaxHopCountExceeded" /><enumeration value="Error_Internal" /><enumeration value="Error_Other" /></string></syntax></parameter><parameter name="Host" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="MaxHopCount" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="64" step="1" /></unsignedInt></syntax></parameter><parameter name="NumberOfTries" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="3" step="1" /></unsignedInt><default value="3" /></syntax></parameter><parameter name="ResponseTime" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt><units value="milliseconds" /></unsignedInt></syntax></parameter><parameter name="RouteHopsNumberOfEntries" access="readOnly" activeNotify="canDeny" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="Timeout" access="readWrite"><syntax><unsignedInt><range minInclusive="1" step="1" /><units value="milliseconds" /></unsignedInt><default value="5000" /></syntax></parameter></object><object name="IP.Diagnostics.TraceRoute.RouteHops.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="RouteHopsNumberOfEntries" store="no"><parameter name="ErrorCode" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="Host" access="readOnly" activeNotify="canDeny"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="HostAddress" access="readOnly" activeNotify="canDeny"><syntax><string /></syntax></parameter><parameter name="RTTimes" access="readOnly" activeNotify="canDeny"><syntax><list><size minLength="0" maxLength="16" /></list><unsignedInt><units value="milliseconds" /></unsignedInt></syntax></parameter></object><object name="IP.Diagnostics.DownloadDiagnostics." access="readOnly" minEntries="1" maxEntries="1" store="no" set="DownloadUploadDiagnostics.sh"><parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled"><syntax><string><enumeration value="None" /><enumeration value="Requested" /><enumeration value="Completed" /><enumeration value="Error_InitConnectionFailed" /><enumeration value="Error_NoResponse" /><enumeration value="Error_TransferFailed" /><enumeration value="Error_PasswordRequestFailed" /><enumeration value="Error_LoginFailed" /><enumeration value="Error_NoTransferMode" /><enumeration value="Error_NoPASV" /><enumeration value="Error_IncorrectSize" /><enumeration value="Error_Timeout" /><enumeration value="Error_NoCWD" /></string><default value="None" /></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="DownloadURL" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="DownloadTransports" access="readOnly"><syntax><list maxItems="2" /><string><enumeration value="HTTP" /><enumeration value="FTP" /></string><default value="HTTP,FTP" /></syntax></parameter><parameter name="DSCP" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="63" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="EthernetPriority" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="7" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="ROMTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /><default value="0001-01-01T00:00:00.000000" /></syntax></parameter><parameter name="BOMTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /><default value="0001-01-01T00:00:00.000000" /></syntax></parameter><parameter name="EOMTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /><default value="0001-01-01T00:00:00.000000" /></syntax></parameter><parameter name="TestBytesReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="TotalBytesReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="TCPOpenRequestTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /><default value="0001-01-01T00:00:00.000000" /></syntax></parameter><parameter name="TCPOpenResponseTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /><default value="0001-01-01T00:00:00.000000" /></syntax></parameter><parameter name="TimeBasedTestDuration" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="999" step="1" /><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="TimeBasedTestIncrements" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="TimeBasedTestIncrementsOffset" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_TrafficPriority" access="readWrite" supported="no"><syntax><string><enumeration value="None" /><enumeration value="Background" /><enumeration value="Foreground" /></string><default value="None" /></syntax></parameter><parameter name="X_ADB_TestRate" access="readOnly"><syntax><unsignedInt><units value="Kbps" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_TotalRate" access="readOnly"><syntax><unsignedInt><units value="Kbps" /></unsignedInt><default value="0" /></syntax></parameter></object><object name="IP.Diagnostics.DownloadDiagnostics.IncrementalResults.{i}." access="readWrite" minEntries="0" maxEntries="unbounded"><parameter name="IncTestBytesReceived" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="IncBOMTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /></syntax></parameter><parameter name="IncEOMTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /></syntax></parameter></object><object name="IP.Diagnostics.UploadDiagnostics." access="readOnly" minEntries="1" maxEntries="1" store="no" set="DownloadUploadDiagnostics.sh"><parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled"><syntax><string><enumeration value="None" /><enumeration value="Requested" /><enumeration value="Completed" /><enumeration value="Error_InitConnectionFailed" /><enumeration value="Error_NoResponse" /><enumeration value="Error_PasswordRequestFailed" /><enumeration value="Error_LoginFailed" /><enumeration value="Error_NoTransferMode" /><enumeration value="Error_NoPASV" /><enumeration value="Error_NoCWD" /><enumeration value="Error_NoSTOR" /><enumeration value="Error_NoTransferComplete" /><enumeration value="Error_Timeout" /></string><default value="None" /></syntax></parameter><parameter name="Interface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".IP.Interface." refType="strong" targetType="row" /></string></syntax></parameter><parameter name="UploadURL" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="UploadTransports" access="readOnly"><syntax><list maxItems="2" /><string><enumeration value="HTTP" /><enumeration value="FTP" /></string><default value="HTTP,FTP" /></syntax></parameter><parameter name="DSCP" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="63" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="EthernetPriority" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="7" step="1" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="TestFileLength" access="readWrite"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="ROMTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /><default value="0001-01-01T00:00:00.000000" /></syntax></parameter><parameter name="BOMTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /><default value="0001-01-01T00:00:00.000000" /></syntax></parameter><parameter name="EOMTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /><default value="0001-01-01T00:00:00.000000" /></syntax></parameter><parameter name="TestBytesSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="TotalBytesSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="TCPOpenRequestTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /><default value="0001-01-01T00:00:00.000000" /></syntax></parameter><parameter name="TCPOpenResponseTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /><default value="0001-01-01T00:00:00.000000" /></syntax></parameter><parameter name="TimeBasedTestDuration" access="readWrite"><syntax><unsignedInt><range minInclusive="0" maxInclusive="999" step="1" /><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="TimeBasedTestIncrements" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="TimeBasedTestIncrementsOffset" access="readWrite"><syntax><unsignedInt><units value="seconds" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_TrafficPriority" access="readWrite" supported="no"><syntax><string><enumeration value="None" /><enumeration value="Background" /><enumeration value="Foreground" /></string><default value="None" /></syntax></parameter><parameter name="X_ADB_TestRate" access="readOnly"><syntax><unsignedInt><units value="Kbps" /></unsignedInt><default value="0" /></syntax></parameter><parameter name="X_ADB_TotalRate" access="readOnly"><syntax><unsignedInt><units value="Kbps" /></unsignedInt><default value="0" /></syntax></parameter></object><object name="IP.Diagnostics.UploadDiagnostics.IncrementalResults.{i}." access="readWrite" minEntries="0" maxEntries="unbounded"><parameter name="IncTestBytesSent" access="readOnly" activeNotify="canDeny"><syntax><unsignedInt /></syntax></parameter><parameter name="IncBOMTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /></syntax></parameter><parameter name="IncEOMTime" access="readOnly" activeNotify="canDeny"><syntax><dateTime /></syntax></parameter></object></datamodel>
+<datamodel name="IP" version="2.0">
+	<object name="IP.Diagnostics." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="X_ADB_IPPingNumberOfEntries" access="readOnly" activeNotify="canDeny" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IP.Diagnostics.IPPing." access="readOnly" minEntries="1" maxEntries="1" set="IPPing.sh" store="no">
+		<parameter name="AverageResponseTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="DSCP" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="63" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="DataBlockSize" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="64" />
+			</syntax>
+		</parameter>
+		<parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Requested" />
+					<enumeration value="Complete" />
+					<enumeration value="Error_CannotResolveHostName" />
+					<enumeration value="Error_Internal" />
+					<enumeration value="Error_Other" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="FailureCount" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="Host" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="MaximumResponseTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="MinimumResponseTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="NumberOfRepetitions" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" step="1" />
+				</unsignedInt>
+				<default value="3" />
+			</syntax>
+		</parameter>
+		<parameter name="SuccessCount" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="Timeout" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" step="1" />
+					<units value="milliseconds" />
+				</unsignedInt>
+				<default value="5000" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IP.Diagnostics.X_ADB_IPPing.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" set="IPPing.sh" numEntriesParameter="X_ADB_IPPingNumberOfEntries">
+		<parameter name="AverageResponseTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="DSCP" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="63" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="DataBlockSize" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="64" />
+			</syntax>
+		</parameter>
+		<parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Requested" />
+					<enumeration value="Complete" />
+					<enumeration value="Error_CannotResolveHostName" />
+					<enumeration value="Error_Internal" />
+					<enumeration value="Error_Other" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="FailureCount" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="Host" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="HostReference" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef refType="strong" targetType="parameter" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="MaximumResponseTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="MinimumResponseTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="NumberOfRepetitions" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" step="1" />
+				</unsignedInt>
+				<default value="3" />
+			</syntax>
+		</parameter>
+		<parameter name="SuccessCount" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="Timeout" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" step="1" />
+					<units value="milliseconds" />
+				</unsignedInt>
+				<default value="5000" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IP.Diagnostics.TraceRoute." access="readOnly" minEntries="1" maxEntries="1" store="no" set="Traceroute.sh">
+		<parameter name="DSCP" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="63" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="DataBlockSize" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="65535" step="1" />
+				</unsignedInt>
+				<default value="38" />
+			</syntax>
+		</parameter>
+		<parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Requested" />
+					<enumeration value="Complete" />
+					<enumeration value="Error_CannotResolveHostName" />
+					<enumeration value="Error_MaxHopCountExceeded" />
+					<enumeration value="Error_Internal" />
+					<enumeration value="Error_Other" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Host" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="MaxHopCount" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="64" step="1" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="NumberOfTries" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="3" step="1" />
+				</unsignedInt>
+				<default value="3" />
+			</syntax>
+		</parameter>
+		<parameter name="ResponseTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="RouteHopsNumberOfEntries" access="readOnly" activeNotify="canDeny" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="Timeout" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" step="1" />
+					<units value="milliseconds" />
+				</unsignedInt>
+				<default value="5000" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IP.Diagnostics.TraceRoute.RouteHops.{i}." access="readOnly" minEntries="0" maxEntries="unbounded" numEntriesParameter="RouteHopsNumberOfEntries" store="no">
+		<parameter name="ErrorCode" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="Host" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="HostAddress" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<string />
+			</syntax>
+		</parameter>
+		<parameter name="RTTimes" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<list>
+					<size minLength="0" maxLength="16" />
+				</list>
+				<unsignedInt>
+					<units value="milliseconds" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IP.Diagnostics.DownloadDiagnostics." access="readOnly" minEntries="1" maxEntries="1" store="no" set="DownloadUploadDiagnostics.sh">
+		<parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Requested" />
+					<enumeration value="Completed" />
+					<enumeration value="Error_InitConnectionFailed" />
+					<enumeration value="Error_NoResponse" />
+					<enumeration value="Error_TransferFailed" />
+					<enumeration value="Error_PasswordRequestFailed" />
+					<enumeration value="Error_LoginFailed" />
+					<enumeration value="Error_NoTransferMode" />
+					<enumeration value="Error_NoPASV" />
+					<enumeration value="Error_IncorrectSize" />
+					<enumeration value="Error_Timeout" />
+					<enumeration value="Error_NoCWD" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="DownloadURL" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="DownloadTransports" access="readOnly">
+			<syntax>
+				<list maxItems="2" />
+				<string>
+					<enumeration value="HTTP" />
+					<enumeration value="FTP" />
+				</string>
+				<default value="HTTP,FTP" />
+			</syntax>
+		</parameter>
+		<parameter name="DSCP" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="63" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="EthernetPriority" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="7" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ROMTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00.000000" />
+			</syntax>
+		</parameter>
+		<parameter name="BOMTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00.000000" />
+			</syntax>
+		</parameter>
+		<parameter name="EOMTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00.000000" />
+			</syntax>
+		</parameter>
+		<parameter name="TestBytesReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="TotalBytesReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="TCPOpenRequestTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00.000000" />
+			</syntax>
+		</parameter>
+		<parameter name="TCPOpenResponseTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00.000000" />
+			</syntax>
+		</parameter>
+		<parameter name="TimeBasedTestDuration" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="999" step="1" />
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="TimeBasedTestIncrements" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="TimeBasedTestIncrementsOffset" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TrafficPriority" access="readWrite" supported="no">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Background" />
+					<enumeration value="Foreground" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TestRate" access="readOnly">
+			<syntax>
+				<unsignedInt>
+					<units value="Kbps" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TotalRate" access="readOnly">
+			<syntax>
+				<unsignedInt>
+					<units value="Kbps" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IP.Diagnostics.DownloadDiagnostics.IncrementalResults.{i}." access="readWrite" minEntries="0" maxEntries="unbounded">
+		<parameter name="IncTestBytesReceived" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="IncBOMTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="IncEOMTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IP.Diagnostics.UploadDiagnostics." access="readOnly" minEntries="1" maxEntries="1" store="no" set="DownloadUploadDiagnostics.sh">
+		<parameter name="DiagnosticsState" access="readWrite" activeNotify="canDeny" localNotify="forceEnabled">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Requested" />
+					<enumeration value="Completed" />
+					<enumeration value="Error_InitConnectionFailed" />
+					<enumeration value="Error_NoResponse" />
+					<enumeration value="Error_PasswordRequestFailed" />
+					<enumeration value="Error_LoginFailed" />
+					<enumeration value="Error_NoTransferMode" />
+					<enumeration value="Error_NoPASV" />
+					<enumeration value="Error_NoCWD" />
+					<enumeration value="Error_NoSTOR" />
+					<enumeration value="Error_NoTransferComplete" />
+					<enumeration value="Error_Timeout" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="Interface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".IP.Interface." refType="strong" targetType="row" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="UploadURL" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="UploadTransports" access="readOnly">
+			<syntax>
+				<list maxItems="2" />
+				<string>
+					<enumeration value="HTTP" />
+					<enumeration value="FTP" />
+				</string>
+				<default value="HTTP,FTP" />
+			</syntax>
+		</parameter>
+		<parameter name="DSCP" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="63" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="EthernetPriority" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="7" step="1" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="TestFileLength" access="readWrite">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ROMTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00.000000" />
+			</syntax>
+		</parameter>
+		<parameter name="BOMTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00.000000" />
+			</syntax>
+		</parameter>
+		<parameter name="EOMTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00.000000" />
+			</syntax>
+		</parameter>
+		<parameter name="TestBytesSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="TotalBytesSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="TCPOpenRequestTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00.000000" />
+			</syntax>
+		</parameter>
+		<parameter name="TCPOpenResponseTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00.000000" />
+			</syntax>
+		</parameter>
+		<parameter name="TimeBasedTestDuration" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="0" maxInclusive="999" step="1" />
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="TimeBasedTestIncrements" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="TimeBasedTestIncrementsOffset" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<units value="seconds" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TrafficPriority" access="readWrite" supported="no">
+			<syntax>
+				<string>
+					<enumeration value="None" />
+					<enumeration value="Background" />
+					<enumeration value="Foreground" />
+				</string>
+				<default value="None" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TestRate" access="readOnly">
+			<syntax>
+				<unsignedInt>
+					<units value="Kbps" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TotalRate" access="readOnly">
+			<syntax>
+				<unsignedInt>
+					<units value="Kbps" />
+				</unsignedInt>
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="IP.Diagnostics.UploadDiagnostics.IncrementalResults.{i}." access="readWrite" minEntries="0" maxEntries="unbounded">
+		<parameter name="IncTestBytesSent" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<unsignedInt />
+			</syntax>
+		</parameter>
+		<parameter name="IncBOMTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="IncEOMTime" access="readOnly" activeNotify="canDeny">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

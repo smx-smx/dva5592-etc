@@ -1,3 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="WiFiBandSteeringDaemon" version="1.0"><object name="WiFi.X_ADB_BandSteering." access="readWrite" minEntries="1" maxEntries="1" set="WiFiBsd.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="VideoSTA" access="readWrite"><syntax><list minItems="0" maxItems="200"><size minLength="0" maxLength="3600" /></list><dataType ref="MACAddress" /><default value="" /></syntax></parameter><parameter name="SingleBandSTA" access="readWrite"><syntax><list minItems="0" maxItems="200"><size minLength="0" maxLength="3600" /></list><dataType ref="MACAddress" /><default value="" /></syntax></parameter><parameter name="DualBandDetectionEnable" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="DualBandSTA" access="readWrite"><syntax><list minItems="0" maxItems="200"><size minLength="0" maxLength="3600" /></list><dataType ref="MACAddress" /><default value="" /></syntax></parameter><parameter name="DetectedDualBandSTA" access="readWrite" get="WiFiBsd.sh"><syntax><list minItems="0" maxItems="200"><size minLength="0" maxLength="3600" /></list><dataType ref="MACAddress" /><default value="" /></syntax></parameter><parameter name="Status" access="readOnly" store="no"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error_RadioOff" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="Reset" access="readWrite" aliasOnGet="%s(false)"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="RssiThreshold5" access="readOnly" excludeUser="CWMP"><syntax><int><range minInclusive="-200" maxInclusive="0" /><units value="dBm" /></int><default value="-90" /></syntax></parameter><parameter name="RssiThreshold24" access="readOnly" excludeUser="CWMP"><syntax><int><range minInclusive="-200" maxInclusive="0" /><units value="dBm" /></int><default value="-70" /></syntax></parameter><parameter name="ConfigReset" access="readWrite" aliasOnGet="%s(false)"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="DeauthTimeout" access="readOnly" excludeUser="CWMP"><syntax><int><range minInclusive="0" maxInclusive="60" /><units value="seconds" /></int><default value="3" /></syntax></parameter></object></datamodel>
+<datamodel name="WiFiBandSteeringDaemon" version="1.0">
+	<object name="WiFi.X_ADB_BandSteering." access="readWrite" minEntries="1" maxEntries="1" set="WiFiBsd.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="VideoSTA" access="readWrite">
+			<syntax>
+				<list minItems="0" maxItems="200">
+					<size minLength="0" maxLength="3600" />
+				</list>
+				<dataType ref="MACAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="SingleBandSTA" access="readWrite">
+			<syntax>
+				<list minItems="0" maxItems="200">
+					<size minLength="0" maxLength="3600" />
+				</list>
+				<dataType ref="MACAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="DualBandDetectionEnable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="DualBandSTA" access="readWrite">
+			<syntax>
+				<list minItems="0" maxItems="200">
+					<size minLength="0" maxLength="3600" />
+				</list>
+				<dataType ref="MACAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="DetectedDualBandSTA" access="readWrite" get="WiFiBsd.sh">
+			<syntax>
+				<list minItems="0" maxItems="200">
+					<size minLength="0" maxLength="3600" />
+				</list>
+				<dataType ref="MACAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error_Misconfigured" />
+					<enumeration value="Error_RadioOff" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="Reset" access="readWrite" aliasOnGet="%s(false)">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="RssiThreshold5" access="readOnly" excludeUser="CWMP">
+			<syntax>
+				<int>
+					<range minInclusive="-200" maxInclusive="0" />
+					<units value="dBm" />
+				</int>
+				<default value="-90" />
+			</syntax>
+		</parameter>
+		<parameter name="RssiThreshold24" access="readOnly" excludeUser="CWMP">
+			<syntax>
+				<int>
+					<range minInclusive="-200" maxInclusive="0" />
+					<units value="dBm" />
+				</int>
+				<default value="-70" />
+			</syntax>
+		</parameter>
+		<parameter name="ConfigReset" access="readWrite" aliasOnGet="%s(false)">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="DeauthTimeout" access="readOnly" excludeUser="CWMP">
+			<syntax>
+				<int>
+					<range minInclusive="0" maxInclusive="60" />
+					<units value="seconds" />
+				</int>
+				<default value="3" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

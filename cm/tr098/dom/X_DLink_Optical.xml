@@ -1,3 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="X_DLink" version="2.0"><object name="X_DLINK_Optical." access="readOnly" minEntries="1" maxEntries="1"><parameter name="Enable" access="readOnly" aliasOnGet="Device.Optical.Interface.%i.Enable"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly" store="no" get="X_DLink_Optical.sh"><syntax><string><enumeration value="Up" /><enumeration value="Down" /><enumeration value="Unknown" /><enumeration value="Dormant" /><enumeration value="NotPresent" /><enumeration value="LowerLayerDown" /><enumeration value="Error" /></string><default value="Down" /></syntax></parameter><parameter name="MACAddress" access="readOnly" store="no" aliasOnGet="Device.Optical.Interface.%i.X_ADB_MACAddress"><syntax><dataType ref="MACAddress" /></syntax></parameter><parameter name="VendorName" access="readOnly" get="Optical.sh"><syntax><string><size minLength="0" maxLength="16" /></string></syntax></parameter><parameter name="VendorSerial" access="readOnly" get="Optical.sh"><syntax><string><size minLength="0" maxLength="16" /></string></syntax></parameter><parameter name="VendorDateCode" access="readOnly" get="Optical.sh"><syntax><string><size minLength="0" maxLength="8" /></string></syntax></parameter><parameter name="VendorRevision" access="readOnly" get="Optical.sh"><syntax><string><size minLength="0" maxLength="4" /></string></syntax></parameter><parameter name="VendorTechName" access="readOnly" get="X_DLink_Optical.sh"><syntax><string><size minLength="0" maxLength="20" /></string></syntax></parameter><parameter name="VendorPartNumber" access="readOnly" get="Optical.sh"><syntax><string><size minLength="0" maxLength="16" /></string></syntax></parameter><parameter name="TransmitOpticalLevel" access="readOnly" get="X_DLink_Optical.sh"><syntax><string><units value="dBm" /></string></syntax></parameter><parameter name="OpticalSignalLevel" access="readOnly" get="X_DLink_Optical.sh"><syntax><string><units value="dBm" /></string></syntax></parameter><parameter name="SignalingRate" access="readOnly" get="Optical.sh"><syntax><unsignedInt><units value="100MBd" /></unsignedInt></syntax></parameter><parameter name="Temperature" access="readOnly" get="Optical.sh"><syntax><string><units value="Celsius" /></string></syntax></parameter></object></datamodel>
+<datamodel name="X_DLink" version="2.0">
+	<object name="X_DLINK_Optical." access="readOnly" minEntries="1" maxEntries="1">
+		<parameter name="Enable" access="readOnly" aliasOnGet="Device.Optical.Interface.%i.Enable">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly" store="no" get="X_DLink_Optical.sh">
+			<syntax>
+				<string>
+					<enumeration value="Up" />
+					<enumeration value="Down" />
+					<enumeration value="Unknown" />
+					<enumeration value="Dormant" />
+					<enumeration value="NotPresent" />
+					<enumeration value="LowerLayerDown" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Down" />
+			</syntax>
+		</parameter>
+		<parameter name="MACAddress" access="readOnly" store="no" aliasOnGet="Device.Optical.Interface.%i.X_ADB_MACAddress">
+			<syntax>
+				<dataType ref="MACAddress" />
+			</syntax>
+		</parameter>
+		<parameter name="VendorName" access="readOnly" get="Optical.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="16" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="VendorSerial" access="readOnly" get="Optical.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="16" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="VendorDateCode" access="readOnly" get="Optical.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="8" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="VendorRevision" access="readOnly" get="Optical.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="4" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="VendorTechName" access="readOnly" get="X_DLink_Optical.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="20" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="VendorPartNumber" access="readOnly" get="Optical.sh">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="16" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="TransmitOpticalLevel" access="readOnly" get="X_DLink_Optical.sh">
+			<syntax>
+				<string>
+					<units value="dBm" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="OpticalSignalLevel" access="readOnly" get="X_DLink_Optical.sh">
+			<syntax>
+				<string>
+					<units value="dBm" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="SignalingRate" access="readOnly" get="Optical.sh">
+			<syntax>
+				<unsignedInt>
+					<units value="100MBd" />
+				</unsignedInt>
+			</syntax>
+		</parameter>
+		<parameter name="Temperature" access="readOnly" get="Optical.sh">
+			<syntax>
+				<string>
+					<units value="Celsius" />
+				</string>
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="X_ADB_MobileModem" version="2.0"><object name="X_ADB_MobileModem." access="readWrite" minEntries="1" maxEntries="1" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.%n">
-    </object><object name="X_ADB_MobileModem.Interface.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceNumberOfEntries" aliasOnAdd="InternetGatewayDevice.X_ADB_MobileModem.Interface.%i" aliasOnDel="InternetGatewayDevice.X_ADB_MobileModem.Interface.%i" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.Interface.%i.%n">
-    </object><object name="X_ADB_MobileModem.Interface.{i}.Modem." access="readWrite" minEntries="1" maxEntries="1" store="no" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.Interface.%i1.Modem.%n">
-    </object><object name="X_ADB_MobileModem.SIMCard.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="SIMCardNumberOfEntries" aliasOnAdd="InternetGatewayDevice.X_ADB_MobileModem.SIMCard.%i" aliasOnDel="InternetGatewayDevice.X_ADB_MobileModem.SIMCard.%i" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.SIMCard.%i.%n">
-    </object><object name="X_ADB_MobileModem.SIMCard.{i}.Stats." access="readWrite" minEntries="1" maxEntries="1" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.SIMCard.%i1.Stats.%n">
-    </object><object name="X_ADB_MobileModem.Operator.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="OperatorNumberOfEntries" aliasOnAdd="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i" aliasOnDel="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i.%n">
-    </object><object name="X_ADB_MobileModem.Operator.{i}.APN.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="APNNumberOfEntries" aliasOnAdd="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i1.APN.%i" aliasOnDel="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i1.APN.%i" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i1.APN.%i.%n">
-    </object><object name="X_ADB_MobileModem.Model.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ModelNumberOfEntries" aliasOnAdd="InternetGatewayDevice.X_ADB_MobileModem.Model.%i" aliasOnDel="InternetGatewayDevice.X_ADB_MobileModem.Model.%i" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.Model.%i.%n">
-    </object></datamodel>
+<datamodel name="X_ADB_MobileModem" version="2.0">
+    <object name="X_ADB_MobileModem." access="readWrite" minEntries="1" maxEntries="1" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.%n">
+    </object>
+    <object name="X_ADB_MobileModem.Interface.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="InterfaceNumberOfEntries" aliasOnAdd="InternetGatewayDevice.X_ADB_MobileModem.Interface.%i" aliasOnDel="InternetGatewayDevice.X_ADB_MobileModem.Interface.%i" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.Interface.%i.%n">
+    </object>
+    <object name="X_ADB_MobileModem.Interface.{i}.Modem." access="readWrite" minEntries="1" maxEntries="1" store="no" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.Interface.%i1.Modem.%n">
+    </object>
+    <object name="X_ADB_MobileModem.SIMCard.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="SIMCardNumberOfEntries" aliasOnAdd="InternetGatewayDevice.X_ADB_MobileModem.SIMCard.%i" aliasOnDel="InternetGatewayDevice.X_ADB_MobileModem.SIMCard.%i" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.SIMCard.%i.%n">
+    </object>
+    <object name="X_ADB_MobileModem.SIMCard.{i}.Stats." access="readWrite" minEntries="1" maxEntries="1" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.SIMCard.%i1.Stats.%n">
+    </object>
+    <object name="X_ADB_MobileModem.Operator.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="OperatorNumberOfEntries" aliasOnAdd="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i" aliasOnDel="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i.%n">
+    </object>
+    <object name="X_ADB_MobileModem.Operator.{i}.APN.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="APNNumberOfEntries" aliasOnAdd="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i1.APN.%i" aliasOnDel="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i1.APN.%i" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.Operator.%i1.APN.%i.%n">
+    </object>
+    <object name="X_ADB_MobileModem.Model.{i}." access="readWrite" minEntries="0" maxEntries="unbounded" numEntriesParameter="ModelNumberOfEntries" aliasOnAdd="InternetGatewayDevice.X_ADB_MobileModem.Model.%i" aliasOnDel="InternetGatewayDevice.X_ADB_MobileModem.Model.%i" aliasOnSet="InternetGatewayDevice.X_ADB_MobileModem.Model.%i.%n">
+    </object>
+</datamodel>

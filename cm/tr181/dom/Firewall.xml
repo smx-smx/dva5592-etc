@@ -1,3 +1,640 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<datamodel name="Firewall" version="2.0"><object name="Firewall." access="readOnly" minEntries="1" maxEntries="1" set="Firewall.sh" add="Firewall.sh" del="Firewall.sh"><parameter name="Config" access="readWrite"><syntax><string><enumerationRef targetParam="X_ADB_AvailableConfigLevels" /><enumeration value="High" /><enumeration value="Low" /><enumeration value="Advanced" /></string><default value="Low" /></syntax></parameter><parameter name="X_ADB_AvailableConfigLevels" access="readOnly"><syntax><list maxItems="3" /><string><enumeration value="High" /><enumeration value="Low" /><enumeration value="Advanced" /></string><default value="High,Low,Advanced" /></syntax></parameter><parameter name="X_ADB_FlushCache" access="readOnly" store="no"><syntax hidden="true"><boolean /><default value="false" /></syntax></parameter><parameter name="LastChange" access="readOnly"><syntax><dateTime /><default value="0001-01-01T00:00:00Z" /></syntax></parameter><parameter name="Version" access="readOnly"><syntax><string><size minLength="0" maxLength="16" /></string></syntax></parameter><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="AdvancedLevel" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".Firewall.Level." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="Type" access="readOnly"><syntax><string><enumeration value="Stateful" /><enumeration value="Stateless" /></string><default value="Stateful" /></syntax></parameter><parameter name="LevelNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="ChainNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter></object><object name="Firewall.Level.{i}." numEntriesParameter="LevelNumberOfEntries" access="readWrite" minEntries="0" maxEntries="unbounded" set="Firewall.sh" add="Firewall.sh" del="Firewall.sh"><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Name" access="readWrite"><syntax><dataType ref="Name" /></syntax></parameter><parameter name="Description" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="Order" access="readWrite" key="yes"><syntax><unsignedInt><range minInclusive="1" maxInclusive="100" step="1" /></unsignedInt><default value="1" /></syntax></parameter><parameter name="Chain" access="readOnly"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".Firewall.Chain." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="PortMappingEnabled" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="DefaultPolicy" access="readWrite"><syntax><string><enumeration value="Accept" /><enumeration value="Reject" /><enumeration value="Drop" /></string><default value="Drop" /></syntax></parameter><parameter name="DefaultLogPolicy" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_AllowLocalServices" access="readWrite"><syntax><boolean /><default value="true" /></syntax></parameter><parameter name="X_ADB_Permissions" access="readWrite"><syntax><dataType ref="UserPermission" /><default value="333" /></syntax></parameter></object><object name="Firewall.Chain.{i}." numEntriesParameter="ChainNumberOfEntries" access="readWrite" minEntries="0" maxEntries="unbounded" set="Firewall.sh" add="Firewall.sh" del="Firewall.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Name" access="readWrite" key="yes"><syntax><dataType ref="Name" /></syntax></parameter><parameter name="Alias" access="readWrite" key="yes"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Creator" access="readOnly"><syntax><string><enumeration value="Defaults" /><enumeration value="PortMapping" /><enumeration value="WANIPv6FirewallControl" /><enumeration value="ACS" /><enumeration value="UserInterface" /><enumeration value="Other" /></string><default value="ACS" /></syntax></parameter><parameter name="RuleNumberOfEntries" access="readOnly" store="no"><syntax><unsignedInt /><default value="0" /></syntax></parameter><parameter name="X_ADB_Permissions" access="readWrite"><syntax><dataType ref="UserPermission" /><default value="333" /></syntax></parameter></object><object name="Firewall.Chain.{i}.Rule.{i}" numEntriesParameter="RuleNumberOfEntries" access="readWrite" minEntries="0" maxEntries="unbounded" set="Firewall.sh" add="Firewall.sh" del="Firewall.sh"><parameter name="Enable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Status" access="readOnly"><syntax><string><enumeration value="Disabled" /><enumeration value="Enabled" /><enumeration value="Error_Misconfigured" /><enumeration value="Error" /></string><default value="Disabled" /></syntax></parameter><parameter name="Alias" key="yes" access="readWrite"><syntax><dataType ref="Alias" /></syntax></parameter><parameter name="Order" access="readWrite"><syntax><unsignedInt><range minInclusive="1" maxInclusive="100" step="1" /></unsignedInt><default value="1" /></syntax></parameter><parameter name="Description" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /></string></syntax></parameter><parameter name="Target" access="readWrite"><syntax><string><enumeration value="Accept" /><enumeration value="Reject" /><enumeration value="Drop" /><enumeration value="Return" /><enumeration value="TargetChain" /></string><default value="Drop" /></syntax></parameter><parameter name="TargetChain" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".Firewall.Chain." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="Log" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="CreationDate" access="readOnly"><syntax><dateTime /></syntax></parameter><parameter name="ExpiryDate" access="readWrite"><syntax><dateTime /><default value="9999-12-31T23:59:59Z" /></syntax></parameter><parameter name="SourceInterface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef refType="strong" targetType="row" /><enumeration value="X_ADB_Local" /></string><default value="" /></syntax></parameter><parameter name="SourceInterfaceExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="SourceAllInterfaces" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="DestInterface" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef refType="strong" targetType="row" /><enumeration value="X_ADB_Local" /></string><default value="" /></syntax></parameter><parameter name="DestInterfaceExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="DestAllInterfaces" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="IPVersion" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="15" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="DestIP" access="readWrite"><syntax><dataType ref="IPAddress" /><string><size maxLength="45" /></string><default value="" /></syntax></parameter><parameter name="DestMask" access="readWrite"><syntax><dataType ref="IPPrefix" /><string><size maxLength="49" /></string><default value="" /></syntax></parameter><parameter name="DestIPExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="SourceIP" access="readWrite"><syntax><dataType ref="IPAddress" /><string><size maxLength="45" /></string><default value="" /></syntax></parameter><parameter name="SourceMask" access="readWrite"><syntax><dataType ref="IPPrefix" /><string><size maxLength="49" /></string><default value="" /></syntax></parameter><parameter name="SourceIPExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="Protocol" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="255" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="ProtocolExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="DestPort" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="65535" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="DestPortRangeMax" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="65535" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="DestPortExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="SourcePort" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="65535" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="SourcePortRangeMax" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="65535" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="SourcePortExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="DSCP" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="63" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="DSCPExclude" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_TCPFlagsSet" access="readWrite"><syntax><list /><string><enumeration value="SYN" /><enumeration value="ACK" /><enumeration value="FIN" /><enumeration value="RST" /><enumeration value="URG" /><enumeration value="PSH" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_TCPFlagsUnset" access="readWrite"><syntax><list /><string><enumeration value="SYN" /><enumeration value="ACK" /><enumeration value="FIN" /><enumeration value="RST" /><enumeration value="URG" /><enumeration value="PSH" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_AddressingMatch" access="readWrite"><syntax><list /><string><enumeration value="unicast" /><enumeration value="multicast" /><enumeration value="broadcast" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_AddressingNoMatch" access="readWrite"><syntax><list /><string><enumeration value="unicast" /><enumeration value="multicast" /><enumeration value="broadcast" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_ConnectionStatus" access="readWrite"><syntax><list /><string><enumeration value="NEW" /><enumeration value="INVALID" /><enumeration value="UNTRACKED" /><enumeration value="ESTABLISHED" /><enumeration value="RELATED" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_Permissions" access="readWrite"><syntax><dataType ref="UserPermission" /><default value="333" /></syntax></parameter><parameter name="X_ADB_ForwardingPolicy" access="readWrite"><syntax><int><range minInclusive="-1" maxInclusive="255" step="1" /></int><default value="-1" /></syntax></parameter><parameter name="X_ADB_RuleType" access="readWrite"><syntax><string><enumeration value="IPAddress" /><enumeration value="IPSubnet" /><enumeration value="IPRange" /><enumeration value="MACAddress" /><enumeration value="HostName" /></string><default value="IPAddress" /></syntax></parameter><parameter name="X_ADB_ProtocolMode" access="readWrite"><syntax><string><enumeration value="All" /><enumeration value="Predefined" /><enumeration value="UserDefined" /></string><default value="All" /></syntax></parameter><parameter name="X_ADB_ProtocolSourcePortMode" access="readWrite"><syntax><string><enumeration value="All" /><enumeration value="Single" /><enumeration value="Range" /></string><default value="All" /></syntax></parameter><parameter name="X_ADB_ProtocolDestPortMode" access="readWrite"><syntax><string><enumeration value="All" /><enumeration value="Single" /><enumeration value="Range" /></string><default value="All" /></syntax></parameter><parameter name="X_ADB_EndpointFiltering" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_RedirectEnable" access="readWrite"><syntax><boolean /><default value="false" /></syntax></parameter><parameter name="X_ADB_SourceIPRangeMin" access="readWrite"><syntax><dataType ref="IPAddress" /><default value="" /></syntax></parameter><parameter name="X_ADB_SourceIPRangeMax" access="readWrite"><syntax><dataType ref="IPAddress" /><default value="" /></syntax></parameter><parameter name="X_ADB_DestIPRangeMin" access="readWrite"><syntax><dataType ref="IPAddress" /><default value="" /></syntax></parameter><parameter name="X_ADB_DestIPRangeMax" access="readWrite"><syntax><dataType ref="IPAddress" /><default value="" /></syntax></parameter><parameter name="X_ADB_MACAddress" access="readWrite"><syntax><dataType ref="MACAddress" /><default value="" /></syntax></parameter><parameter name="X_ADB_MACMask" access="readWrite"><syntax><dataType ref="MACAddress" /><default value="" /></syntax></parameter><parameter name="X_ADB_HostName" access="readWrite"><syntax><string><size minLength="0" maxLength="64" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_Service" access="readWrite"><syntax><string><size minLength="0" maxLength="256" /><pathRef targetParent=".NAT.X_ADB_Service." refType="strong" targetType="row" /></string><default value="" /></syntax></parameter><parameter name="X_ADB_Type" access="readOnly"><syntax><string><enumeration value="Hidden" /><enumeration value="LAN" /><enumeration value="RemoteManagement" /><enumeration value="Custom" /></string><default value="Custom" /></syntax></parameter></object></datamodel>
+<datamodel name="Firewall" version="2.0">
+	<object name="Firewall." access="readOnly" minEntries="1" maxEntries="1" set="Firewall.sh" add="Firewall.sh" del="Firewall.sh">
+		<parameter name="Config" access="readWrite">
+			<syntax>
+				<string>
+					<enumerationRef targetParam="X_ADB_AvailableConfigLevels" />
+					<enumeration value="High" />
+					<enumeration value="Low" />
+					<enumeration value="Advanced" />
+				</string>
+				<default value="Low" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AvailableConfigLevels" access="readOnly">
+			<syntax>
+				<list maxItems="3" />
+				<string>
+					<enumeration value="High" />
+					<enumeration value="Low" />
+					<enumeration value="Advanced" />
+				</string>
+				<default value="High,Low,Advanced" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_FlushCache" access="readOnly" store="no">
+			<syntax hidden="true">
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="LastChange" access="readOnly">
+			<syntax>
+				<dateTime />
+				<default value="0001-01-01T00:00:00Z" />
+			</syntax>
+		</parameter>
+		<parameter name="Version" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="16" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="AdvancedLevel" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".Firewall.Level." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Type" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Stateful" />
+					<enumeration value="Stateless" />
+				</string>
+				<default value="Stateful" />
+			</syntax>
+		</parameter>
+		<parameter name="LevelNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="ChainNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Firewall.Level.{i}." numEntriesParameter="LevelNumberOfEntries" access="readWrite" minEntries="0" maxEntries="unbounded" set="Firewall.sh" add="Firewall.sh" del="Firewall.sh">
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readWrite">
+			<syntax>
+				<dataType ref="Name" />
+			</syntax>
+		</parameter>
+		<parameter name="Description" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Order" access="readWrite" key="yes">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="100" step="1" />
+				</unsignedInt>
+				<default value="1" />
+			</syntax>
+		</parameter>
+		<parameter name="Chain" access="readOnly">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".Firewall.Chain." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="PortMappingEnabled" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="DefaultPolicy" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Accept" />
+					<enumeration value="Reject" />
+					<enumeration value="Drop" />
+				</string>
+				<default value="Drop" />
+			</syntax>
+		</parameter>
+		<parameter name="DefaultLogPolicy" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AllowLocalServices" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="true" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Permissions" access="readWrite">
+			<syntax>
+				<dataType ref="UserPermission" />
+				<default value="333" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Firewall.Chain.{i}." numEntriesParameter="ChainNumberOfEntries" access="readWrite" minEntries="0" maxEntries="unbounded" set="Firewall.sh" add="Firewall.sh" del="Firewall.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Name" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Name" />
+			</syntax>
+		</parameter>
+		<parameter name="Alias" access="readWrite" key="yes">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Creator" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Defaults" />
+					<enumeration value="PortMapping" />
+					<enumeration value="WANIPv6FirewallControl" />
+					<enumeration value="ACS" />
+					<enumeration value="UserInterface" />
+					<enumeration value="Other" />
+				</string>
+				<default value="ACS" />
+			</syntax>
+		</parameter>
+		<parameter name="RuleNumberOfEntries" access="readOnly" store="no">
+			<syntax>
+				<unsignedInt />
+				<default value="0" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Permissions" access="readWrite">
+			<syntax>
+				<dataType ref="UserPermission" />
+				<default value="333" />
+			</syntax>
+		</parameter>
+	</object>
+	<object name="Firewall.Chain.{i}.Rule.{i}" numEntriesParameter="RuleNumberOfEntries" access="readWrite" minEntries="0" maxEntries="unbounded" set="Firewall.sh" add="Firewall.sh" del="Firewall.sh">
+		<parameter name="Enable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Status" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Disabled" />
+					<enumeration value="Enabled" />
+					<enumeration value="Error_Misconfigured" />
+					<enumeration value="Error" />
+				</string>
+				<default value="Disabled" />
+			</syntax>
+		</parameter>
+		<parameter name="Alias" key="yes" access="readWrite">
+			<syntax>
+				<dataType ref="Alias" />
+			</syntax>
+		</parameter>
+		<parameter name="Order" access="readWrite">
+			<syntax>
+				<unsignedInt>
+					<range minInclusive="1" maxInclusive="100" step="1" />
+				</unsignedInt>
+				<default value="1" />
+			</syntax>
+		</parameter>
+		<parameter name="Description" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+				</string>
+			</syntax>
+		</parameter>
+		<parameter name="Target" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="Accept" />
+					<enumeration value="Reject" />
+					<enumeration value="Drop" />
+					<enumeration value="Return" />
+					<enumeration value="TargetChain" />
+				</string>
+				<default value="Drop" />
+			</syntax>
+		</parameter>
+		<parameter name="TargetChain" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".Firewall.Chain." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="Log" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="CreationDate" access="readOnly">
+			<syntax>
+				<dateTime />
+			</syntax>
+		</parameter>
+		<parameter name="ExpiryDate" access="readWrite">
+			<syntax>
+				<dateTime />
+				<default value="9999-12-31T23:59:59Z" />
+			</syntax>
+		</parameter>
+		<parameter name="SourceInterface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef refType="strong" targetType="row" />
+					<enumeration value="X_ADB_Local" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="SourceInterfaceExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="SourceAllInterfaces" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="DestInterface" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef refType="strong" targetType="row" />
+					<enumeration value="X_ADB_Local" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="DestInterfaceExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="DestAllInterfaces" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="IPVersion" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="15" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="DestIP" access="readWrite">
+			<syntax>
+				<dataType ref="IPAddress" />
+				<string>
+					<size maxLength="45" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="DestMask" access="readWrite">
+			<syntax>
+				<dataType ref="IPPrefix" />
+				<string>
+					<size maxLength="49" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="DestIPExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="SourceIP" access="readWrite">
+			<syntax>
+				<dataType ref="IPAddress" />
+				<string>
+					<size maxLength="45" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="SourceMask" access="readWrite">
+			<syntax>
+				<dataType ref="IPPrefix" />
+				<string>
+					<size maxLength="49" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="SourceIPExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="Protocol" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="255" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="ProtocolExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="DestPort" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="65535" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="DestPortRangeMax" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="65535" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="DestPortExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="SourcePort" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="65535" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="SourcePortRangeMax" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="65535" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="SourcePortExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="DSCP" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="63" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="DSCPExclude" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TCPFlagsSet" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="SYN" />
+					<enumeration value="ACK" />
+					<enumeration value="FIN" />
+					<enumeration value="RST" />
+					<enumeration value="URG" />
+					<enumeration value="PSH" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_TCPFlagsUnset" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="SYN" />
+					<enumeration value="ACK" />
+					<enumeration value="FIN" />
+					<enumeration value="RST" />
+					<enumeration value="URG" />
+					<enumeration value="PSH" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AddressingMatch" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="unicast" />
+					<enumeration value="multicast" />
+					<enumeration value="broadcast" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_AddressingNoMatch" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="unicast" />
+					<enumeration value="multicast" />
+					<enumeration value="broadcast" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ConnectionStatus" access="readWrite">
+			<syntax>
+				<list />
+				<string>
+					<enumeration value="NEW" />
+					<enumeration value="INVALID" />
+					<enumeration value="UNTRACKED" />
+					<enumeration value="ESTABLISHED" />
+					<enumeration value="RELATED" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Permissions" access="readWrite">
+			<syntax>
+				<dataType ref="UserPermission" />
+				<default value="333" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ForwardingPolicy" access="readWrite">
+			<syntax>
+				<int>
+					<range minInclusive="-1" maxInclusive="255" step="1" />
+				</int>
+				<default value="-1" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_RuleType" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="IPAddress" />
+					<enumeration value="IPSubnet" />
+					<enumeration value="IPRange" />
+					<enumeration value="MACAddress" />
+					<enumeration value="HostName" />
+				</string>
+				<default value="IPAddress" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ProtocolMode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="All" />
+					<enumeration value="Predefined" />
+					<enumeration value="UserDefined" />
+				</string>
+				<default value="All" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ProtocolSourcePortMode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="All" />
+					<enumeration value="Single" />
+					<enumeration value="Range" />
+				</string>
+				<default value="All" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_ProtocolDestPortMode" access="readWrite">
+			<syntax>
+				<string>
+					<enumeration value="All" />
+					<enumeration value="Single" />
+					<enumeration value="Range" />
+				</string>
+				<default value="All" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_EndpointFiltering" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_RedirectEnable" access="readWrite">
+			<syntax>
+				<boolean />
+				<default value="false" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SourceIPRangeMin" access="readWrite">
+			<syntax>
+				<dataType ref="IPAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_SourceIPRangeMax" access="readWrite">
+			<syntax>
+				<dataType ref="IPAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_DestIPRangeMin" access="readWrite">
+			<syntax>
+				<dataType ref="IPAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_DestIPRangeMax" access="readWrite">
+			<syntax>
+				<dataType ref="IPAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_MACAddress" access="readWrite">
+			<syntax>
+				<dataType ref="MACAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_MACMask" access="readWrite">
+			<syntax>
+				<dataType ref="MACAddress" />
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_HostName" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="64" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Service" access="readWrite">
+			<syntax>
+				<string>
+					<size minLength="0" maxLength="256" />
+					<pathRef targetParent=".NAT.X_ADB_Service." refType="strong" targetType="row" />
+				</string>
+				<default value="" />
+			</syntax>
+		</parameter>
+		<parameter name="X_ADB_Type" access="readOnly">
+			<syntax>
+				<string>
+					<enumeration value="Hidden" />
+					<enumeration value="LAN" />
+					<enumeration value="RemoteManagement" />
+					<enumeration value="Custom" />
+				</string>
+				<default value="Custom" />
+			</syntax>
+		</parameter>
+	</object>
+</datamodel>

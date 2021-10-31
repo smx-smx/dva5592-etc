@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-<object name="Device.X_ADB_SystemLog.Service.-1">
-	<parameter name="Enable">
-		<value>true</value>
-	</parameter>
-	<parameter name="Alias">
-		<value>Printk Dump</value>
-	</parameter>
-	<parameter name="Identity">
-		<value>printkd</value>
-	</parameter>
-</object>
+	<object name="Device.X_ADB_SystemLog.Service.-1">
+		<parameter name="Enable">
+			<value>true</value>
+		</parameter>
+		<parameter name="Alias">
+			<value>Printk Dump</value>
+		</parameter>
+		<parameter name="Identity">
+			<value>printkd</value>
+		</parameter>
+	</object>
 </config>
